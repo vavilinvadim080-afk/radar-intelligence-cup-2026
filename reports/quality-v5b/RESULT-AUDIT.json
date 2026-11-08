@@ -1,0 +1,66 @@
+{
+  "status": "pass",
+  "method": "Contingency counters and set intersections, no model inference",
+  "checks": {
+    "needs:tfidf": {
+      "tp": 3,
+      "fp": 3,
+      "fn": 141,
+      "n": 116
+    },
+    "needs:e5": {
+      "tp": 64,
+      "fp": 207,
+      "fn": 80,
+      "n": 116
+    },
+    "needs:qwen": {
+      "tp": 82,
+      "fp": 33,
+      "fn": 62,
+      "n": 116
+    },
+    "embedding_only:tfidf": {
+      "tp": 51,
+      "fp": 192,
+      "fn": 93,
+      "n": 116
+    },
+    "embedding_only:e5": {
+      "tp": 111,
+      "fp": 456,
+      "fn": 33,
+      "n": 116
+    },
+    "embedding_only:qwen": {
+      "tp": 72,
+      "fp": 16,
+      "fn": 72,
+      "n": 116
+    },
+    "autoreply:tfidf": {
+      "tp": 9,
+      "fp": 5,
+      "fn": 11,
+      "n": 80,
+      "positives": 20
+    },
+    "autoreply:e5": {
+      "tp": 13,
+      "fp": 2,
+      "fn": 7,
+      "n": 80,
+      "positives": 20
+    },
+    "autoreply:qwen": {
+      "tp": 15,
+      "fp": 7,
+      "fn": 5,
+      "n": 80,
+      "positives": 20
+    }
+  },
+  "result_sha256": "158314cbff0fb89cf736689e827382eedd289b4ae53fd145812760f5c99e38ee",
+  "predictions_sha256": "e6ea7faf2b8cd6c04ffb5091c598b2be91209accce5a62ebe7ba1e20d2a3bb4a",
+  "freeze_sha256": "2fee9865aa7a1f803f3430e2369c1ab4c1d7709b173f01d9e769ffe2b7bad2c3"
+}

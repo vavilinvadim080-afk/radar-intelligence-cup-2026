@@ -1,0 +1,53 @@
+{
+  "label": "Расчётные сценарии, не измеренная нагрузка компании",
+  "scenarios": [
+    {
+      "handle_minutes": 24,
+      "tickets_day": 600.0,
+      "peak_factor": 5,
+      "work_hours": 8,
+      "text_latency_assumed_s": 30,
+      "text_slots": 4,
+      "audio_fraction": 0.4,
+      "audio_minutes": 3,
+      "audio_hours_day": 12.0,
+      "asr_latency_assumed_s": 10,
+      "asr_slots": 1,
+      "image_fraction": 0.2,
+      "vl_latency_assumed_s": 8,
+      "vl_slots": 1
+    },
+    {
+      "handle_minutes": 12,
+      "tickets_day": 1200.0,
+      "peak_factor": 5,
+      "work_hours": 8,
+      "text_latency_assumed_s": 30,
+      "text_slots": 7,
+      "audio_fraction": 0.4,
+      "audio_minutes": 3,
+      "audio_hours_day": 24.0,
+      "asr_latency_assumed_s": 10,
+      "asr_slots": 1,
+      "image_fraction": 0.2,
+      "vl_latency_assumed_s": 8,
+      "vl_slots": 1
+    },
+    {
+      "handle_minutes": 6,
+      "tickets_day": 2400.0,
+      "peak_factor": 5,
+      "work_hours": 8,
+      "text_latency_assumed_s": 30,
+      "text_slots": 13,
+      "audio_fraction": 0.4,
+      "audio_minutes": 3,
+      "audio_hours_day": 48.0,
+      "asr_latency_assumed_s": 10,
+      "asr_slots": 2,
+      "image_fraction": 0.2,
+      "vl_latency_assumed_s": 8,
+      "vl_slots": 1
+    }
+  ]
+}

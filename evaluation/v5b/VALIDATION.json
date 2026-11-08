@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "errors": [],
+  "counts": {
+    "needs_rows": 120,
+    "needs_unique_ids": 116,
+    "needs_families": 24,
+    "unknown": 20,
+    "duplicate_deliveries": 4,
+    "reply_rows": 80,
+    "standard_positive": 20,
+    "standard_negative": 60,
+    "reply_families": 6,
+    "fixed_notice_positive": 2,
+    "old_exact_text_overlap": 0
+  },
+  "old_read_allowlist": {
+    "evaluation/v5/control-inputs.jsonl": {
+      "sha256": "ef34b86a561de0739f074c240010b156a6f4407c0cbd6e22e1b15c9719b118ab",
+      "rows": 120
+    },
+    "evaluation/v5/tune.jsonl": {
+      "sha256": "0d5b10952b8ed8d49f5960060086c08574337ba9b5b8261f0450a769c73aec9c",
+      "rows": 120
+    },
+    "evaluation/v5/reply-control-inputs.jsonl": {
+      "sha256": "b2d265d391efbf53f2282814ede6700a4d785e31426213b7a580bf0a44913dda",
+      "rows": 80
+    },
+    "evaluation/v5/reply-tune.jsonl": {
+      "sha256": "054f8b96f6f04906a4c9e6ed9b3b7207b692e000b3566feccf72fa6735da920d",
+      "rows": 80
+    }
+  },
+  "no_model_imports": true,
+  "labels_not_in_inputs": true,
+  "semantic_nonoverlap": "Manually reviewed against allowed inputs/tune; automatic audit checks exact text/topic ids only"
+}

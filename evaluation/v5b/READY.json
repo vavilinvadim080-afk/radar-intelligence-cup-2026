@@ -1,0 +1,21 @@
+{
+  "ready": true,
+  "counts": {
+    "needs_rows": 120,
+    "needs_unique_ids": 116,
+    "needs_families": 24,
+    "unknown": 20,
+    "duplicate_deliveries": 4,
+    "reply_rows": 80,
+    "standard_positive": 20,
+    "standard_negative": 60,
+    "reply_families": 6,
+    "fixed_notice_positive": 2,
+    "old_exact_text_overlap": 0
+  },
+  "lock_path": "evaluation/v5b/CONTROL-LOCK.json",
+  "lock_sha256": "45f14a04ef30cb5a8d06b56e39a799aa98b078541c4e958cf762d7ed037dad2e",
+  "validator_tests_passed": 8,
+  "lock_verified": true,
+  "model_test_executed": false
+}

@@ -1,0 +1,32 @@
+{
+  "model": "MoritzLaurer/multilingual-MiniLMv2-L6-mnli-xnli",
+  "revision": "0a71e92a985b6e1ad1828cf67ce9c459639c1dca",
+  "source": "https://huggingface.co/MoritzLaurer/multilingual-MiniLMv2-L6-mnli-xnli",
+  "license": "mit",
+  "files": {
+    "config.json": {
+      "bytes": 1032,
+      "sha256": "79862295be1538a947e0f56d495ef8d658c3eaebcfb42c7ad96229d195ca745d"
+    },
+    "tokenizer.json": {
+      "bytes": 17082758,
+      "sha256": "098c131bb4423163db239755e309facaa6850059f850f9f3d88a78344a4b631c"
+    },
+    "tokenizer_config.json": {
+      "bytes": 565,
+      "sha256": "86139ce1f39e814bcdb99a6fe30c0c4983911508aad07417e616d994fb74eb25"
+    },
+    "special_tokens_map.json": {
+      "bytes": 280,
+      "sha256": "06e405a36dfe4b9604f484f6a1e619af1a7f7d09e34a8555eb0b77b66318067f"
+    },
+    "model.safetensors": {
+      "bytes": 427997022,
+      "sha256": "91b323ccf247ec1e3b5925d566230bae7c52de8147e6062b42e250089a3fc80b"
+    },
+    "README.md": {
+      "bytes": 6741,
+      "sha256": "f28aebb1babf603b5c5c107670645f2b00e09a2e9a39132293ad0a9a7ab6fa34"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+ "_note": "Генерируется presentation/derive_v12.py: разбор вывода mvp/eval/claim_coverage_eval.py. Руками не править. Порог выбран на той же выборке, на которой измерен: оценка, не гарантия.",
+ "source": "mvp/eval/claim_coverage_eval.py на mvp/eval/cache/claims-raw-v2-schema.json; mvp/STATUS-autoreply-claims.md",
+ "n_cards": 31,
+ "n_claims": 126,
+ "kinds": {
+  "checkable": 53,
+  "not_checkable": 30,
+  "ids_release_task": 33,
+  "no_ids": 10
+ },
+ "chosen_threshold": 0.3,
+ "by_threshold": {
+  "0.25": {
+   "false_drops": 0,
+   "of_checkable": 53,
+   "swaps_caught": 1293,
+   "swaps_total": 1590,
+   "swaps_caught_share": 0.8132075471698114
+  },
+  "0.3": {
+   "false_drops": 0,
+   "of_checkable": 53,
+   "swaps_caught": 1427,
+   "swaps_total": 1590,
+   "swaps_caught_share": 0.8974842767295598
+  },
+  "0.34": {
+   "false_drops": 1,
+   "of_checkable": 53,
+   "swaps_caught": 1504,
+   "swaps_total": 1590,
+   "swaps_caught_share": 0.9459119496855346
+  },
+  "0.4": {
+   "false_drops": 1,
+   "of_checkable": 53,
+   "swaps_caught": 1507,
+   "swaps_total": 1590,
+   "swaps_caught_share": 0.9477987421383648
+  },
+  "0.5": {
+   "false_drops": 7,
+   "of_checkable": 53,
+   "swaps_caught": 1548,
+   "swaps_total": 1590,
+   "swaps_caught_share": 0.9735849056603774
+  }
+ },
+ "manual_sample": {
+  "_note": "перенесено вручную из mvp/STATUS-autoreply-claims.md, раздел «Ручная выборка из 20 утверждений» (вердикты расставил автор замера, не скрипт)",
+  "n": 20,
+  "obviously_true_dropped": 0,
+  "fully_true": 19,
+  "half_true_passed": 1
+ }
+}

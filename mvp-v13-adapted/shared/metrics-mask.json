@@ -1,0 +1,1537 @@
+{
+ "generated_at": "2026-10-29T00:45:46",
+ "rule": "Запуск из mvp/:  PYTHONPATH=. .venv/bin/python eval/mask_eval.py\nСравнивает: v1 (замороженная копия eval/baseline/mask_v1.py, маскирование до правок 2026-10-20),\nv2 (radar/mask.py, регулярки), v2+ner (radar/mask.py с флагом ner=True, если natasha стоит).\nПишет ../shared/metrics-mask.json.",
+ "sets": {
+  "dev": "mvp/tests/data/mask_gold.jsonl: по нему правились регулярки v2, поэтому цифры v2 здесь завышены",
+  "holdout": "mvp/tests/data/mask_gold_holdout.jsonl: написан после правок, регулярки по нему не подгонялись"
+ },
+ "variants": {
+  "v1_before": {
+   "dev": {
+    "by_type": {
+     "PHONE": {
+      "total": 16,
+      "caught": 14,
+      "recall": 0.875,
+      "missed": [
+       {
+        "value": "9123456789",
+        "masked_text": "номер телефона 9123456789 не принимает приложение"
+       },
+       {
+        "value": "+375 29 123 45 67",
+        "masked_text": "в профиле указан +375 29 123 45 67 это не мой номер"
+       }
+      ]
+     },
+     "EMAIL": {
+      "total": 9,
+      "caught": 9,
+      "recall": 1.0,
+      "missed": []
+     },
+     "CARD": {
+      "total": 7,
+      "caught": 7,
+      "recall": 1.0,
+      "missed": []
+     },
+     "ACCOUNT": {
+      "total": 4,
+      "caught": 0,
+      "recall": 0.0,
+      "missed": [
+       {
+        "value": "40817810099910004312",
+        "masked_text": "Расчётный счёт 40817810099910004312 указан в договоре неверно"
+       },
+       {
+        "value": "40702 810 4 0000 1234567",
+        "masked_text": "перечислите на счёт <CARD_1> 1234567 возврат"
+       },
+       {
+        "value": "40817810500001234567",
+        "masked_text": "мой р/с 40817810500001234567, БИК 044525225, возврат не пришёл"
+       },
+       {
+        "value": "30101810400000000225",
+        "masked_text": "Счёт получателя 30101810400000000225 вернули обратно"
+       }
+      ]
+     },
+     "CAR_PLATE": {
+      "total": 13,
+      "caught": 12,
+      "recall": 0.923,
+      "missed": [
+       {
+        "value": "АВ 1234 77",
+        "masked_text": "Прицеп АВ 1234 77 не вносится"
+       }
+      ]
+     },
+     "PASSPORT": {
+      "total": 5,
+      "caught": 0,
+      "recall": 0.0,
+      "missed": [
+       {
+        "value": "4510 123456",
+        "masked_text": "Паспорт 4510 123456, прошу снять блокировку профиля"
+       },
+       {
+        "value": "45 10 номер 123456",
+        "masked_text": "серия 45 10 номер 123456 для проверки личности"
+       },
+       {
+        "value": "4510123456",
+        "masked_text": "мои паспортные данные 4510123456 приложение просит повторно"
+       },
+       {
+        "value": "6511 654321",
+        "masked_text": "паспорт: 6511 654321 выдан в 2015"
+       },
+       {
+        "value": "4510 123456",
+        "masked_text": "Прошу связаться: <PERSON_1>, <EMAIL_1>, паспорт 4510 123456"
+       }
+      ]
+     },
+     "SNILS": {
+      "total": 2,
+      "caught": 0,
+      "recall": 0.0,
+      "missed": [
+       {
+        "value": "123-456-789 01",
+        "masked_text": "СНИЛС 123-456-789 01 не принимается в личном кабинете"
+       },
+       {
+        "value": "12345678901",
+        "masked_text": "снилс 12345678901 введён, а сайт пишет ошибку"
+       }
+      ]
+     },
+     "PERSON": {
+      "total": 28,
+      "caught": 16,
+      "recall": 0.571,
+      "missed": [
+       {
+        "value": "Рамиль",
+        "masked_text": "меня зовут Рамиль, у меня вопрос по баллам"
+       },
+       {
+        "value": "Петровой Анны Викторовны",
+        "masked_text": "Обращение от <PERSON_1> Викторовны по поводу списания"
+       },
+       {
+        "value": "Радик Хабибуллин",
+        "masked_text": "Здравствуйте! Радик Хабибуллин, номер заявки 4412, жду ответа"
+       },
+       {
+        "value": "Зарипов Ильнур Рафаэльевич",
+        "masked_text": "подпись: Зарипов <PERSON_1>"
+       },
+       {
+        "value": "Кириллу Белоусову",
+        "masked_text": "Мне сказали обратиться к Кириллу Белоусову в отдел бонусов"
+       },
+       {
+        "value": "Аделины Фаттаховой",
+        "masked_text": "жалоба от Аделины Фаттаховой, пункт выдачи не работает"
+       },
+       {
+        "value": "Тимофей",
+        "masked_text": "пишет Тимофей, уже третий раз пишет про оплату"
+       },
+       {
+        "value": "иван петров",
+        "masked_text": "зовут меня иван петров, не могу войти"
+       },
+       {
+        "value": "Владислав Гончаренко",
+        "masked_text": "Ваш сотрудник Владислав Гончаренко отказал в возврате"
+       },
+       {
+        "value": "Нурия Шайхутдинова",
+        "masked_text": "Нурия Шайхутдинова просит ответить письменно"
+       },
+       {
+        "value": "Иванов Пётр",
+        "masked_text": "Иванов Пётр, <PHONE_1>, <EMAIL_1>, машина <CAR_PLATE_1>, карта <CARD_1>"
+       },
+       {
+        "value": "Ахметова Рината",
+        "masked_text": "Заявка от Ахметова Рината: карта <CARD_1> списана без чека"
+       }
+      ]
+     },
+     "ADDRESS": {
+      "total": 13,
+      "caught": 7,
+      "recall": 0.538,
+      "missed": [
+       {
+        "value": "Казань, улица Баумана, дом 7",
+        "masked_text": "адрес: Казань, улица Баумана, дом 7"
+       },
+       {
+        "value": "Ленина 5",
+        "masked_text": "пункт на Ленина 5 не принимает карту"
+       },
+       {
+        "value": "Екатеринбург, Малышева 51",
+        "masked_text": "Приехал на АЗС по адресу Екатеринбург, Малышева 51, колонки не работают"
+       },
+       {
+        "value": "улице Советской 25",
+        "masked_text": "АЗС на улице Советской 25 не пускает в приложение"
+       },
+       {
+        "value": "Уфа, ул. Карла Маркса, 4",
+        "masked_text": "моя квартира: Уфа, <ADDRESS_1>, подъезд 2"
+       },
+       {
+        "value": "Новосибирск, Красный проспект, 25",
+        "masked_text": "доставьте по адресу: Новосибирск, Красный проспект, 25"
+       }
+      ]
+     }
+    },
+    "all": {
+     "total": 97,
+     "caught": 65
+    },
+    "false_positive_tokens_by_kind": {
+     "CARD": 1,
+     "PERSON": 2
+    },
+    "false_positive_items": [
+     {
+      "kind": "CARD",
+      "original": "1234567890123",
+      "text": "Заказ 1234567890123 не отображается в истории",
+      "line_has_pii": false
+     },
+     {
+      "kind": "PERSON",
+      "original": "Вера",
+      "text": "Вера в то, что вы исправите ошибку, потеряна, третий раз пишу",
+      "line_has_pii": false
+     },
+     {
+      "kind": "PERSON",
+      "original": "Надежда",
+      "text": "Надежда на скорый ответ остаётся, пишу уже неделю",
+      "line_has_pii": false
+     }
+    ],
+    "lines_without_pii": 37,
+    "lines_without_pii_with_false_mask": 3,
+    "texts_per_sec": 25803.5
+   },
+   "holdout": {
+    "by_type": {
+     "PHONE": {
+      "total": 6,
+      "caught": 6,
+      "recall": 1.0,
+      "missed": []
+     },
+     "EMAIL": {
+      "total": 3,
+      "caught": 2,
+      "recall": 0.667,
+      "missed": [
+       {
+        "value": "m.petrenko[at]yandex.ru",
+        "masked_text": "почта для чека: m.petrenko[at]yandex.ru"
+       }
+      ]
+     },
+     "CARD": {
+      "total": 3,
+      "caught": 3,
+      "recall": 1.0,
+      "missed": []
+     },
+     "ACCOUNT": {
+      "total": 1,
+      "caught": 1,
+      "recall": 1.0,
+      "missed": []
+     },
+     "CAR_PLATE": {
+      "total": 5,
+      "caught": 5,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PASSPORT": {
+      "total": 3,
+      "caught": 0,
+      "recall": 0.0,
+      "missed": [
+       {
+        "value": "9214 765432",
+        "masked_text": "паспорт РФ 9214 765432 прошу удалить из профиля"
+       },
+       {
+        "value": "65 08 112233",
+        "masked_text": "Серия и номер паспорта: 65 08 112233"
+       },
+       {
+        "value": "4001 998877",
+        "masked_text": "<PERSON_1>, <PHONE_1>, <EMAIL_1>, паспорт 4001 998877"
+       }
+      ]
+     },
+     "SNILS": {
+      "total": 1,
+      "caught": 0,
+      "recall": 0.0,
+      "missed": [
+       {
+        "value": "987-654-321 00",
+        "masked_text": "СНИЛС 987-654-321 00 пришлите подтверждение"
+       }
+      ]
+     },
+     "PERSON": {
+      "total": 18,
+      "caught": 2,
+      "recall": 0.111,
+      "missed": [
+       {
+        "value": "Глафира",
+        "masked_text": "Меня зовут Глафира, вход не выполняется"
+       },
+       {
+        "value": "Мансур Каримов",
+        "masked_text": "Здравствуйте, это Мансур Каримов, пишу по заявке 778"
+       },
+       {
+        "value": "Лопатиной Виолетте Эдуардовне",
+        "masked_text": "Прошу ответить Лопатиной Виолетте Эдуардовне до пятницы"
+       },
+       {
+        "value": "Эльмира Сабирова",
+        "masked_text": "Звонила Эльмира Сабирова, оператор ничего не записал"
+       },
+       {
+        "value": "Ярославу Мельнику",
+        "masked_text": "Передайте Ярославу Мельнику, что баллы так и не пришли"
+       },
+       {
+        "value": "Юлиана Шевчук",
+        "masked_text": "Клиентка Юлиана Шевчук возмущена задержкой"
+       },
+       {
+        "value": "Бахтияр Нуриев",
+        "masked_text": "К вам обращается Бахтияр Нуриев, номер обращения 5521"
+       },
+       {
+        "value": "Тарасов Игнат Львович",
+        "masked_text": "Заявитель: Тарасов <PERSON_1>"
+       },
+       {
+        "value": "Захар",
+        "masked_text": "Это Захар из Тюмени, у меня вопрос по бонусам"
+       },
+       {
+        "value": "Фаина Ермакова",
+        "masked_text": "сообщаю, что Фаина Ермакова трижды меняла пароль"
+       },
+       {
+        "value": "Хамзина Тагира",
+        "masked_text": "Обращение от Хамзина Тагира, АЗС на трассе"
+       },
+       {
+        "value": "Агата Орлова",
+        "masked_text": "С вами говорила Агата Орлова, пообещала перезвонить"
+       },
+       {
+        "value": "Артур Шарафутдинов",
+        "masked_text": "Меня зовут Артур Шарафутдинов, номер <PHONE_1>, живу на <ADDRESS_1>"
+       },
+       {
+        "value": "Фарида",
+        "masked_text": "Позвонила женщина по имени Фарида и попросила вернуть деньги"
+       },
+       {
+        "value": "Мухаметшин Ринат Ильдарович",
+        "masked_text": "Директор Мухаметшин <PERSON_1> подписал акт"
+       },
+       {
+        "value": "Вероника Дорохова",
+        "masked_text": "Вероника Дорохова из бухгалтерии не отвечает на письма"
+       }
+      ]
+     },
+     "ADDRESS": {
+      "total": 9,
+      "caught": 2,
+      "recall": 0.222,
+      "missed": [
+       {
+        "value": "Садовую 18",
+        "masked_text": "Доставка на Садовую 18, подъезд 3, этаж 5"
+       },
+       {
+        "value": "проспекте Кирова 140",
+        "masked_text": "Живу в Самаре на проспекте Кирова 140, курьер не дозвонился"
+       },
+       {
+        "value": "Московском шоссе 12",
+        "masked_text": "заправка на Московском шоссе 12 закрыта"
+       },
+       {
+        "value": "Нижний Новгород, Большая Покровская, 22",
+        "masked_text": "Пункт выдачи: Нижний Новгород, Большая Покровская, 22"
+       },
+       {
+        "value": "Красноярск, ул. Весны 7 кв 81",
+        "masked_text": "мой адрес Красноярск, <ADDRESS_1>, прошу доставить туда"
+       },
+       {
+        "value": "Тверь, улица Трёхсвятская, 4",
+        "masked_text": "посылка не дошла: Тверь, <ADDRESS_1>"
+       },
+       {
+        "value": "Сургут, проспект Ленина, дом 55, квартира 12",
+        "masked_text": "адрес регистрации: Сургут, проспект Ленина, дом 55, квартира 12"
+       }
+      ]
+     }
+    },
+    "all": {
+     "total": 49,
+     "caught": 21
+    },
+    "false_positive_tokens_by_kind": {
+     "CARD": 1,
+     "PHONE": 1
+    },
+    "false_positive_items": [
+     {
+      "kind": "CARD",
+      "original": "7788990011223",
+      "text": "Заказ 7788990011223 висит в статусе передан курьеру",
+      "line_has_pii": false
+     },
+     {
+      "kind": "PHONE",
+      "original": "8 800 100 20 30",
+      "text": "Номер 8 800 100 20 30 это горячая линия компании, звонил туда, не берут",
+      "line_has_pii": false
+     }
+    ],
+    "lines_without_pii": 19,
+    "lines_without_pii_with_false_mask": 2,
+    "texts_per_sec": 16405.2
+   }
+  },
+  "v2_regex": {
+   "dev": {
+    "by_type": {
+     "PHONE": {
+      "total": 16,
+      "caught": 16,
+      "recall": 1.0,
+      "missed": []
+     },
+     "EMAIL": {
+      "total": 9,
+      "caught": 9,
+      "recall": 1.0,
+      "missed": []
+     },
+     "CARD": {
+      "total": 7,
+      "caught": 7,
+      "recall": 1.0,
+      "missed": []
+     },
+     "ACCOUNT": {
+      "total": 4,
+      "caught": 4,
+      "recall": 1.0,
+      "missed": []
+     },
+     "CAR_PLATE": {
+      "total": 13,
+      "caught": 13,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PASSPORT": {
+      "total": 5,
+      "caught": 5,
+      "recall": 1.0,
+      "missed": []
+     },
+     "SNILS": {
+      "total": 2,
+      "caught": 2,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PERSON": {
+      "total": 28,
+      "caught": 16,
+      "recall": 0.571,
+      "missed": [
+       {
+        "value": "Рамиль",
+        "masked_text": "меня зовут Рамиль, у меня вопрос по баллам"
+       },
+       {
+        "value": "Петровой Анны Викторовны",
+        "masked_text": "Обращение от <PERSON_1> Викторовны по поводу списания"
+       },
+       {
+        "value": "Радик Хабибуллин",
+        "masked_text": "Здравствуйте! Радик Хабибуллин, номер заявки 4412, жду ответа"
+       },
+       {
+        "value": "Зарипов Ильнур Рафаэльевич",
+        "masked_text": "подпись: Зарипов <PERSON_1>"
+       },
+       {
+        "value": "Кириллу Белоусову",
+        "masked_text": "Мне сказали обратиться к Кириллу Белоусову в отдел бонусов"
+       },
+       {
+        "value": "Аделины Фаттаховой",
+        "masked_text": "жалоба от Аделины Фаттаховой, пункт выдачи не работает"
+       },
+       {
+        "value": "Тимофей",
+        "masked_text": "пишет Тимофей, уже третий раз пишет про оплату"
+       },
+       {
+        "value": "иван петров",
+        "masked_text": "зовут меня иван петров, не могу войти"
+       },
+       {
+        "value": "Владислав Гончаренко",
+        "masked_text": "Ваш сотрудник Владислав Гончаренко отказал в возврате"
+       },
+       {
+        "value": "Нурия Шайхутдинова",
+        "masked_text": "Нурия Шайхутдинова просит ответить письменно"
+       },
+       {
+        "value": "Иванов Пётр",
+        "masked_text": "Иванов Пётр, <PHONE_1>, <EMAIL_1>, машина <CAR_PLATE_1>, карта <CARD_1>"
+       },
+       {
+        "value": "Ахметова Рината",
+        "masked_text": "Заявка от Ахметова Рината: карта <CARD_1> списана без чека"
+       }
+      ]
+     },
+     "ADDRESS": {
+      "total": 13,
+      "caught": 13,
+      "recall": 1.0,
+      "missed": []
+     }
+    },
+    "all": {
+     "total": 97,
+     "caught": 85
+    },
+    "false_positive_tokens_by_kind": {
+     "PERSON": 2
+    },
+    "false_positive_items": [
+     {
+      "kind": "PERSON",
+      "original": "Вера",
+      "text": "Вера в то, что вы исправите ошибку, потеряна, третий раз пишу",
+      "line_has_pii": false
+     },
+     {
+      "kind": "PERSON",
+      "original": "Надежда",
+      "text": "Надежда на скорый ответ остаётся, пишу уже неделю",
+      "line_has_pii": false
+     }
+    ],
+    "lines_without_pii": 37,
+    "lines_without_pii_with_false_mask": 2,
+    "texts_per_sec": 11950.9
+   },
+   "holdout": {
+    "by_type": {
+     "PHONE": {
+      "total": 6,
+      "caught": 6,
+      "recall": 1.0,
+      "missed": []
+     },
+     "EMAIL": {
+      "total": 3,
+      "caught": 2,
+      "recall": 0.667,
+      "missed": [
+       {
+        "value": "m.petrenko[at]yandex.ru",
+        "masked_text": "почта для чека: m.petrenko[at]yandex.ru"
+       }
+      ]
+     },
+     "CARD": {
+      "total": 3,
+      "caught": 3,
+      "recall": 1.0,
+      "missed": []
+     },
+     "ACCOUNT": {
+      "total": 1,
+      "caught": 1,
+      "recall": 1.0,
+      "missed": []
+     },
+     "CAR_PLATE": {
+      "total": 5,
+      "caught": 5,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PASSPORT": {
+      "total": 3,
+      "caught": 3,
+      "recall": 1.0,
+      "missed": []
+     },
+     "SNILS": {
+      "total": 1,
+      "caught": 1,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PERSON": {
+      "total": 18,
+      "caught": 2,
+      "recall": 0.111,
+      "missed": [
+       {
+        "value": "Глафира",
+        "masked_text": "Меня зовут Глафира, вход не выполняется"
+       },
+       {
+        "value": "Мансур Каримов",
+        "masked_text": "Здравствуйте, это Мансур Каримов, пишу по заявке 778"
+       },
+       {
+        "value": "Лопатиной Виолетте Эдуардовне",
+        "masked_text": "Прошу ответить Лопатиной Виолетте Эдуардовне до пятницы"
+       },
+       {
+        "value": "Эльмира Сабирова",
+        "masked_text": "Звонила Эльмира Сабирова, оператор ничего не записал"
+       },
+       {
+        "value": "Ярославу Мельнику",
+        "masked_text": "Передайте Ярославу Мельнику, что баллы так и не пришли"
+       },
+       {
+        "value": "Юлиана Шевчук",
+        "masked_text": "Клиентка Юлиана Шевчук возмущена задержкой"
+       },
+       {
+        "value": "Бахтияр Нуриев",
+        "masked_text": "К вам обращается Бахтияр Нуриев, номер обращения 5521"
+       },
+       {
+        "value": "Тарасов Игнат Львович",
+        "masked_text": "Заявитель: Тарасов <PERSON_1>"
+       },
+       {
+        "value": "Захар",
+        "masked_text": "Это Захар из Тюмени, у меня вопрос по бонусам"
+       },
+       {
+        "value": "Фаина Ермакова",
+        "masked_text": "сообщаю, что Фаина Ермакова трижды меняла пароль"
+       },
+       {
+        "value": "Хамзина Тагира",
+        "masked_text": "Обращение от Хамзина Тагира, АЗС на трассе"
+       },
+       {
+        "value": "Агата Орлова",
+        "masked_text": "С вами говорила Агата Орлова, пообещала перезвонить"
+       },
+       {
+        "value": "Артур Шарафутдинов",
+        "masked_text": "Меня зовут Артур Шарафутдинов, номер <PHONE_1>, живу на <ADDRESS_1>"
+       },
+       {
+        "value": "Фарида",
+        "masked_text": "Позвонила женщина по имени Фарида и попросила вернуть деньги"
+       },
+       {
+        "value": "Мухаметшин Ринат Ильдарович",
+        "masked_text": "Директор Мухаметшин <PERSON_1> подписал акт"
+       },
+       {
+        "value": "Вероника Дорохова",
+        "masked_text": "Вероника Дорохова из бухгалтерии не отвечает на письма"
+       }
+      ]
+     },
+     "ADDRESS": {
+      "total": 9,
+      "caught": 5,
+      "recall": 0.556,
+      "missed": [
+       {
+        "value": "Садовую 18",
+        "masked_text": "Доставка на Садовую 18, подъезд 3, этаж 5"
+       },
+       {
+        "value": "Московском шоссе 12",
+        "masked_text": "заправка на Московском шоссе 12 закрыта"
+       },
+       {
+        "value": "Тверь, улица Трёхсвятская, 4",
+        "masked_text": "посылка не дошла: Тверь, <ADDRESS_1>"
+       },
+       {
+        "value": "Сургут, проспект Ленина, дом 55, квартира 12",
+        "masked_text": "адрес регистрации: <ADDRESS_1>, квартира 12"
+       }
+      ]
+     }
+    },
+    "all": {
+     "total": 49,
+     "caught": 28
+    },
+    "false_positive_tokens_by_kind": {
+     "PHONE": 1
+    },
+    "false_positive_items": [
+     {
+      "kind": "PHONE",
+      "original": "8 800 100 20 30",
+      "text": "Номер 8 800 100 20 30 это горячая линия компании, звонил туда, не берут",
+      "line_has_pii": false
+     }
+    ],
+    "lines_without_pii": 19,
+    "lines_without_pii_with_false_mask": 1,
+    "texts_per_sec": 7447.2
+   }
+  },
+  "v2_regex_ctx": {
+   "dev": {
+    "by_type": {
+     "PHONE": {
+      "total": 16,
+      "caught": 16,
+      "recall": 1.0,
+      "missed": []
+     },
+     "EMAIL": {
+      "total": 9,
+      "caught": 9,
+      "recall": 1.0,
+      "missed": []
+     },
+     "CARD": {
+      "total": 7,
+      "caught": 7,
+      "recall": 1.0,
+      "missed": []
+     },
+     "ACCOUNT": {
+      "total": 4,
+      "caught": 4,
+      "recall": 1.0,
+      "missed": []
+     },
+     "CAR_PLATE": {
+      "total": 13,
+      "caught": 13,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PASSPORT": {
+      "total": 5,
+      "caught": 5,
+      "recall": 1.0,
+      "missed": []
+     },
+     "SNILS": {
+      "total": 2,
+      "caught": 2,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PERSON": {
+      "total": 28,
+      "caught": 28,
+      "recall": 1.0,
+      "missed": []
+     },
+     "ADDRESS": {
+      "total": 13,
+      "caught": 13,
+      "recall": 1.0,
+      "missed": []
+     }
+    },
+    "all": {
+     "total": 97,
+     "caught": 97
+    },
+    "false_positive_tokens_by_kind": {
+     "PERSON": 1
+    },
+    "false_positive_items": [
+     {
+      "kind": "PERSON",
+      "original": "Основной",
+      "text": "Основной номер +7 (343) 222-33-44, дополнительный 8 800 555 35 35",
+      "line_has_pii": true
+     }
+    ],
+    "lines_without_pii": 37,
+    "lines_without_pii_with_false_mask": 0,
+    "texts_per_sec": 11403.2
+   },
+   "holdout": {
+    "by_type": {
+     "PHONE": {
+      "total": 6,
+      "caught": 6,
+      "recall": 1.0,
+      "missed": []
+     },
+     "EMAIL": {
+      "total": 3,
+      "caught": 2,
+      "recall": 0.667,
+      "missed": [
+       {
+        "value": "m.petrenko[at]yandex.ru",
+        "masked_text": "почта для чека: m.petrenko[at]yandex.ru"
+       }
+      ]
+     },
+     "CARD": {
+      "total": 3,
+      "caught": 3,
+      "recall": 1.0,
+      "missed": []
+     },
+     "ACCOUNT": {
+      "total": 1,
+      "caught": 1,
+      "recall": 1.0,
+      "missed": []
+     },
+     "CAR_PLATE": {
+      "total": 5,
+      "caught": 5,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PASSPORT": {
+      "total": 3,
+      "caught": 3,
+      "recall": 1.0,
+      "missed": []
+     },
+     "SNILS": {
+      "total": 1,
+      "caught": 1,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PERSON": {
+      "total": 18,
+      "caught": 8,
+      "recall": 0.444,
+      "missed": [
+       {
+        "value": "Мансур Каримов",
+        "masked_text": "Здравствуйте, это Мансур Каримов, пишу по заявке 778"
+       },
+       {
+        "value": "Эльмира Сабирова",
+        "masked_text": "Звонила Эльмира Сабирова, оператор ничего не записал"
+       },
+       {
+        "value": "Ярославу Мельнику",
+        "masked_text": "Передайте <PERSON_1> Мельнику, что баллы так и не пришли"
+       },
+       {
+        "value": "Юлиана Шевчук",
+        "masked_text": "Клиентка Юлиана Шевчук возмущена задержкой"
+       },
+       {
+        "value": "Бахтияр Нуриев",
+        "masked_text": "К вам обращается Бахтияр <PERSON_1>, номер обращения 5521"
+       },
+       {
+        "value": "Захар",
+        "masked_text": "Это Захар из Тюмени, у меня вопрос по бонусам"
+       },
+       {
+        "value": "Фаина Ермакова",
+        "masked_text": "сообщаю, что Фаина Ермакова трижды меняла пароль"
+       },
+       {
+        "value": "Хамзина Тагира",
+        "masked_text": "Обращение от Хамзина Тагира, АЗС на трассе"
+       },
+       {
+        "value": "Агата Орлова",
+        "masked_text": "С вами говорила Агата Орлова, пообещала перезвонить"
+       },
+       {
+        "value": "Вероника Дорохова",
+        "masked_text": "Вероника Дорохова из бухгалтерии не отвечает на письма"
+       }
+      ]
+     },
+     "ADDRESS": {
+      "total": 9,
+      "caught": 5,
+      "recall": 0.556,
+      "missed": [
+       {
+        "value": "Садовую 18",
+        "masked_text": "Доставка на Садовую 18, подъезд 3, этаж 5"
+       },
+       {
+        "value": "Московском шоссе 12",
+        "masked_text": "заправка на Московском шоссе 12 закрыта"
+       },
+       {
+        "value": "Тверь, улица Трёхсвятская, 4",
+        "masked_text": "посылка не дошла: Тверь, <ADDRESS_1>"
+       },
+       {
+        "value": "Сургут, проспект Ленина, дом 55, квартира 12",
+        "masked_text": "адрес регистрации: <ADDRESS_1>, квартира 12"
+       }
+      ]
+     }
+    },
+    "all": {
+     "total": 49,
+     "caught": 34
+    },
+    "false_positive_tokens_by_kind": {
+     "PHONE": 1
+    },
+    "false_positive_items": [
+     {
+      "kind": "PHONE",
+      "original": "8 800 100 20 30",
+      "text": "Номер 8 800 100 20 30 это горячая линия компании, звонил туда, не берут",
+      "line_has_pii": false
+     }
+    ],
+    "lines_without_pii": 19,
+    "lines_without_pii_with_false_mask": 1,
+    "texts_per_sec": 7030.2
+   }
+  },
+  "v2_regex_ner": {
+   "dev": {
+    "by_type": {
+     "PHONE": {
+      "total": 16,
+      "caught": 16,
+      "recall": 1.0,
+      "missed": []
+     },
+     "EMAIL": {
+      "total": 9,
+      "caught": 9,
+      "recall": 1.0,
+      "missed": []
+     },
+     "CARD": {
+      "total": 7,
+      "caught": 7,
+      "recall": 1.0,
+      "missed": []
+     },
+     "ACCOUNT": {
+      "total": 4,
+      "caught": 4,
+      "recall": 1.0,
+      "missed": []
+     },
+     "CAR_PLATE": {
+      "total": 13,
+      "caught": 13,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PASSPORT": {
+      "total": 5,
+      "caught": 5,
+      "recall": 1.0,
+      "missed": []
+     },
+     "SNILS": {
+      "total": 2,
+      "caught": 2,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PERSON": {
+      "total": 28,
+      "caught": 26,
+      "recall": 0.929,
+      "missed": [
+       {
+        "value": "Петровой Анны Викторовны",
+        "masked_text": "Обращение от <PERSON_1> Викторовны по поводу списания"
+       },
+       {
+        "value": "иван петров",
+        "masked_text": "зовут меня иван петров, не могу войти"
+       }
+      ]
+     },
+     "ADDRESS": {
+      "total": 13,
+      "caught": 13,
+      "recall": 1.0,
+      "missed": []
+     }
+    },
+    "all": {
+     "total": 97,
+     "caught": 95
+    },
+    "false_positive_tokens_by_kind": {
+     "PERSON": 4
+    },
+    "false_positive_items": [
+     {
+      "kind": "PERSON",
+      "original": "Перезвоните",
+      "text": "Перезвоните мне на +7 (912) 345-67-89, не могу оплатить на АЗС",
+      "line_has_pii": true
+     },
+     {
+      "kind": "PERSON",
+      "original": "Заправился",
+      "text": "Заправился на АЗС, машина А123ВС 77, чек не пришёл",
+      "line_has_pii": true
+     },
+     {
+      "kind": "PERSON",
+      "original": "Вера",
+      "text": "Вера в то, что вы исправите ошибку, потеряна, третий раз пишу",
+      "line_has_pii": false
+     },
+     {
+      "kind": "PERSON",
+      "original": "Надежда",
+      "text": "Надежда на скорый ответ остаётся, пишу уже неделю",
+      "line_has_pii": false
+     }
+    ],
+    "lines_without_pii": 37,
+    "lines_without_pii_with_false_mask": 2,
+    "texts_per_sec": 110.4
+   },
+   "holdout": {
+    "by_type": {
+     "PHONE": {
+      "total": 6,
+      "caught": 6,
+      "recall": 1.0,
+      "missed": []
+     },
+     "EMAIL": {
+      "total": 3,
+      "caught": 2,
+      "recall": 0.667,
+      "missed": [
+       {
+        "value": "m.petrenko[at]yandex.ru",
+        "masked_text": "почта для чека: m.petrenko[at]yandex.ru"
+       }
+      ]
+     },
+     "CARD": {
+      "total": 3,
+      "caught": 3,
+      "recall": 1.0,
+      "missed": []
+     },
+     "ACCOUNT": {
+      "total": 1,
+      "caught": 1,
+      "recall": 1.0,
+      "missed": []
+     },
+     "CAR_PLATE": {
+      "total": 5,
+      "caught": 5,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PASSPORT": {
+      "total": 3,
+      "caught": 3,
+      "recall": 1.0,
+      "missed": []
+     },
+     "SNILS": {
+      "total": 1,
+      "caught": 1,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PERSON": {
+      "total": 18,
+      "caught": 18,
+      "recall": 1.0,
+      "missed": []
+     },
+     "ADDRESS": {
+      "total": 9,
+      "caught": 5,
+      "recall": 0.556,
+      "missed": [
+       {
+        "value": "Садовую 18",
+        "masked_text": "Доставка на Садовую 18, подъезд 3, этаж 5"
+       },
+       {
+        "value": "Московском шоссе 12",
+        "masked_text": "заправка на Московском шоссе 12 закрыта"
+       },
+       {
+        "value": "Тверь, улица Трёхсвятская, 4",
+        "masked_text": "посылка не дошла: Тверь, <ADDRESS_1>"
+       },
+       {
+        "value": "Сургут, проспект Ленина, дом 55, квартира 12",
+        "masked_text": "адрес регистрации: <ADDRESS_1>, квартира 12"
+       }
+      ]
+     }
+    },
+    "all": {
+     "total": 49,
+     "caught": 44
+    },
+    "false_positive_tokens_by_kind": {
+     "PERSON": 1,
+     "PHONE": 1
+    },
+    "false_positive_items": [
+     {
+      "kind": "PERSON",
+      "original": "Директор Мухаметшин",
+      "text": "Директор Мухаметшин Ринат Ильдарович подписал акт",
+      "line_has_pii": true
+     },
+     {
+      "kind": "PHONE",
+      "original": "8 800 100 20 30",
+      "text": "Номер 8 800 100 20 30 это горячая линия компании, звонил туда, не берут",
+      "line_has_pii": false
+     }
+    ],
+    "lines_without_pii": 19,
+    "lines_without_pii_with_false_mask": 1,
+    "texts_per_sec": 538.6
+   }
+  },
+  "v2_regex_ctx_ner": {
+   "dev": {
+    "by_type": {
+     "PHONE": {
+      "total": 16,
+      "caught": 16,
+      "recall": 1.0,
+      "missed": []
+     },
+     "EMAIL": {
+      "total": 9,
+      "caught": 9,
+      "recall": 1.0,
+      "missed": []
+     },
+     "CARD": {
+      "total": 7,
+      "caught": 7,
+      "recall": 1.0,
+      "missed": []
+     },
+     "ACCOUNT": {
+      "total": 4,
+      "caught": 4,
+      "recall": 1.0,
+      "missed": []
+     },
+     "CAR_PLATE": {
+      "total": 13,
+      "caught": 13,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PASSPORT": {
+      "total": 5,
+      "caught": 5,
+      "recall": 1.0,
+      "missed": []
+     },
+     "SNILS": {
+      "total": 2,
+      "caught": 2,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PERSON": {
+      "total": 28,
+      "caught": 28,
+      "recall": 1.0,
+      "missed": []
+     },
+     "ADDRESS": {
+      "total": 13,
+      "caught": 13,
+      "recall": 1.0,
+      "missed": []
+     }
+    },
+    "all": {
+     "total": 97,
+     "caught": 97
+    },
+    "false_positive_tokens_by_kind": {
+     "PERSON": 4
+    },
+    "false_positive_items": [
+     {
+      "kind": "PERSON",
+      "original": "Перезвоните",
+      "text": "Перезвоните мне на +7 (912) 345-67-89, не могу оплатить на АЗС",
+      "line_has_pii": true
+     },
+     {
+      "kind": "PERSON",
+      "original": "Основной",
+      "text": "Основной номер +7 (343) 222-33-44, дополнительный 8 800 555 35 35",
+      "line_has_pii": true
+     },
+     {
+      "kind": "PERSON",
+      "original": "Заправился",
+      "text": "Заправился на АЗС, машина А123ВС 77, чек не пришёл",
+      "line_has_pii": true
+     },
+     {
+      "kind": "PERSON",
+      "original": "Вера",
+      "text": "Вера в то, что вы исправите ошибку, потеряна, третий раз пишу",
+      "line_has_pii": false
+     }
+    ],
+    "lines_without_pii": 37,
+    "lines_without_pii_with_false_mask": 1,
+    "texts_per_sec": 545.5
+   },
+   "holdout": {
+    "by_type": {
+     "PHONE": {
+      "total": 6,
+      "caught": 6,
+      "recall": 1.0,
+      "missed": []
+     },
+     "EMAIL": {
+      "total": 3,
+      "caught": 2,
+      "recall": 0.667,
+      "missed": [
+       {
+        "value": "m.petrenko[at]yandex.ru",
+        "masked_text": "почта для чека: m.petrenko[at]yandex.ru"
+       }
+      ]
+     },
+     "CARD": {
+      "total": 3,
+      "caught": 3,
+      "recall": 1.0,
+      "missed": []
+     },
+     "ACCOUNT": {
+      "total": 1,
+      "caught": 1,
+      "recall": 1.0,
+      "missed": []
+     },
+     "CAR_PLATE": {
+      "total": 5,
+      "caught": 5,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PASSPORT": {
+      "total": 3,
+      "caught": 3,
+      "recall": 1.0,
+      "missed": []
+     },
+     "SNILS": {
+      "total": 1,
+      "caught": 1,
+      "recall": 1.0,
+      "missed": []
+     },
+     "PERSON": {
+      "total": 18,
+      "caught": 17,
+      "recall": 0.944,
+      "missed": [
+       {
+        "value": "Ярославу Мельнику",
+        "masked_text": "Передайте <PERSON_1> Мельнику, что баллы так и не пришли"
+       }
+      ]
+     },
+     "ADDRESS": {
+      "total": 9,
+      "caught": 5,
+      "recall": 0.556,
+      "missed": [
+       {
+        "value": "Садовую 18",
+        "masked_text": "Доставка на Садовую 18, подъезд 3, этаж 5"
+       },
+       {
+        "value": "Московском шоссе 12",
+        "masked_text": "заправка на Московском шоссе 12 закрыта"
+       },
+       {
+        "value": "Тверь, улица Трёхсвятская, 4",
+        "masked_text": "посылка не дошла: Тверь, <ADDRESS_1>"
+       },
+       {
+        "value": "Сургут, проспект Ленина, дом 55, квартира 12",
+        "masked_text": "адрес регистрации: <ADDRESS_1>, квартира 12"
+       }
+      ]
+     }
+    },
+    "all": {
+     "total": 49,
+     "caught": 43
+    },
+    "false_positive_tokens_by_kind": {
+     "PHONE": 1
+    },
+    "false_positive_items": [
+     {
+      "kind": "PHONE",
+      "original": "8 800 100 20 30",
+      "text": "Номер 8 800 100 20 30 это горячая линия компании, звонил туда, не берут",
+      "line_has_pii": false
+     }
+    ],
+    "lines_without_pii": 19,
+    "lines_without_pii_with_false_mask": 1,
+    "texts_per_sec": 369.6
+   }
+  }
+ },
+ "lines": {
+  "dev": {
+   "all": 121,
+   "with_pii": 84,
+   "without_pii": 37
+  },
+  "holdout": {
+   "all": 61,
+   "with_pii": 42,
+   "without_pii": 19
+  }
+ },
+ "cascade": {
+  "generated_at": "2026-10-29T02:41:38",
+  "rule": "needs_ner(остаток после регулярок): заглавное слово не в начале предложения и не из словаря терминов, или триггер (меня зовут, с уважением, ул., проспект, г., д. N, [at], это/я + Заглавное), или >=5 цифр подряд, или латинско-цифровая смесь >=5, или латинское слово >=5 не из словаря. Пороги: Config.cascade_*",
+  "ner_model_load_s": 0.39,
+  "sets": {
+   "dev": {
+    "regex_only": {
+     "caught": 85,
+     "total": 97,
+     "by_type": {
+      "PHONE": "16/16",
+      "EMAIL": "9/9",
+      "CARD": "7/7",
+      "ACCOUNT": "4/4",
+      "CAR_PLATE": "13/13",
+      "PASSPORT": "5/5",
+      "SNILS": "2/2",
+      "PERSON": "16/28",
+      "ADDRESS": "13/13"
+     },
+     "false_positive_tokens": 2,
+     "false_positive_tokens_by_kind": {
+      "PERSON": 2
+     },
+     "lines_without_pii_with_false_mask": 2,
+     "lines_without_pii": 37
+    },
+    "always_ner": {
+     "caught": 95,
+     "total": 97,
+     "by_type": {
+      "PHONE": "16/16",
+      "EMAIL": "9/9",
+      "CARD": "7/7",
+      "ACCOUNT": "4/4",
+      "CAR_PLATE": "13/13",
+      "PASSPORT": "5/5",
+      "SNILS": "2/2",
+      "PERSON": "26/28",
+      "ADDRESS": "13/13"
+     },
+     "false_positive_tokens": 4,
+     "false_positive_tokens_by_kind": {
+      "PERSON": 4
+     },
+     "lines_without_pii_with_false_mask": 2,
+     "lines_without_pii": 37
+    },
+    "cascade_auto": {
+     "caught": 95,
+     "total": 97,
+     "by_type": {
+      "PHONE": "16/16",
+      "EMAIL": "9/9",
+      "CARD": "7/7",
+      "ACCOUNT": "4/4",
+      "CAR_PLATE": "13/13",
+      "PASSPORT": "5/5",
+      "SNILS": "2/2",
+      "PERSON": "26/28",
+      "ADDRESS": "13/13"
+     },
+     "false_positive_tokens": 2,
+     "false_positive_tokens_by_kind": {
+      "PERSON": 2
+     },
+     "lines_without_pii_with_false_mask": 2,
+     "lines_without_pii": 37,
+     "texts_with_ner_call": 23,
+     "texts": 121,
+     "ner_share": 0.19
+    },
+    "criterion_cascade_ge_always_minus_2": true
+   },
+   "holdout": {
+    "regex_only": {
+     "caught": 28,
+     "total": 49,
+     "by_type": {
+      "PHONE": "6/6",
+      "EMAIL": "2/3",
+      "CARD": "3/3",
+      "ACCOUNT": "1/1",
+      "CAR_PLATE": "5/5",
+      "PASSPORT": "3/3",
+      "SNILS": "1/1",
+      "PERSON": "2/18",
+      "ADDRESS": "5/9"
+     },
+     "false_positive_tokens": 1,
+     "false_positive_tokens_by_kind": {
+      "PHONE": 1
+     },
+     "lines_without_pii_with_false_mask": 1,
+     "lines_without_pii": 19
+    },
+    "always_ner": {
+     "caught": 44,
+     "total": 49,
+     "by_type": {
+      "PHONE": "6/6",
+      "EMAIL": "2/3",
+      "CARD": "3/3",
+      "ACCOUNT": "1/1",
+      "CAR_PLATE": "5/5",
+      "PASSPORT": "3/3",
+      "SNILS": "1/1",
+      "PERSON": "18/18",
+      "ADDRESS": "5/9"
+     },
+     "false_positive_tokens": 2,
+     "false_positive_tokens_by_kind": {
+      "PERSON": 1,
+      "PHONE": 1
+     },
+     "lines_without_pii_with_false_mask": 1,
+     "lines_without_pii": 19
+    },
+    "cascade_auto": {
+     "caught": 44,
+     "total": 49,
+     "by_type": {
+      "PHONE": "6/6",
+      "EMAIL": "2/3",
+      "CARD": "3/3",
+      "ACCOUNT": "1/1",
+      "CAR_PLATE": "5/5",
+      "PASSPORT": "3/3",
+      "SNILS": "1/1",
+      "PERSON": "18/18",
+      "ADDRESS": "5/9"
+     },
+     "false_positive_tokens": 2,
+     "false_positive_tokens_by_kind": {
+      "PERSON": 1,
+      "PHONE": 1
+     },
+     "lines_without_pii_with_false_mask": 1,
+     "lines_without_pii": 19,
+     "texts_with_ner_call": 29,
+     "texts": 61,
+     "ner_share": 0.475
+    },
+    "criterion_cascade_ge_always_minus_2": true
+   }
+  },
+  "timing": {
+   "texts": 10000,
+   "source": "синтетика radar.gen, seeds начиная с 401, шум mid, 800 в день; тексты те же для трёх режимов",
+   "regex_only": {
+    "seconds": 0.84,
+    "texts_per_sec": 11904.8
+   },
+   "always_ner": {
+    "seconds": 10.42,
+    "texts_per_sec": 960.0
+   },
+   "cascade_auto": {
+    "seconds": 3.32,
+    "texts_per_sec": 3013.9,
+    "ner_calls": 1408,
+    "ner_share": 0.141
+   },
+   "cascade_vs_always_speedup_x": 3.14,
+   "cascade_vs_regex_slowdown_x": 3.95
+  }
+ }
+}

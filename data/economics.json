@@ -1,0 +1,172 @@
+{
+  "conservative": {
+    "inputs": {
+      "staff": 20,
+      "weeks": 48,
+      "before_hours": 1,
+      "after_hours": 0.75,
+      "hourly_cost": 800,
+      "adoption": [
+        0.25,
+        0.5,
+        0.75
+      ],
+      "cash_share": 0,
+      "discount": 0.3,
+      "wage_growth": 0
+    },
+    "results": {
+      "annual_hours": 240.0,
+      "annual_capacity_rub": 192000.0,
+      "capacity_flows": [
+        48000.0,
+        96000.0,
+        144000.0
+      ],
+      "cash_flows": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "budget_simple": 0,
+      "budget_discounted": 0,
+      "viable": false
+    }
+  },
+  "base": {
+    "inputs": {
+      "staff": 40,
+      "weeks": 48,
+      "before_hours": 2,
+      "after_hours": 0.5,
+      "hourly_cost": 800,
+      "adoption": [
+        0.5,
+        1,
+        1
+      ],
+      "cash_share": 0.25,
+      "discount": 0.2,
+      "wage_growth": 0
+    },
+    "results": {
+      "annual_hours": 2880.0,
+      "annual_capacity_rub": 2304000.0,
+      "capacity_flows": [
+        1152000.0,
+        2304000.0,
+        2304000.0
+      ],
+      "cash_flows": [
+        288000.0,
+        576000.0,
+        576000.0
+      ],
+      "budget_simple": 1440000.0,
+      "budget_discounted": 973333.3333333334,
+      "viable": true
+    }
+  },
+  "optimistic": {
+    "inputs": {
+      "staff": 40,
+      "weeks": 48,
+      "before_hours": 3,
+      "after_hours": 0.5,
+      "hourly_cost": 1000,
+      "adoption": [
+        0.75,
+        1,
+        1
+      ],
+      "cash_share": 0.5,
+      "discount": 0.1,
+      "wage_growth": 0
+    },
+    "results": {
+      "annual_hours": 4800.0,
+      "annual_capacity_rub": 4800000.0,
+      "capacity_flows": [
+        3600000.0,
+        4800000.0,
+        4800000.0
+      ],
+      "cash_flows": [
+        1800000.0,
+        2400000.0,
+        2400000.0
+      ],
+      "budget_simple": 6600000.0,
+      "budget_discounted": 5422990.232907588,
+      "viable": true
+    }
+  },
+  "alternatives": {
+    "manual": 0,
+    "standard_export": {
+      "annual_hours": 960.0,
+      "annual_capacity_rub": 768000.0,
+      "capacity_flows": [
+        384000.0,
+        768000.0,
+        768000.0
+      ],
+      "cash_flows": [
+        96000.0,
+        192000.0,
+        192000.0
+      ],
+      "budget_simple": 480000.0,
+      "budget_discounted": 324444.4444444445,
+      "viable": true
+    },
+    "agent_incremental_budget": 648888.8888888889
+  },
+  "sensitivity": [
+    {
+      "discount": 0.1,
+      "wage_growth": 0,
+      "budget": 1170608.56498873
+    },
+    {
+      "discount": 0.1,
+      "wage_growth": 0.05,
+      "budget": 1238767.8437265211
+    },
+    {
+      "discount": 0.1,
+      "wage_growth": 0.1,
+      "budget": 1309090.909090909
+    },
+    {
+      "discount": 0.2,
+      "wage_growth": 0,
+      "budget": 973333.3333333334
+    },
+    {
+      "discount": 0.2,
+      "wage_growth": 0.05,
+      "budget": 1027500.0
+    },
+    {
+      "discount": 0.2,
+      "wage_growth": 0.1,
+      "budget": 1083333.3333333335
+    },
+    {
+      "discount": 0.3,
+      "wage_growth": 0,
+      "budget": 824542.5580336822
+    },
+    {
+      "discount": 0.3,
+      "wage_growth": 0.05,
+      "budget": 868456.986800182
+    },
+    {
+      "discount": 0.3,
+      "wage_growth": 0.1,
+      "budget": 913682.2940373237
+    }
+  ]
+}

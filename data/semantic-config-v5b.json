@@ -1,0 +1,101 @@
+{
+  "version": "5b",
+  "selected_backend": "qwen",
+  "backends": {
+    "tfidf": {
+      "needs": {
+        "cosine_min": 0.0,
+        "entailment_min": 0.4,
+        "max_contradiction": 0.15,
+        "margin": 0.0,
+        "kind_min": 0.2,
+        "kind_margin": 0.1,
+        "risk_min": 0.6,
+        "pair_min": 0.7
+      },
+      "reply": {
+        "cosine_min": 0.0,
+        "entailment_min": 0.4,
+        "max_contradiction": 0.15,
+        "margin": 0.0,
+        "kind_min": 0.2,
+        "kind_margin": 0.1,
+        "risk_min": 0.8,
+        "pair_min": 0.4
+      },
+      "ablation": {
+        "cosine_min": 0.2,
+        "entailment_min": 0.4,
+        "max_contradiction": 0.15,
+        "margin": 0.0,
+        "kind_min": 0.2,
+        "kind_margin": 0.1,
+        "risk_min": 0.6
+      }
+    },
+    "e5": {
+      "needs": {
+        "cosine_min": 0.0,
+        "entailment_min": 0.4,
+        "max_contradiction": 0.15,
+        "margin": 0.02,
+        "kind_min": 0.2,
+        "kind_margin": 0.02,
+        "risk_min": 0.6,
+        "pair_min": 0.4
+      },
+      "reply": {
+        "cosine_min": 0.9,
+        "entailment_min": 0.4,
+        "max_contradiction": 0.15,
+        "margin": 0.0,
+        "kind_min": 0.2,
+        "kind_margin": 0.02,
+        "risk_min": 0.8,
+        "pair_min": 0.4
+      },
+      "ablation": {
+        "cosine_min": 0.2,
+        "entailment_min": 0.4,
+        "max_contradiction": 0.15,
+        "margin": 0.0,
+        "kind_min": 0.2,
+        "kind_margin": 0.02,
+        "risk_min": 0.6
+      }
+    },
+    "qwen": {
+      "needs": {
+        "cosine_min": 0.0,
+        "entailment_min": 0.4,
+        "max_contradiction": 0.15,
+        "margin": 0.0,
+        "kind_min": 0.2,
+        "kind_margin": 0.02,
+        "risk_min": 0.6,
+        "pair_min": 0.6
+      },
+      "reply": {
+        "cosine_min": 0.0,
+        "entailment_min": 0.4,
+        "max_contradiction": 0.15,
+        "margin": 0.0,
+        "kind_min": 0.2,
+        "kind_margin": 0.02,
+        "risk_min": 0.8,
+        "pair_min": 0.4
+      },
+      "ablation": {
+        "cosine_min": 0.7,
+        "entailment_min": 0.4,
+        "max_contradiction": 0.15,
+        "margin": 0.0,
+        "kind_min": 0.2,
+        "kind_margin": 0.02,
+        "risk_min": 0.6
+      }
+    }
+  },
+  "status": "experiment; control pending",
+  "selection": "Needs pair F1 subject to precision >= .85 where achievable; reply zero false standard replies before recall. Encoder selected before control."
+}

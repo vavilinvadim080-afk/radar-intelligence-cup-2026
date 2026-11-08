@@ -1,0 +1,289 @@
+{
+  "_note": "Единый источник цифр экономики. Все входы - допущения (в открытых источниках данных ГПН нет). Проверено вручную 2026-10-13. Пересчитывается скриптом economics/model.py.",
+  "scenarios": [
+    "conservative",
+    "base",
+    "optimistic"
+  ],
+  "inputs": {
+    "N": {
+      "label": "обращений в день по всем продуктам",
+      "conservative": 1500,
+      "base": 3000,
+      "optimistic": 5000
+    },
+    "r": {
+      "label": "доля повторных обращений",
+      "conservative": 0.2,
+      "base": 0.3,
+      "optimistic": 0.4
+    },
+    "t": {
+      "label": "время первой линии на обращение, мин",
+      "conservative": 8,
+      "base": 10,
+      "optimistic": 12
+    },
+    "s": {
+      "label": "на сколько агент сокращает время на повторном обращении",
+      "conservative": 0.2,
+      "base": 0.35,
+      "optimistic": 0.5
+    },
+    "C1": {
+      "label": "стоимость часа первой линии с налогами, руб",
+      "conservative": 600,
+      "base": 800,
+      "optimistic": 1000
+    },
+    "P": {
+      "label": "продуктов в контуре",
+      "conservative": 20,
+      "base": 40,
+      "optimistic": 60
+    },
+    "h": {
+      "label": "часов в неделю на ручной разбор обращений в команде продукта",
+      "conservative": 2,
+      "base": 3,
+      "optimistic": 4
+    },
+    "C2": {
+      "label": "стоимость часа продакта или аналитика, руб",
+      "conservative": 1500,
+      "base": 2000,
+      "optimistic": 2500
+    },
+    "e": {
+      "label": "доля ручного разбора, которую забирает агент",
+      "conservative": 0.5,
+      "base": 0.6,
+      "optimistic": 0.7
+    },
+    "I": {
+      "label": "значимых регрессий в год, видимых через поддержку",
+      "conservative": 12,
+      "base": 24,
+      "optimistic": 36
+    },
+    "dt": {
+      "label": "на сколько часов раньше команда узнаёт о проблеме",
+      "conservative": 2,
+      "base": 4,
+      "optimistic": 6
+    },
+    "L": {
+      "label": "потери за час открытой проблемы, руб",
+      "conservative": 50000,
+      "base": 150000,
+      "optimistic": 250000
+    },
+    "Infra": {
+      "label": "инфраструктура в год, руб",
+      "conservative": 5000000,
+      "base": 3000000,
+      "optimistic": 2000000
+    },
+    "Ops": {
+      "label": "сопровождение в год, руб",
+      "conservative": 4800000,
+      "base": 2400000,
+      "optimistic": 1800000
+    },
+    "Impl": {
+      "label": "внедрение, разово, руб",
+      "conservative": 6400000,
+      "base": 4200000,
+      "optimistic": 2700000
+    }
+  },
+  "results_mln_rub": {
+    "E1": {
+      "conservative": 1.75,
+      "base": 15.33,
+      "optimistic": 73.0
+    },
+    "E2": {
+      "conservative": 1.56,
+      "base": 7.49,
+      "optimistic": 21.84
+    },
+    "E3": {
+      "conservative": 1.2,
+      "base": 14.4,
+      "optimistic": 54.0
+    },
+    "Run": {
+      "conservative": 9.8,
+      "base": 5.4,
+      "optimistic": 3.8
+    },
+    "Net_hard": {
+      "conservative": -6.49,
+      "base": 17.42,
+      "optimistic": 91.04
+    },
+    "Net_full": {
+      "conservative": -5.29,
+      "base": 31.82,
+      "optimistic": 145.04
+    }
+  },
+  "payback_months_hard": {
+    "conservative": null,
+    "base": 2.9,
+    "optimistic": 0.4
+  },
+  "breakeven_N_per_day": {
+    "conservative": 8400,
+    "base": 1060,
+    "optimistic": 260
+  },
+  "formulas": {
+    "v": "v = r * (t/60) * s * C1",
+    "E1": "E1 = N * v * 365",
+    "E2": "E2 = P * h * C2 * 52 * e",
+    "E3": "E3 = I * dt * L",
+    "Run": "Run = Infra + Ops",
+    "Net_hard": "Net_hard = E1 + E2 - Run",
+    "Net_full": "Net_full = E1 + E2 + E3 - Run",
+    "Payback": "Payback_months = Impl / Net_hard * 12",
+    "Nstar": "N* = Run / (v * 365)"
+  },
+  "presentation_rules": {
+    "show": [
+      "base",
+      "conservative"
+    ],
+    "do_not_put_on_slide": "optimistic payback (0.4 мес.) - звучит неправдоподобно",
+    "E3_note": "самая шаткая цифра, подавать отдельно как потенциал и просить у экспертов L",
+    "label": "оценка при допущениях"
+  },
+  "pilot": {
+    "inputs": {
+      "scenario_inputs": "conservative",
+      "Pp": {
+        "value": 4,
+        "range": [
+          3,
+          5
+        ],
+        "label": "продуктов в пилоте"
+      },
+      "q": {
+        "value": 0.35,
+        "range": [
+          0.2,
+          0.5
+        ],
+        "label": "доля потока обращений, которую дают эти продукты (допущение: топ-продукты дают больше обращений, чем их доля по числу)"
+      },
+      "k_infra": {
+        "value": 0.1,
+        "range": [
+          0.05,
+          0.2
+        ],
+        "label": "инфраструктура пилота как доля консервативной Infra (допущение: малая модель на существующем сервере)"
+      },
+      "k_ops": {
+        "value": 0.1,
+        "range": [
+          0.05,
+          0.2
+        ],
+        "label": "сопровождение пилота как доля консервативной Ops (допущение: десятая часть инженера)"
+      },
+      "k_impl": {
+        "value": 0.25,
+        "range": [
+          0.15,
+          0.4
+        ],
+        "label": "внедрение пилота как доля консервативной Impl (допущение: один продуктовый контур, без интеграций везде)"
+      }
+    },
+    "note": "все входы пилота - допущения, данных ГПН нет",
+    "results_mln_rub": {
+      "N_pilot": 525.0,
+      "E1": 0.613,
+      "E2": 0.312,
+      "Run": 0.98,
+      "Impl": 1.6,
+      "Net_hard": -0.055,
+      "Payback_months": null,
+      "q_breakeven": 0.381,
+      "Run_breakeven": 0.925,
+      "verdict": "not_break_even"
+    }
+  },
+  "sensitivity_top5": {
+    "delta": 0.2,
+    "unit": "млн руб/год, отклонение от базы; остальные входы на базе",
+    "note": "N, r, t, s, C1 входят в E1 одним произведением, поэтому у них одинаковый размах: это одна группа драйверов. Группы по убыванию: множители E1 (по 6,13 млн размах), I/dt/L для Net_full (по 5,76), P/h/C2/e (по 3,0), Infra и Ops.",
+    "Net_hard": [
+      {
+        "param": "N",
+        "delta_low": -3.066,
+        "delta_high": 3.066,
+        "swing": 6.132
+      },
+      {
+        "param": "r",
+        "delta_low": -3.066,
+        "delta_high": 3.066,
+        "swing": 6.132
+      },
+      {
+        "param": "t",
+        "delta_low": -3.066,
+        "delta_high": 3.066,
+        "swing": 6.132
+      },
+      {
+        "param": "s",
+        "delta_low": -3.066,
+        "delta_high": 3.066,
+        "swing": 6.132
+      },
+      {
+        "param": "C1",
+        "delta_low": -3.066,
+        "delta_high": 3.066,
+        "swing": 6.132
+      }
+    ],
+    "Net_full": [
+      {
+        "param": "N",
+        "delta_low": -3.066,
+        "delta_high": 3.066,
+        "swing": 6.132
+      },
+      {
+        "param": "r",
+        "delta_low": -3.066,
+        "delta_high": 3.066,
+        "swing": 6.132
+      },
+      {
+        "param": "t",
+        "delta_low": -3.066,
+        "delta_high": 3.066,
+        "swing": 6.132
+      },
+      {
+        "param": "s",
+        "delta_low": -3.066,
+        "delta_high": 3.066,
+        "swing": 6.132
+      },
+      {
+        "param": "C1",
+        "delta_low": -3.066,
+        "delta_high": 3.066,
+        "swing": 6.132
+      }
+    ]
+  }
+}

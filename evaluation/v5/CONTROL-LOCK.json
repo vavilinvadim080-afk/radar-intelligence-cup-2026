@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "status": "locked",
+  "locked_at_utc": "2026-11-04T09:09:05.121521+00:00",
+  "files": {
+    "tune.jsonl": {
+      "sha256": "0d5b10952b8ed8d49f5960060086c08574337ba9b5b8261f0450a769c73aec9c",
+      "records": 120,
+      "bytes": 66554
+    },
+    "control-inputs.jsonl": {
+      "sha256": "ef34b86a561de0739f074c240010b156a6f4407c0cbd6e22e1b15c9719b118ab",
+      "records": 120,
+      "bytes": 42487
+    },
+    "control-gold.jsonl": {
+      "sha256": "4223007b9a26651e1a5daf45c9eb23607f476d56e1c4f23ca05ce14f5e17f2ac",
+      "records": 120,
+      "bytes": 27137
+    },
+    "reply-tune.jsonl": {
+      "sha256": "054f8b96f6f04906a4c9e6ed9b3b7207b692e000b3566feccf72fa6735da920d",
+      "records": 80,
+      "bytes": 107863
+    },
+    "reply-control-inputs.jsonl": {
+      "sha256": "b2d265d391efbf53f2282814ede6700a4d785e31426213b7a580bf0a44913dda",
+      "records": 80,
+      "bytes": 90576
+    },
+    "reply-control-gold.jsonl": {
+      "sha256": "2eb7b6e24cc862f66c9fadde5e580f0dfa04815f47da04088c45c36c650ce9eb",
+      "records": 80,
+      "bytes": 19851
+    }
+  },
+  "counts": {
+    "needs_tune": 120,
+    "needs_control": 120,
+    "reply_tune": 80,
+    "reply_control": 80,
+    "needs_families_tune": 24,
+    "needs_families_control": 24
+  },
+  "independence": {
+    "new_semantic_code_read_before_lock": false,
+    "old_demo_rules_read_before_lock": false,
+    "model_runs_before_lock": 0,
+    "authored_contexts": 1,
+    "semantic_goal_families_disjoint": true,
+    "real_gpn_data": false,
+    "expert_real_annotation": false
+  },
+  "rules": [
+    "Tune only for model/threshold selection.",
+    "Freeze configuration and its hash before the one final control run.",
+    "Never pass gold/expected into a working model payload.",
+    "Control gold is joined in evaluation harness only after freeze.",
+    "Do not expose control answers or topic dictionaries in handoff/tutorial.",
+    "Do not relabel/control-tune after observing control results.",
+    "same_topic and eligibility remain separate labels.",
+    "Keep full denominators, recall, coverage and safety; do not report conditional precision alone."
+  ],
+  "protocol_sha256": "96609a53bfdd6738d451430cec4eca9f2497de95deb86abdc5dd3234aee41c6a"
+}

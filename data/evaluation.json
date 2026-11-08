@@ -1,0 +1,212 @@
+[
+  {
+    "id": "eval-export-0",
+    "product": "webneft",
+    "text": "Нужен экспорт заказов в Excel",
+    "gold_kind": "wish",
+    "gold_topic": "export"
+  },
+  {
+    "id": "eval-export-1",
+    "product": "webneft",
+    "text": "Хотим выгружать историю заказов",
+    "gold_kind": "wish",
+    "gold_topic": "export"
+  },
+  {
+    "id": "eval-export-2",
+    "product": "webneft",
+    "text": "Дайте скачать покупки одним файлом",
+    "gold_kind": "wish",
+    "gold_topic": "export"
+  },
+  {
+    "id": "eval-export-3",
+    "product": "webneft",
+    "text": "Удобно было бы получать таблицу заказов",
+    "gold_kind": "wish",
+    "gold_topic": "export"
+  },
+  {
+    "id": "eval-notify-0",
+    "product": "webneft",
+    "text": "Добавьте уведомления о статусе заказа",
+    "gold_kind": "wish",
+    "gold_topic": "notify"
+  },
+  {
+    "id": "eval-notify-1",
+    "product": "webneft",
+    "text": "Нужны оповещения о готовности отгрузки",
+    "gold_kind": "wish",
+    "gold_topic": "notify"
+  },
+  {
+    "id": "eval-notify-2",
+    "product": "webneft",
+    "text": "Пусть система сообщает, когда заказ собран",
+    "gold_kind": "wish",
+    "gold_topic": "notify"
+  },
+  {
+    "id": "eval-off-0",
+    "product": "webneft",
+    "text": "Отключите уведомления о статусе заказа",
+    "gold_kind": "wish",
+    "gold_topic": "off"
+  },
+  {
+    "id": "eval-off-1",
+    "product": "webneft",
+    "text": "Не нужны уведомления о каждом заказе",
+    "gold_kind": "wish",
+    "gold_topic": "off"
+  },
+  {
+    "id": "eval-off-2",
+    "product": "webneft",
+    "text": "Можно перестать присылать сообщения о заказе",
+    "gold_kind": "wish",
+    "gold_topic": "off"
+  },
+  {
+    "id": "eval-contact-0",
+    "product": "webneft",
+    "text": "Измените контактный телефон в заявке",
+    "gold_kind": "service",
+    "gold_topic": "contact"
+  },
+  {
+    "id": "eval-contact-1",
+    "product": "webneft",
+    "text": "Требуется добавить контактный номер, прежний недоступен",
+    "gold_kind": "service",
+    "gold_topic": "contact"
+  },
+  {
+    "id": "eval-contact-2",
+    "product": "webneft",
+    "text": "В заказе указан неверный номер, замените его",
+    "gold_kind": "service",
+    "gold_topic": "contact"
+  },
+  {
+    "id": "eval-sms-0",
+    "product": "webneft",
+    "text": "Не приходит смс для входа",
+    "gold_kind": "bug",
+    "gold_topic": "sms"
+  },
+  {
+    "id": "eval-sms-1",
+    "product": "webneft",
+    "text": "Код восстановления пароля не поступает",
+    "gold_kind": "bug",
+    "gold_topic": "sms"
+  },
+  {
+    "id": "eval-sms-2",
+    "product": "webneft",
+    "text": "На телефоне так и нет сообщения для авторизации",
+    "gold_kind": "bug",
+    "gold_topic": "sms"
+  },
+  {
+    "id": "eval-queue-0",
+    "product": "webneft",
+    "text": "При записи в электронную очередь ошибка 404",
+    "gold_kind": "bug",
+    "gold_topic": "queue"
+  },
+  {
+    "id": "eval-queue-1",
+    "product": "webneft",
+    "text": "Не получается забронировать время в очереди",
+    "gold_kind": "bug",
+    "gold_topic": "queue"
+  },
+  {
+    "id": "eval-queue-2",
+    "product": "webneft",
+    "text": "Слот отгрузки показывается свободным, но занять его нельзя",
+    "gold_kind": "bug",
+    "gold_topic": "queue"
+  },
+  {
+    "id": "eval-legal-0",
+    "product": "webneft",
+    "text": "В договоре оферты ИП вместо ООО, ОПФ не заполнено",
+    "gold_kind": "bug",
+    "gold_topic": "legal"
+  },
+  {
+    "id": "eval-legal-1",
+    "product": "webneft",
+    "text": "Неверная организационно-правовая форма в оферте",
+    "gold_kind": "bug",
+    "gold_topic": "legal"
+  },
+  {
+    "id": "eval-legal-2",
+    "product": "webneft",
+    "text": "Вместо общества в документе стоит предприниматель",
+    "gold_kind": "bug",
+    "gold_topic": "legal"
+  },
+  {
+    "id": "eval-button-0",
+    "product": "webneft",
+    "text": "На втором шаге кнопка Далее не реагирует",
+    "gold_kind": "bug",
+    "gold_topic": "button"
+  },
+  {
+    "id": "eval-button-1",
+    "product": "webneft",
+    "text": "Кнопка продолжения оформления договора не работает",
+    "gold_kind": "bug",
+    "gold_topic": "button"
+  },
+  {
+    "id": "eval-button-2",
+    "product": "webneft",
+    "text": "Заполнили все поля соглашения, перейти к следующему шагу невозможно",
+    "gold_kind": "bug",
+    "gold_topic": "button"
+  },
+  {
+    "id": "eval-exportbug-0",
+    "product": "webneft",
+    "text": "Экспорт заказов не работает",
+    "gold_kind": "bug",
+    "gold_topic": "exportbug"
+  },
+  {
+    "id": "eval-exportbug-1",
+    "product": "webneft",
+    "text": "При выгрузке заказов ошибка",
+    "gold_kind": "bug",
+    "gold_topic": "exportbug"
+  },
+  {
+    "id": "eval-exportbug-2",
+    "product": "webneft",
+    "text": "Раньше выгрузка работала, теперь не работает",
+    "gold_kind": "bug",
+    "gold_topic": "exportbug"
+  },
+  {
+    "id": "eval-unknown-0",
+    "product": "webneft",
+    "text": "Нужен совет по совершенно новой теме",
+    "gold_kind": "unknown",
+    "gold_topic": null
+  },
+  {
+    "id": "eval-unknown-1",
+    "product": "webneft",
+    "text": "Здравствуйте, помогите разобраться",
+    "gold_kind": "unknown",
+    "gold_topic": null
+  }
+]

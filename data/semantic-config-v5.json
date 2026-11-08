@@ -1,0 +1,15 @@
+{
+  "version": 5,
+  "needs": {
+    "use_pair_head": true,
+    "use_reranker": false,
+    "join_cosine": 0.6,
+    "join_margin": 0.03,
+    "content_weight": 0.65
+  },
+  "reply": {
+    "threshold": 0.4
+  },
+  "label": "Локальный синтетический прототип; корпоративный Qwen не измерен",
+  "selection": "Tune only: pair F1 with precision >= .8; reply maximum recall with zero false standard replies on tune"
+}

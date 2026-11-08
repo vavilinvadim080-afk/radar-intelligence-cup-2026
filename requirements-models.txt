@@ -1,0 +1,4 @@
+# Optional local semantic experiment. Not needed for the demonstration.
+-r requirements.txt
+torch==2.14.1
+transformers==5.20.2

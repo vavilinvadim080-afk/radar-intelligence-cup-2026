@@ -1,0 +1,11 @@
+# Python 3.12. Verified versions for the local demo and functional tests.
+fastapi==0.143.0
+uvicorn==0.54.0
+pydantic==2.14.1
+numpy==2.5.4
+scipy==1.18.1
+scikit-learn==1.9.1
+jsonschema==4.26.0
+httpx==0.28.1
+natasha==1.6.0
+pytest==9.1.1

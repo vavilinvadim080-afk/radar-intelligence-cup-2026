@@ -1,0 +1,13 @@
+{
+  "version": "v5b",
+  "source": "Field sets and enum meanings from the permitted v5 tune.jsonl/reply-tune.jsonl; separate old gold files were not read",
+  "jsonl": "UTF-8, one object per line",
+  "needs_inputs": ["id", "product", "author_id", "source_id", "created_at", "received_at", "channel", "text"],
+  "reply_inputs": ["id", "event", "product", "kind", "references", "query", "approved", "state", "fix_confirmed", "human_closed", "fixed_notice_approved", "seen_message_ids"],
+  "gold_envelope": {"id": "input id", "gold": "unchanged needs/reply gold field block from v5 tune"},
+  "needs_gold_fields": ["product", "kind", "topic_id", "direction", "route", "is_duplicate_delivery", "synthetic", "reason"],
+  "reply_gold_fields": ["same_topic", "eligibility", "safe_action", "reference_topic_id", "query_kind", "query_direction", "reason", "synthetic"],
+  "alignment": "Gold rows align with input rows, including repeated deliveries of the same needs id. Only received_at differs in a duplicate delivery; the duplicate flag is delivery-specific.",
+  "eligibility_scope": "queue_standard only; fixed-notice preparation is a separate safe_action and does not increase the standard-positive denominator",
+  "input_privacy": "No gold/family/topic/stratum labels in inputs; ids are opaque; all material synthetic"
+}

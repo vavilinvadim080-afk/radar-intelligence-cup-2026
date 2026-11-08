@@ -1,0 +1,100 @@
+{
+ "kind": "эксперимент, не часть замка протокола",
+ "seeds": [
+  401,
+  402,
+  403,
+  404,
+  405
+ ],
+ "volume": 3000,
+ "z_values": [
+  6.0,
+  8.0,
+  10.0
+ ],
+ "methods": [
+  "poisson",
+  "ewma"
+ ],
+ "note": "меняется только z_threshold; z_version и windows_min из tuned_params.json; код детектора не менялся",
+ "by_method": {
+  "poisson": {
+   "6.0": {
+    "n_events": 33,
+    "n_alerts": 107,
+    "caught": 24,
+    "precision": 0.2616822429906542,
+    "recall": 0.7272727272727273,
+    "ttc_median_min": 47.0,
+    "ttc_p90_min": 88.1,
+    "recall_within_60": 0.5454545454545454,
+    "false_alarms": 79,
+    "false_alarms_per_week": 1.4746666666666668
+   },
+   "8.0": {
+    "n_events": 33,
+    "n_alerts": 87,
+    "caught": 25,
+    "precision": 0.3333333333333333,
+    "recall": 0.7575757575757576,
+    "ttc_median_min": 49.0,
+    "ttc_p90_min": 88.2,
+    "recall_within_60": 0.5151515151515151,
+    "false_alarms": 58,
+    "false_alarms_per_week": 1.0826666666666667
+   },
+   "10.0": {
+    "n_events": 33,
+    "n_alerts": 78,
+    "caught": 24,
+    "precision": 0.358974358974359,
+    "recall": 0.7272727272727273,
+    "ttc_median_min": 48.5,
+    "ttc_p90_min": 88.1,
+    "recall_within_60": 0.5151515151515151,
+    "false_alarms": 50,
+    "false_alarms_per_week": 0.9333333333333333
+   }
+  },
+  "ewma": {
+   "6.0": {
+    "n_events": 33,
+    "n_alerts": 98,
+    "caught": 24,
+    "precision": 0.2653061224489796,
+    "recall": 0.7272727272727273,
+    "ttc_median_min": 46.5,
+    "ttc_p90_min": 88.1,
+    "recall_within_60": 0.5454545454545454,
+    "false_alarms": 72,
+    "false_alarms_per_week": 1.344
+   },
+   "8.0": {
+    "n_events": 33,
+    "n_alerts": 104,
+    "caught": 25,
+    "precision": 0.28846153846153844,
+    "recall": 0.7575757575757576,
+    "ttc_median_min": 48.0,
+    "ttc_p90_min": 87.80000000000001,
+    "recall_within_60": 0.5757575757575758,
+    "false_alarms": 74,
+    "false_alarms_per_week": 1.3813333333333333
+   },
+   "10.0": {
+    "n_events": 33,
+    "n_alerts": 92,
+    "caught": 24,
+    "precision": 0.29347826086956524,
+    "recall": 0.7272727272727273,
+    "ttc_median_min": 48.5,
+    "ttc_p90_min": 88.1,
+    "recall_within_60": 0.5151515151515151,
+    "false_alarms": 65,
+    "false_alarms_per_week": 1.2133333333333334
+   }
+  }
+ },
+ "generated_at": "2026-10-20T22:48:45"
+}

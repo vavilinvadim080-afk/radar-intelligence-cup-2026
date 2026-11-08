@@ -1,0 +1,91 @@
+{
+  "version": "v5b",
+  "created_utc": "2026-11-04T20:07:01.086180+00:00",
+  "counts": {
+    "needs_rows": 120,
+    "needs_unique_ids": 116,
+    "needs_families": 24,
+    "unknown": 20,
+    "duplicate_deliveries": 4,
+    "reply_rows": 80,
+    "standard_positive": 20,
+    "standard_negative": 60,
+    "reply_families": 6,
+    "fixed_notice_positive": 2,
+    "old_exact_text_overlap": 0
+  },
+  "files": {
+    "control-inputs.jsonl": {
+      "sha256": "6b34d49fc59843cae70a23a74029f095dba69a5dda20eccf17faaf607d30a6f0",
+      "bytes": 51997
+    },
+    "control-gold.jsonl": {
+      "sha256": "485f4271b48d3d181a718813beef4cfec1d7bdb272a5d47ef72efd99b85eed4e",
+      "bytes": 54240
+    },
+    "reply-control-inputs.jsonl": {
+      "sha256": "e4396c4341c511f99f1b4678cce07637d572feb4e2667857443ddc2cb33066ac",
+      "bytes": 111406
+    },
+    "reply-control-gold.jsonl": {
+      "sha256": "183fa2f2260ab5a0f4aa68a9541946759a5aa025141b7c2bb141025fac58f1b4",
+      "bytes": 22262
+    },
+    "PROTOCOL.md": {
+      "sha256": "7ef67c77500ce5dc33049f5903ad4c40a0f63c716e823877d389f238a2edde47",
+      "bytes": 4042
+    },
+    "SCHEMA.json": {
+      "sha256": "40a114162cf33a09bbaf67f773a46b5c5185ab9c7bbe16fe8236426ffcf37864",
+      "bytes": 1315
+    },
+    "validate.py": {
+      "sha256": "0c1817538a7e71e0203bc992fc06f255f54f1a027115547570b6cee8d017ebeb",
+      "bytes": 11138
+    },
+    "test_validate.py": {
+      "sha256": "b620aac6c4d21c3ec54471de2592e61d737e6274e7c4c78f22a44b4a47c6f7d7",
+      "bytes": 3412
+    },
+    "VALIDATION.json": {
+      "sha256": "a7009e26a4d23ee5db5283a7de58cdd39570a03870ff2c716416ed19310d24db",
+      "bytes": 1169
+    },
+    "README.md": {
+      "sha256": "a5158d6e47b03578c412890535a1c719ef63a2c6d25d6e9bb7658e006f620cf4",
+      "bytes": 5125
+    },
+    "private/authoring.py": {
+      "sha256": "24c2b5049a730a9c1eb087601be065ec4efc954e7a4167c473b756dd423bc045",
+      "bytes": 35073
+    },
+    "private/adjudication.jsonl": {
+      "sha256": "d01aa5c26fdc30dd960f0ac25222e0492fac7f000578cb550210ad862f1874cd",
+      "bytes": 5007
+    },
+    "private/semantic-review.md": {
+      "sha256": "3e8f1f032d8c93328dd20d3e4c7c9562852eabed4ede8b2d4f485c1deb9fd37a",
+      "bytes": 9754
+    }
+  },
+  "old_read_allowlist": {
+    "evaluation/v5/control-inputs.jsonl": {
+      "sha256": "ef34b86a561de0739f074c240010b156a6f4407c0cbd6e22e1b15c9719b118ab",
+      "rows": 120
+    },
+    "evaluation/v5/tune.jsonl": {
+      "sha256": "0d5b10952b8ed8d49f5960060086c08574337ba9b5b8261f0450a769c73aec9c",
+      "rows": 120
+    },
+    "evaluation/v5/reply-control-inputs.jsonl": {
+      "sha256": "b2d265d391efbf53f2282814ede6700a4d785e31426213b7a580bf0a44913dda",
+      "rows": 80
+    },
+    "evaluation/v5/reply-tune.jsonl": {
+      "sha256": "054f8b96f6f04906a4c9e6ed9b3b7207b692e000b3566feccf72fa6735da920d",
+      "rows": 80
+    }
+  },
+  "freeze_contract": "Control locked before backend test; parent may read gold only after configuration freeze; no matcher/model read or executed by author",
+  "gold_format": "id plus gold envelope; gold fields copied from the permitted v5 tune schema"
+}

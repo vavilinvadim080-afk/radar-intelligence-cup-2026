@@ -1,0 +1,145 @@
+{
+  "status": "measured",
+  "version": 5,
+  "created": "2026-11-04",
+  "label": "Независимая синтетическая проверка локального прототипа; не данные ГПН и не Qwen",
+  "protocol": {
+    "control_lock": "evaluation/v5/CONTROL-LOCK.json",
+    "freeze": "reports/quality-v5/CONFIG-FREEZE.json",
+    "predictions_before_gold": true,
+    "expert_annotation": false,
+    "independent_author_contexts": 1,
+    "needs_input_rows": 120,
+    "reply_input_rows": 80,
+    "population": "Unseen semantic families authored in a separate context; synthetic only"
+  },
+  "needs": {
+    "baseline": {
+      "n": 116,
+      "pair_metrics": {
+        "tp": 0,
+        "fp": 4,
+        "fn": 144,
+        "precision": 0.0,
+        "recall": 0.0,
+        "coverage": 0.07758620689655173
+      },
+      "kind_accuracy": 0.21551724137931033,
+      "assigned": 9,
+      "latency_ms": {
+        "p50": 0.18225001986138523,
+        "p95": 0.26354199508205056,
+        "total": 556.9189159723464,
+        "note": "Includes local masking, cached queries and candidate work; not corporate throughput"
+      }
+    },
+    "semantic": {
+      "n": 116,
+      "pair_metrics": {
+        "tp": 50,
+        "fp": 69,
+        "fn": 94,
+        "precision": 0.42016806722689076,
+        "recall": 0.3472222222222222,
+        "coverage": 0.7413793103448276
+      },
+      "kind_accuracy": 0.8103448275862069,
+      "assigned": 86,
+      "latency_ms": {
+        "p50": 53.15320799127221,
+        "p95": 64.26212500082329,
+        "total": 13612.946624140022,
+        "note": "Includes local masking, cached queries and candidate work; not corporate throughput"
+      }
+    }
+  },
+  "autoreply": {
+    "baseline": {
+      "n": 80,
+      "tp": 0,
+      "fp": 2,
+      "fn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "expected_standard": 8,
+      "queued_standard": 2,
+      "action_accuracy": 0.75,
+      "fixed_notice": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "unsafe_standard_replies": 2
+    },
+    "semantic": {
+      "n": 80,
+      "tp": 3,
+      "fp": 9,
+      "fn": 5,
+      "precision": 0.25,
+      "recall": 0.375,
+      "expected_standard": 8,
+      "queued_standard": 12,
+      "action_accuracy": 0.7,
+      "fixed_notice": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1.0,
+        "recall": 0.4
+      },
+      "unsafe_standard_replies": 9
+    }
+  },
+  "model_metadata": {
+    "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "encoder_revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "reranker": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "reranker_revision": "1427fd652930e4ba29e8149678df786c240d8825",
+    "dimension": 384,
+    "pooling": "attention-mask mean + L2 normalization",
+    "encoder_max_tokens": 256,
+    "reranker_max_tokens": 512,
+    "score_type": "raw relevance logit; not probability",
+    "offline": true,
+    "attention": "eager",
+    "reranker_minimum_batch": 2,
+    "torch": "2.14.1",
+    "transformers": "5.20.2"
+  },
+  "limitations": [
+    "One synthetic control, not corporate acceptance",
+    "New wishes/bugs/usability/services; pair metrics are grouping quality, not card precision",
+    "Small positive standard-reply denominator must be shown",
+    "Prepared local queue only; no external delivery"
+  ],
+  "historical_bursts": {
+    "precision": 0.6,
+    "recall": 0.68,
+    "median_minutes": 99,
+    "seeds": "401–410",
+    "source": "mvp-v13-adapted/shared/metrics-v3.json",
+    "unchanged": true
+  },
+  "release_gate": {
+    "autoreply": {
+      "passed": false,
+      "rule": "No false standard replies on synthetic control and improved recall; no production claim without company validation",
+      "reason": "9 false standard replies out of 12 prepared; candidate is not enabled by default",
+      "default": "Existing incident matcher plus independently tested safety, idempotency and fix-lifecycle corrections"
+    },
+    "needs": {
+      "passed": false,
+      "reason": "Type accuracy improves, but grouping precision 42.0% / recall 34.7% do not meet requested quality",
+      "availability": "Experimental local mode with human review; internal Qwen pathway preserved"
+    }
+  },
+  "functional_tests": {
+    "passed": 560,
+    "skipped": 7,
+    "source": "reports/quality-v5/full-tests-final.txt",
+    "interpretation": "Functional correctness; not semantic quality score"
+  }
+}

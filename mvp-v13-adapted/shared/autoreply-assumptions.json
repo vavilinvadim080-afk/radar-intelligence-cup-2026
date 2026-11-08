@@ -1,0 +1,9 @@
+{
+  "_note": "ДОПУЩЕНИЯ, не измерения. Нужны только для оценки «сколько минут оператора сэкономил автоответ» в интерфейсе. Не входят в numbers.json и в расчёт окупаемости. Данных ГПН о доле повторных обращений и времени оператора нет.",
+  "source": "economics/model.py, базовый сценарий; значения читаются из shared/numbers.json (inputs.t.base, inputs.r.base, inputs.s.base). Тест tests/test_autoreply.py сверяет этот файл с numbers.json.",
+  "scenario": "base",
+  "minutes_per_ticket": {"value": 10, "from": "numbers.json inputs.t.base", "label": "время первой линии на обращение, мин"},
+  "repeat_share": {"value": 0.3, "from": "numbers.json inputs.r.base", "label": "доля повторных обращений в потоке (контекст; в расчёт экономии не входит)"},
+  "minutes_saved_low": {"value": 3.5, "from": "inputs.t.base * inputs.s.base", "label": "нижняя оценка: автоответ сокращает работу над обращением так же, как агент в модели (35 % времени)"},
+  "minutes_saved_high": {"value": 10, "from": "inputs.t.base", "label": "верхняя оценка: автоответ полностью заменяет обработку обращения оператором (допущение, в model.py такого сценария нет)"}
+}

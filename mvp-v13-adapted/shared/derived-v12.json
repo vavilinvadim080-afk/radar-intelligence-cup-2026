@@ -1,0 +1,58 @@
+{
+ "_note": "Генерируется presentation/derive_v12.py из кэша mvp/eval/cache/v3/final-401-410-top.json (режим «без проверки», seeds 401-410). Руками не править. Сверено с shared/metrics-v3.json (final[0].table.none).",
+ "source": "mvp/eval/cache/v3/final-401-410-top.json + mvp/eval/v3_metrics.py::aggregate(thr=None)",
+ "total": {
+  "n_events": 69,
+  "n_page": 85,
+  "strict_precision": 0.6,
+  "strict_recall": 0.6811594202898551,
+  "strict_ttc_median_min": 99.0,
+  "work_recall": 0.7971014492753623,
+  "on_target_share": 0.7294117647058823,
+  "false_pages_per_week": 0.21466666666666667,
+  "strict_false_pages_per_week": 0.31733333333333336,
+  "ttc_p90_min": 152.6,
+  "recall_within_60": 0.10144927536231885
+ },
+ "by_noise": {
+  "low": {
+   "n_events": 23,
+   "n_page": 27,
+   "strict_precision": 0.5925925925925926,
+   "strict_recall": 0.6086956521739131,
+   "strict_ttc_median_min": 95.5,
+   "work_recall": 0.7391304347826086,
+   "on_target_share": 0.7407407407407407,
+   "false_pages_per_week": 0.196,
+   "strict_false_pages_per_week": 0.308,
+   "ttc_p90_min": 148.0,
+   "recall_within_60": 0.17391304347826086
+  },
+  "mid": {
+   "n_events": 23,
+   "n_page": 28,
+   "strict_precision": 0.6428571428571429,
+   "strict_recall": 0.7391304347826086,
+   "strict_ttc_median_min": 95.0,
+   "work_recall": 0.8695652173913043,
+   "on_target_share": 0.75,
+   "false_pages_per_week": 0.196,
+   "strict_false_pages_per_week": 0.27999999999999997,
+   "ttc_p90_min": 139.8,
+   "recall_within_60": 0.08695652173913043
+  },
+  "high": {
+   "n_events": 23,
+   "n_page": 30,
+   "strict_precision": 0.5666666666666667,
+   "strict_recall": 0.6956521739130435,
+   "strict_ttc_median_min": 124.5,
+   "work_recall": 0.782608695652174,
+   "on_target_share": 0.7,
+   "false_pages_per_week": 0.252,
+   "strict_false_pages_per_week": 0.364,
+   "ttc_p90_min": 155.5,
+   "recall_within_60": 0.043478260869565216
+  }
+ }
+}

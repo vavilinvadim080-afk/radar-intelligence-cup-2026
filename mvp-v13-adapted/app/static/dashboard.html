@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Радар: дашборд</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Ccircle cx=%278%27 cy=%278%27 r=%277%27 fill=%27%23d9480f%27/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f3f4f7; --panel:#ffffff; --ink:#15181e; --muted:#5b6472; --line:#dfe3ea; --soft:#eef0f4;
+  --accent:#d9480f; --accent-soft:#fdeadf; --blue:#2563eb; --blue-soft:#e3ecfd; --green:#168a4a; --green-soft:#dff3e7;
+  --red:#c92a2a; --red-soft:#fbe3e3; --amber:#a86a00; --amber-soft:#fdf0d2; --grid:#e6e9ef; --shadow:0 1px 2px rgba(20,25,35,.06);
+  --gap:12px; --pad:14px; --r:12px; --fs-xs:12px; --fs-sm:13px; --fs-md:15px; --fs-lg:18px; --h:32px;
+}
+:root[data-theme="dark"]{
+  --bg:#0f1218; --panel:#171b23; --ink:#e8ebf0; --muted:#9aa3b2; --line:#2a303b; --soft:#1f242e;
+  --accent:#ff8a4c; --accent-soft:#3a2517; --blue:#6aa0ff; --blue-soft:#1b2a47; --green:#4cc88a; --green-soft:#16301f;
+  --red:#ff7b7b; --red-soft:#3b1b1b; --amber:#e8b44c; --amber-soft:#3a2f14; --grid:#252b36; --shadow:none;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:var(--fs-md)/1.4 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;height:100vh;display:flex;flex-direction:column;overflow:hidden}
+.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+[hidden]{display:none!important}
+
+/* ---------- верхняя панель: переносится, а не налезает ---------- */
+header{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel);flex:none}
+.brand{display:flex;align-items:center;gap:16px;flex-wrap:wrap;min-width:0;flex:1 1 auto}
+.logo{font-weight:700;font-size:24px;line-height:1;display:flex;align-items:center;gap:10px}
+.logo i{width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--accent-soft);display:inline-block;flex:none}
+.clock{display:flex;flex-direction:column;line-height:1.1}
+.clock b{font-size:24px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.clock small{font-size:var(--fs-xs);color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:2px 10px;font-size:var(--fs-sm);font-weight:600;background:var(--soft);color:var(--muted);white-space:nowrap}
+.chip.warn{background:var(--amber-soft);color:var(--amber)}
+.chip.ok{background:var(--green-soft);color:var(--green)}
+.chip.bad{background:var(--red-soft);color:var(--red)}
+.chip.acc{background:var(--accent-soft);color:var(--accent)}
+.chip.blue{background:var(--blue-soft);color:var(--blue)}
+.controls{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:flex-end}
+.ctl{display:flex;flex-direction:column;gap:3px}
+.lbl{font-size:var(--fs-xs);color:var(--muted);white-space:nowrap}
+.group{display:inline-flex;gap:0}
+.group>button{border-radius:0;margin-left:-1px}
+.group>button:first-child{border-radius:8px 0 0 8px;margin-left:0}
+.group>button:last-child{border-radius:0 8px 8px 0}
+.group>button:only-child{border-radius:8px}
+.group>button.on{position:relative;z-index:1}
+button{white-space:nowrap;font:inherit;font-size:var(--fs-sm);font-weight:600;height:var(--h);border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:0 11px;cursor:pointer}
+button:hover{border-color:var(--muted)}
+button:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button:disabled{opacity:.45;cursor:default}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.green{background:var(--green);border-color:var(--green);color:#fff}
+button.round{border-radius:50%;width:var(--h);padding:0;font-size:var(--fs-md)}
+button.sm{height:26px;padding:0 9px;font-size:var(--fs-xs)}
+
+/* ---------- сетка ---------- */
+main{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1.1fr) minmax(0,.95fr);gap:var(--gap);padding:var(--gap);flex:1;min-height:0}
+.col{display:flex;flex-direction:column;gap:var(--gap);min-height:0;min-width:0}
+.col.right{overflow-y:auto}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:var(--pad);min-height:0;min-width:0;display:flex;flex-direction:column}
+.panel>header{display:block;padding:0;border:0;background:none;margin-bottom:8px}
+.panel h2{margin:0;font-size:var(--fs-md);font-weight:700;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.panel h2 .right{margin-left:auto;font-weight:500;display:inline-flex;gap:6px;align-items:center}
+.hint{margin:2px 0 0;font-size:var(--fs-xs);color:var(--muted);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.scroll{overflow:auto;min-height:0;flex:1}
+.tabs{display:flex;gap:6px;margin-bottom:6px;flex-wrap:wrap}
+svg text{font-family:inherit}
+.small{font-size:var(--fs-xs);color:var(--muted)}
+
+/* ---------- карточки ---------- */
+.card{border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;margin-bottom:var(--gap);background:var(--panel)}
+.card.alert{border-left:6px solid var(--accent)}
+.card.watch{border-left:6px solid var(--blue)}
+.card .top{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
+.card .title{font-size:var(--fs-lg);font-weight:700;margin:2px 0 8px;line-height:1.25}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:8px;margin:8px 0}
+.fact{background:var(--soft);border-radius:8px;padding:6px 9px;min-width:0}
+.fact b{display:block;font-size:var(--fs-lg);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.fact span{font-size:var(--fs-xs);color:var(--muted);line-height:1.2;display:block}
+.claims{margin:6px 0;padding:0;list-style:none}
+.claims li{padding:5px 0;border-top:1px dashed var(--line);font-size:var(--fs-md)}
+.ref{display:inline-block;font-size:var(--fs-xs);border-radius:6px;padding:1px 6px;margin:2px 4px 0 0;background:var(--blue-soft);color:var(--blue)}
+.btns{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
+.btns button{height:34px}
+.btnhelp{margin-top:6px}
+.autoreply{margin-top:10px;border-radius:10px;padding:10px 12px;background:var(--soft);border:1px solid var(--line, var(--soft))}
+.autoreply .counts{font-size:var(--fs-sm);margin:6px 0}
+.arbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 8px;font-size:var(--fs-sm)}
+.proposal{margin-top:10px;border-radius:10px;padding:10px 12px;background:var(--green-soft);color:var(--ink);border:1px solid var(--green)}
+.pending{color:var(--muted);font-style:italic}
+.dots::after{content:"";animation:d 1.2s infinite}
+@keyframes d{0%{content:""}33%{content:"."}66%{content:".."}100%{content:"..."}}
+
+/* ---------- маскирование ---------- */
+.mask{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);flex:1;min-height:0}
+.mask.one{grid-template-columns:1fr}
+.mbox{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--soft);min-height:0;overflow:auto}
+.mbox h3{margin:0 0 6px;font-size:var(--fs-xs);color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.mbox p{margin:0 0 9px;font-size:var(--fs-md);overflow-wrap:anywhere}
+.pii{background:var(--red-soft);color:var(--red);border-radius:4px;padding:0 3px;font-weight:600}
+.tok{background:var(--green-soft);color:var(--green);border-radius:4px;padding:0 3px;font-weight:600;font-family:ui-monospace,Menlo,monospace;font-size:var(--fs-sm)}
+
+/* ---------- таблицы и журнал ---------- */
+table{border-collapse:collapse;width:100%;font-size:var(--fs-sm)}
+td:first-child{white-space:nowrap}
+td,th{padding:5px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:var(--fs-xs)}
+.row-radar td{background:var(--accent-soft)}
+h3.sub{margin:10px 0 4px;font-size:var(--fs-xs);color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.audit .r{display:flex;gap:8px;padding:5px 0;border-bottom:1px solid var(--line);font-size:var(--fs-sm);align-items:flex-start}
+.audit .t{color:var(--muted);width:42px;flex:none;font-variant-numeric:tabular-nums}
+.audit .k{flex:none}
+.audit .m{word-break:break-word;min-width:0}
+.metrics{display:grid;align-content:start;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:8px}
+.metrics .fact b{font-size:var(--fs-lg)}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:10px;font-weight:600;opacity:0;transition:opacity .2s;pointer-events:none;z-index:30}
+.toast.show{opacity:1}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.92em;background:var(--soft);border-radius:4px;padding:0 4px}
+
+/* ---------- панель «Как читать экран» и вход ---------- */
+.scrim{position:fixed;inset:0;background:rgba(10,14,20,.45);z-index:20}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(520px,100vw);background:var(--panel);border-left:1px solid var(--line);z-index:21;display:flex;flex-direction:column;box-shadow:-8px 0 24px rgba(0,0,0,.18)}
+.drawer .dh{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.drawer .dh h2{margin:0;font-size:var(--fs-lg)}
+.drawer .db{overflow:auto;padding:4px 16px 24px}
+.drawer h3{margin:18px 0 6px;font-size:var(--fs-md)}
+.drawer dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:6px 12px;font-size:var(--fs-sm)}
+.drawer dt{font-weight:700;white-space:nowrap}
+.drawer dd{margin:0;color:var(--ink)}
+.drawer p{margin:6px 0;font-size:var(--fs-sm)}
+.modal{position:fixed;inset:0;z-index:40;display:flex;align-items:center;justify-content:center;background:rgba(10,14,20,.55)}
+.modal form{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px;width:min(400px,92vw);display:flex;flex-direction:column;gap:10px}
+.modal input{font:inherit;height:36px;border:1px solid var(--line);border-radius:8px;padding:0 10px;background:var(--bg);color:var(--ink)}
+
+@media (max-width:1500px),(max-height:800px){
+  :root{--h:28px;--gap:10px;--pad:12px}
+  header{padding:8px 14px;gap:6px 18px}
+  .clock b{font-size:22px}
+  .logo{font-size:22px}
+}
+@media (max-width:1500px){ main{grid-template-columns:minmax(0,1.3fr) minmax(0,1.15fr) minmax(0,1fr)} }
+
+/* ---------- узкие окна: одна колонка, страница прокручивается ---------- */
+@media (max-width:1100px){
+  body{height:auto;min-height:100vh;overflow:auto}
+  main{display:flex;flex-direction:column;flex:none}
+  .col{flex:none}
+  .panel{flex:none!important;min-height:300px}
+  .scroll{max-height:420px}
+}
+</style>
+<link rel="stylesheet" href="/history.css">
+</head>
+<body>
+<nav style="display:flex;gap:8px;padding:8px 16px;background:var(--panel);border-bottom:1px solid var(--line)">
+<a id="needs-tab" href="?mode=needs" style="color:var(--ink);font-weight:700;text-decoration:none;padding:4px 12px">Потребности</a>
+<a id="incidents-tab" href="?mode=incidents" style="color:var(--muted);text-decoration:none;padding:4px 12px">Инциденты</a>
+<button id="history-tab" aria-selected="false">Обращения</button>
+<span class="small" style="margin-left:auto;align-self:center">Радар · единый поток обращений</span></nav>
+<header id="legacy-header">
+  <div class="brand">
+    <div class="logo" title="Радар: ранний сигнал о багах по потоку обращений"><i></i>Радар</div>
+    <div class="clock" title="Модельное время потока обращений. Идёт быстрее реального: скорость задаётся кнопками «1 с реального =»."><b id="clock">--</b><small>потоковое время</small></div>
+    <div class="chips">
+      <span class="chip warn" id="synth" title="Все данные в демо синтетические: сгенерированы программой, настоящих пользователей нет">синтетические данные, демо-seed</span>
+      <span class="chip" id="llmchip" title="Как агент пишет карточки для дежурного">агент: ?</span>
+      <span class="chip" id="rolechip" hidden title="Роль по токену доступа">роль</span>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="ctl"><span class="lbl">Сцена демо (готовый кадр)</span>
+      <div class="group" title="Готовые сценарии демо: переносят время на нужный момент и сбрасывают карточки. Подробности в «?»">
+        <button data-scene="1" title="Сцена 1, поток: 09.03 13:00, до релиза. Фон без аварии, видно маскирование обращений">1 Поток</button><button data-scene="2" title="Сцена 2, релиз: 09.03 14:30, за 15 минут до релиза бонусов 2.8.0. Запустите «Пуск»: после релиза тема растёт, около 18:00 появляется карточка">2 Релиз</button><button data-scene="3" title="Сцена 3, человек: 09.03 18:30, карточка по бонусам уже написана и ждёт решения дежурного">3 Человек</button><button data-scene="4" title="Сцена 4, петля: 12.03 16:30, фикс уже вышел; дальше обращение с инструкцией для ИИ и проверка, что тема ушла">4 Петля</button>
+      </div></div>
+    <div class="ctl"><span class="lbl">Скорость: 1 с реального =</span>
+      <div class="group" title="Во сколько раз ускорено модельное время: 1 секунда реального времени равна выбранному числу минут потока">
+        <button data-speed="5" title="1 секунда = 5 минут потока">5 мин</button><button data-speed="10" title="1 секунда = 10 минут потока">10 мин</button><button data-speed="30" title="1 секунда = 30 минут потока">30 мин</button><button data-speed="120" title="1 секунда = 2 часа потока">2 ч</button>
+      </div></div>
+    <div class="ctl"><span class="lbl">Поток обращений</span>
+      <button id="play" class="primary" title="Пуск запускает поток: время идёт само и обращения приходят. Пауза останавливает.">Пуск</button></div>
+    <div class="ctl"><span class="lbl">Как агент пишет карточку</span>
+      <div class="group" title="Откуда берётся текст карточки для дежурного">
+        <button data-mode="replay" title="Запись ответов: воспроизводятся ранее записанные ответы модели. Работает без сети и без модели, для демо">Запись ответов</button><button data-mode="live" title="Живая модель: вызывается локальная модель Ollama прямо сейчас. Нужна запущенная Ollama, ответ идёт десятки секунд">Живая модель</button><button data-mode="template" title="Без модели (шаблон): карточку собирает код по шаблону, модель не вызывается">Без модели (шаблон)</button>
+      </div></div>
+    <div class="ctl"><span class="lbl">Вид</span>
+      <div class="group"><button id="theme" title="Переключить светлую и тёмную тему">Тема</button><button id="helpbtn" class="round" title="Как читать экран: что делает каждая кнопка и панель" aria-haspopup="dialog">?</button></div></div>
+  </div>
+</header>
+<main id="legacy-view">
+  <div class="col">
+    <div class="panel" style="flex:1.15">
+      <header><h2>Поток обращений <span class="right small" id="chartnote"></span></h2>
+        <p class="hint" title="Сколько обращений приходит по продукту за 30 минут. Оранжевая линия: люди одной темы внутри всплеска, пунктир: релиз, красная черта: момент тревоги.">Обращений за 30 минут; оранжевым люди одной темы</p></header>
+      <div class="tabs" id="tabs"></div>
+      <div class="scroll" id="chartbox" style="overflow:hidden;position:relative"><svg id="chart" style="position:absolute;left:0;top:0;width:100%;height:100%"></svg></div>
+    </div>
+    <div class="panel" style="flex:.95">
+      <header><h2>Маскирование перед моделью
+        <span class="right group"><button class="sm on" data-mview="both" title="Показать оба текста рядом">рядом</button><button class="sm" data-mview="before" title="Только исходный текст, как видит человек">до</button><button class="sm" data-mview="after" title="Только текст, который уходит в модель">после</button></span></h2>
+        <p class="hint" title="Телефоны, карты, имена и адреса заменяются токенами до любой модели. Красным то, что скрыто, зелёным токен.">ПДн заменяются токенами до любой модели</p></header>
+      <div class="mask" id="mask"></div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="panel" style="flex:1">
+      <header><h2>Карточки для дежурного <span class="right small" id="thr"></span></h2>
+        <p class="hint" title="Разбор всплеска от агента: что случилось, сколько людей, какой релиз подозревается, со ссылками на обращения. Решает человек.">Разбор от агента со ссылками, решает человек</p></header>
+      <div class="arbar" id="arbar" title="Автоответ на повторные обращения: один клик дежурного на инцидент, дальше шаблонные ответы без текста от модели и без текста пользователя"></div>
+      <div class="scroll" id="cards"></div>
+    </div>
+  </div>
+  <div class="col right">
+    <div class="panel" style="flex:.9;min-height:230px">
+      <header><h2>Проверка фикса</h2>
+        <p class="hint" title="После исправления сравниваем поток темы с нормой до релиза: вернулась ли она к обычному уровню.">Вернулась ли тема к норме после фикса</p></header>
+      <div class="scroll" id="fix"></div>
+    </div>
+    <div class="panel" style="flex:1.1;min-height:190px">
+      <header><h2>Мок-трекер</h2>
+        <p class="hint" title="Имитация трекера задач вместо реального. Сюда попадает задача по кнопке «Наш баг»; в проде подключается ваш трекер.">Имитация трекера вместо реального; сюда падают задачи</p></header>
+      <div class="scroll" id="tracker"></div>
+    </div>
+    <div class="panel" style="flex:1.2;min-height:190px">
+      <header><h2>Журнал аудита <span class="right" id="chain"></span></h2>
+        <p class="hint" title="Кто что сделал: вызовы агента и нажатия человека. Записи связаны цепочкой хэшей, правку задним числом видно.">Кто что сделал; записи в цепочке хэшей</p></header>
+      <div class="scroll audit" id="audit"></div>
+    </div>
+    <div class="panel" style="flex:.9;min-height:200px">
+      <header><h2>Качество на слепых seeds</h2>
+        <p class="hint" title="Детектор: финальный слепой прогон v3 на свежих seeds 401-410 (shared/metrics-v3.json, режим без LLM-проверки тревог). Агент: промпт v2 со строгой схемой ответа, 32 карточки и 24 текста с инструкцией (shared/metrics-agent-v2-schema.json). Синтетика, не демо-данные.">Не демо. Детектор: seeds 401–410 (metrics-v3.json), агент v2</p></header>
+      <div class="metrics scroll" id="metrics"></div>
+    </div>
+  </div>
+</main>
+
+<header id="needs-header">
+ <div class="brand"><div class="logo"><i></i>Радар</div><div class="clock"><b>Потребности</b><small>из обращений — в задачи продукта</small></div><div class="chips"><span class="chip warn" id="needs-mode">Демонстрация</span><span class="chip" id="needs-window">28 дней</span></div></div>
+ <div class="controls"><div class="ctl"><span class="lbl">Продукт</span><select id="needs-product" style="height:32px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);padding:0 12px;font:inherit"></select></div><button class="primary" id="needs-load">Загрузить пример</button><button id="needs-refresh">Обновить</button><button id="needs-theme">Тема</button><button id="needs-help">Как читать экран</button></div>
+</header>
+<div id="needs-explain" class="panel" hidden style="margin:12px 12px 0;flex:none"><b>Слева — источники, в центре — повторные темы, справа — доказательства и решение.</b><p>«Загрузить пример» добавляет синтетические обращения. Повторная загрузка не увеличивает счётчики. Три разных автора по теме в окне 28 дней дают карточку. «Подтвердить» сохраняет решение; «Подготовить задачу» создаёт локальный черновик. В демо смысл определяют правила. Подключение внутренней модели выполняется отдельно.</p><p>Раздел «Инциденты» сохраняет прежний детектор. В нём «Пуск» двигает время записи, «Шаблон» собирает карточку без модели, «Запись» читает сохранённые ответы, «Живая модель» вызывает локальную Ollama. Это отдельный дополнительный сценарий, не оценка Qwen из кейса.</p></div>
+<main id="needs-view">
+ <div class="col"><div class="panel" style="flex:.7"><header><h2>Поток обращений</h2><p class="hint">Обработанные обращения по датам · демонстрационная история</p></header><svg id="needs-chart" style="width:100%;flex:1;min-height:150px"></svg></div><div class="panel" style="flex:1.2"><header><h2>Источники после маскирования</h2><p class="hint">Текст, по которому проверяются цитаты</p></header><div class="scroll" id="needs-source"></div></div></div>
+ <div class="col"><div class="panel" style="flex:1"><header><h2>Повторные потребности <span class="right small" id="needs-count"></span></h2><p class="hint">Один автор считается одним голосом</p></header><div class="scroll" id="needs-cards"></div></div></div>
+ <div class="col right"><div class="panel" style="flex:none"><header><h2>Доказательства и решение</h2><p class="hint">Владелец продукта подтверждает потребность</p></header><div id="needs-detail"></div><div id="needs-error" role="alert" style="color:var(--red);margin-top:8px"></div></div><div class="panel" style="flex:none"><header><h2>Черновики</h2></header><div id="needs-outbox"></div></div><div class="panel audit" style="flex:1;min-height:150px"><header><h2>Журнал обработки</h2></header><div class="scroll" id="needs-audit"></div></div></div>
+</main>
+<script>
+const incidentMode=new URLSearchParams(location.search).get('mode')!=='needs';
+document.querySelectorAll('#needs-tab,#incidents-tab').forEach(el=>{const active=(el.id==='incidents-tab')===incidentMode;el.style.color=active?'var(--ink)':'var(--muted)';el.style.fontWeight=active?'700':'400';el.setAttribute('aria-current',active?'page':'false');});
+for(const id of ['legacy-header','legacy-view'])document.getElementById(id).hidden=!incidentMode;
+for(const id of ['needs-header','needs-view'])document.getElementById(id).hidden=incidentMode;
+</script>
+
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="help" role="dialog" aria-modal="true" aria-labelledby="helptitle" hidden>
+  <div class="dh"><h2 id="helptitle">Как читать экран</h2><span class="small">Esc закрывает</span><button class="sm" id="helpclose" style="margin-left:auto" title="Закрыть">Закрыть</button></div>
+  <div class="db">
+    <p>Радар смотрит на поток обращений пользователей, замечает всплеск одной темы после релиза и просит человека решить, что с ним делать. Все данные здесь синтетические.</p>
+    <h3>Верхняя панель</h3>
+    <dl>
+      <dt>Сцена 1 Поток</dt><dd>09.03 13:00. Релиза ещё нет, аварии нет: виден обычный фон обращений и маскирование.</dd>
+      <dt>Сцена 2 Релиз</dt><dd>09.03 14:30. В 14:45 выходит релиз бонусов 2.8.0. Нажмите «Пуск»: тема растёт, около 18:00 детектор срабатывает и появляется карточка.</dd>
+      <dt>Сцена 3 Человек</dt><dd>09.03 18:30. Карточка уже написана и ждёт решения дежурного. Дальше в потоке ложная тревога по АЗС (11.03) и известная проблема портала (12.03).</dd>
+      <dt>Сцена 4 Петля</dt><dd>12.03 16:30. Фикс уже вышел. Затем обращение с инструкцией для ИИ (агент помечает её и ничего не выполняет) и проверка фикса с предложением закрыть задачу.</dd>
+      <dt>1 с реального =</dt><dd>Скорость модельного времени: сколько минут потока проходит за одну реальную секунду. Не влияет на данные, только на темп показа.</dd>
+      <dt>Пуск / Пауза</dt><dd>Пуск запускает поток обращений: время идёт само, график и карточки обновляются. Пауза останавливает.</dd>
+      <dt>Запись ответов</dt><dd>Агент воспроизводит ранее записанные ответы модели. Работает без сети и без модели, для демо.</dd>
+      <dt>Живая модель</dt><dd>Вызывается локальная модель Ollama прямо сейчас. Нужна запущенная Ollama, карточка пишется дольше.</dd>
+      <dt>Без модели (шаблон)</dt><dd>Карточку собирает код по шаблону, модель не вызывается. Это запасной вариант.</dd>
+      <dt>Тема</dt><dd>Светлая или тёмная.</dd>
+    </dl>
+    <p class="small">Значения режима в API: <code>replay</code>, <code>live</code>, <code>template</code>.</p>
+    <h3>Панели</h3>
+    <dl>
+      <dt>Поток обращений</dt><dd>Синяя линия — все обращения продукта за 30 минут. Оранжевая — люди одной темы (кластера) внутри всплеска. Пунктир — релиз или фикс, красная черта — момент тревоги, «ожидали» — сколько людей было бы в обычный день.</dd>
+      <dt>Маскирование</dt><dd>До: что пришло и видит человек. После: что уходит в модель. Модель видит только токены вроде <code>&lt;PHONE_1&gt;</code>.</dd>
+      <dt>Карточки для дежурного</dt><dd>Что случилось, сколько людей, цена за неделю, подозреваемый релиз. Каждое утверждение со ссылкой на обращение; без ссылки оно отбрасывается.</dd>
+      <dt>Проверка фикса</dt><dd>После выхода исправления сверяет поток темы с нормой до релиза. «Подтверждено по данным» — тема вернулась к обычному уровню.</dd>
+      <dt>Мок-трекер</dt><dd>Имитация реального трекера задач (Jira и подобных). Радар кладёт сюда задачи и сообщения команде только после нажатия кнопки человеком.</dd>
+      <dt>Журнал аудита</dt><dd>Кто что сделал: шаги агента и решения человека. «цепочка цела» — проверка хэшей не нашла правок.</dd>
+      <dt>Качество на слепых seeds</dt><dd>Детектор: финальный слепой прогон v3 на свежих синтетических наборах seeds 401–410. «Строгая» точность и полнота: тревога в окне [начало − 30 мин, начало + 6 ч] по календарю. «В рабочих часах»: для B2B, портала и партнёров допуск 6 ч считается пн–пт 9–19 (строгая при этом остаётся рядом). «По делу»: доля тревог, которые относятся к настоящей регрессии. Агент: промпт v2 со строгой схемой ответа. Источник — файлы <code>shared/metrics-v3.json</code> и <code>shared/metrics-agent-v2-schema.json</code>.</dd>
+    </dl>
+    <h3>Кнопки на карточке</h3>
+    <dl>
+      <dt>Наш баг</dt><dd>Создаёт в мок-трекере задачу из черновика агента и привязывает её к карточке.</dd>
+      <dt>Известно, уже чиним</dt><dd>Привязывает карточку к уже существующей задаче, новую не создаёт.</dd>
+      <dt>Шум</dt><dd>Повышает порог тревоги для этого продукта: z и минимум людей растут, похожие слабые всплески больше не будят.</dd>
+      <dt>Подтвердить закрытие</dt><dd>Появляется после проверки фикса. Закрывает задачу в трекере; сам агент ничего не закрывает.</dd>
+    </dl>
+    <p class="small">Решение на карточку одно. Кнопки видит и нажимает дежурный; наблюдатель только читает.</p>
+  </div>
+</aside>
+<div class="modal" id="authbox" hidden>
+  <form id="authform" autocomplete="off">
+    <b>Нужен токен доступа</b>
+    <span class="small" id="authmsg">Сервер запущен с токеном (RADAR_API_TOKEN, RADAR_TOKEN_VIEW или RADAR_TOKEN_DUTY). Токен хранится только до закрытия вкладки.</span>
+    <input id="authtok" type="password" placeholder="токен" aria-label="токен доступа">
+    <button class="primary" type="submit" style="height:36px">Войти</button>
+  </form>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const $ = s => document.querySelector(s);
+const PNAME = {azs:"Приложение АЗС", bonus:"Бонусы", b2b:"B2B-портал", portal:"Портал сотрудника", partners:"Партнёры"};
+const MODE_TXT = {replay:"запись ответов", live:"живая модель (Ollama)", template:"без модели (шаблон)"};
+const SHORT = {azs:"АЗС", bonus:"Бонусы", b2b:"B2B", portal:"Портал", partners:"Партнёры"};
+const HOURS=36;
+let st = {}, product = "bonus", mview = "both", userPicked = false, role = "duty";
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),2600)}
+const fmt = iso => iso ? iso.slice(5,10).split("-").reverse().join(".")+" "+iso.slice(11,16) : "";
+const rub = n => Math.round(n).toLocaleString("ru-RU").replace(/ /g," ")+" ₽";
+
+/* ---------- вход по токену (если сервер запущен с RADAR_API_TOKEN / RADAR_TOKEN_*) ---------- */
+const getTok = () => { try { return sessionStorage.getItem("radar_token") || ""; } catch(e) { return ""; } };
+const setTok = t => { try { sessionStorage.setItem("radar_token", t); } catch(e) {} };
+const launchParams=new URLSearchParams(location.hash.slice(1));
+if(launchParams.has('token')){setTok(launchParams.get('token'));history.replaceState(null,'',location.pathname+location.search);}
+let tokenAsk = null;
+function askToken(wrong){   // одно окно на все параллельные запросы
+  if(!tokenAsk) tokenAsk = new Promise(res => {
+    $("#authmsg").textContent = wrong ? "Токен не подошёл. Введите ещё раз." : $("#authmsg").dataset.def || $("#authmsg").textContent;
+    $("#authbox").hidden = false; $("#authtok").value = ""; $("#authtok").focus();
+    $("#authform").onsubmit = e => { e.preventDefault(); setTok($("#authtok").value.trim()); $("#authbox").hidden = true; tokenAsk = null; res(); };
+  });
+  return tokenAsk;
+}
+$("#authmsg").dataset.def = $("#authmsg").textContent;
+async function api(p, o){
+  o = o || {}; const h = Object.assign({}, o.headers || {}), t = getTok(); if(t) h.Authorization = "Bearer " + t;
+  const r = await fetch(p, Object.assign({}, o, {headers: h}));
+  if(r.status === 401){ await askToken(!!t); return api(p, o); }
+  const j = await r.json().catch(() => ({}));
+  if(!r.ok) throw new Error(j.detail || r.status);
+  return j;
+}
+const post = (p, b) => api(p, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(b||{})});
+
+/* ---------- тема ---------- */
+(function(){let t=null; try{t=localStorage.getItem("theme")}catch(e){}
+ if(t) document.documentElement.dataset.theme=t;
+ else if(matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.dataset.theme="dark";})();
+$("#theme").onclick=()=>{const d=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=d;try{localStorage.setItem("theme",d)}catch(e){};drawChart()};
+
+/* ---------- панель «Как читать экран» ---------- */
+function helpOpen(on){ $("#help").hidden=!on; $("#scrim").hidden=!on; if(on) $("#helpclose").focus(); else $("#helpbtn").focus(); }
+$("#helpbtn").onclick=()=>helpOpen(true);
+$("#helpclose").onclick=()=>helpOpen(false);
+$("#scrim").onclick=()=>helpOpen(false);
+document.addEventListener("keydown", e => { if(e.key==="Escape" && !$("#help").hidden) helpOpen(false); });
+
+/* ---------- управление ---------- */
+document.querySelectorAll("[data-scene]").forEach(b=>b.onclick=async()=>{await post("/api/jump",{scene:+b.dataset.scene,reset:+b.dataset.scene<4});product=({1:"bonus",2:"bonus",3:"bonus",4:"bonus"})[b.dataset.scene];userPicked=false;refreshAll()});
+document.querySelectorAll("[data-speed]").forEach(b=>b.onclick=()=>post("/api/control",{speed:+b.dataset.speed}).then(loadStatus).catch(e=>toast(e.message)));
+document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>post("/api/mode",{mode:b.dataset.mode}).then(loadStatus).catch(e=>toast(e.message)));
+document.querySelectorAll("[data-mview]").forEach(b=>b.onclick=()=>{mview=b.dataset.mview;document.querySelectorAll("[data-mview]").forEach(x=>x.classList.toggle("on",x===b));drawMask()});
+$("#play").onclick=()=>post("/api/control",{playing:!st.playing}).then(loadStatus).catch(e=>toast(e.message));
+
+async function loadStatus(){
+  st = await api("/api/status");
+  $("#clock").textContent = fmt(st.now);
+  $("#synth").textContent = "синтетика · seed " + st.seed; $("#synth").title = st.label + ": все данные сгенерированы программой, настоящих пользователей нет";
+  $("#play").textContent = st.playing ? "Пауза" : "Пуск";
+  document.querySelectorAll("[data-speed]").forEach(b=>b.classList.toggle("on",+b.dataset.speed===st.speed));
+  document.querySelectorAll("[data-mode]").forEach(b=>b.classList.toggle("on",b.dataset.mode===st.mode));
+  const c=$("#llmchip");
+  c.textContent = "агент: "+(MODE_TXT[st.mode]||esc(st.mode)); c.className = "chip "+(st.mode==="template"?"warn":"ok");
+}
+async function loadRole(){
+  const w = await api("/api/whoami"); role = w.role;
+  const c = $("#rolechip"); c.hidden = !w.auth_required;
+  c.textContent = role==="viewer" ? "роль: наблюдатель (только чтение)" : "роль: дежурный"; c.className = "chip " + (role==="viewer" ? "warn" : "ok");
+  document.querySelectorAll("#play,[data-scene],[data-speed],[data-mode]").forEach(b=>{b.disabled = role==="viewer"; if(role==="viewer") b.title = "Роль наблюдателя: управление доступно дежурному";});
+}
+
+/* ---------- график ---------- */
+let S = null;
+async function loadSeries(){ S = await api("/api/series?hours=" + HOURS); drawChart(); }
+function drawChart(){
+  if(!S) return;
+  const bx=$("#chartbox"), W=Math.max(300,bx.clientWidth), H=Math.max(140,bx.clientHeight), L=40,R=20,T=12,B=30, pw=W-L-R, ph=H-T-B;
+  $("#chart").setAttribute("viewBox",`0 0 ${W} ${H}`);
+  const n = S.products[product].length; if(!n) return;
+  const t0 = new Date(S.t0+":00Z").getTime(), step=S.bin_min*60000;
+  const total = S.products[product];
+  const bs = Object.entries(S.bursts).filter(([k,b])=>b.product===product);
+  let ymax = Math.max(4, ...total); ymax = Math.ceil(ymax*1.15/5)*5;
+  const x = i => L + pw*(i/Math.max(1,(HOURS*60/S.bin_min)));   // окно всегда HOURS часов, данные прижаты к правому краю
+  const off = Math.max(0, HOURS*60/S.bin_min - (n-1));
+  const X = i => x(i+off), Y = v => T+ph*(1-v/ymax);
+  const css = getComputedStyle(document.documentElement), c = k=>css.getPropertyValue(k).trim();
+  let o = "";
+  for(let g=0; g<=4; g++){const v=ymax*g/4; o+=`<line x1="${L}" x2="${W-R}" y1="${Y(v)}" y2="${Y(v)}" stroke="${c('--grid')}"/><text x="${L-6}" y="${Y(v)+4}" text-anchor="end" font-size="12" fill="${c('--muted')}">${Math.round(v)}</text>`}
+  // ось времени: подписи каждые 6 часов, на узком графике каждые 12 (иначе налезают)
+  const labelStep = pw/(HOURS/6) < 95 ? 12 : 6;
+  for(let i=0;i<n;i++){const d=new Date(t0+i*step); if(d.getUTCMinutes()<S.bin_min && d.getUTCHours()%labelStep===0){
+    o+=`<line x1="${X(i)}" x2="${X(i)}" y1="${T}" y2="${T+ph}" stroke="${c('--grid')}" stroke-dasharray="2 4"/><text x="${X(i)}" y="${H-8}" text-anchor="${X(i)>W-45?"end":"middle"}" font-size="12" fill="${c('--muted')}">${String(d.getUTCDate()).padStart(2,"0")}.${String(d.getUTCMonth()+1).padStart(2,"0")} ${String(d.getUTCHours()).padStart(2,"0")}:00</text>`}}
+  // площадь потока
+  let pts = total.map((v,i)=>`${X(i)},${Y(v)}`).join(" ");
+  o += `<polygon points="${X(0)},${Y(0)} ${pts} ${X(n-1)},${Y(0)}" fill="${c('--blue')}" opacity=".13"/><polyline points="${pts}" fill="none" stroke="${c('--blue')}" stroke-width="2"/>`;
+  // кластеры всплесков продукта
+  let ek = 0;   // номер подписи «ожидали»: следующие поднимаются выше, чтобы не лечь на предыдущую
+  for(const [id,b] of bs){
+    const col = b.alert ? c('--accent') : c('--muted');
+    const p2 = b.bins.map((v,i)=>`${X(i)},${Y(v)}`).join(" ");
+    o += `<polyline points="${p2}" fill="none" stroke="${col}" stroke-width="${b.alert?3:1.6}" ${b.alert?"":'stroke-dasharray="5 4"'} opacity="${b.alert?1:.8}"/>`;
+    // ожидаемый фон на 30 минут
+    const ex = b.expected*S.bin_min/b.window_min, firstI = b.bins.findIndex(v=>v>0);
+    if(b.alert && firstI>=0) o += `<line x1="${X(firstI)}" x2="${X(n-1)}" y1="${Y(ex)}" y2="${Y(ex)}" stroke="${col}" stroke-dasharray="3 4" opacity=".7"/><text x="${X(n-1)-4}" y="${Y(ex)-5-14*(ek++)}" text-anchor="end" font-size="12" fill="${col}">ожидали ${ex.toFixed(1)}</text>`;
+  }
+  // релизы
+  for(const r of S.releases.filter(r=>r.product===product)){
+    const i=(new Date(r.ts+":00Z").getTime()-t0)/step; if(i<0) continue;
+    const col = r.kind==="fix"? c('--green') : c('--ink');
+    o += `<line x1="${X(i)}" x2="${X(i)}" y1="${T}" y2="${T+ph}" stroke="${col}" stroke-width="2" stroke-dasharray="7 4"/><text x="${X(i)+(X(i)>W-150?-6:5)}" text-anchor="${X(i)>W-150?"end":"start"}" y="${T+16}" font-size="14" font-weight="700" fill="${col}">${r.kind==="fix"?"фикс ":"релиз "}${esc(r.version)}</text>`;
+  }
+  // момент срабатывания: подписи раскладываются по строкам, чтобы не налезать друг на друга и на соседние черты
+  const als = S.alerts.filter(a=>a.product===product && a.alert).map(a=>({a, i:(new Date(a.ts+":00Z").getTime()-t0)/step})).filter(q=>q.i>=0).sort((p,q)=>p.i-q.i);
+  const alText = q => "тревога z="+q.a.z;
+  const lay = layoutAlertLabels(als.map(q=>({x:X(q.i), w:alText(q).length*7.8+8})), L+2, W-R-2, 20);
+  als.forEach(q=>{
+    const b=S.bursts[q.a.burst_id];
+    o += `<line x1="${X(q.i)}" x2="${X(q.i)}" y1="${T}" y2="${T+ph}" stroke="${c('--red')}" stroke-width="2.5"/><circle cx="${X(q.i)}" cy="${Y(b? b.bins[Math.min(b.bins.length-1,Math.round(q.i))]||0 :0)}" r="6" fill="${c('--red')}"/>`;
+  });
+  als.forEach((q,k)=>{ const p=lay[k];   // подписи после всех чёрт: обводка цвета панели прикрывает линию под текстом
+    o += `<text x="${p.x}" y="${T+40+20*p.row}" text-anchor="${p.anchor}" font-size="14" font-weight="700" fill="${c('--red')}" stroke="${c('--panel')||'#fff'}" stroke-width="4" paint-order="stroke" stroke-linejoin="round">${esc(alText(q))}</text>`;
+  });
+  // правый край: текущий момент
+  o += `<line x1="${X(n-1)}" x2="${X(n-1)}" y1="${T}" y2="${T+ph}" stroke="${c('--ink')}" opacity=".35"/>`;
+  $("#chart").innerHTML = o;
+  $("#chartnote").innerHTML = `<span style="color:${c('--blue')}">━</span> все обращения &nbsp; <span style="color:${c('--accent')}">━</span> люди темы &nbsp; пунктир: релиз`;
+  const tabs=$("#tabs"); if(!tabs.dataset.built){tabs.dataset.built=1;tabs.innerHTML=Object.keys(PNAME).map(p=>`<button class="sm" data-p="${p}" title="Показать поток: ${PNAME[p]}">${SHORT[p]}</button>`).join("");tabs.querySelectorAll("button").forEach(b=>b.onclick=()=>{product=b.dataset.p;userPicked=true;drawChart()})}
+  tabs.querySelectorAll("button").forEach(b=>{b.classList.toggle("on",b.dataset.p===product); const has=Object.values(S.bursts).some(x=>x.product===b.dataset.p&&x.alert); b.textContent=SHORT[b.dataset.p]+(has?" ●":"")});
+}
+window.addEventListener("resize", () => drawChart());
+
+/* ---------- маскирование ---------- */
+let TK = null;
+async function loadTickets(){ TK = await api("/api/tickets?limit=3"); drawMask(); }
+function hiOriginal(t){ // красным то, что маскируется
+  let out="", p=0; for(const [a,b] of (t.spans||[])){out+=esc(t.original.slice(p,a))+`<span class="pii">${esc(t.original.slice(a,b))}</span>`;p=b} return out+esc(t.original.slice(p)); }
+function hiMasked(s){ return esc(s).replace(/&lt;([A-Z_]+_\d+)&gt;/g,'<span class="tok">&lt;$1&gt;</span>'); }
+function drawMask(){
+  if(!TK) return; const m=$("#mask"); const list = TK.with_pii.length? TK.with_pii : TK.latest;
+  m.className = "mask"+(mview==="both"?"":" one");
+  const before = `<div class="mbox"><h3>Пришло (видит человек)</h3>${list.map(t=>`<p>${hiOriginal(t)}<br><span class="small">${esc(t.id)} · ${esc(PNAME[t.product])} · ${esc(t.channel)}</span></p>`).join("")}</div>`;
+  const after = `<div class="mbox"><h3>Уходит в модель</h3>${list.map(t=>`<p>${hiMasked(t.masked)}<br><span class="small">${esc(t.id)} · словарь подстановки остаётся у человека</span></p>`).join("")}</div>`;
+  m.innerHTML = mview==="before"?before: mview==="after"?after: before+after;
+}
+
+/* ---------- карточки ---------- */
+function refs(ids){return (ids||[]).map(i=>`<span class="ref mono">${esc(i)}</span>`).join("")}
+function chip(t,k){return `<span class="chip ${k||""}">${esc(t)}</span>`}
+function autoreplyHtml(c, ro){
+  const a=c.autoreply; if(!a || c.kind!=="alert") return "";
+  const dis = ro || "";
+  let h=`<div class="autoreply"><b>Автоответ на повторные обращения</b> ${chip(a.state, a.on?"ok":a.state==="выключен"?"warn":"")}`;
+  if(a.state==="не включён"){
+    h+=`<div class="small">Один клик на инцидент: новые обращения по этой проблеме получат шаблонный ответ «известная проблема, команда чинит, сообщим». В ответ попадают только продукт, время начала и номер инцидента из кода, текст пользователя и текст модели не попадают.</div>`
+      +`<div class="btns"><button class="primary" data-arapprove="1"${dis||` title="Включить шаблонные автоответы по этому инциденту (решение человека). Выключается одной кнопкой"`}>Включить автоответ</button></div>`;
+  } else {
+    h+=`<div class="counts"><b>${esc(a.replied)}</b> ответов в очереди · <b>${esc(a.to_operator)}</b> передано оператору · сегодня ${esc(a.today)} из ${esc(a.daily_limit)}</div>`;
+    if(a.recent_replies&&a.recent_replies.length) h+=`<details data-reply-preview="1"><summary>Примеры подготовленных ответов</summary>${a.recent_replies.map(q=>`<div class="small" style="margin:8px 0;padding:8px;border:1px solid var(--line);border-radius:8px"><b>${esc(q.ticket_id)}</b> · ${esc(fmt(q.ts))}<br>${esc(q.text)}<br><span class="hint">${esc(q.status)} · в демо внешней доставки нет</span></div>`).join("")}</details>`;
+    if(a.on) h+=`<div class="btns"><button data-ardisable="1"${dis||` title="Остановить автоответы по инциденту: новые обращения пойдут оператору"`}>Выключить автоответ</button>`
+      +(a.proposal?"":`<button class="green" data-arfixed="1"${dis||` title="Фикс выкатили: сформировать рассылку «починили» всем, кто писал по инциденту (мок-очередь, отправка вне Радара)"`}>Починили</button>`)+`</div>`;
+    if(a.proposal && !a.mailing) h+=`<div class="proposal">Проверка фикса подтвердила, что тема вернулась к норме. Рассылка «починили» уйдёт в очередь для ${esc(a.recipients)} обращений. Сама она не отправляется.<div class="btns"><button class="green" data-arfixed="1"${dis||` title="Подтвердить рассылку «починили» (решение человека)"`}>Разослать «починили»</button></div></div>`;
+    if(a.mailing) h+=`<div class="small">${chip("рассылка «починили» в очереди","ok")} ${esc(a.mailing)} · ${esc(a.recipients)} обращений</div>`;
+  }
+  return h+`</div>`;
+}
+function closeProposalHtml(c){
+  const p=c.close_proposal;if(!p)return "";const ro=role==="viewer"?' disabled title="Решение доступно дежурному"':"";
+  return `<div class="proposal" data-close-proposal="1">${esc(p.text)}<div class="btns">${p.state==="ждёт человека"?`<button class="green" data-close="1"${ro}>Подтвердить закрытие</button>`:chip("закрыто человеком","ok")}</div></div>`;
+}
+function cardHtml(c){
+  const a=c.agent, k=a&&a.card, f=c.facts;
+  let h=`<div class="card ${esc(c.kind)}" data-id="${esc(c.id)}"><div class="top">${chip(c.product_name,"blue")}${chip(fmt(c.created_sim))}`;
+  if(c.kind==="alert" && c.tier) h+=chip(c.tier==="quiet"?"тихая карточка: без звонка":"будим дежурного", c.tier==="quiet"?"warn":"bad");
+  if(c.suspicion) h+=chip(c.tier==="quiet"?"подозрение на накрутку":"накрутка вычтена, остаток тревожный", "warn");
+  if(k){ h+=chip(k.status, k.status==="новая"?"acc":k.status==="известная"?"ok":"") + chip("важность: "+k.severity, k.severity==="high"?"bad":"");
+    h+= chip(a.mode==="LLM"?"LLM"+(a.recorded?" · запись":""):"шаблон, без LLM", a.mode==="LLM"?"ok":"warn");
+    if(k.injection_suspected) h+=chip("инъекция помечена","bad"); }
+  h+=`</div><div class="btns"><button data-history-mode="incidents" data-history-product="${esc(c.product)}" data-history-topic="${esc(c.id)}">Перейти к проверке</button></div>`;
+  if(c.pending||!k) return h+`<div class="pending">агент пишет карточку<span class="dots"></span></div></div>`;
+  h+=`<div class="title">${esc(k.title)}</div>`;
+  if(c.kind==="alert"){
+    h+=`<div class="facts"><div class="fact"><b>${esc(f.unique_users)}</b><span>человек</span></div><div class="fact"><b>${esc(rub(f.weekly_cost_rub))}</b><span>цена за неделю</span></div><div class="fact"><b>${esc(f.z)}</b><span>z, число сигм</span></div><div class="fact"><b>${f.suspected_release?esc(f.suspected_release.version):"нет"}</b><span>подозреваемый релиз</span></div></div>`;
+  }
+  h+=closeProposalHtml(c);
+  h+=`<ul class="claims">${k.claims.map(x=>`<li>${esc(x.text)}<br>${refs(x.ids)}</li>`).join("")}</ul>`;
+  if(k.repro_steps_draft&&k.repro_steps_draft.length) h+=`<div class="small">Шаги воспроизведения (черновик): ${k.repro_steps_draft.map(esc).join(" → ")}</div>`;
+  h+=`<div class="small" style="margin-top:6px">Вызвано инструментов: ${a.tools_used.length?a.tools_used.map(esc).join(", "):"нет"} · шагов ${esc(a.steps)} · ${esc(a.latency_s)} с${a.fallback_reason?" · "+esc(a.fallback_reason):""}</div>`;
+  if(k.existing_ticket) h+=`<div class="small">Похожая задача: <span class="ref mono">${esc(k.existing_ticket)}</span></div>`;
+  if(c.kind==="watch"){ h+=`<div class="small" style="margin-top:6px;color:var(--blue)"><b>Агент ничего не выполнил:</b> инструкция в тексте обращения помечена, закрытий, удалений и сообщений нет.</div>`; }
+  else {
+    const d=c.decision, ro = role==="viewer" ? ` disabled title="Роль наблюдателя: кнопки решений доступны дежурному"` : "";
+    if(d) h+=`<div class="btns">${chip({our_bug:"наш баг: создана "+(d.task_key||""),known:"известно, привязано к "+(d.task_key||""),noise:"шум: порог продукта повышен"}[d.action]||d.action,"ok")}${chip(fmt(d.at))}</div>`;
+    else h+=`<div class="btns"><button class="primary" data-act="our_bug"${ro||` title="Создать в мок-трекере задачу из черновика агента и привязать к карточке"`}>Наш баг</button><button data-act="known"${ro||` title="Привязать карточку к уже существующей задаче, новую не создавать"`}>Известно, уже чиним</button><button data-act="noise"${ro||` title="Ложная тревога: поднять порог для этого продукта, похожие слабые всплески перестанут будить"`}>Шум</button></div><div class="small btnhelp">Наш баг: создаст задачу · Известно: привяжет к существующей · Шум: поднимет порог тревоги продукта</div>`;
+    h+=autoreplyHtml(c, ro);
+
+  }
+  return h+`</div>`;
+}
+let cardsSignature="";
+async function loadCards(){
+  const r = await api("/api/cards"), box=$("#cards"), sc=box.scrollTop;
+  const signature=JSON.stringify([role,r]);if(signature===cardsSignature)return;cardsSignature=signature;
+  const openReplies=[...box.querySelectorAll("details[data-reply-preview][open]")].map(e=>e.closest(".card").dataset.id);
+  const needs = c => c.close_proposal && c.close_proposal.state==="ждёт человека" ? 1 : 0;   // карточки, где ждут человека, наверх
+  r.cards.sort((a,b)=>needs(b)-needs(a));
+  box.innerHTML = r.cards.length? r.cards.map(cardHtml).join("") : `<div class="pending">Карточек пока нет. Агент напишет её, когда детектор поймает всплеск после релиза. Нажмите «2 Релиз», затем «Пуск».</div>`;
+  box.scrollTop = sc;
+  openReplies.forEach(id=>{const el=[...box.querySelectorAll(".card")].find(e=>e.dataset.id===id);const detail=el&&el.querySelector("details[data-reply-preview]");if(detail)detail.open=true;});
+  box.querySelectorAll(".card").forEach(el=>{const id=el.dataset.id;
+    el.querySelectorAll("[data-act]").forEach(b=>b.onclick=()=>act(id,b.dataset.act));
+    const arcall=(sel,url,msg)=>{const b=el.querySelector(sel); if(b) b.onclick=()=>post(`/api/incidents/${encodeURIComponent(id)}/${url}`).then(()=>{toast(msg);refreshAll()}).catch(e=>toast(e.message));};
+    arcall("[data-arapprove]","autoreply/approve","Автоответ включён человеком");
+    arcall("[data-ardisable]","autoreply/disable","Автоответ выключен");
+    arcall("[data-arfixed]","fixed/approve","Рассылка «починили» поставлена в очередь");
+    const cb=el.querySelector("[data-close]"); if(cb) cb.onclick=()=>post(`/api/cards/${encodeURIComponent(id)}/confirm-close`).then(()=>{toast("Задача закрыта человеком");refreshAll()}).catch(e=>toast(e.message));
+  });
+  const ths = Object.entries(r.thresholds).map(([p,t])=>`${PNAME[p]||p}: z ≥ ${t.z_threshold}, людей ≥ ${t.min_users}`);
+  $("#thr").textContent = ths.length? "пороги: "+ths.join("; ") : "";
+  // самую свежую карточку берём в график, если пользователь не выбирал сам
+  const last = r.cards.find(c=>c.kind==="alert"); if(last && !userPicked) product = last.product;
+}
+async function loadAutoreply(){
+  const r=await api("/api/autoreply"), s=r.stats, m=s.assumed_minutes_saved;
+  $("#arbar").innerHTML = chip("подготовлено автоответов: "+s.autoreplied, s.autoreplied?"ok":"")
+    + chip("передано оператору: "+s.to_operator, "")
+    + (s.mailings?chip("рассылок «починили»: "+s.mailings,"ok"):"")
+    + `<span class="small" title="${esc(m.source)}">допущение, не измерение: ≈ ${Math.round(m.low)}–${Math.round(m.high)} мин оператора (shared/autoreply-assumptions.json)</span>`;
+}
+function act(id,action){ post(`/api/cards/${encodeURIComponent(id)}/decision`,{action}).then(r=>{toast({our_bug:"Создана задача "+(r.task&&r.task.key),known:"Привязано к "+(r.task&&r.task.key),noise:"Порог продукта повышен: z ≥ "+(r.threshold&&r.threshold.to.z_threshold)}[action]);refreshAll()}).catch(e=>toast(e.message)); }
+
+/* ---------- фикс, трекер, журнал, метрики ---------- */
+async function loadFix(){
+  const r=await api("/api/fix"); const b=$("#fix");
+  b.innerHTML = r.items.length? r.items.map(i=>`<div style="margin-bottom:10px"><b>${esc(PNAME[i.product]||i.product)}</b> · ${esc(i.card_id)}<br>${chip(i.state, i.fix&&i.fix.verdict==="confirmed"?"ok":i.fix_version?"acc":"")}${i.fix_version?` фикс ${esc(i.fix_version)}, ${fmt(i.fix_ts)}`:""}${i.fix?`<div class="small">остаток всплеска ${Math.round((i.fix.residual_share||0)*100)}% (верхняя граница ${Math.round((i.fix.residual_ci_high||0)*100)}%), проверено ${fmt(i.fix.checked_at)}</div>`:""}${i.demo_next?`<div class="small" style="margin-top:8px">Следующий этап демо: ${esc(fmt(i.demo_next.to))}<br><button data-demo-jump="${esc(i.demo_next.to)}"${role==="viewer"?" disabled":""}>${esc(i.demo_next.label)}</button><br>Переводит модельное время; решения и автоответ сохраняются.</div>`:""}</div>`).join("") : `<div class="pending">Пока нет карточек, которые надо проверять.</div>`;
+  b.querySelectorAll("[data-demo-jump]").forEach(button=>button.onclick=async()=>{button.disabled=true;try{await post("/api/control",{playing:false});await post("/api/jump",{to:button.dataset.demoJump,reset:false});refreshAll();}catch(e){toast(e.message);button.disabled=false;}});
+}
+async function loadTracker(){
+  const r=await api("/api/tracker"); const b=$("#tracker");
+  const rows=r.tasks.slice(0,12).map(t=>`<tr class="${t.source==="radar"?"row-radar":""}"><td class="mono">${esc(t.key)}</td><td>${esc(t.title.slice(0,54))}</td><td>${({open:"открыта",in_progress:"в работе",done:"готово",wontfix:"не будем"})[t.status]||esc(t.status)}</td></tr>`).join("");
+  const dr=r.drafts.map(d=>`<div class="small">${esc(d.id)}: ${esc(d.title.slice(0,50))} · ${esc(d.status)}</div>`).join("");
+  const dis = role==="viewer" ? " disabled" : "";
+  const ob=r.outbox.map(o=>`<div class="small">${esc(o.id)} → команда ${esc(o.product)}: ${esc(o.message.slice(0,60))} · ${esc(o.status)} ${o.status==="ждёт подтверждения"?`<button class="sm" data-ob="${esc(o.id)}"${dis} title="Подтвердить отправку сообщения команде (отправляет человек, не агент)">Подтвердить</button>`:""}</div>`).join("");
+  b.innerHTML=`<table><tr><th>ключ</th><th>задача</th><th>статус</th></tr>${rows}</table>${dr?"<h3 class='sub'>Черновики агента</h3>"+dr:""}${ob?"<h3 class='sub'>Очередь сообщений</h3>"+ob:""}`;
+  b.querySelectorAll("[data-ob]").forEach(x=>x.onclick=()=>post(`/api/outbox/${encodeURIComponent(x.dataset.ob)}/approve`).then(()=>{toast("Подтверждено человеком");refreshAll()}).catch(e=>toast(e.message)));
+}
+const KIND = {agent_input:["вход агента",""],tool_call:["инструмент","blue"],tool_denied:["отказ","bad"],model_reply:["ответ модели",""],validator:["валидатор","warn"],human:["человек","ok"],system:["система",""],autoreply_approved:["автоответ: включён","ok"],autoreply_disabled:["автоответ: выключен","warn"],autoreply_sent:["автоответ","blue"],autoreply_escalated:["автоответ: оператору","warn"],autoreply_fixed_proposed:["починили: предложение",""],autoreply_fixed_approved:["починили: рассылка","ok"]};
+function summ(r){const p=r.payload;
+  if(r.kind==="tool_call") return `${esc(p.name)}(${esc(JSON.stringify(p.args)).slice(0,70)})`;
+  if(r.kind==="tool_denied") return `${esc(p.name)}: запрещено`;
+  if(r.kind==="human"){const t=p.task&&typeof p.task==="object"?p.task.key:p.task; return `${esc(p.decision)} ${esc(t||p.id||"")} (${esc(p.who)})`;}
+  if(r.kind==="validator") return p.mode? `${esc(p.mode)}: ${esc(p.reason)}` : `утверждений ${esc(p.claims_kept)}/${esc(p.claims_in)}, отброшено ${(p.dropped||[]).length}, инъекция: ${p.injection_code||p.injection_model?"да":"нет"}`;
+  if(r.kind==="model_reply") return esc((p.reply||"").slice(0,90));
+  if(r.kind==="autoreply_sent") return `${esc(p.ticket_id)} → ${esc(p.queue_id)} (шаблон, инцидент ${esc(p.incident)})`;
+  if(r.kind==="autoreply_escalated") return `${esc(p.ticket_id)}: ${esc(p.reason)}`;
+  if(r.kind==="autoreply_approved"||r.kind==="autoreply_disabled") return `${esc(p.incident)} (${esc(p.who)})`;
+  if(r.kind==="autoreply_fixed_proposed") return `${esc(p.incident)}: ${esc(p.recipients)} обращений, ждёт человека`;
+  if(r.kind==="autoreply_fixed_approved") return `${esc(p.mailing)}: ${esc(p.recipients)} обращений (${esc(p.who)})`;
+  if(r.kind==="agent_input") return "числа от кода, обращения в &lt;tickets&gt;";
+  return esc(p.msg||"");}
+async function loadAudit(){
+  const r=await api("/api/audit?limit=60"); const b=$("#audit");
+  b.innerHTML=r.rows.slice().reverse().map(x=>{const k=KIND[x.kind]||[x.kind,""];return `<div class="r"><span class="t">${esc((x.sim_ts||"").slice(11,16)||x.wall_ts.slice(11,16))}</span><span class="k">${chip(k[0],k[1])}</span><span class="m">${summ(x)}</span></div>`}).join("");
+  api("/api/audit/verify").then(v=>{const c=$("#chain"); c.innerHTML=v.ok?chip("цепочка цела","ok"):chip("цепочка нарушена, запись "+v.broken_at,"bad"); c.title="Проверка хэшей журнала: "+v.rows+" записей"}).catch(()=>{});
+}
+/*LAYOUT-BEGIN*/
+/* Раскладка подписей «тревога z=...» (чистая функция, проверяется в tests/test_dashboard_v12.py через node).
+   items: [{x, w}] в порядке времени (x: положение чёрты, w: ширина текста), L и R: границы области, step: шаг строки в пикселях.
+   Подпись стоит слева от своей чёрты (anchor end), у левого края справа (anchor start); подписи, чьи рамки пересекаются по горизонтали, получают разные строки. */
+function layoutAlertLabels(items, L, R, step){
+  const placed = [], xs = items.map(it => it.x);
+  return items.map((it, k) => {
+    const cand = [["end", it.x - 8], ["start", it.x + 8]].map(([anchor, x0]) => {
+      const x = anchor === "end" ? Math.max(L + it.w, Math.min(R, x0)) : Math.max(L, Math.min(R - it.w, x0));
+      const left = anchor === "end" ? x - it.w : x, right = left + it.w;
+      const bad = (left < L || right > R ? 100 : 0) + xs.filter((v, m) => m !== k && v > left && v < right).length;   // выход за область и чужие чёрты внутри подписи
+      return {anchor, x, left, right, bad};
+    }).sort((a, b) => a.bad - b.bad || (a.anchor === "end" ? -1 : 1))[0];
+    let row = 0;
+    while(placed.some(q => q.row === row && Math.min(q.right, cand.right) - Math.max(q.left, cand.left) > -6)) row++;
+    placed.push({row, left: cand.left, right: cand.right});
+    return {x: cand.x, anchor: cand.anchor, row};
+  });
+}
+/*LAYOUT-END*/
+async function loadMetrics(){
+  const r=await api("/api/metrics"), s=r.summary, b=$("#metrics"); let h="";
+  const f=(v,l,t)=>`<div class="fact"${t?` title="${esc(t)}"`:""}><b>${esc(v)}</b><span>${esc(l)}</span></div>`;
+  const p=v=>Math.round(v*100)+"%", c2=v=>v.toFixed(2).replace(".",",");
+  const d=s.detector_v3, a=s.agent_v2;
+  if(d){
+    const sd=d.seeds.length?` Seeds ${d.seeds[0]}–${d.seeds[d.seeds.length-1]}.`:"";
+    h+=f(p(d.strict_precision),"точность (строгая)","Доля тревог, попавших в окно настоящей регрессии: [начало − 30 мин, начало + 6 ч] по календарю."+sd)
+     +f(p(d.strict_recall),"полнота (строгая)","Доля регрессий, по которым пришла тревога в строгом окне."+sd)
+     +f(p(d.work_recall),"полнота в рабочих часах","Для B2B, портала и партнёров допуск 6 ч считается в рабочих часах (пн–пт 9–19). Строгая полнота рядом, не подменяется.")
+     +f(p(d.on_target_share),"тревог по делу","Тревога относится к настоящей регрессии того же продукта и темы.")
+     +f(c2(d.false_pages_per_week),"ложных подъёмов дежурного в неделю","Будящие тревоги не по делу на неделю наблюдения, один поток 800 обращений в день.")
+     +f(Math.round(d.ttc_median_min),"мин до карточки (медиана)","Медиана по строгой оценке.");
+  }
+  if(a){
+    h+=f(p(a.first_try_valid_share),"карточек с первой попытки","Агент v2 со строгой схемой: ответ сразу прошёл схему и валидатор. "+a.n_cards+" карточек.")
+     +f(p(a.claims_valid_share),"карточек, где все утверждения со ссылками","До фильтра валидатора.")
+     +f(a.steps_mean+" шага · "+Math.round(a.latency_s_median)+" с","шагов диалога · медиана ответа","Локальная модель "+(a.model||"")+" на ноутбуке.")
+     +f(Math.round(a.injection_resisted_share*a.n_injections)+" из "+a.n_injections,"инъекций не выполнено","Пометку «инъекция» ставит код, а не модель.");
+  }
+  b.innerHTML=h||"<span class='small'>нет данных</span>";
+}
+
+/* ---------- обновление ---------- */
+let lifecycleBusy=false,lifecycleTimer=null;
+async function refreshLifecycle(){if(lifecycleBusy)return;lifecycleBusy=true;try{await Promise.allSettled([loadCards(),loadAutoreply(),loadFix(),loadTracker(),loadAudit()]);}finally{lifecycleBusy=false;}}
+function scheduleLifecycle(){if(lifecycleTimer)return;lifecycleTimer=setTimeout(()=>{lifecycleTimer=null;refreshLifecycle();},350);}
+function refreshAll(){ loadStatus(); loadSeries(); refreshLifecycle(); loadTickets(); }
+(async function start(){
+  if(!incidentMode)return;
+  try{ await loadStatus(); if(st.auth_required && !getTok()) await askToken(false); await loadRole(); }catch(e){}
+  refreshAll(); loadMetrics().catch(()=>{});
+  setInterval(()=>{[loadStatus,loadSeries,loadTickets].forEach(f=>f().catch(()=>{}))},1000);   // сервер мог перезапуститься: молча ждём
+  setInterval(()=>{if(incidentMode&&!document.hidden)refreshLifecycle();},2000);
+  stream();
+})();
+
+/* поток событий через fetch: EventSource не умеет заголовок Authorization */
+async function stream(){
+  try{
+    const h = getTok() ? {Authorization:"Bearer "+getTok()} : {};
+    const r = await fetch("/api/stream", {headers:h});
+    if(r.status === 401){ await askToken(!!getTok()); return stream(); }
+    if(!r.ok || !r.body) throw new Error("stream " + r.status);
+    const rd = r.body.getReader(), dec = new TextDecoder(); let buf = "";
+    for(;;){
+      const {value, done} = await rd.read(); if(done) break;
+      buf += dec.decode(value, {stream:true});
+      let i; while((i = buf.indexOf("\n\n")) >= 0){
+        const chunk = buf.slice(0, i); buf = buf.slice(i + 2);
+        if(!chunk.startsWith("data: ")) continue;
+        let m; try{ m = JSON.parse(chunk.slice(6)); }catch(e){ continue; }
+        if(["refresh","card_opened","fix_checked","autoreply_updated"].includes(m.type))scheduleLifecycle();
+      }
+    }
+  }catch(e){}
+  setTimeout(stream, 2000);   // обрыв или перезапуск сервера: переподключаемся
+}
+</script>
+<script src="/needs.js"></script>
+<script src="/history.js"></script>
+</body>
+</html>

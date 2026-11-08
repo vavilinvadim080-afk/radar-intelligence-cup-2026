@@ -1,0 +1,152 @@
+{
+ "_note": "Считает mvp/eval/bench_load.py. Не править руками. Данные синтетические; меряется пропускная способность и память одного ядра, не задержка одного обращения и не качество детекции.",
+ "generated_at": "2026-10-20T16:28:28",
+ "machine": {
+  "platform": "macOS-14.0-arm64-arm-64bit",
+  "cpu": "Apple M1",
+  "cores_logical": 8,
+  "ram_gb": 8.0,
+  "python": "3.12.13",
+  "numpy": "2.5.4",
+  "scikit_learn": "1.9.1",
+  "scipy": "1.18.1",
+  "threads_limit": "BLAS/OpenMP = 1, один процесс",
+  "loadavg_at_start": [
+   9.44,
+   10.17,
+   10.46
+  ]
+ },
+ "by_volume": {
+  "3000": {
+   "volume_per_day": 3000,
+   "days": 28,
+   "seed": 1,
+   "tickets": 104139,
+   "generate_s": 4.7,
+   "prep": {
+    "seconds": 34.41,
+    "tickets_per_s": 3026.7,
+    "ms_per_ticket": 0.33
+   },
+   "detector_all": {
+    "seconds": 53.79,
+    "tickets_per_s": 1936.1
+   },
+   "detector_warmup": {
+    "tickets": 10743,
+    "seconds": 0.57,
+    "tickets_per_s": 18693.0
+   },
+   "detector_active": {
+    "tickets": 93396,
+    "seconds": 53.21,
+    "tickets_per_s": 1755.1,
+    "ms_per_ticket": 0.57
+   },
+   "memory_mb": {
+    "rss_after_generate": 219,
+    "rss_after_prepare": 326,
+    "rss_after_detector": 127,
+    "peak_rss": 335,
+    "kb_per_ticket_growth_prepare_to_end": -1.96,
+    "kb_per_ticket_peak_over_generated": 1.14
+   },
+   "bursts": 117,
+   "bursts_alert": 13
+  },
+  "30000": {
+   "volume_per_day": 30000,
+   "days": 7,
+   "seed": 1,
+   "tickets": 240260,
+   "generate_s": 14.0,
+   "prep": {
+    "seconds": 145.18,
+    "tickets_per_s": 1654.9,
+    "ms_per_ticket": 0.604
+   },
+   "detector_all": {
+    "seconds": 34.17,
+    "tickets_per_s": 7032.3
+   },
+   "detector_warmup": {
+    "tickets": 104742,
+    "seconds": 5.94,
+    "tickets_per_s": 17639.1
+   },
+   "detector_active": {
+    "tickets": 135518,
+    "seconds": 28.23,
+    "tickets_per_s": 4800.9,
+    "ms_per_ticket": 0.208
+   },
+   "memory_mb": {
+    "rss_after_generate": 88,
+    "rss_after_prepare": 299,
+    "rss_after_detector": 217,
+    "peak_rss": 510,
+    "kb_per_ticket_growth_prepare_to_end": -0.35,
+    "kb_per_ticket_peak_over_generated": 1.8
+   },
+   "bursts": 83,
+   "bursts_alert": 5
+  },
+  "100000": {
+   "volume_per_day": 100000,
+   "days": 5,
+   "seed": 1,
+   "tickets": 581429,
+   "generate_s": 31.7,
+   "prep": {
+    "seconds": 743.81,
+    "tickets_per_s": 781.7,
+    "ms_per_ticket": 1.279
+   },
+   "detector_all": {
+    "seconds": 157.49,
+    "tickets_per_s": 3691.9
+   },
+   "detector_warmup": {
+    "tickets": 348874,
+    "seconds": 69.92,
+    "tickets_per_s": 4989.8
+   },
+   "detector_active": {
+    "tickets": 232555,
+    "seconds": 87.57,
+    "tickets_per_s": 2655.6,
+    "ms_per_ticket": 0.377
+   },
+   "memory_mb": {
+    "rss_after_generate": 421,
+    "rss_after_prepare": 58,
+    "rss_after_detector": 306,
+    "peak_rss": 740,
+    "kb_per_ticket_growth_prepare_to_end": 0.44,
+    "kb_per_ticket_peak_over_generated": 0.56
+   },
+   "bursts": 63,
+   "bursts_alert": 4
+  }
+ },
+ "memprobe": {
+  "tickets": 52870,
+  "days": 14,
+  "volume_per_day": 3000,
+  "traced_bytes_per_ticket_total": 883,
+  "traced_bytes_per_ticket_by_file": {
+   ".venv/lib/python3.12/site-packages/numpy/_core/shape_base.py": 645,
+   "radar/pipeline.py": 175,
+   "radar/detect.py": 54,
+   "radar/cluster.py": 8,
+   ".venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py": 1,
+   ".venv/lib/python3.12/site-packages/numpy/lib/_stride_tricks_impl.py": 0
+  },
+  "vecs": {
+   "vecs_float32_bytes": 33554432,
+   "tickets_objects_estimate_bytes": null,
+   "vecs_bytes_per_ticket": 634.7
+  }
+ }
+}

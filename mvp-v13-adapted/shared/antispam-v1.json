@@ -1,0 +1,3101 @@
+{
+ "meta": {
+  "generated_at": "2026-10-29T13:30:12",
+  "code_hash": "916b9eddd333a88e",
+  "dev_seeds": [
+   201,
+   202,
+   203,
+   204,
+   205,
+   206,
+   207,
+   208,
+   209,
+   210
+  ],
+  "scenario_seeds": [
+   201,
+   202,
+   203
+  ],
+  "fresh_seeds_401_410_used": false,
+  "judge": "выключена (judge_enabled=False, как по умолчанию)",
+  "protection_config": {
+   "user_cap_max": 20,
+   "user_cap_window_min": 1440,
+   "brigade_check": true,
+   "brigade_min_users": 8,
+   "brigade_min_group": 5,
+   "brigade_min_tokens": 4,
+   "brigade_dup_sim": 0.8,
+   "brigade_dup_share": 0.5,
+   "brigade_timer_share": 0.35,
+   "brigade_timer_cv": 0.4
+  },
+  "off_config": {
+   "user_cap_max": 0,
+   "brigade_check": false
+  },
+  "note": "Все числа напечатаны eval/antispam_eval.py; syntetic data, dev seeds; атаки сгенерированы поверх данных набора."
+ },
+ "dev": {
+  "seeds": [
+   201,
+   202,
+   203,
+   204,
+   205,
+   206,
+   207,
+   208,
+   209,
+   210
+  ],
+  "noises": [
+   "low",
+   "mid",
+   "high"
+  ],
+  "runs": 30,
+  "tickets_total": 870890,
+  "off": {
+   "n_events": 78,
+   "n_page": 100,
+   "strict_tp": 46,
+   "strict_recall": 0.5256410256410257,
+   "strict_precision": 0.46,
+   "caught": 41,
+   "ttc_median_min": 110.0,
+   "target_tp": 68,
+   "on_target_share": 0.68,
+   "false_pages_per_week": 0.2986666666666667
+  },
+  "on": {
+   "n_events": 78,
+   "n_page": 100,
+   "strict_tp": 46,
+   "strict_recall": 0.5256410256410257,
+   "strict_precision": 0.46,
+   "caught": 41,
+   "ttc_median_min": 110.0,
+   "target_tp": 68,
+   "on_target_share": 0.68,
+   "false_pages_per_week": 0.2986666666666667
+  },
+  "delta_on_minus_off": {
+   "n_events": 0,
+   "n_page": 0,
+   "strict_tp": 0,
+   "strict_recall": 0.0,
+   "strict_precision": 0.0,
+   "caught": 0,
+   "ttc_median_min": 0.0,
+   "target_tp": 0,
+   "on_target_share": 0.0,
+   "false_pages_per_week": 0.0
+  },
+  "delta_strict_recall_pp": 0.0,
+  "delta_on_target_pp": 0.0,
+  "within_1pp": true,
+  "alert_sets_identical": true,
+  "tickets_dropped_by_user_cap": 0,
+  "alerts_flagged_as_brigading": 0,
+  "flagged_that_match_real_regression": 0,
+  "max_tickets_per_user_24h": 8,
+  "real_alerts": {
+   "n": 84,
+   "dup_share": {
+    "n": 84,
+    "min": 0.033,
+    "median": 0.087,
+    "p90": 0.188,
+    "max": 0.25
+   },
+   "gap_cv": {
+    "n": 17,
+    "min": 0.045,
+    "median": 0.357,
+    "p90": 0.885,
+    "max": 0.957
+   },
+   "fresh_share": {
+    "n": 84,
+    "min": 0.0,
+    "median": 0.667,
+    "p90": 1.0,
+    "max": 1.0
+   },
+   "n_assessed": {
+    "n": 84,
+    "min": 8,
+    "median": 21,
+    "p90": 29,
+    "max": 38
+   }
+  },
+  "false_alerts": {
+   "n": 35,
+   "dup_share": {
+    "n": 35,
+    "min": 0.03,
+    "median": 0.087,
+    "p90": 0.167,
+    "max": 0.273
+   },
+   "gap_cv": {
+    "n": 11,
+    "min": 0.039,
+    "median": 0.422,
+    "p90": 0.922,
+    "max": 0.955
+   },
+   "fresh_share": {
+    "n": 35,
+    "min": 0.0,
+    "median": 0.5,
+    "p90": 1.0,
+    "max": 1.0
+   },
+   "n_assessed": {
+    "n": 35,
+    "min": 11,
+    "median": 26,
+    "p90": 35,
+    "max": 67
+   }
+  },
+  "reference_run_v3_dev_without_judge": {
+   "n_events": 78,
+   "n_page": 100,
+   "strict_tp": 46,
+   "strict_recall": 0.5256410256410257,
+   "strict_precision": 0.46,
+   "caught": 41,
+   "ttc_median_min": 110.0,
+   "target_tp": 68,
+   "on_target_share": 0.68,
+   "false_pages_per_week": 0.2986666666666667
+  },
+  "reference_matches_off": true
+ },
+ "scenarios": [
+  {
+   "spec": {
+    "id": "a1",
+    "group": "a",
+    "name": "1 пользователь x 500 обращений, один текст, за 60 мин",
+    "kind": "single_user",
+    "n": 500,
+    "minutes": 60,
+    "text_mode": "exact_one",
+    "start": "quiet_release"
+   },
+   "per_seed": [
+    {
+     "seed": 201,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T17:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "Бонусные баллы не зачислились на карту лояльности"
+     },
+     "n_attack": 500,
+     "off": {
+      "attack_bursts": 0,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28059,
+      "attack_tickets_in_detector": 500,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 0,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 480,
+      "accepted": 27579,
+      "attack_tickets_in_detector": 20,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 202,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-19T14:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "Не начисляют баллы после оплаты на станция"
+     },
+     "n_attack": 500,
+     "off": {
+      "attack_bursts": 0,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 5,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28954,
+      "attack_tickets_in_detector": 500,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 0,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 5,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 480,
+      "accepted": 28474,
+      "attack_tickets_in_detector": 20,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 203,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T15:00",
+      "kind": "после релиза без регрессии",
+      "text_example": "Баллы не зачислились на карту лояльности!!"
+     },
+     "n_attack": 500,
+     "off": {
+      "attack_bursts": 0,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 1,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29667,
+      "attack_tickets_in_detector": 500,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 0,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 1,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 480,
+      "accepted": 29187,
+      "attack_tickets_in_detector": 20,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    }
+   ],
+   "off": {
+    "runs": 3,
+    "false_alarm_page_runs": 0,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 500.0,
+    "n_capped_mean": 0.0
+   },
+   "on": {
+    "runs": 3,
+    "false_alarm_page_runs": 0,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 20.0,
+    "n_capped_mean": 480.0
+   }
+  },
+  {
+   "spec": {
+    "id": "a2",
+    "group": "a",
+    "name": "1 пользователь x 500 обращений, разные тексты, за 60 мин",
+    "kind": "single_user",
+    "n": 500,
+    "minutes": 60,
+    "text_mode": "varied",
+    "start": "quiet_release"
+   },
+   "per_seed": [
+    {
+     "seed": 201,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T17:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "не могу списать бонусные баллы при оплатте"
+     },
+     "n_attack": 500,
+     "off": {
+      "attack_bursts": 0,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28059,
+      "attack_tickets_in_detector": 500,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 0,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 480,
+      "accepted": 27579,
+      "attack_tickets_in_detector": 20,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 202,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-19T14:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "Одна звезда. Списание баллы лояльности на заправка не открывается Авто Е 622 ХУ 72."
+     },
+     "n_attack": 500,
+     "off": {
+      "attack_bursts": 0,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 5,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28954,
+      "attack_tickets_in_detector": 500,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 0,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 5,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 480,
+      "accepted": 28474,
+      "attack_tickets_in_detector": 20,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 203,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T15:00",
+      "kind": "после релиза без регрессии",
+      "text_example": "Не начисляют баллы после оплаты на АЗС"
+     },
+     "n_attack": 500,
+     "off": {
+      "attack_bursts": 0,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 1,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29667,
+      "attack_tickets_in_detector": 500,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 0,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 1,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 480,
+      "accepted": 29187,
+      "attack_tickets_in_detector": 20,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    }
+   ],
+   "off": {
+    "runs": 3,
+    "false_alarm_page_runs": 0,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 500.0,
+    "n_capped_mean": 0.0
+   },
+   "on": {
+    "runs": 3,
+    "false_alarm_page_runs": 0,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 20.0,
+    "n_capped_mean": 480.0
+   }
+  },
+  {
+   "spec": {
+    "id": "b50",
+    "group": "b",
+    "name": "50 свежих аккаунтов, один текст, за 20 мин (случайные моменты)",
+    "kind": "brigade",
+    "n": 50,
+    "minutes": 20,
+    "mut": 0,
+    "timing": "random",
+    "start": "quiet_release"
+   },
+   "per_seed": [
+    {
+     "seed": 201,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T17:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "Хочу оплатить бонусы, приложение пишет недостаточно Мой номер 8-942-511-74-64. ответ пришлите на info7835@inbox.ru Меня "
+     },
+     "n_attack": 50,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27609,
+      "attack_tickets_in_detector": 50,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27609,
+      "attack_tickets_in_detector": 50,
+      "max_dup_share": 0.9285714285714286,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 202,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-19T14:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "Кнопка списать баллы неактивна..."
+     },
+     "n_attack": 50,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28504,
+      "attack_tickets_in_detector": 50,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 5,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28504,
+      "attack_tickets_in_detector": 50,
+      "max_dup_share": 1.0,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 203,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T15:00",
+      "kind": "после релиза без регрессии",
+      "text_example": "Меня зовут Дмитрий Алексеевич. Не могу списать бонусы при оплате"
+     },
+     "n_attack": 50,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29217,
+      "attack_tickets_in_detector": 50,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 1,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29217,
+      "attack_tickets_in_detector": 50,
+      "max_dup_share": 1.0,
+      "kept_page_after_recount": false
+     }
+    }
+   ],
+   "off": {
+    "runs": 3,
+    "false_alarm_page_runs": 3,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 50.0,
+    "n_capped_mean": 0.0
+   },
+   "on": {
+    "runs": 3,
+    "false_alarm_page_runs": 0,
+    "marked_as_brigading_runs": 3,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 50.0,
+    "n_capped_mean": 0.0
+   }
+  },
+  {
+   "spec": {
+    "id": "b100",
+    "group": "b",
+    "name": "100 свежих аккаунтов, один текст, за 20 мин (случайные моменты)",
+    "kind": "brigade",
+    "n": 100,
+    "minutes": 20,
+    "mut": 0,
+    "timing": "random",
+    "start": "quiet_release"
+   },
+   "per_seed": [
+    {
+     "seed": 201,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T17:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "Начисление бонусные баллы виснет, разберитесь пожалуйста..."
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 1.0,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 202,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-19T14:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "Баллы не зачислились на карту лояльности Прошу разобраться."
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 5,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 0.9310344827586207,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 203,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T15:00",
+      "kind": "после релиза без регрессии",
+      "text_example": "АЗС г. Новосибирск, ул. Пушкина, д. 53, кв. 10. карта 9187 76306084 1746 БОНУСЫ НЕ ЗАЧИСЛИЛИСЬ НА КАРТУ ЛОЯЛЬНОСТИ ответ"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 1,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 1.0,
+      "kept_page_after_recount": false
+     }
+    }
+   ],
+   "off": {
+    "runs": 3,
+    "false_alarm_page_runs": 3,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   },
+   "on": {
+    "runs": 3,
+    "false_alarm_page_runs": 0,
+    "marked_as_brigading_runs": 3,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   }
+  },
+  {
+   "spec": {
+    "id": "b200",
+    "group": "b",
+    "name": "200 свежих аккаунтов, один текст, за 20 мин (случайные моменты)",
+    "kind": "brigade",
+    "n": 200,
+    "minutes": 20,
+    "mut": 0,
+    "timing": "random",
+    "start": "quiet_release"
+   },
+   "per_seed": [
+    {
+     "seed": 201,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T17:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "Баллы лояльности есть, а списать нельзя, красная ошибка"
+     },
+     "n_attack": 200,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27759,
+      "attack_tickets_in_detector": 200,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27759,
+      "attack_tickets_in_detector": 200,
+      "max_dup_share": 1.0,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 202,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-19T14:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "кнопка списать баллы неактивна прошу разобраться."
+     },
+     "n_attack": 200,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28654,
+      "attack_tickets_in_detector": 200,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 5,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28654,
+      "attack_tickets_in_detector": 200,
+      "max_dup_share": 1.0,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 203,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T15:00",
+      "kind": "после релиза без регрессии",
+      "text_example": "списание бонусы на азс не работает!"
+     },
+     "n_attack": 200,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29367,
+      "attack_tickets_in_detector": 200,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 1,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29367,
+      "attack_tickets_in_detector": 200,
+      "max_dup_share": 1.0,
+      "kept_page_after_recount": false
+     }
+    }
+   ],
+   "off": {
+    "runs": 3,
+    "false_alarm_page_runs": 3,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 200.0,
+    "n_capped_mean": 0.0
+   },
+   "on": {
+    "runs": 3,
+    "false_alarm_page_runs": 0,
+    "marked_as_brigading_runs": 3,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 200.0,
+    "n_capped_mean": 0.0
+   }
+  },
+  {
+   "spec": {
+    "id": "b100even",
+    "group": "b",
+    "name": "100 аккаунтов, один текст, за 20 мин ровно через равные паузы",
+    "kind": "brigade",
+    "n": 100,
+    "minutes": 20,
+    "mut": 0,
+    "timing": "even",
+    "start": "quiet_release"
+   },
+   "per_seed": [
+    {
+     "seed": 201,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T17:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "списание баллы лояльности на азс не грузится"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 1.0,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 202,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-19T14:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "Начисление бонусы не грузится, разберитесь пожалуйста Перезвоните на +79461118978. Меня зовут Алексеев С.М.. ответ пришл"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 5,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 5,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 1.0,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 203,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T15:00",
+      "kind": "после релиза без регрессии",
+      "text_example": "Карта 5243 5754 5060 1973. Заправился вчера, баллы не пришли с утра Адрес: г. Тюмень, ул. Молодёжная, д. 63, кв. 86 Почт"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 1,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 0.9411764705882353,
+      "kept_page_after_recount": false
+     }
+    }
+   ],
+   "off": {
+    "runs": 3,
+    "false_alarm_page_runs": 3,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   },
+   "on": {
+    "runs": 3,
+    "false_alarm_page_runs": 0,
+    "marked_as_brigading_runs": 3,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   }
+  },
+  {
+   "spec": {
+    "id": "m1",
+    "group": "m",
+    "name": "100 аккаунтов, текст с 1 случайными правками слов у каждого",
+    "kind": "brigade",
+    "n": 100,
+    "minutes": 20,
+    "mut": 1,
+    "timing": "random",
+    "start": "quiet_release"
+   },
+   "per_seed": [
+    {
+     "seed": 201,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T17:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "Не могу списать баллы лояльности при оплате"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 202,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-19T14:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "ЗАПРАВИЛСЯ ВЧЕРА, БАЛЛЫ ЛОЯЛЬНОСТИ НЕ ПРИШЛИ ВТОРОЙ"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 203,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T15:00",
+      "kind": "после релиза без регрессии",
+      "text_example": "Иван Иванович Хочу оплатить бонусные баллы, приложение пиешт недостаточно"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 1,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 0.6153846153846154,
+      "kept_page_after_recount": false
+     }
+    }
+   ],
+   "off": {
+    "runs": 3,
+    "false_alarm_page_runs": 3,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   },
+   "on": {
+    "runs": 3,
+    "false_alarm_page_runs": 2,
+    "marked_as_brigading_runs": 1,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   }
+  },
+  {
+   "spec": {
+    "id": "m2",
+    "group": "m",
+    "name": "100 аккаунтов, текст с 2 случайными правками слов у каждого",
+    "kind": "brigade",
+    "n": 100,
+    "minutes": 20,
+    "mut": 2,
+    "timing": "random",
+    "start": "quiet_release"
+   },
+   "per_seed": [
+    {
+     "seed": 201,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T17:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "добрый вечер, не начисляют баллы оплаты на заправочная станция"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 202,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-19T14:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "Подскажите, не могу сипсать при оплате"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 203,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T15:00",
+      "kind": "после релиза без регрессии",
+      "text_example": "карта лояльности 1564029700735 баллы лояльности не зачислились на лояльности срочно Почта driver867@inbox.ru Мой номер 8"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 1,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 0.5333333333333333,
+      "kept_page_after_recount": false
+     }
+    }
+   ],
+   "off": {
+    "runs": 3,
+    "false_alarm_page_runs": 3,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   },
+   "on": {
+    "runs": 3,
+    "false_alarm_page_runs": 2,
+    "marked_as_brigading_runs": 1,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   }
+  },
+  {
+   "spec": {
+    "id": "m3",
+    "group": "m",
+    "name": "100 аккаунтов, текст с 3 случайными правками слов у каждого",
+    "kind": "brigade",
+    "n": 100,
+    "minutes": 20,
+    "mut": 3,
+    "timing": "random",
+    "start": "quiet_release"
+   },
+   "per_seed": [
+    {
+     "seed": 201,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T17:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "Добрый вечер, анчисление баллы не помогите Потча mihail_5159@company.ru"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 202,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-19T14:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "снова Хочу оплатить баллы, пишет пожалуйста недостаточно"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 203,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T15:00",
+      "kind": "после релиза без регрессии",
+      "text_example": "Привте, охчу оплатить баллы лояльности, приложение пишет"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    }
+   ],
+   "off": {
+    "runs": 3,
+    "false_alarm_page_runs": 3,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   },
+   "on": {
+    "runs": 3,
+    "false_alarm_page_runs": 3,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   }
+  },
+  {
+   "spec": {
+    "id": "m4",
+    "group": "m",
+    "name": "100 аккаунтов, текст с 4 случайными правками слов у каждого",
+    "kind": "brigade",
+    "n": 100,
+    "minutes": 20,
+    "mut": 4,
+    "timing": "random",
+    "start": "quiet_release"
+   },
+   "per_seed": [
+    {
+     "seed": 201,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T17:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "лояльности есть, а списать ошибка помогите 1207!!"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 202,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-19T14:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "госонмер м 101 ес 116 Бонусные есть, а списать красная ошибка разобраться."
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 203,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T15:00",
+      "kind": "после релиза без регрессии",
+      "text_example": "вчера, баллы не пршили уже неделю!"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    }
+   ],
+   "off": {
+    "runs": 3,
+    "false_alarm_page_runs": 3,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   },
+   "on": {
+    "runs": 3,
+    "false_alarm_page_runs": 3,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   }
+  },
+  {
+   "spec": {
+    "id": "m6",
+    "group": "m",
+    "name": "100 аккаунтов, текст с 6 случайными правками слов у каждого",
+    "kind": "brigade",
+    "n": 100,
+    "minutes": 20,
+    "mut": 6,
+    "timing": "random",
+    "start": "quiet_release"
+   },
+   "per_seed": [
+    {
+     "seed": 201,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T17:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "начисленеи снова баллы ребтяа не ребята грузится, помогите..."
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 2,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 2,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 4,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 2,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 2,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 4,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 202,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-19T14:30",
+      "kind": "после релиза без регрессии",
+      "text_example": "Где бонусы за есьт ответ пришлите на info.7281@rambler.ru м771тн55"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 203,
+     "where": {
+      "product": "bonus",
+      "start": "2026-03-10T15:00",
+      "kind": "после релиза без регрессии",
+      "text_example": "не сегодня опять после оплаты заправка"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 2,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 2,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 2,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 2,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     }
+    }
+   ],
+   "off": {
+    "runs": 3,
+    "false_alarm_page_runs": 3,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   },
+   "on": {
+    "runs": 3,
+    "false_alarm_page_runs": 3,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   }
+  },
+  {
+   "spec": {
+    "id": "c1",
+    "group": "c",
+    "name": "100 аккаунтов, чужая тема, начало через 30 мин после начала регрессии",
+    "kind": "brigade",
+    "n": 100,
+    "minutes": 20,
+    "mut": 0,
+    "timing": "random",
+    "start": "regression",
+    "offset_min": 30,
+    "topic": "other"
+   },
+   "per_seed": [
+    {
+     "seed": 201,
+     "where": {
+      "product": "portal",
+      "start": "2026-03-10T17:52",
+      "regression": "E2",
+      "regression_topic": "portal_vacation",
+      "regression_onset": "2026-03-10T17:22",
+      "kind": "вместе с настоящей регрессией",
+      "text_example": "подскажите, зарплатный листок пришёл с неверной суммой"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 1.0,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 202,
+     "where": {
+      "product": "portal",
+      "start": "2026-03-09T12:52",
+      "regression": "E1",
+      "regression_topic": "portal_vpn",
+      "regression_onset": "2026-03-09T12:22",
+      "kind": "вместе с настоящей регрессией",
+      "text_example": "НУЖНА СПРАВКА С МЕТСА РАБОТЫ, ГДЕ ОФОРМИТЬ"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 5,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 1.0,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 203,
+     "where": {
+      "product": "portal",
+      "start": "2026-03-11T14:59",
+      "regression": "E2",
+      "regression_topic": "portal_vpn",
+      "regression_onset": "2026-03-11T14:29",
+      "kind": "вместе с настоящей регрессией",
+      "text_example": "Светлана Расчётный листок пустой, разберитесь пожалуйста"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": true,
+      "n_false_page_bursts": 1,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 1,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 0.9523809523809523,
+      "kept_page_after_recount": false
+     }
+    }
+   ],
+   "off": {
+    "runs": 3,
+    "false_alarm_page_runs": 3,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   },
+   "on": {
+    "runs": 3,
+    "false_alarm_page_runs": 0,
+    "marked_as_brigading_runs": 3,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   }
+  },
+  {
+   "spec": {
+    "id": "c2",
+    "group": "c",
+    "name": "100 аккаунтов копируют текст самой регрессии, через 30 мин после начала",
+    "kind": "brigade",
+    "n": 100,
+    "minutes": 20,
+    "mut": 0,
+    "timing": "random",
+    "start": "regression",
+    "offset_min": 30,
+    "topic": "regression",
+    "label_as_topic": true
+   },
+   "per_seed": [
+    {
+     "seed": 201,
+     "where": {
+      "product": "portal",
+      "start": "2026-03-10T17:52",
+      "regression": "E2",
+      "regression_topic": "portal_vacation",
+      "regression_onset": "2026-03-10T17:22",
+      "kind": "вместе с настоящей регрессией",
+      "text_example": "Не могу оформить отпуск через портал"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [
+       "E2"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 0.9655172413793104,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 202,
+     "where": {
+      "product": "portal",
+      "start": "2026-03-09T12:52",
+      "regression": "E1",
+      "regression_topic": "portal_vpn",
+      "regression_onset": "2026-03-09T12:22",
+      "kind": "вместе с настоящей регрессией",
+      "text_example": "добрый вечер, портал сотрудника недоступен вне офиса. Меня зовут Ахметов А.А.. ответ пришлите на mihail_1232@mail.ru"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 5,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 0.9642857142857143,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 203,
+     "where": {
+      "product": "portal",
+      "start": "2026-03-11T14:59",
+      "regression": "E2",
+      "regression_topic": "portal_vpn",
+      "regression_onset": "2026-03-11T14:29",
+      "kind": "вместе с настоящей регрессией",
+      "text_example": "подскажите, доступ к порталу пропал после смены пароля. прошу разобраться. Это Шарипов Ильдар Иванович."
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E2"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 1,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 1.0,
+      "kept_page_after_recount": false
+     }
+    }
+   ],
+   "off": {
+    "runs": 3,
+    "false_alarm_page_runs": 0,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 5,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   },
+   "on": {
+    "runs": 3,
+    "false_alarm_page_runs": 0,
+    "marked_as_brigading_runs": 3,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   }
+  },
+  {
+   "spec": {
+    "id": "c3",
+    "group": "c",
+    "name": "300 аккаунтов копируют текст регрессии, через 30 мин после начала",
+    "kind": "brigade",
+    "n": 300,
+    "minutes": 20,
+    "mut": 0,
+    "timing": "random",
+    "start": "regression",
+    "offset_min": 30,
+    "topic": "regression",
+    "label_as_topic": true
+   },
+   "per_seed": [
+    {
+     "seed": 201,
+     "where": {
+      "product": "portal",
+      "start": "2026-03-10T17:52",
+      "regression": "E2",
+      "regression_topic": "portal_vacation",
+      "regression_onset": "2026-03-10T17:22",
+      "kind": "вместе с настоящей регрессией",
+      "text_example": "Заявка на отпуск не отправляется на согласование"
+     },
+     "n_attack": 300,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [
+       "E2"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27859,
+      "attack_tickets_in_detector": 300,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27859,
+      "attack_tickets_in_detector": 300,
+      "max_dup_share": 0.9649122807017544,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 202,
+     "where": {
+      "product": "portal",
+      "start": "2026-03-09T12:52",
+      "regression": "E1",
+      "regression_topic": "portal_vpn",
+      "regression_onset": "2026-03-09T12:22",
+      "kind": "вместе с настоящей регрессией",
+      "text_example": "Привет, портал не открывается из дома, VPN подключен Спасибо."
+     },
+     "n_attack": 300,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28754,
+      "attack_tickets_in_detector": 300,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 5,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28754,
+      "attack_tickets_in_detector": 300,
+      "max_dup_share": 0.9824561403508771,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 203,
+     "where": {
+      "product": "portal",
+      "start": "2026-03-11T14:59",
+      "regression": "E2",
+      "regression_topic": "portal_vpn",
+      "regression_onset": "2026-03-11T14:29",
+      "kind": "вместе с настоящей регрессией",
+      "text_example": "портал не открывается из дома, vpn подключен"
+     },
+     "n_attack": 300,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E2"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29467,
+      "attack_tickets_in_detector": 300,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 1,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29467,
+      "attack_tickets_in_detector": 300,
+      "max_dup_share": 0.9803921568627451,
+      "kept_page_after_recount": false
+     }
+    }
+   ],
+   "off": {
+    "runs": 3,
+    "false_alarm_page_runs": 0,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 5,
+    "attack_tickets_in_detector_mean": 300.0,
+    "n_capped_mean": 0.0
+   },
+   "on": {
+    "runs": 3,
+    "false_alarm_page_runs": 0,
+    "marked_as_brigading_runs": 3,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 300.0,
+    "n_capped_mean": 0.0
+   }
+  },
+  {
+   "spec": {
+    "id": "c4",
+    "group": "c",
+    "name": "100 аккаунтов копируют текст регрессии за 20 мин ДО её начала",
+    "kind": "brigade",
+    "n": 100,
+    "minutes": 20,
+    "mut": 0,
+    "timing": "random",
+    "start": "regression",
+    "offset_min": -20,
+    "topic": "regression",
+    "label_as_topic": true
+   },
+   "per_seed": [
+    {
+     "seed": 201,
+     "where": {
+      "product": "portal",
+      "start": "2026-03-10T17:02",
+      "regression": "E2",
+      "regression_topic": "portal_vacation",
+      "regression_onset": "2026-03-10T17:22",
+      "kind": "вместе с настоящей регрессией",
+      "text_example": "привет, кнопка отправить заявку на отпуск неактивна"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [
+       "E2"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 3,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [],
+      "real_regressions_caught_attacked": [],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 27659,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 0.9583333333333334,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 202,
+     "where": {
+      "product": "portal",
+      "start": "2026-03-09T12:02",
+      "regression": "E1",
+      "regression_topic": "portal_vpn",
+      "regression_onset": "2026-03-09T12:22",
+      "kind": "вместе с настоящей регрессией",
+      "text_example": "карта лояльности 5072 4150 2747 3274 Это Иван Сергеевич. Портал не открывается из дома, VPN подключен"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 6,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1",
+       "E3"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E3"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 5,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 28554,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 1.0,
+      "kept_page_after_recount": false
+     }
+    },
+    {
+     "seed": 203,
+     "where": {
+      "product": "portal",
+      "start": "2026-03-11T14:09",
+      "regression": "E2",
+      "regression_topic": "portal_vpn",
+      "regression_onset": "2026-03-11T14:29",
+      "kind": "вместе с настоящей регрессией",
+      "text_example": "Помогите! доступ к порталу пропал после смены пароля"
+     },
+     "n_attack": 100,
+     "off": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": false,
+      "quiet_bursts_with_attack": 0,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1",
+       "E2"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 2,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": null,
+      "kept_page_after_recount": false
+     },
+     "on": {
+      "attack_bursts": 1,
+      "false_alarm_page": false,
+      "n_false_page_bursts": 0,
+      "marked_as_brigading": true,
+      "quiet_bursts_with_attack": 1,
+      "real_regressions_caught_clean": [
+       "E1"
+      ],
+      "real_regressions_caught_attacked": [
+       "E1"
+      ],
+      "real_lost": [],
+      "page_bursts_total": 1,
+      "new_page_bursts_without_attack_tickets": 0,
+      "n_capped": 0,
+      "accepted": 29267,
+      "attack_tickets_in_detector": 100,
+      "max_dup_share": 1.0,
+      "kept_page_after_recount": false
+     }
+    }
+   ],
+   "off": {
+    "runs": 3,
+    "false_alarm_page_runs": 0,
+    "marked_as_brigading_runs": 0,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 5,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   },
+   "on": {
+    "runs": 3,
+    "false_alarm_page_runs": 0,
+    "marked_as_brigading_runs": 3,
+    "real_lost_runs": 0,
+    "real_caught_clean": 3,
+    "real_caught_attacked": 3,
+    "attack_tickets_in_detector_mean": 100.0,
+    "n_capped_mean": 0.0
+   }
+  }
+ ],
+ "dup_sim_sensitivity": {
+  "0.8": {
+   "flag_rate_by_edits": {
+    "0": 1.0,
+    "1": 0.465,
+    "2": 0.115,
+    "3": 0.015,
+    "4": 0.0,
+    "6": 0.0
+   },
+   "dev": {
+    "alerts": 119,
+    "max_dup_share": 0.273,
+    "flagged_on_dev": 0
+   }
+  },
+  "0.7": {
+   "flag_rate_by_edits": {
+    "0": 1.0,
+    "1": 0.82,
+    "2": 0.325,
+    "3": 0.14,
+    "4": 0.05,
+    "6": 0.0
+   },
+   "dev": null
+  },
+  "0.6": {
+   "flag_rate_by_edits": {
+    "0": 1.0,
+    "1": 0.92,
+    "2": 0.585,
+    "3": 0.29,
+    "4": 0.195,
+    "6": 0.025
+   },
+   "dev": {
+    "alerts": 119,
+    "max_dup_share": 0.6,
+    "flagged_on_dev": 1
+   }
+  },
+  "0.5": {
+   "flag_rate_by_edits": {
+    "0": 1.0,
+    "1": 0.955,
+    "2": 0.875,
+    "3": 0.655,
+    "4": 0.5,
+    "6": 0.125
+   },
+   "dev": {
+    "alerts": 119,
+    "max_dup_share": 0.583,
+    "flagged_on_dev": 3
+   }
+  }
+ }
+}

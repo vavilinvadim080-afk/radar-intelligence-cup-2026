@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "created": "2026-11-04",
+  "title": "Сценарии ёмкости контура из условия кейса",
+  "official_facts": {
+    "support_managers_approximately": 40,
+    "actual_daily_tickets": null,
+    "infrastructure_cost_ignored_by_case": true,
+    "source": "reports/case-text-for-v5.txt"
+  },
+  "workloads": [
+    {
+      "daily_capacity": 1200.0,
+      "annual_days": 240,
+      "annual_capacity": 288000.0,
+      "weekly_hours_used_per_person": 32,
+      "actual_daily_tickets": null,
+      "is_observed_traffic": false,
+      "day_kind": "support_workday",
+      "inputs": {
+        "staff": 40,
+        "contact_hours_per_day": 6,
+        "handling_minutes": 12,
+        "weeks": 48,
+        "days_per_week": 5,
+        "weekly_work_hours": 40,
+        "analysis_hours_per_week": 2
+      },
+      "provenance": {
+        "staff": "Official case: approximately 40 support managers in the covered contour",
+        "other_inputs": "Scenario assumptions, not measured company operations",
+        "source": "reports/case-text-for-v5.txt"
+      },
+      "id": "long",
+      "text_slots_assumption": 7,
+      "slot_inputs": {
+        "peak_factor": 5,
+        "seconds_per_text": 30,
+        "working_seconds": 28800,
+        "measured_internal_model": false
+      }
+    },
+    {
+      "daily_capacity": 1800.0,
+      "annual_days": 240,
+      "annual_capacity": 432000.0,
+      "weekly_hours_used_per_person": 32,
+      "actual_daily_tickets": null,
+      "is_observed_traffic": false,
+      "day_kind": "support_workday",
+      "inputs": {
+        "staff": 40,
+        "contact_hours_per_day": 6,
+        "handling_minutes": 8,
+        "weeks": 48,
+        "days_per_week": 5,
+        "weekly_work_hours": 40,
+        "analysis_hours_per_week": 2
+      },
+      "provenance": {
+        "staff": "Official case: approximately 40 support managers in the covered contour",
+        "other_inputs": "Scenario assumptions, not measured company operations",
+        "source": "reports/case-text-for-v5.txt"
+      },
+      "id": "middle",
+      "text_slots_assumption": 10,
+      "slot_inputs": {
+        "peak_factor": 5,
+        "seconds_per_text": 30,
+        "working_seconds": 28800,
+        "measured_internal_model": false
+      }
+    },
+    {
+      "daily_capacity": 3600.0,
+      "annual_days": 240,
+      "annual_capacity": 864000.0,
+      "weekly_hours_used_per_person": 32,
+      "actual_daily_tickets": null,
+      "is_observed_traffic": false,
+      "day_kind": "support_workday",
+      "inputs": {
+        "staff": 40,
+        "contact_hours_per_day": 6,
+        "handling_minutes": 4,
+        "weeks": 48,
+        "days_per_week": 5,
+        "weekly_work_hours": 40,
+        "analysis_hours_per_week": 2
+      },
+      "provenance": {
+        "staff": "Official case: approximately 40 support managers in the covered contour",
+        "other_inputs": "Scenario assumptions, not measured company operations",
+        "source": "reports/case-text-for-v5.txt"
+      },
+      "id": "short",
+      "text_slots_assumption": 19,
+      "slot_inputs": {
+        "peak_factor": 5,
+        "seconds_per_text": 30,
+        "working_seconds": 28800,
+        "measured_internal_model": false
+      }
+    }
+  ],
+  "core_economics": {
+    "conservative": {
+      "inputs": {
+        "staff": 20,
+        "weeks": 48,
+        "before_hours": 1,
+        "after_hours": 0.75,
+        "hourly_cost": 800,
+        "adoption": [
+          0.25,
+          0.5,
+          0.75
+        ],
+        "cash_share": 0,
+        "discount": 0.3,
+        "wage_growth": 0
+      },
+      "results": {
+        "annual_hours": 240.0,
+        "annual_capacity_rub": 192000.0,
+        "capacity_flows": [
+          48000.0,
+          96000.0,
+          144000.0
+        ],
+        "cash_flows": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "budget_simple": 0,
+        "budget_discounted": 0,
+        "viable": false
+      }
+    },
+    "base": {
+      "inputs": {
+        "staff": 40,
+        "weeks": 48,
+        "before_hours": 2,
+        "after_hours": 0.5,
+        "hourly_cost": 800,
+        "adoption": [
+          0.5,
+          1,
+          1
+        ],
+        "cash_share": 0.25,
+        "discount": 0.2,
+        "wage_growth": 0
+      },
+      "results": {
+        "annual_hours": 2880.0,
+        "annual_capacity_rub": 2304000.0,
+        "capacity_flows": [
+          1152000.0,
+          2304000.0,
+          2304000.0
+        ],
+        "cash_flows": [
+          288000.0,
+          576000.0,
+          576000.0
+        ],
+        "budget_simple": 1440000.0,
+        "budget_discounted": 973333.3333333334,
+        "viable": true
+      }
+    },
+    "optimistic": {
+      "inputs": {
+        "staff": 40,
+        "weeks": 48,
+        "before_hours": 3,
+        "after_hours": 0.5,
+        "hourly_cost": 1000,
+        "adoption": [
+          0.75,
+          1,
+          1
+        ],
+        "cash_share": 0.5,
+        "discount": 0.1,
+        "wage_growth": 0
+      },
+      "results": {
+        "annual_hours": 4800.0,
+        "annual_capacity_rub": 4800000.0,
+        "capacity_flows": [
+          3600000.0,
+          4800000.0,
+          4800000.0
+        ],
+        "cash_flows": [
+          1800000.0,
+          2400000.0,
+          2400000.0
+        ],
+        "budget_simple": 6600000.0,
+        "budget_discounted": 5422990.232907588,
+        "viable": true
+      }
+    }
+  },
+  "explanation": "40 × 6 контактных часов × 60 / 12, 8 или 4 минуты. Это сценарная ёмкость рабочего дня поддержки, не фактическая нагрузка ГПН.",
+  "assumptions": {
+    "contact_hours_per_day": 6,
+    "working_days_per_week": 5,
+    "working_weeks": 48,
+    "weekly_work_hours": 40,
+    "analysis_hours_per_week": 2,
+    "other_weekly_hours": 8
+  },
+  "core_roi_independent_of_ticket_volume": true,
+  "autoreply": {
+    "status": "candidate_rejected",
+    "include_in_core_roi": false,
+    "observed_delivery_effect": 0,
+    "external_delivery_connected": false,
+    "explanation": "Новый локальный matcher не прошёл контроль; его метрики не переносятся в денежный эффект. Сохраняются прежний путь и независимые исправления защиты."
+  },
+  "not_transferable_legacy_numbers": [
+    "17.42 million annual net",
+    "1060 daily break-even",
+    "2500–6000 observed GPN traffic"
+  ]
+}
