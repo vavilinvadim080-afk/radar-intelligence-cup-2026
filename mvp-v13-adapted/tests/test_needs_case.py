@@ -60,27 +60,31 @@ def test_cross_origin_and_invalid_ticket(client):
     assert client.post('/api/needs/decision',headers=AUTH,json={'product':'webneft','topic':'missing','status':'accepted'}).status_code==404
 
 
-def test_new_semantic_experiment_requires_explicit_opt_in(client,tmp_path,monkeypatch):
+@pytest.mark.parametrize('version',['v5b','v5c'])
+def test_new_semantic_experiment_requires_explicit_opt_in(client,tmp_path,monkeypatch,version):
     import app.needs as router
     monkeypatch.setattr(router,'RUNTIME',tmp_path/'isolated-runtime')
-    monkeypatch.setenv('RADAR_NEEDS_MODE','semantic-v5b');monkeypatch.delenv('RADAR_ALLOW_EXPERIMENTAL',raising=False)
+    monkeypatch.setenv('RADAR_NEEDS_MODE','semantic-'+version);monkeypatch.delenv('RADAR_ALLOW_EXPERIMENTAL',raising=False)
     server.app.state.needs_radar=None
     assert client.get('/api/needs/status',headers=AUTH).status_code==409
 
 
-def test_semantic_experiment_is_connected_to_the_needs_api_without_touching_the_default_database(client,tmp_path,monkeypatch):
+@pytest.mark.parametrize('version,expected_mode',[
+    ('v5b','local-calibrated-v5b-experiment'),('v5c','local-verifier-v5c-experiment')])
+def test_semantic_experiment_is_connected_to_the_needs_api_without_touching_the_default_database(client,tmp_path,monkeypatch,version,expected_mode):
     import app.needs as router
-    import radar_app.local_selection_runtime_v5b as local
+    import importlib
+    local=importlib.import_module('radar_app.local_selection_runtime_'+version)
     class Analyzer:
-        mode='local-calibrated-v5b-experiment';minimum_confidence=0;supports_examples=True
+        mode=expected_mode;minimum_confidence=0;supports_examples=True
         def __call__(self,text,catalog):raise AssertionError('Status must not run inference')
     monkeypatch.setattr(router,'RUNTIME',tmp_path/'isolated-runtime')
     monkeypatch.setattr(local,'experimental_analyzer',lambda:Analyzer())
-    monkeypatch.setenv('RADAR_NEEDS_MODE','semantic-v5b');server.app.state.needs_radar=None
+    monkeypatch.setenv('RADAR_NEEDS_MODE','semantic-'+version);server.app.state.needs_radar=None
     try:
         response=client.get('/api/needs/status',headers=AUTH)
-        assert response.status_code==200 and response.json()['mode']=='local-calibrated-v5b-experiment'
-        assert (tmp_path/'isolated-runtime'/'semantic-v5b-needs.db').exists()
+        assert response.status_code==200 and response.json()['mode']==expected_mode
+        assert (tmp_path/'isolated-runtime'/('semantic-'+version+'-needs.db')).exists()
     finally:
         if server.app.state.needs_radar is not None:server.app.state.needs_radar.close()
         server.app.state.needs_radar=None

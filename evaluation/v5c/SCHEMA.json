@@ -1,0 +1,39 @@
+{
+  "version": "v5c",
+  "jsonl": "UTF-8, one object per line; real newlines escaped in JSON strings",
+  "needs_inputs": [
+    "id",
+    "product",
+    "author_id",
+    "source_id",
+    "created_at",
+    "received_at",
+    "channel",
+    "text"
+  ],
+  "reply_inputs": [
+    "id",
+    "event",
+    "product",
+    "kind",
+    "references",
+    "query",
+    "approved",
+    "state",
+    "fix_confirmed",
+    "human_closed",
+    "fixed_notice_approved",
+    "seen_message_ids"
+  ],
+  "gold_envelope": {
+    "id": "aligned input id, including repeated delivery",
+    "gold": "separate target object"
+  },
+  "reply_kind_semantics": "Existing contract field: candidate/reference context kind, never the query target label. references[].kind has the same contextual role.",
+  "privacy": "No needs kind/topic/gold or reply query target labels in inputs. Opaque independent identities, shared fictitious products across every class.",
+  "duplicates": "Same id/source/author/text/created_at and all other fields; only received_at differs. Gold duplicate flag is delivery-specific.",
+  "ordinary_eligibility": "eligibility means queue_standard only; a valid fix uses queue_fixed_notice with eligibility false.",
+  "fix_prerequisites": "Same topic and product, verified independent sources, consent, approval, confirmed fix, human closure, approved notice and unseen query.",
+  "evaluation_caveat": "Eight known singleton topics and sixteen unknown singletons per split. Topic-pair denominator excludes retransmissions; authors are counted by distinct author_id.",
+  "sealed": "control inputs unavailable to candidate author until CONFIG-FREEZE; gold unavailable until predictions-only are written; authoring/adjudication are sealed too."
+}

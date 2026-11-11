@@ -5471,5 +5471,88 @@ window.addEventListener('beforeprint',()=>project(document.querySelector('#print
 
 DECK.start();
 </script>
+<script>
+DECK.DATA.v11={quality:{"version":"v5c","provenance":{"predictions_path":"/Users/vadimvavilin/ГПН/Радар-официальный-кейс-2026/reports/quality-v5c/control-predictions-only.json","predictions_sha256":"1d3d8718ecca6966a5edff0c89e1a45a6b1fd26719d75d7e284a98e822cea77a","predictions_sha_path":"/Users/vadimvavilin/ГПН/Радар-официальный-кейс-2026/reports/quality-v5c/control-predictions-only.sha256","freeze_path":"/Users/vadimvavilin/ГПН/Радар-официальный-кейс-2026/reports/quality-v5c/CONFIG-FREEZE.json","freeze_sha256":"6b936225b46e9c6b397a2d00187e49a24a1e1740a93bc11e107fe03a73e5ffab","dataset_lock_path":"/Users/vadimvavilin/ГПН/Радар-официальный-кейс-2026/evaluation/v5c/CONTROL-LOCK.json","dataset_lock_sha256":"df5292dff17d24273fe236442c3618f8db9f41b1b95127db8e36006c9fc97185","frozen_files_verified":67,"dataset_files_verified":14},"models":{"baseline":{"needs":{"deliveries":188,"unique_messages":184,"duplicate_deliveries":4,"kind_correct":112,"kind_accuracy":0.6086956521739131,"kind_confusion":{"bug":{"bug":28,"usability":3,"unknown":9,"wish":2},"service":{"unknown":7,"service":31,"wish":2,"bug":1,"usability":1},"wish":{"wish":16,"unknown":16,"service":6,"usability":4},"usability":{"bug":2,"usability":22,"unknown":17,"service":1},"unknown":{"unknown":15,"wish":1}},"pairs":{"tp":43,"fp":19,"fn":197,"tn":16577,"positives":240,"negatives":16596,"predicted_positives":62,"precision":0.6935483870967742,"recall":0.17916666666666667,"f1":0.2847682119205298}},"ordinary_reply":{"population":120,"tp":10,"fp":6,"fn":20,"tn":84,"positives":30,"negatives":90,"predicted_positives":16,"precision":0.625,"recall":0.3333333333333333,"f1":0.43478260869565216},"fixed_notice":{"population":12,"tp":1,"fp":0,"fn":5,"tn":6,"positives":6,"negatives":6,"predicted_positives":1,"precision":1.0,"recall":0.16666666666666666,"f1":0.2857142857142857},"action_accuracy_all":{"population":132,"correct":93,"accuracy":0.7045454545454546,"confusion":{"operator":{"operator":78,"queue_standard":6,"needs_fix_approval":2},"needs_approval":{"operator":4},"queue_standard":{"queue_standard":10,"operator":20},"ignore_duplicate":{"ignore_duplicate":4},"queue_fixed_notice":{"operator":5,"queue_fixed_notice":1},"needs_fix_approval":{"operator":2}}},"cross_path_auto_actions":0,"gates":{"target_80_met":false,"target_checks":{"needs_kind_accuracy":false,"pair_precision":false,"pair_recall":false,"ordinary_precision":false,"ordinary_recall":false},"zero_ordinary_false_positives":false,"zero_fixed_notice_false_positives":true,"no_cross_path_auto_actions":true,"zero_false_positive_replies":false,"auto_enable":false}},"candidate":{"needs":{"deliveries":188,"unique_messages":184,"duplicate_deliveries":4,"kind_correct":153,"kind_accuracy":0.8315217391304348,"kind_confusion":{"bug":{"bug":31,"usability":7,"wish":4},"service":{"service":41,"wish":1},"wish":{"wish":30,"bug":7,"usability":4,"service":1},"usability":{"usability":38,"wish":3,"unknown":1},"unknown":{"unknown":13,"usability":2,"wish":1}},"pairs":{"tp":132,"fp":128,"fn":108,"tn":16468,"positives":240,"negatives":16596,"predicted_positives":260,"precision":0.5076923076923077,"recall":0.55,"f1":0.528}},"ordinary_reply":{"population":120,"tp":7,"fp":3,"fn":23,"tn":87,"positives":30,"negatives":90,"predicted_positives":10,"precision":0.7,"recall":0.23333333333333334,"f1":0.35},"fixed_notice":{"population":12,"tp":1,"fp":0,"fn":5,"tn":6,"positives":6,"negatives":6,"predicted_positives":1,"precision":1.0,"recall":0.16666666666666666,"f1":0.2857142857142857},"action_accuracy_all":{"population":132,"correct":95,"accuracy":0.7196969696969697,"confusion":{"operator":{"operator":81,"queue_standard":3,"needs_fix_approval":2},"needs_approval":{"operator":2,"needs_approval":2},"queue_standard":{"queue_standard":7,"operator":23},"ignore_duplicate":{"ignore_duplicate":4},"queue_fixed_notice":{"queue_fixed_notice":1,"operator":5},"needs_fix_approval":{"operator":2}}},"cross_path_auto_actions":0,"gates":{"target_80_met":false,"target_checks":{"needs_kind_accuracy":true,"pair_precision":false,"pair_recall":false,"ordinary_precision":false,"ordinary_recall":false},"zero_ordinary_false_positives":false,"zero_fixed_notice_false_positives":true,"no_cross_path_auto_actions":true,"zero_false_positive_replies":false,"auto_enable":false}}},"candidate_minus_baseline":{"needs_kind_accuracy":0.22282608695652173,"pair_precision":-0.18585607940446658,"pair_recall":0.37083333333333335,"ordinary_precision":0.07499999999999996,"ordinary_recall":-0.09999999999999998,"fixed_precision":0.0,"fixed_recall":0.0,"action_accuracy_all":0.015151515151515138},"metric_policy":{"undefined":"null; never NaN or an invented perfect score","deduplication":"product/source_id, sorted by created_at then id","ordinary":"120 incoming_ticket rows; positive action queue_standard","fixed":"12 fixed_notice_candidate rows; positive action queue_fixed_notice","target":"0.80 for kind accuracy and grouping/ordinary precision and recall; separate from zero-FP gate","release":"Local evaluation only; auto_enable is always false"}}};
+(function(factory){
+  const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;
+  if(typeof DECK!=='undefined'){
+    DECK.v11Quality=api;
+    DECK.v6Metrics=(root,ctx,scope)=>api.render(root,ctx,scope,DECK,gsap);
+  }
+})(function(){
+  'use strict';
+  const pct=n=>n===null?'нет оценки':(100*n).toLocaleString('ru-RU',{maximumFractionDigits:1})+'%';
+  function verify(m){
+    for(const k of ['tp','fp','fn'])if(!Number.isInteger(m[k])||m[k]<0)throw Error('Invalid confusion counts');
+    const p=m.tp+m.fp?m.tp/(m.tp+m.fp):null,r=m.tp+m.fn?m.tp/(m.tp+m.fn):null;
+    if(m.precision!==p||m.recall!==r)throw Error('Metrics differ from confusion counts');
+    return m;
+  }
+  function prepare(q){
+    if(q?.version!=='v5c'||!q.provenance?.predictions_sha256)throw Error('Independent control report required');
+    const models=['baseline','candidate'].map((id,i)=>{
+      const m=q.models[id];if(m.gates.auto_enable!==false)throw Error('Automatic release is forbidden');
+      if(m.needs.unique_messages!==184||m.ordinary_reply.population!==120||m.fixed_notice.population!==12)throw Error('Wrong populations');
+      verify(m.needs.pairs);verify(m.ordinary_reply);verify(m.fixed_notice);
+      if(m.needs.pairs.tp+m.needs.pairs.fn!==240||m.ordinary_reply.tp+m.ordinary_reply.fn!==30)throw Error('Wrong positive denominator');
+      if(m.needs.kind_correct/184!==m.needs.kind_accuracy)throw Error('Wrong Accuracy');
+      return {...m,id,label:i?'Qwen + проверка пар':'Qwen v5b',color:i?'var(--code)':'var(--human)'};
+    });
+    return {models,needsPassed:['needs_kind_accuracy','pair_precision','pair_recall'].every(k=>models[1].gates.target_checks[k]),
+            autoPassed:models[1].gates.target_80_met&&models[1].gates.zero_false_positive_replies};
+  }
+  function render(root,ctx,scope,D,G){
+    const view=prepare(D.DATA.v11.quality),{s}=D;
+    root.dataset.qualitySource='data/quality-v5c.json';root.dataset.autoEnable='false';root.dataset.resultStatus='measured';
+    const svg=s('svg',{viewBox:'0 0 1688 640',role:'img','aria-label':scope==='needs'?'Accuracy, Precision, Recall на новом контроле':'Подготовка автоответов на новом контроле'});
+    svg.style.cssText='width:100%;height:100%;object-fit:contain';const bars=[];
+    const text=(x,y,value,size=22,color='var(--ink)',anchor='start')=>s('text',{x,y,text:String(value),'text-anchor':anchor,fill:color,style:`font-size:${size}px;font-family:inherit`});
+    svg.append(text(30,30,'Один новый контроль для двух вариантов · независимая синтетика',24),text(30,65,'Внутренних обращений компании «Газпром нефть» нет',21,'var(--muted)'));
+    view.models.forEach((m,i)=>svg.append(s('rect',{x:1080+i*295,y:10,width:14,height:14,rx:3,fill:m.color}),text(1100+i*295,27,m.label,21,m.color)));
+    const specs=scope==='needs'?[
+      ['Accuracy (верные типы)',m=>m.needs.kind_accuracy*100,100],
+      ['Precision (точность пар)',m=>m.needs.pairs.precision===null?null:m.needs.pairs.precision*100,100],
+      ['Recall (полнота пар)',m=>m.needs.pairs.recall===null?null:m.needs.pairs.recall*100,100]
+    ]:[
+      ['Верно подготовлено · TP',m=>m.ordinary_reply.tp,null],
+      ['Ложная подготовка · FP',m=>m.ordinary_reply.fp,null],
+      ['Пропущено · FN',m=>m.ordinary_reply.fn,null]
+    ];
+    specs.forEach(([title,get,cap],i)=>{
+      const x=35+i*550,max=cap||Math.max(1,...view.models.map(get));svg.append(text(x,122,title,24));
+      [0,max/2,max].forEach(v=>{const y=420-230*v/max;svg.append(s('line',{x1:x+40,x2:x+500,y1:y,y2:y,stroke:'var(--line)'}),text(x+30,y+6,String(Math.round(v)),17,'var(--muted)','end'));});
+      if(scope==='needs'){const y=420-230*.8;svg.append(s('line',{x1:x+40,x2:x+500,y1:y,y2:y,stroke:'var(--muted)','stroke-dasharray':'5 6'}),text(x+493,y-8,'80%',17,'var(--muted)','end'));}
+      view.models.forEach((m,j)=>{
+        const value=get(m),cx=x+170+j*220;
+        if(value===null){svg.append(text(cx,405,'нет оценки',20,'var(--muted)','middle'));return;}
+        const height=230*value/max,bar=s('rect',{x:cx-55,y:420-height,width:110,height,rx:7,fill:m.color,
+          'data-v11-model':m.id,'data-v11-chart':String(i),'data-measured-value':String(value)});
+        svg.append(bar,text(cx,408-height,scope==='needs'?pct(value/100):String(value),27,'var(--ink)','middle'));bars.push(bar);
+        svg.append(text(cx,452,j?'Кандидат':'До',21,'var(--muted)','middle'));
+      });
+    });
+    if(scope==='needs'){
+      view.models.forEach((m,i)=>svg.append(text(35+i*825,500,`${m.label}: TP ${m.needs.pairs.tp} / FP ${m.needs.pairs.fp} / FN ${m.needs.pairs.fn}`,23)));
+      const reply=view.models[1].ordinary_reply;
+      svg.append(text(35,545,`184 обращения · 240 пар. Автоответ отдельно: Precision ${pct(reply.precision)}, Recall ${pct(reply.recall)} · n=120`,22,'var(--muted)'),
+        text(35,588,view.needsPassed?'Три показателя потребностей ≥ 80% на этом контроле.':'Порог 80% по всем показателям потребностей пока не достигнут.',25,view.needsPassed?'var(--code)':'var(--human)'));
+    }else{
+      view.models.forEach((m,i)=>{
+        const x=35+i*825,r=m.ordinary_reply,f=m.fixed_notice;
+        svg.append(text(x,493,`${m.label}: Precision ${pct(r.precision)} · Recall ${pct(r.recall)}`,23),
+          text(x,535,`Фикс отдельно: TP ${f.tp} / FP ${f.fp} / FN ${f.fn} · n=12`,22,'var(--muted)'));
+      });
+      svg.append(text(35,583,'Обычный ответ: 120 случаев, 30 допустимых. Автовыпуск отключён; внешней доставки нет.',23,'var(--human)'));
+    }
+    svg.append(text(35,624,'data/quality-v5c.json · всплески не переизмерялись · автовыпуск отключён · это не производственные показатели',19,'var(--muted)'));
+    root.append(svg);const tl=G.timeline({paused:true});bars.forEach((bar,i)=>tl.from(bar,{scaleY:0,transformOrigin:'50% 100%',duration:1.1,ease:'power2.out'},i*.08));return tl;
+  }
+  return {prepare,render};
+});
+
+(function(){const b=DECK.nodeById('quality').branches.find(b=>b.id==='speed');
+b.notes='Четыре действия сохранены. Всплески: прежние исторические замеры. Потребности и автоответ: frozen Qwen-v5b и новый Qwen+reranker сравниваются на одном независимом синтетическом контроле v5c. До контроля зафиксированы 67 файлов, источники, веса и параметры; эталон открыт только после записи полных предсказаний. Потребности: 184 уникальных сообщения и 240 истинных пар. Обычный ответ: 120 случаев, 30 допустимых; фикс: отдельно 12/6. История может перегруппировать ранее наблюдённые сообщения, это не измерение онлайн-задержки. Все проценты и TP/FP/FN читаются из data/quality-v5c.json. Автовыпуск отключён, внутренних данных компании и внешней доставки нет. TF-IDF/E5 остаются в историческом отчёте v5b, их цифры с новым контролем не смешиваются.';
+})();
+</script>
 </body>
 </html>

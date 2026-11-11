@@ -23,6 +23,7 @@ runtime/models/*
 !runtime/models/e5-small-v5b/
 !runtime/models/qwen-embedding-v5b/
 !runtime/models/nli-minilm-v5b/
+!runtime/models/qwen-reranker-v5c/
 runtime/models/*/*
 !runtime/models/*/MANIFEST.json
 *.part

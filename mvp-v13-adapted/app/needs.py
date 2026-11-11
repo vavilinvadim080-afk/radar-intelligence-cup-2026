@@ -59,7 +59,12 @@ def install_needs(app):
         if getattr(app.state,'needs_radar',None) is None:
             mode=os.environ.get('RADAR_NEEDS_MODE','demo')
             config=private_config();kw={}
-            if mode=='semantic-v5b':
+            if mode=='semantic-v5c':
+                from radar_app.local_selection_runtime_v5c import experimental_analyzer
+                try:analyzer=experimental_analyzer()
+                except (ValueError,OSError,KeyError):raise HTTPException(409,'Эксперимент не подготовлен или не разрешён')
+                kw={'analyzer':analyzer,'now':'2026-11-01T12:00:00Z'}
+            elif mode=='semantic-v5b':
                 from radar_app.local_selection_runtime_v5b import experimental_analyzer
                 try:analyzer=experimental_analyzer()
                 except ValueError:raise HTTPException(409,'Локальный смысловой эксперимент ещё не подготовлен или не разрешён')
@@ -118,7 +123,7 @@ def install_needs(app):
     @app.post('/api/needs/demo')
     def demo(request:Request):
         products=principal(request,write=True);r=get()
-        if r.mode not in {'demo-rules','local-semantic-prototype','local-calibrated-v5b-experiment'}:raise HTTPException(409,'Пример доступен только в локальном режиме')
+        if r.mode not in {'demo-rules','local-semantic-prototype','local-calibrated-v5b-experiment','local-verifier-v5c-experiment'}:raise HTTPException(409,'Пример доступен только в локальном режиме')
         rows=json.loads((ROOT/'data/demo.json').read_text())
         results=[r.ingest(x) for x in rows if x['product'] in products]
         return {'results':results,'stats':r.stats()}

@@ -1,0 +1,67 @@
+{
+  "algorithm": "sha256",
+  "version": "v5c",
+  "files": {
+    "tune-inputs.jsonl": "5344e721c4eb96dc9ab4d8291b2363ae6bffc389f85ffe8cda7b064c1d09a236",
+    "tune-gold.jsonl": "d2928c76846e74d0a599abdc0db48a3412c5d6711639e0147988be863f7641b2",
+    "reply-tune-inputs.jsonl": "a88ad4c7b27d7cf53f3a92b950f823d3901cd7da4c0baf00ae552a563ab6a528",
+    "reply-tune-gold.jsonl": "1b277de27c3f970b037f27ef4f05e3d991682deacc67dcf1a4fb65418643f0eb",
+    "control-inputs.jsonl": "fa3116f5e3f9f44ae1c41b4d5447abe369f5416144b99023bb46e368691f7ae5",
+    "sealed/control-gold.jsonl": "542d350c35fc33a9fbf1b61b5b41199098e71988cd3f69c959e55c3d250dd581",
+    "reply-control-inputs.jsonl": "2b41f55a36e23ac33e7fc90923df8db3b45a98209760d5f2d1256835b9d17d93",
+    "sealed/reply-control-gold.jsonl": "6bff864a68e68860e155f3bd753f33f0833f6043c015a8396cf57b77a7c0e3cc",
+    "PROTOCOL.md": "c78c8857e8bd46425fc54c2a3bfb1229a8d48df39248f365c19272c5bd41af84",
+    "SCHEMA.json": "a1921d9328db0b7d11d2dbff4976cc519b5ea2435272c8c94518e355b70f1fe4",
+    "validate.py": "333813ec105cde7830b4c63e5578e52d4666e41fd34bab2a4371e1ca173650a7",
+    "sealed/authoring.py": "353b97af17e8f8edbb7d0478a8a8ec285cd416c4b2f5e71ed8a22d3357a021a0",
+    "sealed/adjudication.json": "9fa6ff24308924be2dd418219d7199fe29cf0182f212d6201bad62242bf3462b",
+    "sealed/source-lock.json": "9ed47ebcd16be26d6555db2eb1416ae654f6acd3ec2791e2ccb2b2defed5602c"
+  },
+  "protocol": "Sealed independently before candidate freeze; control gold is not public.",
+  "populations": {
+    "tune": {
+      "needs": {
+        "deliveries": 188,
+        "unique_messages": 184,
+        "duplicate_deliveries": 4,
+        "families_of_four": 40,
+        "true_pairs": 240,
+        "known_singletons": 8,
+        "unknown_singletons": 16,
+        "unique_authors": 144
+      },
+      "replies": {
+        "total": 132,
+        "ordinary": 120,
+        "ordinary_positive": 30,
+        "ordinary_negative": 90,
+        "fix": 12,
+        "fix_positive": 6,
+        "fix_negative": 6,
+        "semantic_hard_negatives_without_flag_shortcut": 36
+      }
+    },
+    "control": {
+      "needs": {
+        "deliveries": 188,
+        "unique_messages": 184,
+        "duplicate_deliveries": 4,
+        "families_of_four": 40,
+        "true_pairs": 240,
+        "known_singletons": 8,
+        "unknown_singletons": 16,
+        "unique_authors": 144
+      },
+      "replies": {
+        "total": 132,
+        "ordinary": 120,
+        "ordinary_positive": 30,
+        "ordinary_negative": 90,
+        "fix": 12,
+        "fix_positive": 6,
+        "fix_negative": 6,
+        "semantic_hard_negatives_without_flag_shortcut": 36
+      }
+    }
+  }
+}

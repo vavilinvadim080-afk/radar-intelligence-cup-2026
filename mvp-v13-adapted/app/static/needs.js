@@ -12,7 +12,7 @@ async function load(){
   if(!select.options.length){status.products.forEach(p=>{const o=document.createElement('option');o.value=p;o.textContent={webneft:'ВебНефть',portal:'Внутренний портал'}[p]||p;select.append(o)});prod=select.value;}
   const data=await api('/api/needs/topics?product='+encodeURIComponent(prod));cards=data.cards;
   context=await api('/api/needs/context?product='+encodeURIComponent(prod));
-  $('#needs-mode').textContent=({'demo-rules':'Синтетика · правила, без модели','local-semantic-prototype':'Синтетика · локальная семантика','local-calibrated-v5b-experiment':'Синтетика · смысловой отбор, эксперимент','internal':'Внутренняя модель','internal-model':'Внутренняя модель'})[status.mode]||'Режим анализа не распознан';
+  $('#needs-mode').textContent=({'demo-rules':'Синтетика · правила, без модели','local-semantic-prototype':'Синтетика · локальная семантика','local-calibrated-v5b-experiment':'Синтетика · смысловой отбор, эксперимент','local-verifier-v5c-experiment':'Qwen · проверка похожих обращений, эксперимент','internal':'Внутренняя модель','internal-model':'Внутренняя модель'})[status.mode]||'Режим анализа не распознан';
   $('#needs-window').textContent=status.window_days+' дней · от '+status.min_users+' авторов';
   $('#needs-error').textContent='';
   $('#needs-count').textContent=cards.length+' тем';

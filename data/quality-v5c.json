@@ -1,0 +1,277 @@
+{
+  "version": "v5c",
+  "provenance": {
+    "predictions_path": "/Users/vadimvavilin/ГПН/Радар-официальный-кейс-2026/reports/quality-v5c/control-predictions-only.json",
+    "predictions_sha256": "1d3d8718ecca6966a5edff0c89e1a45a6b1fd26719d75d7e284a98e822cea77a",
+    "predictions_sha_path": "/Users/vadimvavilin/ГПН/Радар-официальный-кейс-2026/reports/quality-v5c/control-predictions-only.sha256",
+    "freeze_path": "/Users/vadimvavilin/ГПН/Радар-официальный-кейс-2026/reports/quality-v5c/CONFIG-FREEZE.json",
+    "freeze_sha256": "6b936225b46e9c6b397a2d00187e49a24a1e1740a93bc11e107fe03a73e5ffab",
+    "dataset_lock_path": "/Users/vadimvavilin/ГПН/Радар-официальный-кейс-2026/evaluation/v5c/CONTROL-LOCK.json",
+    "dataset_lock_sha256": "df5292dff17d24273fe236442c3618f8db9f41b1b95127db8e36006c9fc97185",
+    "frozen_files_verified": 67,
+    "dataset_files_verified": 14
+  },
+  "models": {
+    "baseline": {
+      "needs": {
+        "deliveries": 188,
+        "unique_messages": 184,
+        "duplicate_deliveries": 4,
+        "kind_correct": 112,
+        "kind_accuracy": 0.6086956521739131,
+        "kind_confusion": {
+          "bug": {
+            "bug": 28,
+            "usability": 3,
+            "unknown": 9,
+            "wish": 2
+          },
+          "service": {
+            "unknown": 7,
+            "service": 31,
+            "wish": 2,
+            "bug": 1,
+            "usability": 1
+          },
+          "wish": {
+            "wish": 16,
+            "unknown": 16,
+            "service": 6,
+            "usability": 4
+          },
+          "usability": {
+            "bug": 2,
+            "usability": 22,
+            "unknown": 17,
+            "service": 1
+          },
+          "unknown": {
+            "unknown": 15,
+            "wish": 1
+          }
+        },
+        "pairs": {
+          "tp": 43,
+          "fp": 19,
+          "fn": 197,
+          "tn": 16577,
+          "positives": 240,
+          "negatives": 16596,
+          "predicted_positives": 62,
+          "precision": 0.6935483870967742,
+          "recall": 0.17916666666666667,
+          "f1": 0.2847682119205298
+        }
+      },
+      "ordinary_reply": {
+        "population": 120,
+        "tp": 10,
+        "fp": 6,
+        "fn": 20,
+        "tn": 84,
+        "positives": 30,
+        "negatives": 90,
+        "predicted_positives": 16,
+        "precision": 0.625,
+        "recall": 0.3333333333333333,
+        "f1": 0.43478260869565216
+      },
+      "fixed_notice": {
+        "population": 12,
+        "tp": 1,
+        "fp": 0,
+        "fn": 5,
+        "tn": 6,
+        "positives": 6,
+        "negatives": 6,
+        "predicted_positives": 1,
+        "precision": 1.0,
+        "recall": 0.16666666666666666,
+        "f1": 0.2857142857142857
+      },
+      "action_accuracy_all": {
+        "population": 132,
+        "correct": 93,
+        "accuracy": 0.7045454545454546,
+        "confusion": {
+          "operator": {
+            "operator": 78,
+            "queue_standard": 6,
+            "needs_fix_approval": 2
+          },
+          "needs_approval": {
+            "operator": 4
+          },
+          "queue_standard": {
+            "queue_standard": 10,
+            "operator": 20
+          },
+          "ignore_duplicate": {
+            "ignore_duplicate": 4
+          },
+          "queue_fixed_notice": {
+            "operator": 5,
+            "queue_fixed_notice": 1
+          },
+          "needs_fix_approval": {
+            "operator": 2
+          }
+        }
+      },
+      "cross_path_auto_actions": 0,
+      "gates": {
+        "target_80_met": false,
+        "target_checks": {
+          "needs_kind_accuracy": false,
+          "pair_precision": false,
+          "pair_recall": false,
+          "ordinary_precision": false,
+          "ordinary_recall": false
+        },
+        "zero_ordinary_false_positives": false,
+        "zero_fixed_notice_false_positives": true,
+        "no_cross_path_auto_actions": true,
+        "zero_false_positive_replies": false,
+        "auto_enable": false
+      }
+    },
+    "candidate": {
+      "needs": {
+        "deliveries": 188,
+        "unique_messages": 184,
+        "duplicate_deliveries": 4,
+        "kind_correct": 153,
+        "kind_accuracy": 0.8315217391304348,
+        "kind_confusion": {
+          "bug": {
+            "bug": 31,
+            "usability": 7,
+            "wish": 4
+          },
+          "service": {
+            "service": 41,
+            "wish": 1
+          },
+          "wish": {
+            "wish": 30,
+            "bug": 7,
+            "usability": 4,
+            "service": 1
+          },
+          "usability": {
+            "usability": 38,
+            "wish": 3,
+            "unknown": 1
+          },
+          "unknown": {
+            "unknown": 13,
+            "usability": 2,
+            "wish": 1
+          }
+        },
+        "pairs": {
+          "tp": 132,
+          "fp": 128,
+          "fn": 108,
+          "tn": 16468,
+          "positives": 240,
+          "negatives": 16596,
+          "predicted_positives": 260,
+          "precision": 0.5076923076923077,
+          "recall": 0.55,
+          "f1": 0.528
+        }
+      },
+      "ordinary_reply": {
+        "population": 120,
+        "tp": 7,
+        "fp": 3,
+        "fn": 23,
+        "tn": 87,
+        "positives": 30,
+        "negatives": 90,
+        "predicted_positives": 10,
+        "precision": 0.7,
+        "recall": 0.23333333333333334,
+        "f1": 0.35
+      },
+      "fixed_notice": {
+        "population": 12,
+        "tp": 1,
+        "fp": 0,
+        "fn": 5,
+        "tn": 6,
+        "positives": 6,
+        "negatives": 6,
+        "predicted_positives": 1,
+        "precision": 1.0,
+        "recall": 0.16666666666666666,
+        "f1": 0.2857142857142857
+      },
+      "action_accuracy_all": {
+        "population": 132,
+        "correct": 95,
+        "accuracy": 0.7196969696969697,
+        "confusion": {
+          "operator": {
+            "operator": 81,
+            "queue_standard": 3,
+            "needs_fix_approval": 2
+          },
+          "needs_approval": {
+            "operator": 2,
+            "needs_approval": 2
+          },
+          "queue_standard": {
+            "queue_standard": 7,
+            "operator": 23
+          },
+          "ignore_duplicate": {
+            "ignore_duplicate": 4
+          },
+          "queue_fixed_notice": {
+            "queue_fixed_notice": 1,
+            "operator": 5
+          },
+          "needs_fix_approval": {
+            "operator": 2
+          }
+        }
+      },
+      "cross_path_auto_actions": 0,
+      "gates": {
+        "target_80_met": false,
+        "target_checks": {
+          "needs_kind_accuracy": true,
+          "pair_precision": false,
+          "pair_recall": false,
+          "ordinary_precision": false,
+          "ordinary_recall": false
+        },
+        "zero_ordinary_false_positives": false,
+        "zero_fixed_notice_false_positives": true,
+        "no_cross_path_auto_actions": true,
+        "zero_false_positive_replies": false,
+        "auto_enable": false
+      }
+    }
+  },
+  "candidate_minus_baseline": {
+    "needs_kind_accuracy": 0.22282608695652173,
+    "pair_precision": -0.18585607940446658,
+    "pair_recall": 0.37083333333333335,
+    "ordinary_precision": 0.07499999999999996,
+    "ordinary_recall": -0.09999999999999998,
+    "fixed_precision": 0.0,
+    "fixed_recall": 0.0,
+    "action_accuracy_all": 0.015151515151515138
+  },
+  "metric_policy": {
+    "undefined": "null; never NaN or an invented perfect score",
+    "deduplication": "product/source_id, sorted by created_at then id",
+    "ordinary": "120 incoming_ticket rows; positive action queue_standard",
+    "fixed": "12 fixed_notice_candidate rows; positive action queue_fixed_notice",
+    "target": "0.80 for kind accuracy and grouping/ordinary precision and recall; separate from zero-FP gate",
+    "release": "Local evaluation only; auto_enable is always false"
+  }
+}

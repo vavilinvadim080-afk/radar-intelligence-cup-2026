@@ -1,0 +1,7025 @@
+{
+  "baseline": {
+    "needs": [
+      {
+        "id": "n-7ed9291166814421880305b2",
+        "kind": "bug",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "bug",
+          "nli-b06b55de8a0664069d48"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.27691270373206234,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-17f633c81d4e46bebed94510",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.3241936450823156,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-88227ba827d6483bb113e5ca",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "nli-7f98935318a16b2c1f15"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.29922780014879685,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-480f26ad27c441dca1b953a3",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "nli-9c82a9d9923129e4d1bb"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.26145566687883043,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-9d245b219ff04f8d9013b656",
+        "kind": "wish",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "wish",
+          "nli-22a77f47a4a164216b30"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.24658302928379533,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-db1bb07d618c46359e5908ef",
+        "kind": "service",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "service",
+          "nli-feaf0b2cd85e75f214b3"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.3428572630453993,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-e3c7bd85595d442bbdba53d2",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "nli-bec464427b182d346545"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.2691050417440362,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-e232511068c74dc982ec5e0d",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.3298006256401775,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-4a39769a81a34f6e93f9969b",
+        "kind": "usability",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "usability",
+          "nli-9a36540e6323e2856512"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.3209665330365601,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-b3c7fbfa71ea4f7d899305ad",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "nli-4f9fa5080900efac2eab"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.31332165033461434,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-af60a5bf375c45d588a6752b",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "nli-9fa1483eca3d60245b53"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.24621474912039554,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-a3ee7f6fad034911b4a1cc5b",
+        "kind": "bug",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "bug",
+          "nli-b06b55de8a0664069d48"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.34584716792783177,
+          "matches": [
+            {
+              "match_score": 0.8780190465390159,
+              "support_score": 0.7553421981131534,
+              "topic": "nli-b06b55de8a0664069d48"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-b09eadfb761e4bb2a1339a6a",
+        "kind": "wish",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "wish",
+          "nli-b6ba5a284cde42bfb022"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.193585935086015,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-728f34970f5d4ffdb96ba525",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.3401216286843782,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-bf3ebc688f154a95a3d3808a",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "nli-5cc0eeff02d7bd558dc3"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.23380238288908153,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-7c5689c5ce8d42a0bc8f90ef",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "nli-3494b4fe5f1fc4db00d9"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.4310376200977406,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-0ff11df3153c42f3b9be4f1f",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2152750425322831,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-79b2b1cb705747e08a53fc24",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "nli-3494b4fe5f1fc4db00d9"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.5033417593168942,
+          "matches": [
+            {
+              "match_score": 0.8629326891645579,
+              "support_score": 0.6996486778107721,
+              "topic": "nli-3494b4fe5f1fc4db00d9"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-99553f8aaf6a42a8a83401ed",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "nli-509ada6f6a46fbaf51a9"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.24194155907885107,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-d6b0539c52244f29aa7f6079",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "nli-f1c2f513797f8271f195"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.4772719324010879,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-d5431157260d4201bb8135ee",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "nli-398c740f1475409ed4a4"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.268366403580175,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-16051fb08bf14c6dbea2952e",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.27548044751011075,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-2346ac125cbd4b299b8986f0",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "nli-f1c2f513797f8271f195"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.5216460086695064,
+          "matches": [
+            {
+              "match_score": 0.6509717395768587,
+              "support_score": 0.6454837656838576,
+              "topic": "nli-f1c2f513797f8271f195"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-a291f2f1a03b4682a5f7880d",
+        "kind": "service",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "service",
+          "nli-9ccdbae02055696c233c"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.5138113767735899,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-4815ec64066d4bfe9e0b9111",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "nli-29f0f059fa45e603a134"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.26852329272255004,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-7fc786287ae84075a7d27209",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.23331522707849592,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-e58db8e773dc4589a0920ce3",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "nli-e96e2098814a5570647d"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.3346221003083568,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-e1aa37610e754a968f82e679",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "nli-15c75e0fa4abd634e14f"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.3179091118413091,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-a7892d2e403746c68c371942",
+        "kind": "wish",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "wish",
+          "nli-874e4027201f1c100bea"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.34594137558322474,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-c70db1397d02408bb078cb42",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.28378105615750066,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-1d51e6dc09db4ebc83234038",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "nli-1bfbcdcf52e2cadcd906"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.441494077405001,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-599df0b42fd54af5b5820591",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.28939061706145736,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-008139b77639461b94c14480",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "nli-cff2c537647d54181d03"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.2952991907774699,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-6ecc4ac7abed43ab8f848454",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "nli-3c653fcb60ce301dd075"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.3821428823074695,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-1387659ab80a41af8f794689",
+        "kind": "bug",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "bug",
+          "nli-b21453b6f07d239ba153"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.25621779395267735,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-77b5a8c84610455dac3592c6",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.3539082130237801,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-3d9ba8d036c24051ae5f515e",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.4649914601647332,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-f4acc88cd8664cb491e17fe6",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "nli-e96e2098814a5570647d"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.37996783232095055,
+          "matches": [
+            {
+              "match_score": 0.8140235309885107,
+              "support_score": 0.6634812028815988,
+              "topic": "nli-e96e2098814a5570647d"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-8072d19fb5bd4d4b85a466a3",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.3121984698245754,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-afa001cdcfac4ceb8c4b8e6b",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2717655465045801,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-5fc0b9597c0742d1a3af56b5",
+        "kind": "wish",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "wish",
+          "nli-6daece8b967288ae800d"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.26179933001878125,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-7c1b2a9b47fb43ef8e75e5da",
+        "kind": "service",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "service",
+          "nli-38dd076adcfe7ad5d3bc"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.40168542307905414,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-4520f3eead8d483eb3918b4a",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.3213197168928311,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-2659eeffb286414fb0b39c9c",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.25538519235754326,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-1a5f10f1ae8b44198e91abfc",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.25345437049774283,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-65952c870a0145f4babf00fe",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "nli-ca60201cdc6d5d1bde22"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.281215700023016,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-170e4ad87cea442b809bb503",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "nli-e96e2098814a5570647d"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.3176422818025868,
+          "matches": [
+            {
+              "match_score": 0.7183492622751199,
+              "support_score": 0.6668227638421662,
+              "topic": "nli-e96e2098814a5570647d"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-73a91efc84074989959104fd",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "nli-1aa7474f736019bd9d05"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.25202902242819325,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-dd04001e4e4c4847ba21e1be",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.33127731639566066,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-0949ad4abbee4d2d841b3b42",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2756530808643667,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-61a4d50abb4e4bb1a9d85046",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "nli-b8b6964836581a651637"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.3055238539714339,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-600868f0e8114c3aad658fda",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "nli-398c740f1475409ed4a4"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.2785892817707423,
+          "matches": [
+            {
+              "match_score": 0.7326084774095577,
+              "support_score": 0.6326058964384408,
+              "topic": "nli-398c740f1475409ed4a4"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-f3bf67506ad741f1a1e12105",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2897507152284012,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-d336a177220740b0a49d4b7c",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.35379879230694417,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-3d1b9fa0017d4df8bdfc121a",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "nli-a3e5c83585d162215241"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.4421597671470727,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-8067d108b74b4e1e9ad332dc",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "nli-039f4e8a8a791931651e"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.30676747449261343,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-7f47279f54084e53ae185662",
+        "kind": "usability",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "usability",
+          "nli-9a36540e6323e2856512"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.4766717669015452,
+          "matches": [
+            {
+              "match_score": 0.6334267761113935,
+              "support_score": 0.5902399125170421,
+              "topic": "nli-9a36540e6323e2856512"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-783d1ce3172b403eb495273d",
+        "kind": "bug",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "bug",
+          "nli-9b1ae994396c552dd432"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.33136644132818177,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-ef33b3799a5a4e32b081f7e9",
+        "kind": "usability",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "usability",
+          "nli-eeb7e7c2fdba09a89724"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.384399464479326,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-af1ab31fe6304d3f993e1754",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.3006506159721354,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-1a936220ddd54072a967567e",
+        "kind": "wish",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "wish",
+          "nli-d8284ae738f663a361a9"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.34521177412817655,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-d02c7014833b4e1392972892",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2521688246833991,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-dd3943f272d9485f8e84e5e6",
+        "kind": "wish",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "wish",
+          "nli-caeb094cf6bd2c97c13b"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.32435954769166364,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-ad6a8efaf43b4e97b18047b9",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "nli-9fa1483eca3d60245b53"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.31936474595873815,
+          "matches": [
+            {
+              "match_score": 0.817033939898448,
+              "support_score": 0.73240678641542,
+              "topic": "nli-9fa1483eca3d60245b53"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-63eb33994d9c4fdcb6cd6bbe",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "nli-a3e5c83585d162215241"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.322043040235156,
+          "matches": [
+            {
+              "match_score": 0.8026987511404206,
+              "support_score": 0.6754211262125079,
+              "topic": "nli-a3e5c83585d162215241"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-07c95f18af7549ef92555c4e",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2696776330751084,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-a073061cdc0141a38696ea69",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "nli-3c653fcb60ce301dd075"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.3795434807887366,
+          "matches": [
+            {
+              "match_score": 0.7885770007577529,
+              "support_score": 0.7067448362666997,
+              "topic": "nli-3c653fcb60ce301dd075"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-c4389d0e8fb642aaa7ece320",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "nli-3ce1d337212e32d8d204"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.31295184410571336,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-a0a7a562461e40cdb8fafd25",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "nli-85a893256d59da1fd5b7"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.21845503221482157,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-fc8844a736dd4dc9b2aaa3ba",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "nli-1ec5e95bf193002983b7"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.29884024322194475,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-c1f7a5ca6247469f838bbcfb",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "nli-efed6ae7613f00b57597"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.28911502115056753,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-fdcd1c0e42e74b068d943360",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "nli-2bdb8a6660d22871ed7a"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.5465242764123078,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-3a2df9bf2a39422896e69f26",
+        "kind": "usability",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "usability",
+          "nli-d4c7b801557c96f27a59"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.30525392445113797,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-f81d8b2ff5fc418ab611d0a1",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.25957842995342617,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-0d940de8db054388867c13cc",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.3081134261078929,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-47dc2f89bf91448898a8405f",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "nli-9c82a9d9923129e4d1bb"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.40663598177684934,
+          "matches": [
+            {
+              "match_score": 0.7796336595431469,
+              "support_score": 0.7042175479191746,
+              "topic": "nli-9c82a9d9923129e4d1bb"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-2558f59cca30433ab101e460",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "nli-061e327259396aefee12"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.3294471181585023,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-4085f1a0320d4466be86910a",
+        "kind": "bug",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "bug",
+          "nli-39c58fa8894c836b6d8c"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.22212517710658192,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-fc68fadbd56f4f8a8e0338ab",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2655027551855563,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-13afa65d30c24beda585b0d4",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.3018113373138073,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-9e4457e3057349b28849173e",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "nli-c4fca0e47b95ec5d99ad"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.2796666196623996,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-9d6429c32a7a44eab2a1655e",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "nli-d072f9e25d4715f8677d"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.45214652582081216,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-672373b47f01405c8fcebf3d",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2679404155579895,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-b1fd70d9346b4b5b80406511",
+        "kind": "service",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "service",
+          "nli-feaf0b2cd85e75f214b3"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.5076594120648467,
+          "matches": [
+            {
+              "match_score": 0.8558874278862315,
+              "support_score": 0.7109193354271756,
+              "topic": "nli-feaf0b2cd85e75f214b3"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-2738cb84b5e1483f9513b830",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "nli-90b6b00df18526262aec"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.3757688087874923,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-a1b8dcf30ce447adbfc4b6cd",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.30777459483667946,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-ea98883adeac45a69c285492",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "nli-bb4b4ef18707f2a0e976"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.28035325394867505,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-1438d67454124f04a9eb6d21",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "nli-d072f9e25d4715f8677d"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.2743943373529342,
+          "matches": [
+            {
+              "match_score": 0.7232514647508806,
+              "support_score": 0.6532630146353633,
+              "topic": "nli-d072f9e25d4715f8677d"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-42f2206e6c214edc861711fc",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.23058996905698403,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-1f772f74aefe44de9c4b4313",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "nli-a3e5c83585d162215241"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.5787578065287398,
+          "matches": [
+            {
+              "match_score": 0.6065898595231913,
+              "support_score": 0.636254390401407,
+              "topic": "nli-a3e5c83585d162215241"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-b3ddc7dd80774373a389ddff",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "nli-baf48e264017e92fdf2a"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.36507378604225604,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-247b1e859cda4319bdfb96b6",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2485960367608302,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-fb2bd0e9a5174a06ba0f3985",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "nli-5bdeb06ec74433279bb2"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.5315901378164303,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-5783311c656040eca50480e1",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.24316995444368272,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-c9f542dbd43d4cd8b83c264b",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "nli-2bdb8a6660d22871ed7a"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.3288900684662294,
+          "matches": [
+            {
+              "match_score": 0.8227476012643349,
+              "support_score": 0.6836519662004255,
+              "topic": "nli-2bdb8a6660d22871ed7a"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-226582385f534dc194f9134a",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.21537214194108437,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-f00c8f1f6d2f416283a2782d",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.28588688994231515,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-3b04af24c24d4c459de33e21",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "nli-fdad214931567545949b"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.36845123171339333,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-3bdca8afaa8343bfb7a5d51b",
+        "kind": "wish",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "wish",
+          "nli-22a77f47a4a164216b30"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.17907554132808665,
+          "matches": [
+            {
+              "match_score": 0.7515262181282061,
+              "support_score": 0.6540294478563554,
+              "topic": "nli-22a77f47a4a164216b30"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-ec37a8409a4c41f98e209ddb",
+        "kind": "wish",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "wish",
+          "nli-caeb094cf6bd2c97c13b"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.25187682926908606,
+          "matches": [
+            {
+              "match_score": 0.870888238032101,
+              "support_score": 0.7252236850943231,
+              "topic": "nli-caeb094cf6bd2c97c13b"
+            },
+            {
+              "match_score": 0.7549833755731294,
+              "support_score": 0.6410719026413826,
+              "topic": "nli-6daece8b967288ae800d"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-78ee9af0e73a454c812cb017",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.45334201469593793,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-5f735642965f43d9849cdcda",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2644560713345517,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-aa9ed9fe73a746b3ac544ce5",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2758677769018329,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-9a65cad728924929bd6f6f13",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2961802367035584,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-609cd8f38d0843ca90981bdb",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "nli-1aa7474f736019bd9d05"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.262212059138412,
+          "matches": [
+            {
+              "match_score": 0.899163906091705,
+              "support_score": 0.785252319797306,
+              "topic": "nli-1aa7474f736019bd9d05"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-50cd26ef1cf94d9886098616",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "nli-cff2c537647d54181d03"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.3135456543715509,
+          "matches": [
+            {
+              "match_score": 0.9315564304016641,
+              "support_score": 0.7730693130485364,
+              "topic": "nli-cff2c537647d54181d03"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-b1e83351ff63488992f3cfa5",
+        "kind": "usability",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "usability",
+          "nli-d1a57906fafaabb94c4e"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.38753619564280467,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-cd881529cce44abab9ed0acb",
+        "kind": "wish",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "wish",
+          "nli-ec5d8e280cba8efea4cb"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.2912058174941799,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-b496b681d7da410aa2a3e891",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.4908960287339407,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-4bc741b60e744155b94e193d",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "nli-9c82a9d9923129e4d1bb"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.3850955427390407,
+          "matches": [
+            {
+              "match_score": 0.6655613074872535,
+              "support_score": 0.8477677255079745,
+              "topic": "nli-9c82a9d9923129e4d1bb"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-a65066d7ba2b4f6a818fa49f",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "nli-9c82a9d9923129e4d1bb"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.3663958505529177,
+          "matches": [
+            {
+              "match_score": 0.7131519959794843,
+              "support_score": 0.7073967152889765,
+              "topic": "nli-9c82a9d9923129e4d1bb"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-3df0ba6281184e79912d0d51",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "nli-9651f8b74b4ab19463ab"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.28934684059057186,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-3d5d2f757b954f8ea778349d",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2222754208105153,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-e05b91cfb84c4c29b72e9fa6",
+        "kind": "service",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "service",
+          "nli-9ccdbae02055696c233c"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.4891933868636342,
+          "matches": [
+            {
+              "match_score": 0.7446159019181746,
+              "support_score": 0.6507087337417605,
+              "topic": "nli-9ccdbae02055696c233c"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-5078f306439e4a36b641cac1",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2768777028067375,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-3b0f45f2e4484a998a65920b",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.24307057507329183,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-6e78066611c34439b876ef66",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2678278021534392,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-f469909e0d7f472ca3efa4b6",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "nli-1ec5e95bf193002983b7"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.47717359219107963,
+          "matches": [
+            {
+              "match_score": 0.7610081095760403,
+              "support_score": 0.6507544572067117,
+              "topic": "nli-1ec5e95bf193002983b7"
+            },
+            {
+              "match_score": 0.7521365218146668,
+              "support_score": 0.7020702629162103,
+              "topic": "nli-039f4e8a8a791931651e"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-9dce16b27f104edb86679095",
+        "kind": "bug",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "bug",
+          "nli-c4389e98bc05d12e101c"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.25217781745354545,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-0888dcefcef042d2950fe331",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "nli-bb4b4ef18707f2a0e976"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.3259543381463526,
+          "matches": [
+            {
+              "match_score": 0.8183586617405375,
+              "support_score": 0.7188215027182072,
+              "topic": "nli-bb4b4ef18707f2a0e976"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-3c9cccb1bce648f0920aceb9",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "nli-c2793a782390c825fa8f"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.3948664350506863,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-0092eb75328a493dac5a8840",
+        "kind": "bug",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "bug",
+          "nli-b06b55de8a0664069d48"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.25374231998601043,
+          "matches": [
+            {
+              "match_score": 0.7406174134742922,
+              "support_score": 0.704784943235411,
+              "topic": "nli-b06b55de8a0664069d48"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-653c623ad72c427b96e5292b",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "nli-ea42e38be5b45cfb601e"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.29575759964626785,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-319f8fe9167546c6ac183f28",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "nli-cff2c537647d54181d03"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.28287768288303394,
+          "matches": [
+            {
+              "match_score": 0.7104224245563602,
+              "support_score": 0.6679430360590551,
+              "topic": "nli-cff2c537647d54181d03"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-51d8dc1580fc4527a3369d7a",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2684069612804833,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-661017e35bb945369dfb23bf",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "nli-398c740f1475409ed4a4"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.24464163215672666,
+          "matches": [
+            {
+              "match_score": 0.7534944816393149,
+              "support_score": 0.6797109100290063,
+              "topic": "nli-398c740f1475409ed4a4"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-686e779d1e1b4b4293142c39",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.4708500041343239,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-6040ef1ba25948399e478c25",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "nli-79e2e713999485247a05"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.5769111236505352,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-c0d73143b62f44d7b457b05f",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.24262446323322256,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-b4fc97bd9a644afc8c5f5068",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.35619020080272074,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-921d770c41ae413da4463374",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "nli-4d72d6447accdc3814b1"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.5072826321235567,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-d551ebb4cf344c1080b206ed",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.3463549481207515,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-9682c18ff4a64819ac2b166b",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.3218441112677604,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-9fd394a26e0f4760a0edee6e",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "nli-85a893256d59da1fd5b7"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.26219991464563147,
+          "matches": [
+            {
+              "match_score": 0.8138916637731362,
+              "support_score": 0.6934193337276265,
+              "topic": "nli-85a893256d59da1fd5b7"
+            },
+            {
+              "match_score": 0.7405658686049417,
+              "support_score": 0.6568437744206757,
+              "topic": "nli-ca60201cdc6d5d1bde22"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-168be3f067bd46bf9fc20fe4",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.23936605281154358,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-08aa20c66f56440a9c1cf5b7",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "nli-fdad214931567545949b"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.33040396610105915,
+          "matches": [
+            {
+              "match_score": 0.6705423096798929,
+              "support_score": 0.6175715859644659,
+              "topic": "nli-fdad214931567545949b"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-178e826ac03c4f2494108f37",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.27602179294066964,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-973b0d353b3a4a96953ae2df",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.4379142412983208,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-64e0d5424a484502bd0b5b16",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "nli-32163e1b42db26e487c0"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.35693602205797237,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-270410ca44794e9ab7af0554",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.265163684531449,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-aa51944640be4fc9a4660fb9",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2949048174214398,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-5d7fa130381a4c0785bab393",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.23957425297869986,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-aabdddb43f7349e5accec59b",
+        "kind": "usability",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "usability",
+          "nli-d08c011acb639c708228"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.29308279579490165,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-7e2d22c0b42b445192186dca",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "nli-3ce1d337212e32d8d204"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.37620432729918807,
+          "matches": [
+            {
+              "match_score": 0.8867099151071304,
+              "support_score": 0.7800779443038309,
+              "topic": "nli-3ce1d337212e32d8d204"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-2a3f900036df4202946c8625",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.23976342323464941,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-8309505c4d5e474aa8fe9dfe",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "nli-7dd3a2cd5031a1741230"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.4361968708233216,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-96d5fd76191345cf831320e3",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "nli-7dd3a2cd5031a1741230"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.4116274937115864,
+          "matches": [
+            {
+              "match_score": 0.7554135206575306,
+              "support_score": 0.6558234475069946,
+              "topic": "nli-7dd3a2cd5031a1741230"
+            },
+            {
+              "match_score": 0.7497903296703669,
+              "support_score": 0.6522484280275744,
+              "topic": "nli-061e327259396aefee12"
+            },
+            {
+              "match_score": 0.7029812245024749,
+              "support_score": 0.6361907796605162,
+              "topic": "nli-cff2c537647d54181d03"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-282cd01417084bf5a86accdc",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "nli-eecd16a9aac45211a1e7"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.28368082116392385,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-975677eaca854aa4aaec6303",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "nli-7dd3a2cd5031a1741230"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.378629777978962,
+          "matches": [
+            {
+              "match_score": 0.7159262298398132,
+              "support_score": 0.6476546591870687,
+              "topic": "nli-7dd3a2cd5031a1741230"
+            },
+            {
+              "match_score": 0.6305140941493566,
+              "support_score": 0.622484237629499,
+              "topic": "nli-cff2c537647d54181d03"
+            },
+            {
+              "match_score": 0.6038003809891004,
+              "support_score": 0.602256687382686,
+              "topic": "nli-061e327259396aefee12"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-763946a22ac649eeb8c7972c",
+        "kind": "bug",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "bug",
+          "nli-7c3e23b90ec78ee9e582"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.21856431047844146,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-c4ac78af66a449529b83d06f",
+        "kind": "wish",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "wish",
+          "nli-22a77f47a4a164216b30"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.19858788216821863,
+          "matches": [
+            {
+              "match_score": 0.7386382993597398,
+              "support_score": 0.7471102970287793,
+              "topic": "nli-22a77f47a4a164216b30"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-fcc59bfd05ba4d9f8b35db2e",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.244314685841801,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-098964ace74b44dba5cdd5d3",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2675394446409999,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-3c2bdda18bf443c2a4452229",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "nli-cac460d0944b0d46bad8"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.315124609362949,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-33d9faf5f2c54eb19ff9b99b",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "nli-8bfaa4017d7e0a70a4e1"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.2514802824511329,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-be179f247f8d4418bc053183",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "nli-fbac7e84d5506353f7cb"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.30268181455407045,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-9bb157bd91f34fdea624070b",
+        "kind": "bug",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "bug",
+          "nli-8d411df6f74a321ab1da"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.32348021909126184,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-913a6b2f200149edb3b7d3bc",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "nli-9699ff0961509da2200d"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.25956583623808105,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-9f76e3d36f5c4b1bbce6e5a2",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.3013586332543314,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-6e3b6b2b5fa24c22ae58cced",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2250562652774575,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-1d702254ae85423eb6b00454",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "nli-e96e2098814a5570647d"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.34990884839344116,
+          "matches": [
+            {
+              "match_score": 0.6421217565718591,
+              "support_score": 0.5864127884998421,
+              "topic": "nli-e96e2098814a5570647d"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-6524ba881915452e9fafeba3",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.2887879214874697,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-ccc14be1ed5e42e99e73d2fb",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "nli-e96e2098814a5570647d"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.33679686204003034,
+          "matches": [
+            {
+              "match_score": 0.7256797288586078,
+              "support_score": 0.6884072706126769,
+              "topic": "nli-e96e2098814a5570647d"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-fbf45df0130f41928e40822b",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "nli-4d72d6447accdc3814b1"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.32391046581418326,
+          "matches": [
+            {
+              "match_score": 0.9628141020034151,
+              "support_score": 0.804867771333992,
+              "topic": "nli-4d72d6447accdc3814b1"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-d968378e720442f1a1eed0ba",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.44977383052575287,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-8e3ce75846604715b3f1b68c",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.27179481888890733,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-91fe5f70e809438cb233fe3f",
+        "kind": "bug",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "bug",
+          "nli-b5f8475679f0c621b65b"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.24427987967862347,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-3faa33261faa4aed9af46a43",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "nli-7f98935318a16b2c1f15"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.2968027241071727,
+          "matches": [
+            {
+              "match_score": 0.8309470625375375,
+              "support_score": 0.6921779369580914,
+              "topic": "nli-7f98935318a16b2c1f15"
+            },
+            {
+              "match_score": 0.706745308564989,
+              "support_score": 0.6334592161604529,
+              "topic": "nli-ca60201cdc6d5d1bde22"
+            },
+            {
+              "match_score": 0.6461358279439401,
+              "support_score": 0.6679524059492276,
+              "topic": "nli-85a893256d59da1fd5b7"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-c1ea125bca6648afa86bff4e",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "nli-bb4b4ef18707f2a0e976"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.2766070594740348,
+          "matches": [
+            {
+              "match_score": 0.8944448938794072,
+              "support_score": 0.7641606601626725,
+              "topic": "nli-bb4b4ef18707f2a0e976"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-5ab9c4247d05450a8b512736",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "nli-c4fca0e47b95ec5d99ad"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.24566068839031122,
+          "matches": [
+            {
+              "match_score": 0.7618248331869055,
+              "support_score": 0.646361893787301,
+              "topic": "nli-c4fca0e47b95ec5d99ad"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-cab5f6610cc846149da8d97c",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.3085685333632743,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-526cc52e093e472894df992b",
+        "kind": "usability",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "usability",
+          "nli-d4c7b801557c96f27a59"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.3208218814126393,
+          "matches": [
+            {
+              "match_score": 0.6373863787844415,
+              "support_score": 0.6406440310483381,
+              "topic": "nli-d4c7b801557c96f27a59"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-480d2f4f8bb0497cb8d9c718",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "nli-38e2d96dafb09d694759"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.3190257461767952,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-d5106e184cd1413892e2c632",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "nli-79e2e713999485247a05"
+        ],
+        "trace": {
+          "kind": "service",
+          "kind_score": 0.37944964200817893,
+          "matches": [
+            {
+              "match_score": 0.7435267129858066,
+              "support_score": 0.6351821657814519,
+              "topic": "nli-79e2e713999485247a05"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-6b167c470bbf4be99e3c7059",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "nli-af9d6b55d69e80807ad8"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.3679199759208175,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-f886b05a19854ab88754f3e2",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "kind": "unknown",
+          "kind_score": 0.38099117334605004,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-03c2c8df259b48969cba6c9e",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "nli-1760a8a7dfabfe143e6e"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.23808270117686064,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-5685814afdfb4852a7c56e44",
+        "kind": "usability",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "usability",
+          "nli-2fe8431f52e7bc4c9ad6"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.332706053477234,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-6ade2ed820984593acce43ed",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "nli-c4fca0e47b95ec5d99ad"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.1830292377272435,
+          "matches": [
+            {
+              "match_score": 0.6078180216801454,
+              "support_score": 0.605587184496252,
+              "topic": "nli-c4fca0e47b95ec5d99ad"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-e46592a180844d0cbe6eee3c",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "nli-bc1db7211efb30250600"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.3836145869115488,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-0a1026431c6d434598e2a1da",
+        "kind": "bug",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "bug",
+          "nli-f4f1e85f45f74944346c"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.4653004092573692,
+          "matches": []
+        }
+      },
+      {
+        "id": "n-7ad8275a411c414d85f2df53",
+        "kind": "usability",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "usability",
+          "nli-2fe8431f52e7bc4c9ad6"
+        ],
+        "trace": {
+          "kind": "usability",
+          "kind_score": 0.41042852277414577,
+          "matches": [
+            {
+              "match_score": 0.6069042137191203,
+              "support_score": 0.6108596577675605,
+              "topic": "nli-2fe8431f52e7bc4c9ad6"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-00604085d98c457aa54cdc48",
+        "kind": "wish",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "wish",
+          "nli-874e4027201f1c100bea"
+        ],
+        "trace": {
+          "kind": "wish",
+          "kind_score": 0.3083786610188589,
+          "matches": [
+            {
+              "match_score": 0.8742352687768232,
+              "support_score": 0.7275493370659559,
+              "topic": "nli-874e4027201f1c100bea"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n-cc7a0756511a454bb8e4d478",
+        "kind": "bug",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "bug",
+          "nli-7c3e23b90ec78ee9e582"
+        ],
+        "trace": {
+          "kind": "bug",
+          "kind_score": 0.20970384000397702,
+          "matches": [
+            {
+              "match_score": 0.8705376008310264,
+              "support_score": 0.7604152491490688,
+              "topic": "nli-7c3e23b90ec78ee9e582"
+            },
+            {
+              "match_score": 0.6677702251637713,
+              "support_score": 0.6489357002837683,
+              "topic": "nli-8d411df6f74a321ab1da"
+            }
+          ]
+        }
+      }
+    ],
+    "reply": [
+      {
+        "id": "r-bae18bd01c444162843c20ed",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-1d10078ec6bc47dd8f44302b",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-8ea337ecf7ef4ff5836571f3",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-c73513d90ae44b5bb43df71f",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-82cb04f6e4324655af8d9b6c",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-5f9d438b272240f897844b34",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-30c5cb6a2b4a441baa5d734a",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-f217fb5963ef4623a7283121",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-7b26cfbd4efb4807a761a548",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-b254a83d91cd4365b3d21abc",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-858e0a6933bb42febd3c7087",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-a9f09e5118c341058032b44b",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-d0d583dc655c4f6bb6e2956d",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-78537b18492949e8bd248cad",
+        "action": "ignore_duplicate",
+        "reason": "повторная доставка",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-33526a64d60e43fb8b6437ed",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-66461061d9ca4f59872cca32",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-c281e3f3ac064af08c7915cf",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-71dbb6fec02c4a5fb9e1c7cd",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-ba7efbabfa5344e581283337",
+        "action": "operator",
+        "reason": "другой продукт",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-ba6e728c0fed4078820ae2c1",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-ec989526294348d886509efb",
+        "action": "operator",
+        "reason": "нет согласия",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-ece7b61ef1d547d68de4b5e3",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-392c198d1ef84220a0f5a369",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-3ef0e5b6a09b468f9300287d",
+        "action": "operator",
+        "reason": "индивидуальное денежное действие",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-45d2879b074349faabb815d7",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-7828d9e6e6ce463e9395b5fe",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-0095433ba4d245feab0feb29",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-2ac9d28c4278496a82cb23e0",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-580b8d004a364ac1a6184c51",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-c02ae57efa5f45ffa21a6746",
+        "action": "operator",
+        "reason": "нет согласия",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-37c31fea323645faa1c23a5f",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-bc615c38663d47f8bb159071",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-2ea8269d0edc459faf42a8e2",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-c78f2600970e44309bd1c1d9",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-13035fe5fc2148edb2b1fd00",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-4a259683e93f4a2689b348ee",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false,
+        "risk": "credentials"
+      },
+      {
+        "id": "r-fa400ca18a8b4263a10baa53",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-5f6cdeaf923548d6a757ec58",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-5e8243ea4150477e816511a0",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-29a4349364434af1998a6eaf",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-6a3c263353494ad6a29e4f40",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-08b2aeb9afb548f0a6dc4527",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-10f546f5782c433ab3d14156",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-630c4d7e218449cca18d3b72",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-bd6220d117d848c3b0f0c13c",
+        "action": "ignore_duplicate",
+        "reason": "повторная доставка",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-832f176e440042a59ab27e38",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-5d88ca173fb44787961badb2",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-fb90e4d4ecd94472905cfedd",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-6683fa2c5f7c47df88ae19d3",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-687be58441464016b5553530",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-9ac4f7c228564b5e9016caa7",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-589b023c9b0c4c0a8319ae21",
+        "action": "operator",
+        "reason": "нет согласия",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-88029b81da8c443b8301a4fa",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": false
+      },
+      {
+        "id": "r-0e82a262951b441f93bdd42e",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-32ae99e93c62451e903265ec",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-9ad654c4032f4cffb96bbb9b",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-d21efb92d75644588b7c6ecf",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-6696ea2bc33f4d438b08ca8c",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-5398a11118e54c2aa53357eb",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-7de8c4694161473e84fbad47",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-3b1a668f59c24f3ab31a80ad",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-5b53f8d5c08547cb97b5163b",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-9022429f05c444a0950b0bb6",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-0629ffdb2a9a445faf8871a3",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-d7b0587342a74e28aa6b32db",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-2d956ef95b794db0ba2f17ad",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-616c45aa36d840fe8cde1a1f",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-5fe4968fbabc43aabd65b3c2",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-5359475f721547c7869e581d",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-01db81e39c7342e9b5c4f0c7",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-d74e3d6a347e48b8b4fe5681",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-7f26b5f1b782479088317e86",
+        "action": "ignore_duplicate",
+        "reason": "повторная доставка",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-be32951ede504ca6a3725307",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-9313269e2eb249cabe37c4f3",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-29c8218837104205a53abd90",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-c8d91b06a69e46e6982c9780",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-8728f381521d477b9a26e500",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-6f62c28b53ea48958262e1e8",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-9fd3357a91b04c25a13dcfa3",
+        "action": "operator",
+        "reason": "другой продукт",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-f23be37e58bf429dabe26cec",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-114ac5ef23b1411bb3fe36e2",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-628e61ada4f24803881e47a9",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-926d7652754c4dbd803fec2a",
+        "action": "needs_fix_approval",
+        "reason": "нужны подтверждения фикса и рассылки",
+        "same_topic": true,
+        "eligible": false
+      },
+      {
+        "id": "r-e10b445f7a0f478fb4fc709b",
+        "action": "needs_fix_approval",
+        "reason": "нужны подтверждения фикса и рассылки",
+        "same_topic": true,
+        "eligible": false
+      },
+      {
+        "id": "r-d4524540f384457abac3aefe",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-4f0d19d1958c4a0ba50a87d6",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-e5d9e60da20c4c199c04cffa",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-ca02000c479848f7988d2090",
+        "action": "operator",
+        "reason": "нет согласия",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-6e50ee79010b4f2fb7b36891",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-df22e00ceeea43ab8825c763",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-8e6b9595105d41ed8dd63021",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-386e84a2b06d4cb3a36a92bf",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-cbb7ae2624264e48afc3667f",
+        "action": "operator",
+        "reason": "индивидуальное денежное действие",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-58c21c28a9ce4953ba4d71f5",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-9c997a960d36429693630625",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-edd8fa923bc74bb9907a4acd",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-edcecb61cf86428b90570f64",
+        "action": "ignore_duplicate",
+        "reason": "повторная доставка",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-379bf77ae1a245f599a74747",
+        "action": "operator",
+        "reason": "другой продукт",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-7bf5481051594e298f97f5fb",
+        "action": "operator",
+        "reason": "другой продукт",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-5efac3a514e3499d90ba72d6",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-67a455d1533a49fea85674ac",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-58927847f2474f9fa10c8325",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-b7715034ec574576b49c3f5f",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-546e65090069422d8f03bd18",
+        "action": "operator",
+        "reason": "другой продукт",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-7fe47b3678e74557be2c6b88",
+        "action": "queue_fixed_notice",
+        "reason": "отдельная подтверждённая рассылка",
+        "same_topic": true,
+        "eligible": false
+      },
+      {
+        "id": "r-37b9484608c1414f9ec93826",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": false
+      },
+      {
+        "id": "r-5f1f75296e204815999aec84",
+        "action": "operator",
+        "reason": "другой продукт",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-e70e47d556614453b2eb7a72",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-b81f93a1885e4e36966a9965",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-18274dd7fd5c40fca5fb43a6",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-5ceaa87bf7b041acb9dd8a36",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-6c764b3a1e804eae82610aed",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": false
+      },
+      {
+        "id": "r-b176aea8b6c841eba0f7b41c",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-e1feff10dd8149a09176e7b8",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-b84dc40e2ab14fd0b41cf510",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-536be15016f04e99a2bc3072",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-ba8cb5aae6d24fbe9651ecf5",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-fd3d97dac4074d34b54d9c76",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-c3df3bb9abe446e7b55ab2eb",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-4eb2e4d6f1214b0e98f4709e",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-f4814349a06844ca92947d93",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-9ac0a6310801496f8104115c",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-90344abb35bf41c3a982e58e",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-a4c28bd426fc49b99c6573bc",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-7f2e8347fbd34dc98513d1cc",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-19f14ff2cf184b7288767011",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-a9d64529aaa948c9a7bb49c8",
+        "action": "operator",
+        "reason": "нет согласия",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-bfdce7fee86a41fd832e3410",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-cd1e64e492924665880011a5",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-458eb263799d4960b3744917",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-0563d2b322704b5ea290ca3c",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-b828b11194744d3ab2fe3959",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      }
+    ]
+  },
+  "candidate": {
+    "needs": [
+      {
+        "id": "n-7ed9291166814421880305b2",
+        "kind": "bug",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "bug",
+          "history-e35fe2b9e1156fe02451"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-17f633c81d4e46bebed94510",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "history-4c5c2041c1e296e1d21a"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-88227ba827d6483bb113e5ca",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "history-0da70feac7828c432ec7"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-480f26ad27c441dca1b953a3",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "history-0c8b4f4102fd999ca5b6"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-9d245b219ff04f8d9013b656",
+        "kind": "wish",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "wish",
+          "history-80f0485213505e10490d"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 8,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-db1bb07d618c46359e5908ef",
+        "kind": "service",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "service",
+          "history-3487e9fcbf10c53788b9"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-e3c7bd85595d442bbdba53d2",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-f75ef6c2cb98bd7d15e2"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-e232511068c74dc982ec5e0d",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "history-506cc176625f870f108e"
+        ],
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-4a39769a81a34f6e93f9969b",
+        "kind": "usability",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "usability",
+          "history-815af29f779af6490964"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-b3c7fbfa71ea4f7d899305ad",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "history-1024243275057e5793d5"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 7,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-af60a5bf375c45d588a6752b",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "history-c836144f9bb8e04b7ace"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-a3ee7f6fad034911b4a1cc5b",
+        "kind": "bug",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "bug",
+          "history-e35fe2b9e1156fe02451"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-b09eadfb761e4bb2a1339a6a",
+        "kind": "bug",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "bug",
+          "history-ec43e27a4a4538fdbd99"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-728f34970f5d4ffdb96ba525",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "history-516ad709cce44b33d3c3"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-bf3ebc688f154a95a3d3808a",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "history-7a76c686db395eb01d63"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-7c5689c5ce8d42a0bc8f90ef",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "history-4c5c2041c1e296e1d21a"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-0ff11df3153c42f3b9be4f1f",
+        "kind": "usability",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "usability",
+          "history-815af29f779af6490964"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-79b2b1cb705747e08a53fc24",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "history-4c5c2041c1e296e1d21a"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-99553f8aaf6a42a8a83401ed",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "history-c3900c7a783da9a94773"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-d6b0539c52244f29aa7f6079",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "history-826af2160c0ebbfbac06"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-d5431157260d4201bb8135ee",
+        "kind": "wish",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "wish",
+          "history-d7b7b45ece4f1db3695f"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-16051fb08bf14c6dbea2952e",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "history-37503bb865ef407d58e2"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-2346ac125cbd4b299b8986f0",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "history-826af2160c0ebbfbac06"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-a291f2f1a03b4682a5f7880d",
+        "kind": "service",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "service",
+          "history-39bc0c390f2252b95d2a"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-4815ec64066d4bfe9e0b9111",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "history-506cc176625f870f108e"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-7fc786287ae84075a7d27209",
+        "kind": "usability",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "usability",
+          "history-9b1d999522aa81bb2d4a"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-e58db8e773dc4589a0920ce3",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "history-37503bb865ef407d58e2"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-e1aa37610e754a968f82e679",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "history-6b0e2ddef9f2fdf4116d"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-a7892d2e403746c68c371942",
+        "kind": "wish",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "wish",
+          "history-f8e112caa706389056d0"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-c70db1397d02408bb078cb42",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-f75ef6c2cb98bd7d15e2"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-1d51e6dc09db4ebc83234038",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "history-582faa126ff922cf97ff"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-599df0b42fd54af5b5820591",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "history-516ad709cce44b33d3c3"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-008139b77639461b94c14480",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-2419a837d583defd5d06"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-6ecc4ac7abed43ab8f848454",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "history-c084ca2cf83ecf5bbcb2"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-1387659ab80a41af8f794689",
+        "kind": "bug",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "bug",
+          "history-4faa73c004603c01a702"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-77b5a8c84610455dac3592c6",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-3d9ba8d036c24051ae5f515e",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-f4acc88cd8664cb491e17fe6",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "history-37503bb865ef407d58e2"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-8072d19fb5bd4d4b85a466a3",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "history-506cc176625f870f108e"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-afa001cdcfac4ceb8c4b8e6b",
+        "kind": "wish",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "wish",
+          "history-d7b7b45ece4f1db3695f"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-5fc0b9597c0742d1a3af56b5",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "history-506cc176625f870f108e"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-7c1b2a9b47fb43ef8e75e5da",
+        "kind": "service",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "service",
+          "history-e0ff9e5010076a51a086"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-4520f3eead8d483eb3918b4a",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "history-826af2160c0ebbfbac06"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-2659eeffb286414fb0b39c9c",
+        "kind": "usability",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "usability",
+          "history-0894eaa46d107bd4fc12"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-1a5f10f1ae8b44198e91abfc",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "history-826af2160c0ebbfbac06"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-65952c870a0145f4babf00fe",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "history-b4ded03138f9c5dfa160"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-170e4ad87cea442b809bb503",
+        "kind": "bug",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "bug",
+          "history-e0fbc05d6942f6bb4450"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-73a91efc84074989959104fd",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "history-c3900c7a783da9a94773"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-dd04001e4e4c4847ba21e1be",
+        "kind": "usability",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "usability",
+          "history-9b1d999522aa81bb2d4a"
+        ],
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-0949ad4abbee4d2d841b3b42",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "history-0da70feac7828c432ec7"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-61a4d50abb4e4bb1a9d85046",
+        "kind": "wish",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "wish",
+          "history-80f0485213505e10490d"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 8,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-600868f0e8114c3aad658fda",
+        "kind": "wish",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "wish",
+          "history-d7b7b45ece4f1db3695f"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-f3bf67506ad741f1a1e12105",
+        "kind": "wish",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "wish",
+          "history-80f0485213505e10490d"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 8,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-d336a177220740b0a49d4b7c",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-3d1b9fa0017d4df8bdfc121a",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "history-47b7c499384fd0354d6c"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-8067d108b74b4e1e9ad332dc",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "history-c70530846b079761847c"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-7f47279f54084e53ae185662",
+        "kind": "usability",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "usability",
+          "history-98d5075bdcdfec4aeb98"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-783d1ce3172b403eb495273d",
+        "kind": "bug",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "bug",
+          "history-ec43e27a4a4538fdbd99"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-ef33b3799a5a4e32b081f7e9",
+        "kind": "usability",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "usability",
+          "history-fb5706f07b785ee82d78"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-af1ab31fe6304d3f993e1754",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-c52efe01af0a39ea8e7a"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-1a936220ddd54072a967567e",
+        "kind": "service",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "service",
+          "history-3487e9fcbf10c53788b9"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-d02c7014833b4e1392972892",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-8ef9c65d830aee46ef36"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-dd3943f272d9485f8e84e5e6",
+        "kind": "wish",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "wish",
+          "history-6178a88ee29ba23932fa"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-ad6a8efaf43b4e97b18047b9",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "history-c836144f9bb8e04b7ace"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-63eb33994d9c4fdcb6cd6bbe",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "history-47b7c499384fd0354d6c"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-07c95f18af7549ef92555c4e",
+        "kind": "service",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "service",
+          "history-3487e9fcbf10c53788b9"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-a073061cdc0141a38696ea69",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "history-6b0e2ddef9f2fdf4116d"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-c4389d0e8fb642aaa7ece320",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-82ed71736c43945e33b5"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-a0a7a562461e40cdb8fafd25",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "history-b4ded03138f9c5dfa160"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-fc8844a736dd4dc9b2aaa3ba",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "history-f1d529b8cbcd72d6c490"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-c1f7a5ca6247469f838bbcfb",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "history-537d228c420801bd37e2"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-fdcd1c0e42e74b068d943360",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "history-537d228c420801bd37e2"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-3a2df9bf2a39422896e69f26",
+        "kind": "usability",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "usability",
+          "history-0894eaa46d107bd4fc12"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-f81d8b2ff5fc418ab611d0a1",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "history-506cc176625f870f108e"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-0d940de8db054388867c13cc",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "history-1725ac32dda385f5a634"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-47dc2f89bf91448898a8405f",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "history-2607e4b6de0c5568702e"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-2558f59cca30433ab101e460",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-8ef9c65d830aee46ef36"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-4085f1a0320d4466be86910a",
+        "kind": "service",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "service",
+          "history-e0ff9e5010076a51a086"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-fc68fadbd56f4f8a8e0338ab",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "history-c836144f9bb8e04b7ace"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-13afa65d30c24beda585b0d4",
+        "kind": "usability",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "usability",
+          "history-d313fe6cdcb7286f4c99"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-9e4457e3057349b28849173e",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-0be2614591ecea1b1a9f"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-9d6429c32a7a44eab2a1655e",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-8ef9c65d830aee46ef36"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-672373b47f01405c8fcebf3d",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-c52efe01af0a39ea8e7a"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-b1fd70d9346b4b5b80406511",
+        "kind": "service",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "service",
+          "history-3487e9fcbf10c53788b9"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-2738cb84b5e1483f9513b830",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "history-c836144f9bb8e04b7ace"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-a1b8dcf30ce447adbfc4b6cd",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-a387348bbed22452ac4a"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-ea98883adeac45a69c285492",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "history-1024243275057e5793d5"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 7,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-1438d67454124f04a9eb6d21",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-8ef9c65d830aee46ef36"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-42f2206e6c214edc861711fc",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-8ef9c65d830aee46ef36"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-1f772f74aefe44de9c4b4313",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "history-47b7c499384fd0354d6c"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-b3ddc7dd80774373a389ddff",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "history-7c6cf679dd20dec35796"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-247b1e859cda4319bdfb96b6",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "history-ec855adf4a892167c2d5"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-fb2bd0e9a5174a06ba0f3985",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-f87d17f8a5f1312167c0"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-5783311c656040eca50480e1",
+        "kind": "usability",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "usability",
+          "history-356f57d15a8ea0110378"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-c9f542dbd43d4cd8b83c264b",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "history-6b0e2ddef9f2fdf4116d"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-226582385f534dc194f9134a",
+        "kind": "wish",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "wish",
+          "history-d7b7b45ece4f1db3695f"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-f00c8f1f6d2f416283a2782d",
+        "kind": "bug",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "bug",
+          "history-2e82eace6fbcee8ed5ce"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-3b04af24c24d4c459de33e21",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "history-37b2190a7e206bc5e7bc"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-3bdca8afaa8343bfb7a5d51b",
+        "kind": "wish",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "wish",
+          "history-80f0485213505e10490d"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 8,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-ec37a8409a4c41f98e209ddb",
+        "kind": "wish",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "wish",
+          "history-6178a88ee29ba23932fa"
+        ],
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-78ee9af0e73a454c812cb017",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-5f735642965f43d9849cdcda",
+        "kind": "wish",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "wish",
+          "history-3d3cd6927923c1375d5e"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-aa9ed9fe73a746b3ac544ce5",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-2419a837d583defd5d06"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-9a65cad728924929bd6f6f13",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-609cd8f38d0843ca90981bdb",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "history-c3900c7a783da9a94773"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-50cd26ef1cf94d9886098616",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-2419a837d583defd5d06"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-b1e83351ff63488992f3cfa5",
+        "kind": "usability",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "usability",
+          "history-815af29f779af6490964"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-cd881529cce44abab9ed0acb",
+        "kind": "wish",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "wish",
+          "history-275e81420ab1c628fafd"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-b496b681d7da410aa2a3e891",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-4bc741b60e744155b94e193d",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "history-2607e4b6de0c5568702e"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-a65066d7ba2b4f6a818fa49f",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "history-0c8b4f4102fd999ca5b6"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-3df0ba6281184e79912d0d51",
+        "kind": "wish",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "wish",
+          "history-b7d19386f3af80faf619"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-3d5d2f757b954f8ea778349d",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "history-1024243275057e5793d5"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 7,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-e05b91cfb84c4c29b72e9fa6",
+        "kind": "service",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "service",
+          "history-3487e9fcbf10c53788b9"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-5078f306439e4a36b641cac1",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-82ed71736c43945e33b5"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-3b0f45f2e4484a998a65920b",
+        "kind": "wish",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "wish",
+          "history-d7b7b45ece4f1db3695f"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-6e78066611c34439b876ef66",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "history-4dd917e7f3f0cea4bee6"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-f469909e0d7f472ca3efa4b6",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "history-f1d529b8cbcd72d6c490"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-9dce16b27f104edb86679095",
+        "kind": "bug",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "bug",
+          "history-e0fbc05d6942f6bb4450"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-0888dcefcef042d2950fe331",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "history-1024243275057e5793d5"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 7,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-3c9cccb1bce648f0920aceb9",
+        "kind": "service",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "service",
+          "history-f1d529b8cbcd72d6c490"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-0092eb75328a493dac5a8840",
+        "kind": "bug",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "bug",
+          "history-e35fe2b9e1156fe02451"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-653c623ad72c427b96e5292b",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "history-1024243275057e5793d5"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 7,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-319f8fe9167546c6ac183f28",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-82ed71736c43945e33b5"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-51d8dc1580fc4527a3369d7a",
+        "kind": "usability",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "usability",
+          "history-fb5706f07b785ee82d78"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-661017e35bb945369dfb23bf",
+        "kind": "wish",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "wish",
+          "history-d7b7b45ece4f1db3695f"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-686e779d1e1b4b4293142c39",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-6040ef1ba25948399e478c25",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "history-537d228c420801bd37e2"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-c0d73143b62f44d7b457b05f",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "history-37b2190a7e206bc5e7bc"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-b4fc97bd9a644afc8c5f5068",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "history-826af2160c0ebbfbac06"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-921d770c41ae413da4463374",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "history-37b2190a7e206bc5e7bc"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-d551ebb4cf344c1080b206ed",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-9682c18ff4a64819ac2b166b",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-9fd394a26e0f4760a0edee6e",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "history-b4ded03138f9c5dfa160"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-168be3f067bd46bf9fc20fe4",
+        "kind": "wish",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "wish",
+          "history-80f0485213505e10490d"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 8,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-08aa20c66f56440a9c1cf5b7",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "history-37b2190a7e206bc5e7bc"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-178e826ac03c4f2494108f37",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "history-506cc176625f870f108e"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-973b0d353b3a4a96953ae2df",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-64e0d5424a484502bd0b5b16",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-f75ef6c2cb98bd7d15e2"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-270410ca44794e9ab7af0554",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "history-1024243275057e5793d5"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 7,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-aa51944640be4fc9a4660fb9",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-f75ef6c2cb98bd7d15e2"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-5d7fa130381a4c0785bab393",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "history-c3900c7a783da9a94773"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-aabdddb43f7349e5accec59b",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "history-b4ded03138f9c5dfa160"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-7e2d22c0b42b445192186dca",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-82ed71736c43945e33b5"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-2a3f900036df4202946c8625",
+        "kind": "bug",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "bug",
+          "history-e0fbc05d6942f6bb4450"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-8309505c4d5e474aa8fe9dfe",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-82ed71736c43945e33b5"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-96d5fd76191345cf831320e3",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-2419a837d583defd5d06"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-282cd01417084bf5a86accdc",
+        "kind": "usability",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "usability",
+          "history-fb5706f07b785ee82d78"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-975677eaca854aa4aaec6303",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-8ef9c65d830aee46ef36"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-763946a22ac649eeb8c7972c",
+        "kind": "bug",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "bug",
+          "history-2e82eace6fbcee8ed5ce"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-c4ac78af66a449529b83d06f",
+        "kind": "wish",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "wish",
+          "history-80f0485213505e10490d"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 8,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-fcc59bfd05ba4d9f8b35db2e",
+        "kind": "wish",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "wish",
+          "history-3d3cd6927923c1375d5e"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-098964ace74b44dba5cdd5d3",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "history-c3900c7a783da9a94773"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-3c2bdda18bf443c2a4452229",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "history-537d228c420801bd37e2"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-33d9faf5f2c54eb19ff9b99b",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "history-3d0c610cf45d90a1bb22"
+        ],
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-be179f247f8d4418bc053183",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-c52efe01af0a39ea8e7a"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-9bb157bd91f34fdea624070b",
+        "kind": "bug",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "bug",
+          "history-2e82eace6fbcee8ed5ce"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-913a6b2f200149edb3b7d3bc",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "history-4c5c2041c1e296e1d21a"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-9f76e3d36f5c4b1bbce6e5a2",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-6e3b6b2b5fa24c22ae58cced",
+        "kind": "wish",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "wish",
+          "history-80f0485213505e10490d"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 8,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-1d702254ae85423eb6b00454",
+        "kind": "wish",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "wish",
+          "history-7b60cb6a5f5d65010848"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-6524ba881915452e9fafeba3",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-ccc14be1ed5e42e99e73d2fb",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "history-37503bb865ef407d58e2"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-fbf45df0130f41928e40822b",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "history-37b2190a7e206bc5e7bc"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-d968378e720442f1a1eed0ba",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-8e3ce75846604715b3f1b68c",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-f75ef6c2cb98bd7d15e2"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-91fe5f70e809438cb233fe3f",
+        "kind": "bug",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "bug",
+          "history-ec43e27a4a4538fdbd99"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-3faa33261faa4aed9af46a43",
+        "kind": "bug",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "bug",
+          "history-0da70feac7828c432ec7"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-c1ea125bca6648afa86bff4e",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "history-1024243275057e5793d5"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 7,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-5ab9c4247d05450a8b512736",
+        "kind": "usability",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "usability",
+          "history-0be2614591ecea1b1a9f"
+        ],
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-cab5f6610cc846149da8d97c",
+        "kind": "wish",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "wish",
+          "history-80f0485213505e10490d"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 8,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-526cc52e093e472894df992b",
+        "kind": "usability",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "usability",
+          "history-356f57d15a8ea0110378"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-480d2f4f8bb0497cb8d9c718",
+        "kind": "service",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "service",
+          "history-826af2160c0ebbfbac06"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-d5106e184cd1413892e2c632",
+        "kind": "service",
+        "prediction": [
+          "p-7f60b58be2744439b1667155",
+          "service",
+          "history-6b0e2ddef9f2fdf4116d"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-6b167c470bbf4be99e3c7059",
+        "kind": "bug",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "bug",
+          "history-d8f0f772f573fe2e3af2"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-f886b05a19854ab88754f3e2",
+        "kind": "unknown",
+        "prediction": null,
+        "trace": {
+          "initial_kind": "unknown",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-03c2c8df259b48969cba6c9e",
+        "kind": "service",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "service",
+          "history-3487e9fcbf10c53788b9"
+        ],
+        "trace": {
+          "initial_kind": "service",
+          "history_members": 6,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-5685814afdfb4852a7c56e44",
+        "kind": "usability",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "usability",
+          "history-815af29f779af6490964"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-6ade2ed820984593acce43ed",
+        "kind": "wish",
+        "prediction": [
+          "p-e416005f918f4eb89e95fa12",
+          "wish",
+          "history-3d0c610cf45d90a1bb22"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-e46592a180844d0cbe6eee3c",
+        "kind": "usability",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "usability",
+          "history-516ad709cce44b33d3c3"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 3,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-0a1026431c6d434598e2a1da",
+        "kind": "bug",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "bug",
+          "history-e386b1cd4facb7e3e039"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 1,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-7ad8275a411c414d85f2df53",
+        "kind": "usability",
+        "prediction": [
+          "p-956c57997b4a4638a6662474",
+          "usability",
+          "history-815af29f779af6490964"
+        ],
+        "trace": {
+          "initial_kind": "usability",
+          "history_members": 5,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-00604085d98c457aa54cdc48",
+        "kind": "wish",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "wish",
+          "history-f8e112caa706389056d0"
+        ],
+        "trace": {
+          "initial_kind": "wish",
+          "history_members": 2,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      },
+      {
+        "id": "n-cc7a0756511a454bb8e4d478",
+        "kind": "bug",
+        "prediction": [
+          "p-3cd301824fec424db1b54a4e",
+          "bug",
+          "history-2e82eace6fbcee8ed5ce"
+        ],
+        "trace": {
+          "initial_kind": "bug",
+          "history_members": 4,
+          "scope": "all observations supplied to this call; no gold"
+        }
+      }
+    ],
+    "reply": [
+      {
+        "id": "r-bae18bd01c444162843c20ed",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-1d10078ec6bc47dd8f44302b",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-8ea337ecf7ef4ff5836571f3",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-c73513d90ae44b5bb43df71f",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-82cb04f6e4324655af8d9b6c",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-5f9d438b272240f897844b34",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-30c5cb6a2b4a441baa5d734a",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": false
+      },
+      {
+        "id": "r-f217fb5963ef4623a7283121",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-7b26cfbd4efb4807a761a548",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-b254a83d91cd4365b3d21abc",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-858e0a6933bb42febd3c7087",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-a9f09e5118c341058032b44b",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-d0d583dc655c4f6bb6e2956d",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-78537b18492949e8bd248cad",
+        "action": "ignore_duplicate",
+        "reason": "повторная доставка",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-33526a64d60e43fb8b6437ed",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-66461061d9ca4f59872cca32",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-c281e3f3ac064af08c7915cf",
+        "action": "queue_fixed_notice",
+        "reason": "отдельная подтверждённая рассылка",
+        "same_topic": true,
+        "eligible": false
+      },
+      {
+        "id": "r-71dbb6fec02c4a5fb9e1c7cd",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-ba7efbabfa5344e581283337",
+        "action": "operator",
+        "reason": "другой продукт",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-ba6e728c0fed4078820ae2c1",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-ec989526294348d886509efb",
+        "action": "operator",
+        "reason": "нет согласия",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-ece7b61ef1d547d68de4b5e3",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-392c198d1ef84220a0f5a369",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-3ef0e5b6a09b468f9300287d",
+        "action": "operator",
+        "reason": "индивидуальное денежное действие",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-45d2879b074349faabb815d7",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-7828d9e6e6ce463e9395b5fe",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-0095433ba4d245feab0feb29",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-2ac9d28c4278496a82cb23e0",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-580b8d004a364ac1a6184c51",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-c02ae57efa5f45ffa21a6746",
+        "action": "operator",
+        "reason": "нет согласия",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-37c31fea323645faa1c23a5f",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-bc615c38663d47f8bb159071",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-2ea8269d0edc459faf42a8e2",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-c78f2600970e44309bd1c1d9",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-13035fe5fc2148edb2b1fd00",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-4a259683e93f4a2689b348ee",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false,
+        "risk": "credentials"
+      },
+      {
+        "id": "r-fa400ca18a8b4263a10baa53",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-5f6cdeaf923548d6a757ec58",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-5e8243ea4150477e816511a0",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-29a4349364434af1998a6eaf",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-6a3c263353494ad6a29e4f40",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-08b2aeb9afb548f0a6dc4527",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": false
+      },
+      {
+        "id": "r-10f546f5782c433ab3d14156",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-630c4d7e218449cca18d3b72",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-bd6220d117d848c3b0f0c13c",
+        "action": "ignore_duplicate",
+        "reason": "повторная доставка",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-832f176e440042a59ab27e38",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-5d88ca173fb44787961badb2",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-fb90e4d4ecd94472905cfedd",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-6683fa2c5f7c47df88ae19d3",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-687be58441464016b5553530",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-9ac4f7c228564b5e9016caa7",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-589b023c9b0c4c0a8319ae21",
+        "action": "operator",
+        "reason": "нет согласия",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-88029b81da8c443b8301a4fa",
+        "action": "needs_approval",
+        "reason": "нужно одобрение",
+        "same_topic": true,
+        "eligible": false
+      },
+      {
+        "id": "r-0e82a262951b441f93bdd42e",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-32ae99e93c62451e903265ec",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-9ad654c4032f4cffb96bbb9b",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-d21efb92d75644588b7c6ecf",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-6696ea2bc33f4d438b08ca8c",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-5398a11118e54c2aa53357eb",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-7de8c4694161473e84fbad47",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-3b1a668f59c24f3ab31a80ad",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-5b53f8d5c08547cb97b5163b",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-9022429f05c444a0950b0bb6",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-0629ffdb2a9a445faf8871a3",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-d7b0587342a74e28aa6b32db",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": false
+      },
+      {
+        "id": "r-2d956ef95b794db0ba2f17ad",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-616c45aa36d840fe8cde1a1f",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": false
+      },
+      {
+        "id": "r-5fe4968fbabc43aabd65b3c2",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-5359475f721547c7869e581d",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-01db81e39c7342e9b5c4f0c7",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-d74e3d6a347e48b8b4fe5681",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-7f26b5f1b782479088317e86",
+        "action": "ignore_duplicate",
+        "reason": "повторная доставка",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-be32951ede504ca6a3725307",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": false
+      },
+      {
+        "id": "r-9313269e2eb249cabe37c4f3",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-29c8218837104205a53abd90",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-c8d91b06a69e46e6982c9780",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-8728f381521d477b9a26e500",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-6f62c28b53ea48958262e1e8",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-9fd3357a91b04c25a13dcfa3",
+        "action": "operator",
+        "reason": "другой продукт",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-f23be37e58bf429dabe26cec",
+        "action": "needs_fix_approval",
+        "reason": "нужны подтверждения фикса и рассылки",
+        "same_topic": true,
+        "eligible": false
+      },
+      {
+        "id": "r-114ac5ef23b1411bb3fe36e2",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-628e61ada4f24803881e47a9",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-926d7652754c4dbd803fec2a",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": false
+      },
+      {
+        "id": "r-e10b445f7a0f478fb4fc709b",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": false
+      },
+      {
+        "id": "r-d4524540f384457abac3aefe",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-4f0d19d1958c4a0ba50a87d6",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-e5d9e60da20c4c199c04cffa",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-ca02000c479848f7988d2090",
+        "action": "operator",
+        "reason": "нет согласия",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-6e50ee79010b4f2fb7b36891",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-df22e00ceeea43ab8825c763",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-8e6b9595105d41ed8dd63021",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-386e84a2b06d4cb3a36a92bf",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": false
+      },
+      {
+        "id": "r-cbb7ae2624264e48afc3667f",
+        "action": "operator",
+        "reason": "индивидуальное денежное действие",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-58c21c28a9ce4953ba4d71f5",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-9c997a960d36429693630625",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-edd8fa923bc74bb9907a4acd",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-edcecb61cf86428b90570f64",
+        "action": "ignore_duplicate",
+        "reason": "повторная доставка",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-379bf77ae1a245f599a74747",
+        "action": "operator",
+        "reason": "другой продукт",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-7bf5481051594e298f97f5fb",
+        "action": "operator",
+        "reason": "другой продукт",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-5efac3a514e3499d90ba72d6",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-67a455d1533a49fea85674ac",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-58927847f2474f9fa10c8325",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-b7715034ec574576b49c3f5f",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": false
+      },
+      {
+        "id": "r-546e65090069422d8f03bd18",
+        "action": "operator",
+        "reason": "другой продукт",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-7fe47b3678e74557be2c6b88",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": false
+      },
+      {
+        "id": "r-37b9484608c1414f9ec93826",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": false
+      },
+      {
+        "id": "r-5f1f75296e204815999aec84",
+        "action": "operator",
+        "reason": "другой продукт",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-e70e47d556614453b2eb7a72",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-b81f93a1885e4e36966a9965",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-18274dd7fd5c40fca5fb43a6",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-5ceaa87bf7b041acb9dd8a36",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": null,
+        "eligible": true
+      },
+      {
+        "id": "r-6c764b3a1e804eae82610aed",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": false
+      },
+      {
+        "id": "r-b176aea8b6c841eba0f7b41c",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-e1feff10dd8149a09176e7b8",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-b84dc40e2ab14fd0b41cf510",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-536be15016f04e99a2bc3072",
+        "action": "needs_fix_approval",
+        "reason": "нужны подтверждения фикса и рассылки",
+        "same_topic": true,
+        "eligible": false
+      },
+      {
+        "id": "r-ba8cb5aae6d24fbe9651ecf5",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-fd3d97dac4074d34b54d9c76",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-c3df3bb9abe446e7b55ab2eb",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-4eb2e4d6f1214b0e98f4709e",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-f4814349a06844ca92947d93",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-9ac0a6310801496f8104115c",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-90344abb35bf41c3a982e58e",
+        "action": "needs_approval",
+        "reason": "нужно одобрение",
+        "same_topic": true,
+        "eligible": false
+      },
+      {
+        "id": "r-a4c28bd426fc49b99c6573bc",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-7f2e8347fbd34dc98513d1cc",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-19f14ff2cf184b7288767011",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "r-a9d64529aaa948c9a7bb49c8",
+        "action": "operator",
+        "reason": "нет согласия",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-bfdce7fee86a41fd832e3410",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "r-cd1e64e492924665880011a5",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-458eb263799d4960b3744917",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": false
+      },
+      {
+        "id": "r-0563d2b322704b5ea290ca3c",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "r-b828b11194744d3ab2fe3959",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false,
+        "risk": "credentials"
+      }
+    ]
+  }
+}

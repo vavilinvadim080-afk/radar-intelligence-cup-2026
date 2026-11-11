@@ -1,0 +1,30 @@
+{
+  "files": {
+    "scripts/compare_semantic_v5b.py": "5591fb6c45647b02fbf97a35cffae13b12918370c3d661d8cdd2c1812a6db3c9",
+    "scripts/prepare_features_v5b.py": "c562c42e4453d4e05659e65e5ee939c15c96541e59aa9a26b7cab1786f486ceb",
+    "scripts/semantic_worker_v5b.py": "6837164e91ed9f5673b44099a2cd5c1a5b750895c38d93ec17c7edef6425c90a",
+    "radar_app/selection_v5b.py": "b64ca07cec8f2bacc85ae8bf8313bda4cac92fc9b181c9e96f31e0894e298f70",
+    "radar_app/semantic_v5b.py": "289e0e7cdbe74130c19bc314df97aa6c4278e859546a169d60e4909726e48783",
+    "radar_app/semantic.py": "bd34ba22259f01e9a756d9db536464781aaaf2ae6ea7d5d4da8181a8c2b1a79d",
+    "radar_app/semantic_client.py": "4b409898acd1de072fa1acffcbf3dacd0904939395855acb7a30ead59aa2c399",
+    "radar_app/reply_policy.py": "d9e0ac79acecafdc032c7e4e226dd580aa58da3be1156846d20cfc4bac24bc7f",
+    "radar_app/reply_safety.py": "99d1ad66cbbc96307e334ce29d932d39456bab91c816a6035e27835c51551262",
+    "radar_app/evaluation.py": "e7ff7b624f9684481d013182cea7d6ea49928602fe44c87324bb14b3f744fa95",
+    "radar_app/privacy/mask.py": "e165553dd20cc3bd087a7a982ef43278896322419700477b1f0a9c1f995ec18e",
+    "radar_app/privacy/mask_ner.py": "d911d47f4dbc697a508b5b60987e0c43b003bad53e48bf7165f21f37287046b9",
+    "mvp-v13-adapted/radar/embed.py": "5492a5745399ba2f56dcf204732ecd561b09d40dfcd8385767c3085ced9c15b1",
+    "scripts/evaluate_reply_tune_v5.py": "f36514b5572dc180c86b29a0ca9d911a646d0c4f9c1ffb86d874ccef4c8226e7",
+    "data/semantic-config-v5b.json": "c420ff756385df88f92beec71f1bda7bb9cfebfea2d4b8e54e55166c88af7ce8",
+    "runtime/models/e5-small-v5b/MANIFEST.json": "9c280185b5a739bb2da403c52efbb7ed6f033ccbb57f3769b3f7317909de4942",
+    "runtime/models/qwen-embedding-v5b/MANIFEST.json": "beb2073e0637f7b1b3d32e90ac9915a18ba65a27b58e7eafecb4a3ec7343bda6",
+    "runtime/models/nli-minilm-v5b/MANIFEST.json": "a03ee4348a436942ea7f316513b5879ed5f67c552535e85043f57a323ec8c348",
+    "radar_app/calibrated_v5b.py": "2e34ef27e108117be57f2da373407221acb5376dccc6e9663044f7a2ed023c2c",
+    "scripts/train_heads_v5b.py": "4eb58628f5641a062ad328ec81ff3b75362e0c0e3de67ad55b2553e555242a75",
+    "data/semantic-heads-v5b.json": "9b28eca18046b7b8df312b693238509743bb55caa3175d33c5bbc58b4aad42f9",
+    "radar_app/model_artifacts_v5b.py": "053a5b19261ed1ee2663436e237dcafa96088e86f7fdd99b06fb999443c58649",
+    "radar_app/local_selection_runtime_v5b.py": "c397ff3a1769a6936528425020a0774bf10ec9871e53e320621237bc763bbf0f"
+  },
+  "changed": [],
+  "selected_backend": "qwen",
+  "quality_sha256": "158314cbff0fb89cf736689e827382eedd289b4ae53fd145812760f5c99e38ee"
+}

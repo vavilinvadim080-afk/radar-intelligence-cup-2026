@@ -7,7 +7,7 @@ import urllib.parse
 import urllib.request
 
 ROOT=Path(__file__).resolve().parents[1]
-DIRECTORIES={'e5':'e5-small-v5b','qwen':'qwen-embedding-v5b','nli':'nli-minilm-v5b'}
+DIRECTORIES={'e5':'e5-small-v5b','qwen':'qwen-embedding-v5b','nli':'nli-minilm-v5b','reranker':'qwen-reranker-v5c'}
 
 
 def verified(path,meta):
