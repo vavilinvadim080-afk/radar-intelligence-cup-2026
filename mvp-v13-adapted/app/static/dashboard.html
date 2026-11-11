@@ -296,9 +296,9 @@ for(const id of ['needs-header','needs-view'])document.getElementById(id).hidden
 </aside>
 <div class="modal" id="authbox" hidden>
   <form id="authform" autocomplete="off">
-    <b>Нужен токен доступа</b>
-    <span class="small" id="authmsg">Сервер запущен с токеном (RADAR_API_TOKEN, RADAR_TOKEN_VIEW или RADAR_TOKEN_DUTY). Токен хранится только до закрытия вкладки.</span>
-    <input id="authtok" type="password" placeholder="токен" aria-label="токен доступа">
+    <b>Вход в локальное демо</b>
+    <span class="small" id="authmsg">Нужен локальный ключ Радара для просмотра и кнопок решений. API-ключ внешней модели здесь не нужен. Запуск через run.py открывает ссылку входа; команда python run.py --access-url показывает её повторно без запуска сервера. Ключ хранится в браузере только до закрытия вкладки.</span>
+    <input id="authtok" type="password" placeholder="локальный ключ доступа" aria-label="локальный ключ доступа">
     <button class="primary" type="submit" style="height:36px">Войти</button>
   </form>
 </div>

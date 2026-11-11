@@ -5,6 +5,7 @@ import os
 import sys
 import threading
 import webbrowser
+from urllib.parse import urlencode
 ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT.parent))
 os.environ.setdefault('RADAR_LAZY_INCIDENTS','1')
@@ -19,7 +20,7 @@ if __name__=='__main__':
     from app.server import app
     url=f'http://127.0.0.1:{a.port}/'
     print('Радар — инциденты и потребности:',url,flush=True)
-    if not a.no_open:threading.Timer(1.5,lambda:webbrowser.open(url+'#token='+os.environ['RADAR_API_TOKEN'])).start()
+    if not a.no_open:threading.Timer(1.5,lambda:webbrowser.open(url+'#'+urlencode({'token':os.environ['RADAR_API_TOKEN']}))).start()
     try:uvicorn.run(app,host='127.0.0.1',port=a.port,access_log=False)
     finally:
         r=getattr(app.state,'needs_radar',None)
