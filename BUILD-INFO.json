@@ -1,7 +1,7 @@
 {
   "date": "2026-11-08",
-  "presentation": "v11",
-  "video": "v4",
+  "presentation": "v12",
+  "video": "v4-weekly-scenarios",
   "quality": "v5c independent synthetic control",
   "unfinished_v5c_included": false,
   "source_files": {
@@ -968,41 +968,37 @@
       "sha256": "a03ee4348a436942ea7f316513b5879ed5f67c552535e85043f57a323ec8c348"
     },
     "presentation/radar.html": {
-      "source": "presentation/Радар-v13-плюс-кейс-v11-для-жюри.html",
-      "sha256": "2f0636672b99b673ffee56a1c66661f85f44c22f00e46b4b6550b9d0189d4618"
+      "source": "presentation/Радар-v13-плюс-кейс-v12-для-жюри.html",
+      "sha256": "b97c00d1a685d297e6c1ffa31158c624d6c3d3f9d045fafc68f994c5e1bf9230"
     },
     "presentation/radar.pdf": {
-      "source": "presentation/Радар-v13-плюс-кейс-v11-для-жюри.pdf",
-      "sha256": "271db32c5a2057e71a42a43894c89d8ca42379813009a65e09f0209dd60b751e"
-    },
-    "presentation/radar-notes.html": {
-      "source": "presentation/Радар-v13-плюс-кейс-v11.html",
-      "sha256": "83078268a336da5ad5ae625dd857c32c86360403e5fcc23728838c3ae33a66ff"
+      "source": "presentation/Радар-v13-плюс-кейс-v12-для-жюри.pdf",
+      "sha256": "13ba4508aa90af7b1ec726b86b6d99dbe8293488273388227525274414606e48"
     },
     "video/radar.mp4": {
       "source": "promo-case-v4/radar-case-v4.mp4",
-      "sha256": "434321a91af1cbb75a1b7562fede05ffca2c955d3d67781a6675b5a7cce89fa4"
+      "sha256": "08c0e5f46262eba441f4ab5da85fc448805c6783479f996f54b9409992385508"
     },
     "video/captions.vtt": {
       "source": "promo-case-v4/radar-case-v4.vtt",
-      "sha256": "b3639991db3a706d68b79d3f8c4b4d78ae27646d5ac62dab1f9d47b3f57e8bb5"
+      "sha256": "a1efc36cd1696abeafa18826930c30d4a8e09f24faf9942856de3550bdc14474"
     },
     "video/captions.srt": {
       "source": "promo-case-v4/radar-case-v4.srt",
-      "sha256": "11cd45a1c129b265f8140b730a7cb178fc18cda0e8f84bfbc248ae9bf383a05f"
+      "sha256": "8c372838e9e0c4ab258cbdf41abf2fad69063418f07babb5e132f6c13d760f82"
     },
     "video/script.md": {
       "source": "promo-case-v4/script.md",
-      "sha256": "4391121205e4f9c0bbee537f95457bea239cb687281aab583ee52f3fd4b33c21"
+      "sha256": "068389d6184f630dd7d0188e1fffbf084acdae05ea4f304fa963e1741236a7e0"
     },
     "submission/solution.md": {
       "source": "submission/01-Решение.md",
-      "sha256": "ef3a7888aa43e9a0b128905287545675d082d2c7d7c1e337f63566a4be2a6adc",
+      "sha256": "3e37789ed91ace7a478812d20bff6f52f95850d844f2a1acc5534825ab105e25",
       "adapted_for_submission": true
     },
     "submission/effect.md": {
       "source": "submission/02-Эффект-внедрения-пункт-5.md",
-      "sha256": "8935524c44d73fbe20999a6ff19a1523cb2d11f5ad79c8fa36c6e0e903a2367a",
+      "sha256": "332005bf3dc9ec927ee8630e704a6d545cd279df0462ad3a818c5388f2f0759d",
       "adapted_for_submission": true
     },
     "data/semantic-config-v5c.json": {
@@ -1179,7 +1175,7 @@
     },
     "tests/test_reranker_v5c_review.py": {
       "source": "tests/test_reranker_v5c_review.py",
-      "sha256": "305b3b66cc31b2c9ecb98e6bc8bbdb3d2b36e71dc87ea72aea34c58278781fe8",
+      "sha256": "aff7016dffb49a0aa0bc3f6770cd1f46d028c15aaa7b5c2d806bd5215919f745",
       "adapted_for_submission": true
     },
     "tests/test_score_v5c.py": {
@@ -1213,9 +1209,21 @@
     "data/quality-v5c.json": {
       "source": "data/quality-v5c.json",
       "sha256": "32e6166e8795157bc3c307ae06707090ede8943132a732fd6adb48925fcc9045"
+    },
+    "data/economics-weekly.json": {
+      "source": "data/economics-weekly.json",
+      "sha256": "25c44ec6f48758fa1794f26010222e882164d64c2bf2db00849156fbe0687a3d"
+    },
+    "scripts/build_weekly_scenarios.py": {
+      "source": "scripts/build_weekly_scenarios.py",
+      "sha256": "96ce181349b8d5b52498e1d7ba228b5949119b9d4e9748ae3fbd72acd0fff258"
+    },
+    "tests/test_economics_weekly.py": {
+      "source": "tests/test_economics_weekly.py",
+      "sha256": "4dc8ce5cb12269d5a7def9badf36bce53d3420c8c7308f815e2261976a62bd0d"
     }
   },
-  "submission_characters": 14907,
+  "submission_characters": 14965,
   "local_access_help_updated": "2026-11-11",
   "updated": "2026-11-12",
   "verification": "RELEASE-CHECKS.md"

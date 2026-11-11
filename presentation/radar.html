@@ -1282,11 +1282,11 @@ function inRoute(x, r){
 function secOf(x){ const R = D.ROUTES[D.route]; if (!R) return x.sec || 30; return x.v === "panel" ? R[x.n + "/" + x.b] : R[x.v]; }
 function seqOf(inAppendix){
   const out = [];
-  if (!inAppendix){ out.push({ v: "cover", title: "Обложка", sec: 20, core: true, notes: D.coverNotes }, { v: "hub", title: "Карта доклада", sec: 25, core: true, notes: D.hubNotes }); }
+  if (!inAppendix){ out.push({ v: "cover", title: "Обложка", sec: 20, core: true, notes: "" }, { v: "hub", title: "Карта доклада", sec: 25, core: true, notes: "" }); }
   const nodes = inAppendix ? [D.nodeById("appendix")] : mainNodes();
   nodes.forEach(n => {
-    out.push({ v: "node", n: n.id, title: n.title, sec: n.sec || 12, core: n.core !== false, notes: n.notes, cue: n.cue });
-    n.branches.forEach(b => out.push({ v: "panel", n: n.id, b: b.id, title: b.title, sec: b.sec || 50, core: !!b.core, notes: b.notes, cue: b.cue }));
+    out.push({ v: "node", n: n.id, title: n.title, sec: n.sec || 12, core: n.core !== false, notes: "", cue: n.cue });
+    n.branches.forEach(b => out.push({ v: "panel", n: n.id, b: b.id, title: b.title, sec: b.sec || 50, core: !!b.core, notes: "", cue: b.cue }));
   });
   return out;
 }
@@ -3788,7 +3788,7 @@ const enter=(els)=>G.timeline({paused:true}).fromTo(els,{opacity:0,y:26},{opacit
 const branch=(nid,bid,title,desc,v,u,takeaway,build)=>{
  const node=D.nodeById(nid);let b=node.branches.find(x=>x.id===bid);
  if(!b){b={id:bid,icon:node.icon};node.branches.push(b);}
- Object.assign(b,{title,title2:title,desc,fig:()=>({v,u}),tags:[],takeaway,build,steps:false,beats:false,intro:false,notes:'',cue:'',sec:50,core:true});return b;
+ Object.assign(b,{title,title2:title,desc,fig:()=>({v,u}),tags:[],takeaway,build,steps:false,beats:false,intro:false,notes:"",cue:'',sec:50,core:true});return b;
 };
 // Original pipeline geometry and animation; only its eleven semantic labels changed in the builder.
 const originalPipeline=D.casePipeline;
@@ -3803,7 +3803,7 @@ const nodeCopy={
  quality:['Качество и нагрузка','Что проверяем до внедрения','Слепая разметка, пороги качества, расчёт очередей'],
  next:['Итог','Что уже можно показать','Работающий прототип и условия промышленного пилота']
 };
-for(const [id,copy] of Object.entries(nodeCopy)){const n=D.nodeById(id);Object.assign(n,{title:copy[0],hint:copy[1],lead:copy[2],notes:'',cue:''});}
+for(const [id,copy] of Object.entries(nodeCopy)){const n=D.nodeById(id);Object.assign(n,{title:copy[0],hint:copy[1],lead:copy[2],notes:"",cue:''});}
 
 branch('problem','lag','Обращение закрыто. Потребность осталась.','Разрозненные пожелания не превращаются в продуктовые решения','40','менеджеров поддержки — по кейсу','Радар собирает <em>повторяющийся спрос</em>, даже когда нет аварии и всплеска.',(root,ctx)=>{
  const svg=s('svg',{viewBox:'0 0 1688 290',style:'width:100%;height:290px;overflow:visible'});root.append(svg);
@@ -3934,7 +3934,7 @@ D.nodes.forEach(n=>{n.branches=selected[n.id].map(id=>n.branches.find(b=>b.id===
 D.caseMode=true;const route={cover:15,hub:15};D.nodes.forEach(n=>n.branches.forEach(b=>route[n.id+'/'+b.id]=b.sec));const total=Object.values(route).reduce((a,b)=>a+b,0);const timed=seconds=>Object.fromEntries(Object.entries(route).map(([k,v])=>[k,v*seconds/total]));D.ROUTES={0:route,7:timed(420),10:timed(600)};D.route=0;
 D.caseRoute=()=>[{v:'cover'},{v:'hub'},...D.nodes.flatMap(n=>n.branches.map(b=>({v:'panel',n:n.id,b:b.id})))];
 D.warmup=()=>{};
-D.hubNotes='';D.coverNotes='';
+D.hubNotes="";D.coverNotes="";
 
 })();
 
@@ -4031,7 +4031,7 @@ summary.build=(root,ctx)=>{const tl=summaryBuild(root,ctx);const p=[...root.quer
 const route={cover:15,hub:15};D.nodes.forEach(n=>n.branches.forEach(b=>route[n.id+'/'+b.id]=b.sec||50));
 const total=Object.values(route).reduce((a,b)=>a+b,0),timed=s=>Object.fromEntries(Object.entries(route).map(([k,v])=>[k,v*s/total]));D.ROUTES={0:route,7:timed(420),10:timed(600)};
 
-if(!document.getElementById('drawer'))D.nodes.forEach(n=>n.branches.forEach(b=>b.notes=''));
+if(!document.getElementById('drawer'))D.nodes.forEach(n=>n.branches.forEach(b=>b.notes=""));
 })();
 
 (function(){
@@ -4536,13 +4536,13 @@ function buildRollout(root, ctx) {
 Object.assign(safety, {
   build: buildSafety, title: 'Безопасность: четыре границы', title2: 'Безопасность: четыре границы',
   desc: 'Периметр, маскирование, валидация, права', beats: false, steps: false, intro: false,
-  fig: () => ({ v: '4', u: 'слоя защиты' }), tags: [], notes: '',
+  fig: () => ({ v: '4', u: 'слоя защиты' }), tags: [], notes: "",
   takeaway: 'Модель предлагает. <em>Код проверяет данные и права; человек подтверждает действие.</em>'
 });
 Object.assign(rollout, {
   build: buildRollout, title: 'Внедрение: от базы до решения', title2: 'Внедрение: от базы до решения',
   desc: 'Системы, обратная связь, владельцы, пилот', beats: false, steps: false, intro: false,
-  fig: () => ({ v: '4', u: 'части внедрения' }), tags: [], notes: '',
+  fig: () => ({ v: '4', u: 'части внедрения' }), tags: [], notes: "",
   takeaway: 'Начинаем с <em>тихого пилота</em>. К рассылке и масштабу переходим после проверки и согласования.'
 });
 
@@ -4556,7 +4556,7 @@ D.securityRollout = Object.freeze({
 });
 
 
-if (!document.getElementById('drawer')) { safety.notes = ''; rollout.notes = ''; }
+if (!document.getElementById('drawer')) { safety.notes = ""; rollout.notes = ""; }
 })();
 
 /* Load after restore.js. Only quality/speed and next/summary are replaced. */
@@ -5469,7 +5469,7 @@ D.buildPrint=function(){const result=buildPrint();project(document.querySelector
 window.addEventListener('beforeprint',()=>project(document.querySelector('#print')));
 })();
 
-DECK.start();
+document.addEventListener('DOMContentLoaded',()=>DECK.start(),{once:true});
 </script>
 <script>
 DECK.DATA.v11={quality:{"version":"v5c","provenance":{"predictions_path":"/Users/vadimvavilin/ГПН/Радар-официальный-кейс-2026/reports/quality-v5c/control-predictions-only.json","predictions_sha256":"1d3d8718ecca6966a5edff0c89e1a45a6b1fd26719d75d7e284a98e822cea77a","predictions_sha_path":"/Users/vadimvavilin/ГПН/Радар-официальный-кейс-2026/reports/quality-v5c/control-predictions-only.sha256","freeze_path":"/Users/vadimvavilin/ГПН/Радар-официальный-кейс-2026/reports/quality-v5c/CONFIG-FREEZE.json","freeze_sha256":"6b936225b46e9c6b397a2d00187e49a24a1e1740a93bc11e107fe03a73e5ffab","dataset_lock_path":"/Users/vadimvavilin/ГПН/Радар-официальный-кейс-2026/evaluation/v5c/CONTROL-LOCK.json","dataset_lock_sha256":"df5292dff17d24273fe236442c3618f8db9f41b1b95127db8e36006c9fc97185","frozen_files_verified":67,"dataset_files_verified":14},"models":{"baseline":{"needs":{"deliveries":188,"unique_messages":184,"duplicate_deliveries":4,"kind_correct":112,"kind_accuracy":0.6086956521739131,"kind_confusion":{"bug":{"bug":28,"usability":3,"unknown":9,"wish":2},"service":{"unknown":7,"service":31,"wish":2,"bug":1,"usability":1},"wish":{"wish":16,"unknown":16,"service":6,"usability":4},"usability":{"bug":2,"usability":22,"unknown":17,"service":1},"unknown":{"unknown":15,"wish":1}},"pairs":{"tp":43,"fp":19,"fn":197,"tn":16577,"positives":240,"negatives":16596,"predicted_positives":62,"precision":0.6935483870967742,"recall":0.17916666666666667,"f1":0.2847682119205298}},"ordinary_reply":{"population":120,"tp":10,"fp":6,"fn":20,"tn":84,"positives":30,"negatives":90,"predicted_positives":16,"precision":0.625,"recall":0.3333333333333333,"f1":0.43478260869565216},"fixed_notice":{"population":12,"tp":1,"fp":0,"fn":5,"tn":6,"positives":6,"negatives":6,"predicted_positives":1,"precision":1.0,"recall":0.16666666666666666,"f1":0.2857142857142857},"action_accuracy_all":{"population":132,"correct":93,"accuracy":0.7045454545454546,"confusion":{"operator":{"operator":78,"queue_standard":6,"needs_fix_approval":2},"needs_approval":{"operator":4},"queue_standard":{"queue_standard":10,"operator":20},"ignore_duplicate":{"ignore_duplicate":4},"queue_fixed_notice":{"operator":5,"queue_fixed_notice":1},"needs_fix_approval":{"operator":2}}},"cross_path_auto_actions":0,"gates":{"target_80_met":false,"target_checks":{"needs_kind_accuracy":false,"pair_precision":false,"pair_recall":false,"ordinary_precision":false,"ordinary_recall":false},"zero_ordinary_false_positives":false,"zero_fixed_notice_false_positives":true,"no_cross_path_auto_actions":true,"zero_false_positive_replies":false,"auto_enable":false}},"candidate":{"needs":{"deliveries":188,"unique_messages":184,"duplicate_deliveries":4,"kind_correct":153,"kind_accuracy":0.8315217391304348,"kind_confusion":{"bug":{"bug":31,"usability":7,"wish":4},"service":{"service":41,"wish":1},"wish":{"wish":30,"bug":7,"usability":4,"service":1},"usability":{"usability":38,"wish":3,"unknown":1},"unknown":{"unknown":13,"usability":2,"wish":1}},"pairs":{"tp":132,"fp":128,"fn":108,"tn":16468,"positives":240,"negatives":16596,"predicted_positives":260,"precision":0.5076923076923077,"recall":0.55,"f1":0.528}},"ordinary_reply":{"population":120,"tp":7,"fp":3,"fn":23,"tn":87,"positives":30,"negatives":90,"predicted_positives":10,"precision":0.7,"recall":0.23333333333333334,"f1":0.35},"fixed_notice":{"population":12,"tp":1,"fp":0,"fn":5,"tn":6,"positives":6,"negatives":6,"predicted_positives":1,"precision":1.0,"recall":0.16666666666666666,"f1":0.2857142857142857},"action_accuracy_all":{"population":132,"correct":95,"accuracy":0.7196969696969697,"confusion":{"operator":{"operator":81,"queue_standard":3,"needs_fix_approval":2},"needs_approval":{"operator":2,"needs_approval":2},"queue_standard":{"queue_standard":7,"operator":23},"ignore_duplicate":{"ignore_duplicate":4},"queue_fixed_notice":{"queue_fixed_notice":1,"operator":5},"needs_fix_approval":{"operator":2}}},"cross_path_auto_actions":0,"gates":{"target_80_met":false,"target_checks":{"needs_kind_accuracy":true,"pair_precision":false,"pair_recall":false,"ordinary_precision":false,"ordinary_recall":false},"zero_ordinary_false_positives":false,"zero_fixed_notice_false_positives":true,"no_cross_path_auto_actions":true,"zero_false_positive_replies":false,"auto_enable":false}}},"candidate_minus_baseline":{"needs_kind_accuracy":0.22282608695652173,"pair_precision":-0.18585607940446658,"pair_recall":0.37083333333333335,"ordinary_precision":0.07499999999999996,"ordinary_recall":-0.09999999999999998,"fixed_precision":0.0,"fixed_recall":0.0,"action_accuracy_all":0.015151515151515138},"metric_policy":{"undefined":"null; never NaN or an invented perfect score","deduplication":"product/source_id, sorted by created_at then id","ordinary":"120 incoming_ticket rows; positive action queue_standard","fixed":"12 fixed_notice_candidate rows; positive action queue_fixed_notice","target":"0.80 for kind accuracy and grouping/ordinary precision and recall; separate from zero-FP gate","release":"Local evaluation only; auto_enable is always false"}}};
@@ -5551,8 +5551,79 @@ DECK.DATA.v11={quality:{"version":"v5c","provenance":{"predictions_path":"/Users
 });
 
 (function(){const b=DECK.nodeById('quality').branches.find(b=>b.id==='speed');
-b.notes='Четыре действия сохранены. Всплески: прежние исторические замеры. Потребности и автоответ: frozen Qwen-v5b и новый Qwen+reranker сравниваются на одном независимом синтетическом контроле v5c. До контроля зафиксированы 67 файлов, источники, веса и параметры; эталон открыт только после записи полных предсказаний. Потребности: 184 уникальных сообщения и 240 истинных пар. Обычный ответ: 120 случаев, 30 допустимых; фикс: отдельно 12/6. История может перегруппировать ранее наблюдённые сообщения, это не измерение онлайн-задержки. Все проценты и TP/FP/FN читаются из data/quality-v5c.json. Автовыпуск отключён, внутренних данных компании и внешней доставки нет. TF-IDF/E5 остаются в историческом отчёте v5b, их цифры с новым контролем не смешиваются.';
+b.notes="";
 })();
+</script>
+<script>
+DECK.DATA.weekly={"version":1,"provenance":{"case":{"source":"Официальное условие кейса «Газпром нефть».","facts":["40 сотрудников","Бесплатная инфраструктура по условию кейса"]},"common_inputs":"data/economics.json#/base/inputs; кроме staff, это сценарные допущения, не замеры.","weekly_saved_hours":"Анализ чувствительности: 1,5 / 3 / 6 часов в неделю на одного сотрудника; сценарии, не измеренный минимум.","legacy_scenarios":"Полные conservative/base/optimistic сохранены отдельно в data/economics.json."},"assumptions":{"staff":40,"weeks":48,"hourly_cost":800,"cash_share":0.25,"adoption":[0.5,1,1],"discount":0.2,"wage_growth":0,"horizon_years":3},"scenarios":[{"weekly_saved_hours":1.5,"annual_hours":2880.0,"annual_capacity_rub":2304000.0,"cash_flows":[288000.0,576000.0,576000.0],"budget_discounted":973333.33},{"weekly_saved_hours":3,"annual_hours":5760,"annual_capacity_rub":4608000,"cash_flows":[576000.0,1152000.0,1152000.0],"budget_discounted":1946666.67},{"weekly_saved_hours":6,"annual_hours":11520,"annual_capacity_rub":9216000,"cash_flows":[1152000.0,2304000.0,2304000.0],"budget_discounted":3893333.33}]};
+(function(){
+'use strict';
+const D=DECK,G=gsap,{h,s}=D,W=D.DATA.weekly,a=W.assumptions;
+const E=Object.fromEntries(W.scenarios.map((r,i)=>[['low','mid','high'][i],{inputs:{...a,weekly_saved_hours:r.weekly_saved_hours},results:r}]));
+E.alternatives=D.DATA.v5.economics.alternatives;
+const branch=D.nodeById('economics').branches.find(b=>b.id==='gpn');
+const keys=['low','mid','high'],names={low:'1,5 ч/нед',mid:'3 ч/нед',high:'6 ч/нед'};
+const nf=(n,d=0)=>Number(n).toLocaleString('ru-RU',{maximumFractionDigits:d});
+const line=(text,style={})=>h('div',{text,style:{fontSize:'24px',lineHeight:1.32,...style}});
+function load(root,ctx){return D.v5Load?D.v5Load(root,ctx):D.v5Pending(root,'Расчётная ёмкость поддержки','Объём обращений неизвестен. Ёмкость рассчитывается из численности и допущений.','Источник: data/load-effect-v5.json');}
+Object.assign(branch,{title:'Экономика: 1,5 / 3 / 6 часов в неделю',title2:'Экономика: 1,5 / 3 / 6 часов в неделю',steps:true,beats:undefined,intro:false,
+  takeaway:'Экономия часов в неделю на сотрудника задана как допущение. <em>Денежную долю и освоение учитываем отдельно.</em>',
+  build(root,ctx){
+    root.style.display='block';const labels=['1 · 1,5 ч/нед','2 · 3 ч/нед','3 · 6 ч/нед','4 · Нагрузка','5 · Сравнение'];
+    const overview=h('div',{style:{position:'absolute',inset:'0 0 36px'}}),right=h('div',{style:{position:'absolute',left:'900px',right:0,top:0,bottom:0,display:'flex',flexDirection:'column',gap:'15px'}});
+    const svg=s('svg',{viewBox:'0 0 850 670',width:850,height:670,role:'img','aria-label':'Предел вложений трёх сценариев за три года'});
+    const max=Math.ceil(Math.max(...keys.map(k=>E[k].results.budget_discounted))/1e6)*1e6,baseY=535,plotH=420,groups=[],bars=[];
+    svg.append(s('text',{x:30,y:34,class:'act',text:'Предел вложений · млн ₽ за 3 года'}));
+    [0,1,2,3,4].forEach(v=>{const y=baseY-v*1e6/max*plotH;svg.append(s('line',{x1:55,x2:830,y1:y,y2:y,stroke:'var(--line)'}),s('text',{x:35,y:y+7,class:'dv-lab s','text-anchor':'end',text:String(v)}));});
+    keys.forEach((key,i)=>{
+      const value=E[key].results.budget_discounted,x=95+i*250,height=value/max*plotH;
+      const bar=s('rect',{x,y:baseY-height,width:170,height,rx:10,fill:'var(--code)','data-budget-bar':key});bars.push(bar);
+      const group=s('g',{'data-economics-scenario':key,tabindex:0,role:'button','aria-label':names[key],style:'cursor:pointer'},
+        s('rect',{x:x-10,y:60,width:190,height:545,fill:'transparent'}),bar,
+        s('text',{x:x+85,y:baseY-height-22,'text-anchor':'middle',class:'act',style:'font-size:33px',text:nf(value/1e6,3)}),
+        s('text',{x:x+85,y:579,'text-anchor':'middle',class:'act-sub',style:'font-size:20px',text:names[key]}));
+      const choose=()=>ctx.request(keys.indexOf(key));group.addEventListener('click',choose);group.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();choose();}});
+      groups.push(group);svg.append(group);
+    });
+    svg.append(s('text',{x:425,y:637,'text-anchor':'middle',class:'act-sub',style:'font-size:19px',text:'Сценарии · все остальные параметры одинаковы'}));
+    overview.append(svg,right);const loadView=h('div',{'data-view':'load',style:{position:'absolute',inset:'0 0 36px',display:'none'}});root.append(overview,loadView);
+    let loadTL=null,k=0;const tabs=h('div',{class:'v5-action-tabs',style:{position:'absolute',left:0,right:0,bottom:0,height:'34px',display:'flex',gap:'9px'}});
+    const buttons=labels.map((text,i)=>h('button',{class:'btn sm',text,style:{fontSize:'18px',height:'34px',padding:'5px 12px'},onclick:()=>ctx.request(i)}));tabs.append(...buttons);root.append(tabs);
+    function focus(){groups.forEach(g=>{const active=k>=3||g.dataset.economicsScenario===keys[k];g.style.opacity=active?'1':'.42';g.setAttribute('aria-pressed',String(k<3&&active));});buttons.forEach((b,i)=>b.classList.toggle('pri',i===k));}
+    function calculation(key){
+      const {inputs:a,results:r}=E[key];right.dataset.view='calculation';right.replaceChildren(
+        h('div',{class:'eyebrow',text:names[key]}),
+        h('div',{class:'kpi hl',style:{padding:'22px 26px'}},h('div',{'data-selected-budget':String(r.budget_discounted),style:{fontSize:'62px',fontWeight:300},text:nf(r.budget_discounted/1e6,3)+' млн ₽'}),line('Максимальное вложение за 3 года при этих допущениях',{fontSize:'22px',color:'var(--ink2)'})),
+        line(`${nf(a.weekly_saved_hours,1)} часа в неделю на сотрудника`,{color:'var(--code)'}),
+        line(`${a.staff} × ${a.weeks} × ${nf(a.weekly_saved_hours,1)} = ${nf(r.annual_hours)} ч/год`),
+        line(`Стоимость времени: ${nf(r.annual_hours)} × ${nf(a.hourly_cost)} = ${nf(r.annual_capacity_rub)} ₽/год`),
+        line(`Денежная доля: ${nf(a.cash_share*100)}% · освоение: ${a.adoption.map(v=>nf(v*100)+'%').join(' / ')}`),
+        line('Денежные потоки по годам',{fontSize:'21px',color:'var(--ink2)'}),
+        line(r.cash_flows.map(v=>nf(v/1000,1)+' тыс. ₽').join(' → '),{fontSize:'28px',color:'var(--code)'}),
+        line(`Дисконт ${nf(a.discount*100)}%: Σ CFᵢ / (1+r)ⁱ = ${nf(r.budget_discounted)} ₽`,{fontSize:'23px'}),
+        h('div',{class:'note',style:{fontSize:'19px'},text:'Источник: data/economics-weekly.json. 40 сотрудников из кейса. Экономия времени, ставка, денежная доля и освоение заданы как допущения. Минимум экономии ещё не измерен.'}));
+    }
+    function comparison(){
+      right.dataset.view='comparison';right.replaceChildren(h('div',{class:'eyebrow',text:'Меняем только часы экономии в неделю'}),
+        h('div',{class:'kpi',style:{padding:'20px'}},h('table',{class:'t',style:{fontSize:'22px'}},
+          h('thead',{},h('tr',{},['Сценарий','Часы/год','Предел, млн ₽'].map(v=>h('th',{text:v})))),
+          h('tbody',{},keys.map(key=>h('tr',{},h('td',{text:names[key]}),h('td',{text:nf(E[key].results.annual_hours)}),h('td',{text:nf(E[key].results.budget_discounted/1e6,3)})))))),
+        line('Ни 1,5, ни 3, ни 6 ч/нед пока не измерены. При нулевой денежной доле бюджет равен нулю.'),
+        h('div',{class:'kpi',style:{padding:'20px'}},line('Для базовых 1,5 ч/нед: альтернатива',{fontWeight:600}),line(`Выгрузка: ${nf(E.alternatives.standard_export.budget_discounted/1e6,3)} млн ₽`,{color:'var(--ink2)'}),line(`Добавочный предел агента: ${nf(E.alternatives.agent_incremental_budget/1e6,3)} млн ₽`,{color:'var(--code)'})),
+        h('div',{class:'note',style:{fontSize:'20px'},text:'Потенциал автоответа рассчитывается отдельно. Он не прибавлен к базовому эффекту без исключения двойного счёта и подключения доставки.'}));
+    }
+    const tl=G.timeline({paused:true}).fromTo(bars,{scaleY:0,transformOrigin:'50% 100%',transformBox:'fill-box'},{scaleY:1,duration:.85,stagger:.12,ease:'power3.out'});
+    function show(next,instant){k=next;overview.style.display=k===3?'none':'block';loadView.style.display=k===3?'block':'none';
+      if(k===3){if(!loadTL){loadTL=load(loadView,ctx);if(loadTL){if(instant||D.rm||ctx.static)loadTL.progress(1);else loadTL.play(0);}}}
+      else if(k===4)comparison();else calculation(keys[k]);focus();
+    }
+    ctx.beats={n:5,labels,auto:false,set:show,reveal(){show(4,true);},previews:()=>labels};show(ctx.static?4:0,true);
+    ctx.onDestroy(()=>{tl.kill();if(loadTL)loadTL.kill();});if(ctx.static)tabs.style.display='none';return tl;
+  }
+});
+
+})();
+
 </script>
 </body>
 </html>

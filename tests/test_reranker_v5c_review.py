@@ -612,7 +612,8 @@ class PublishedV9MetricsTests(unittest.TestCase):
         if (ROOT / 'presentation/radar.html').is_file():
             published = json.loads((ROOT / 'data/quality-v5c.json').read_text())
             self.assertIs(published['models']['candidate']['gates']['auto_enable'], False)
-            for name in ['radar.html', 'radar-notes.html']:
+            self.assertFalse((ROOT / 'presentation/radar-notes.html').exists())
+            for name in ['radar.html']:
                 html = (ROOT / 'presentation' / name).read_text()
                 marker = 'DECK.DATA.v11={quality:'
                 start = html.index(marker) + len(marker)

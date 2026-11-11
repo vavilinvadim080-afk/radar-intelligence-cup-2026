@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "provenance": {
+    "case": {
+      "source": "Официальное условие кейса «Газпром нефть».",
+      "facts": [
+        "40 сотрудников",
+        "Бесплатная инфраструктура по условию кейса"
+      ]
+    },
+    "common_inputs": "data/economics.json#/base/inputs; кроме staff, это сценарные допущения, не замеры.",
+    "weekly_saved_hours": "Анализ чувствительности: 1,5 / 3 / 6 часов в неделю на одного сотрудника; сценарии, не измеренный минимум.",
+    "legacy_scenarios": "Полные conservative/base/optimistic сохранены отдельно в data/economics.json."
+  },
+  "assumptions": {
+    "staff": 40,
+    "weeks": 48,
+    "hourly_cost": 800,
+    "cash_share": 0.25,
+    "adoption": [
+      0.5,
+      1,
+      1
+    ],
+    "discount": 0.2,
+    "wage_growth": 0,
+    "horizon_years": 3
+  },
+  "scenarios": [
+    {
+      "weekly_saved_hours": 1.5,
+      "annual_hours": 2880.0,
+      "annual_capacity_rub": 2304000.0,
+      "cash_flows": [
+        288000.0,
+        576000.0,
+        576000.0
+      ],
+      "budget_discounted": 973333.33
+    },
+    {
+      "weekly_saved_hours": 3,
+      "annual_hours": 5760,
+      "annual_capacity_rub": 4608000,
+      "cash_flows": [
+        576000.0,
+        1152000.0,
+        1152000.0
+      ],
+      "budget_discounted": 1946666.67
+    },
+    {
+      "weekly_saved_hours": 6,
+      "annual_hours": 11520,
+      "annual_capacity_rub": 9216000,
+      "cash_flows": [
+        1152000.0,
+        2304000.0,
+        2304000.0
+      ],
+      "budget_discounted": 3893333.33
+    }
+  ]
+}
