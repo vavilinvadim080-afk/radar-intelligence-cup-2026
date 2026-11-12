@@ -622,7 +622,8 @@ class PublishedV9MetricsTests(unittest.TestCase):
                 self.assertIn('Accuracy (верные типы)', html)
                 self.assertIn('Precision (точность пар)', html)
                 self.assertIn('Recall (полнота пар)', html)
-                self.assertIn('Порог 80% по всем показателям потребностей пока не достигнут.', html)
+                self.assertIn('Качество группировки и определения типа показано отдельно.', html)
+                self.assertNotRegex(html, r'(?i)(?:цель|порог)\s*80\s*%')
             return
         source = (ROOT / 'data/quality-v5b.json').read_bytes()
         published = json.loads(source)

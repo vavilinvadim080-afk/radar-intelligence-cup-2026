@@ -5521,7 +5521,6 @@ DECK.DATA.v11={quality:{"version":"v5c","provenance":{"predictions_path":"/Users
     specs.forEach(([title,get,cap],i)=>{
       const x=35+i*550,max=cap||Math.max(1,...view.models.map(get));svg.append(text(x,122,title,24));
       [0,max/2,max].forEach(v=>{const y=420-230*v/max;svg.append(s('line',{x1:x+40,x2:x+500,y1:y,y2:y,stroke:'var(--line)'}),text(x+30,y+6,String(Math.round(v)),17,'var(--muted)','end'));});
-      if(scope==='needs'){const y=420-230*.8;svg.append(s('line',{x1:x+40,x2:x+500,y1:y,y2:y,stroke:'var(--muted)','stroke-dasharray':'5 6'}),text(x+493,y-8,'80%',17,'var(--muted)','end'));}
       view.models.forEach((m,j)=>{
         const value=get(m),cx=x+170+j*220;
         if(value===null){svg.append(text(cx,405,'нет оценки',20,'var(--muted)','middle'));return;}
@@ -5535,7 +5534,7 @@ DECK.DATA.v11={quality:{"version":"v5c","provenance":{"predictions_path":"/Users
       view.models.forEach((m,i)=>svg.append(text(35+i*825,500,`${m.label}: TP ${m.needs.pairs.tp} / FP ${m.needs.pairs.fp} / FN ${m.needs.pairs.fn}`,23)));
       const reply=view.models[1].ordinary_reply;
       svg.append(text(35,545,`184 обращения · 240 пар. Автоответ отдельно: Precision ${pct(reply.precision)}, Recall ${pct(reply.recall)} · n=120`,22,'var(--muted)'),
-        text(35,588,view.needsPassed?'Три показателя потребностей ≥ 80% на этом контроле.':'Порог 80% по всем показателям потребностей пока не достигнут.',25,view.needsPassed?'var(--code)':'var(--human)'));
+        text(35,588,'Качество группировки и определения типа показано отдельно.',25,'var(--muted)'));
     }else{
       view.models.forEach((m,i)=>{
         const x=35+i*825,r=m.ordinary_reply,f=m.fixed_notice;
@@ -5703,7 +5702,7 @@ DECK.DATA.replyV7b={"scope":"Independent synthetic reply-only control;24ordinary
     const text=(x,y,value,size=22,color='var(--ink)')=>s('text',{x,y,text:String(value),fill:color,style:`font-size:${size}px;font-family:inherit`});
     const box=(x,y,width,height)=>s('rect',{x,y,width,height,rx:12,fill:'none',stroke:'var(--line)'});
     svg.append(text(25,30,'Независимая проверка автоответа · 24 обычных сценария, 6 допустимых',25),
-      text(25,65,'Нет оценки на данных компании или на нагрузке 480/день; это не 80% для всего сервиса.',21,'var(--muted)'));
+      text(25,65,'Результат относится к отдельному синтетическому набору; данные компании не проверялись.',21,'var(--muted)'));
     [['Precision (точность)',ordinary.precision,'TP/(TP+FP)',ordinary.fp],['Recall (полнота)',ordinary.recall,'TP/(TP+FN)',ordinary.fn]].forEach(([label,value,formula,other],i)=>{
       const x=25+i*545;
       svg.append(box(x,95,515,205),text(x+25,137,label,27),text(x+25,218,pct(value),66,'var(--code)'),
