@@ -1,0 +1,33 @@
+{
+  "model": "vserifsaglam/Qwen3-Reranker-4B-4bit-MLX",
+  "revision": "9655b27c01d2ff1c49f7e672a04b70d630161b46",
+  "upstream": "Qwen/Qwen3-Reranker-4B",
+  "license": "Apache-2.0",
+  "format": "MLX safetensors,4bit",
+  "files": {
+    "README.md": {
+      "size": 863,
+      "sha256": "923cb3d77b6cc46ed3ce5c276d8705ea6d4a14838b286ddc04dbe94492e14fea"
+    },
+    "config.json": {
+      "size": 937,
+      "sha256": "62ced005985d6059a889644c75e2c644133e2631c757890600627d112cf54401"
+    },
+    "model.safetensors": {
+      "size": 2262637937,
+      "sha256": "8003a82d273cfbf540f3dd96775dd9065d438a9d91ca4983e7a9c4d0dd9e1448"
+    },
+    "model.safetensors.index.json": {
+      "size": 63964,
+      "sha256": "1603d3013f52651f69479ed6f99c2d32f00a984602fccd3879f80bd90be26ab5"
+    },
+    "tokenizer.json": {
+      "size": 11422654,
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    "tokenizer_config.json": {
+      "size": 5404,
+      "sha256": "443bfa629eb16387a12edbf92a76f6a6f10b2af3b53d87ba1550adfcf45f7fa0"
+    }
+  }
+}

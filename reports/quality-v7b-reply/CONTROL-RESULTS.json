@@ -1,0 +1,52 @@
+{
+  "scope": "Independent synthetic reply-only control;24ordinary+4fixed;no needs-clustering measurement",
+  "models": {
+    "06b": {
+      "incoming_ticket": {
+        "n": 24,
+        "tp": 5,
+        "fp": 4,
+        "fn": 1,
+        "tn": 14,
+        "precision": 0.5555555555555556,
+        "recall": 0.8333333333333334
+      },
+      "fixed_notice_candidate": {
+        "n": 4,
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "tn": 2,
+        "precision": 1.0,
+        "recall": 0.5
+      }
+    },
+    "4b": {
+      "incoming_ticket": {
+        "n": 24,
+        "tp": 5,
+        "fp": 1,
+        "fn": 1,
+        "tn": 17,
+        "precision": 0.8333333333333334,
+        "recall": 0.8333333333333334
+      },
+      "fixed_notice_candidate": {
+        "n": 4,
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "tn": 2,
+        "precision": 1.0,
+        "recall": 0.5
+      }
+    }
+  },
+  "predictions_sha256": "bba9067caa533b6cfc456216701b16f19f39e2ee6d79069447a2cade8fc9bea7",
+  "automatic_release": false,
+  "limitations": [
+    "Only6ordinary and2fixed positive cases",
+    "Synthetic author labels; no corporate data or expert labels",
+    "Both arms use v7policy;06b arm is not the full frozenv5c service"
+  ]
+}

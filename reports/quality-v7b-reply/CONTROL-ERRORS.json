@@ -1,0 +1,47 @@
+{
+  "scope": "post-evaluation diagnosis;no tuning or source changes permitted",
+  "errors": [
+    {
+      "id": "43bb6867-3f6d-4bd6-b408-a815144f9da9",
+      "event": "incoming_ticket",
+      "action": "operator",
+      "gold": {
+        "same_topic": true,
+        "eligibility": true,
+        "safe_action": "queue_standard",
+        "synthetic": true,
+        "reason": "ordinary_positive"
+      },
+      "query": "Стоит заново загрузить моё дежурство, и записанное утро превращается в старт на три часа позднее.",
+      "reason": "индивидуальное действие или инструкция требует человека"
+    },
+    {
+      "id": "1bf3b2f0-610c-4427-9e88-0fb79e493625",
+      "event": "fixed_notice_candidate",
+      "action": "operator",
+      "gold": {
+        "same_topic": true,
+        "eligibility": false,
+        "safe_action": "queue_fixed_notice",
+        "synthetic": true,
+        "reason": "fixed_positive"
+      },
+      "query": "Стоит заново загрузить моё дежурство, и записанное утро превращается в старт на три часа позднее.",
+      "reason": "индивидуальное действие или инструкция требует человека"
+    },
+    {
+      "id": "01892947-7c11-4192-af9b-7ac36d28b576",
+      "event": "incoming_ticket",
+      "action": "queue_standard",
+      "gold": {
+        "same_topic": false,
+        "eligibility": false,
+        "safe_action": "operator",
+        "synthetic": true,
+        "reason": "new_vs_broken"
+      },
+      "query": "Еженедельная рассылка о сроках уже была включена и работала. С понедельника перестала приходить, восстановите её.",
+      "reason": "совпавшая безопасная тема"
+    }
+  ]
+}

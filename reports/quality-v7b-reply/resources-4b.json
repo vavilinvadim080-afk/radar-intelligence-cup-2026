@@ -1,0 +1,7 @@
+{
+  "calls": 40,
+  "peak_rss_bytes": 826753024,
+  "peak_mlx_bytes": 2639346852,
+  "batch_size": 1,
+  "prefix_cache_unchanged": true
+}

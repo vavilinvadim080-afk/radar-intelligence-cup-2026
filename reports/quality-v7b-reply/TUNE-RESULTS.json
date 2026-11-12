@@ -1,0 +1,26 @@
+{
+  "scope": "TUNE24full-policy probe; not independent acceptance",
+  "metrics": {
+    "incoming_ticket": {
+      "n": 24,
+      "tp": 4,
+      "fp": 0,
+      "fn": 1,
+      "tn": 19,
+      "precision": 1.0,
+      "recall": 0.8
+    },
+    "fixed_notice_candidate": {
+      "n": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": null,
+      "recall": null
+    }
+  },
+  "prior_probe_error": "eligibility() omitted product gate and learned risk gate; probe labels were same_topic, not permitted replies; not full-service metrics",
+  "selection": "585settings explored; final4Bmax-direction/best-reference threshold0.95; no CV",
+  "automatic_release": false
+}

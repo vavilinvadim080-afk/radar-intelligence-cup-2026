@@ -1,0 +1,35 @@
+{
+  "contract": {
+    "bytes": 3655,
+    "sha256": "d9e0ac79acecafdc032c7e4e226dd580aa58da3be1156846d20cfc4bac24bc7f"
+  },
+  "contract_path": "/Users/vadimvavilin/\u0413\u041f\u041d/\u0420\u0430\u0434\u0430\u0440-\u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0439-\u043a\u0435\u0439\u0441-2026/radar_app/reply_policy.py",
+  "safe_action_aliases": {
+    "abstain": "operator"
+  },
+  "source_files": {
+    "needs-inputs.jsonl": {
+      "bytes": 21975,
+      "sha256": "480da0574ed625a48b0fd70d0b5eb16735f78eeca8cd2af8f0e69edc47a7a445"
+    },
+    "reply-inputs.jsonl": {
+      "bytes": 50861,
+      "sha256": "1816e2b154dbe04a58105daf279c8af2ee391647c89ed02fbbec06e96c04ef5a"
+    },
+    "sealed/needs-gold.jsonl": {
+      "bytes": 5854,
+      "sha256": "49e3ecc45276c62c80549a18f27de1a039125a3924d6dc1d248c9a8fd1efab37"
+    },
+    "sealed/reply-gold.jsonl": {
+      "bytes": 4901,
+      "sha256": "63b11c3b52691e863d9cd97aed46d017bbc8682daa1695cbe5f3b293414e524f"
+    }
+  },
+  "source_unchanged": true,
+  "status": "PASS",
+  "transform_counts": {
+    "events": 28,
+    "reference_keys": 56,
+    "safe_action_aliases": 20
+  }
+}

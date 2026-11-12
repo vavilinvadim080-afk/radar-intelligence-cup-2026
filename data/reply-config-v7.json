@@ -1,0 +1,8 @@
+{
+  "threshold": 0.95,
+  "direction_policy": "maximum of both directed scores",
+  "reference_policy": "best verified reference",
+  "scope": "reply-only experiment; needs clustering unchanged",
+  "selection": "exploratory TUNE24;585 fusion settings inspected;not CV",
+  "automatic_release": false
+}

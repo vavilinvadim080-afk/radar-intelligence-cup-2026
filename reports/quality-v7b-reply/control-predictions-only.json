@@ -1,0 +1,408 @@
+{
+  "models": {
+    "06b": [
+      {
+        "id": "a7db4344-aaf3-4040-bcab-62adc22386a8",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "72b23da6-3bff-4f4b-84be-52abf27755bf",
+        "action": "operator",
+        "reason": "нет согласия",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "2b2b637a-36eb-4d05-a840-4ce2f37a19fa",
+        "action": "needs_approval",
+        "reason": "нужно одобрение",
+        "same_topic": true,
+        "eligible": false
+      },
+      {
+        "id": "c95568e7-cea8-4461-a690-5142fdab8097",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "4b8e984b-df24-4380-b57f-6432b91e4f8f",
+        "action": "operator",
+        "reason": "другой продукт",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "052a3b72-635b-4ef9-9b76-fafffdee5403",
+        "action": "queue_fixed_notice",
+        "reason": "отдельная подтверждённая рассылка",
+        "same_topic": true,
+        "eligible": false
+      },
+      {
+        "id": "5bf750a4-39b5-41d5-a48e-dfc307f1f330",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "70dda783-da3f-4deb-b40f-78a5c3ab8d67",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "2a60a795-fe96-4140-822e-3958ebb171cd",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "43bb6867-3f6d-4bd6-b408-a815144f9da9",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "eea42c8a-3d77-40f4-9cf2-bad6e14036d1",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "8cd18820-36d4-4f64-bb08-aaa39101cbc0",
+        "action": "operator",
+        "reason": "маркер инъекции",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "9c6e0ac9-9f25-4bd9-a368-1f7efa388604",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "cabc3d00-fe6a-4dbe-aa44-266a4e213fdb",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "074ecea5-58f7-4e9a-8da5-d1db2ffa8f5d",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "1bf3b2f0-610c-4427-9e88-0fb79e493625",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "3a76cd25-5986-4988-98c0-4d88707fbd2b",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "10323fde-bb71-4528-8385-43bc54beec91",
+        "action": "operator",
+        "reason": "маркер инъекции",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "48e1132f-3e4e-48ff-9917-f08575599247",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "8d780373-5484-4481-85a6-a6252c2fec1f",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "4d80c1c7-5881-41ea-ab71-2ad705a5c83d",
+        "action": "needs_fix_approval",
+        "reason": "нужны подтверждения фикса и рассылки",
+        "same_topic": true,
+        "eligible": false
+      },
+      {
+        "id": "9a214678-a3a9-4f6f-b1c0-911c83c6cd4f",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "01892947-7c11-4192-af9b-7ac36d28b576",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "328fe1eb-8213-4f6e-897e-8691f93a5ef3",
+        "action": "operator",
+        "reason": "инцидент не открыт",
+        "same_topic": true,
+        "eligible": false
+      },
+      {
+        "id": "f648d9e0-e4e5-49a0-a624-3be294265cde",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "b28a1258-576e-44f1-a0c7-865ef3968431",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "36cbfb1e-1897-4cfb-9b49-b594b0ff363b",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "99c2fb63-1316-463c-b2a2-92ed6301322e",
+        "action": "ignore_duplicate",
+        "reason": "повторная доставка",
+        "same_topic": null,
+        "eligible": false
+      }
+    ],
+    "4b": [
+      {
+        "id": "a7db4344-aaf3-4040-bcab-62adc22386a8",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "72b23da6-3bff-4f4b-84be-52abf27755bf",
+        "action": "operator",
+        "reason": "нет согласия",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "2b2b637a-36eb-4d05-a840-4ce2f37a19fa",
+        "action": "needs_approval",
+        "reason": "нужно одобрение",
+        "same_topic": true,
+        "eligible": false
+      },
+      {
+        "id": "c95568e7-cea8-4461-a690-5142fdab8097",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "4b8e984b-df24-4380-b57f-6432b91e4f8f",
+        "action": "operator",
+        "reason": "другой продукт",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "052a3b72-635b-4ef9-9b76-fafffdee5403",
+        "action": "queue_fixed_notice",
+        "reason": "отдельная подтверждённая рассылка",
+        "same_topic": true,
+        "eligible": false
+      },
+      {
+        "id": "5bf750a4-39b5-41d5-a48e-dfc307f1f330",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "70dda783-da3f-4deb-b40f-78a5c3ab8d67",
+        "action": "operator",
+        "reason": "непроверенные источники",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "2a60a795-fe96-4140-822e-3958ebb171cd",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "43bb6867-3f6d-4bd6-b408-a815144f9da9",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "eea42c8a-3d77-40f4-9cf2-bad6e14036d1",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "8cd18820-36d4-4f64-bb08-aaa39101cbc0",
+        "action": "operator",
+        "reason": "маркер инъекции",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "9c6e0ac9-9f25-4bd9-a368-1f7efa388604",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "cabc3d00-fe6a-4dbe-aa44-266a4e213fdb",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "074ecea5-58f7-4e9a-8da5-d1db2ffa8f5d",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "1bf3b2f0-610c-4427-9e88-0fb79e493625",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "3a76cd25-5986-4988-98c0-4d88707fbd2b",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "10323fde-bb71-4528-8385-43bc54beec91",
+        "action": "operator",
+        "reason": "маркер инъекции",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "48e1132f-3e4e-48ff-9917-f08575599247",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "8d780373-5484-4481-85a6-a6252c2fec1f",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "4d80c1c7-5881-41ea-ab71-2ad705a5c83d",
+        "action": "needs_fix_approval",
+        "reason": "нужны подтверждения фикса и рассылки",
+        "same_topic": true,
+        "eligible": false
+      },
+      {
+        "id": "9a214678-a3a9-4f6f-b1c0-911c83c6cd4f",
+        "action": "operator",
+        "reason": "тема не подтверждена",
+        "same_topic": false,
+        "eligible": true
+      },
+      {
+        "id": "01892947-7c11-4192-af9b-7ac36d28b576",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "328fe1eb-8213-4f6e-897e-8691f93a5ef3",
+        "action": "operator",
+        "reason": "инцидент не открыт",
+        "same_topic": true,
+        "eligible": false
+      },
+      {
+        "id": "f648d9e0-e4e5-49a0-a624-3be294265cde",
+        "action": "operator",
+        "reason": "индивидуальное действие или инструкция требует человека",
+        "same_topic": null,
+        "eligible": false
+      },
+      {
+        "id": "b28a1258-576e-44f1-a0c7-865ef3968431",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "36cbfb1e-1897-4cfb-9b49-b594b0ff363b",
+        "action": "queue_standard",
+        "reason": "совпавшая безопасная тема",
+        "same_topic": true,
+        "eligible": true
+      },
+      {
+        "id": "99c2fb63-1316-463c-b2a2-92ed6301322e",
+        "action": "ignore_duplicate",
+        "reason": "повторная доставка",
+        "same_topic": null,
+        "eligible": false
+      }
+    ]
+  },
+  "input_sha256": "f025e82648cc16e4e9fae0a74d34240d418145e9f380834dcc53e97606c6703e",
+  "freeze_sha256": "8cb7c42fa9a35908b57e94106497af9e685f0eec0e3c8a3b300b9acc01038412",
+  "risk_sha256": "f564d597b9153019f72f38088f6d7300511ce26a540fe815e3400805f6241327",
+  "preflight_sha256": "7ef4d502fdda580fe0ca97f9979ed1e73f04622232f77f169ca8444d19f37930",
+  "scores_sha256": {
+    "06b": "d5ce79a2b0c29f75c5fea909ff32fc97529b8797820a78ceab28bbd94436a527",
+    "4b": "e1d9da3cafce9e9189c777fe8feefdefa4692e491e848de34d8ef898b6aaa7ca"
+  }
+}

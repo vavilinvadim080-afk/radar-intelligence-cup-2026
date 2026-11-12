@@ -1,0 +1,8 @@
+{
+  "loaded": true,
+  "device": "mlx-metal",
+  "calls": 10,
+  "peak_rss_bytes": 1780301824,
+  "peak_mlx_bytes": 1613353140,
+  "base_cache_unchanged": true
+}

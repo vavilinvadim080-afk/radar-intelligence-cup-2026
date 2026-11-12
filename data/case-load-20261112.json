@@ -1,0 +1,91 @@
+{
+  "version": 14,
+  "provenance": "user_report_of_organizer_case_update",
+  "source": {
+    "reported_on": "2026-11-12",
+    "reporter": "user",
+    "reported_statement": "организаторы еще дописали что в день им по40продуктам приходит480обращений в день в кейсе",
+    "interpretation": "480 обращений в день суммарно по 40 продуктам, не по 480 на каждый.",
+    "direct_document_available": false,
+    "external_url": null,
+    "is_measured_traffic": false,
+    "prior_case_context": {
+      "path": "reports/case-text-for-v5.txt",
+      "support_managers_approximately": 40,
+      "separate_from_product_count": true
+    }
+  },
+  "case_load": {
+    "daily_total": 480,
+    "products": 40,
+    "daily_per_product_mean": 12.0,
+    "is_per_product_peak": false,
+    "distribution": "unknown_uneven"
+  },
+  "assumptions": {
+    "weeks_per_year": 48,
+    "working_days_per_week": 5,
+    "hours_per_day": 8,
+    "peak_factor": 5,
+    "seconds_per_full_text_path": 30
+  },
+  "derived": {
+    "working_days_per_year": 240,
+    "annual_total": 115200,
+    "working_seconds_per_day": 28800,
+    "hourly_total_mean": 60.0,
+    "hourly_per_product_mean": 1.5
+  },
+  "sizing": {
+    "status": "sizing_assumption",
+    "formula": "ceil(daily_total * peak_factor * seconds_per_full_text_path / working_seconds_per_day)",
+    "text_slots": 3,
+    "seconds_sensitivity": [
+      {
+        "seconds_per_full_text_path": 15,
+        "text_slots": 2
+      },
+      {
+        "seconds_per_full_text_path": 30,
+        "text_slots": 3
+      },
+      {
+        "seconds_per_full_text_path": 60,
+        "text_slots": 5
+      }
+    ],
+    "scope": "Один полный текстовый путь на новое обращение, включая его вызовы моделей и программные этапы.",
+    "not_model_or_gpu_benchmark": true,
+    "limitations": [
+      "Пик 5x и длительность пути предположены; распределение по продуктам неравномерно и пока неизвестно.",
+      "12 в день и 1,5 в час на продукт являются средними, не пиковыми значениями.",
+      "Слоты являются параллельными путями, не числом GPU; ASR/VL и повторы планируются отдельно.",
+      "Старые замеры на 800/1500/3000 не подтверждают качество или скорость при 480 в день."
+    ]
+  },
+  "autoreply": {
+    "status": "illustrative_assumptions_only",
+    "formula": "daily_total * working_days_per_year * repeat_share * eligible_share * minutes_saved_per_eligible / 60",
+    "unknown_inputs": [
+      "repeat_share",
+      "eligible_share",
+      "minutes_saved_per_eligible"
+    ],
+    "eligible_share_definition": "Доля допустимых для автоответа среди повторных обращений; определяется отдельным контролем на данных компании.",
+    "illustration": {
+      "repeat_share": 0.2,
+      "eligible_share": 0.5,
+      "minutes_saved_per_eligible": 3.5,
+      "annual_hours": 672.0
+    },
+    "included_in_base_pv": false,
+    "quality_metrics_are_not_eligible_share": true,
+    "delivery_connected": false,
+    "limitations": "672 ч/год при 20% повторов, 50% допуска среди повторов и 3,5 мин экономии являются иллюстрацией допущений, не измерением. Синтетические Precision/Recall не задают долю допуска. До сложения с другими эффектами нужно исключить двойной счёт."
+  },
+  "economics": {
+    "source": "data/economics-weekly.json",
+    "depends_on_case_volume": false,
+    "policy": "Три сценария 1,5/3/6 ч/нед и PV 0,973/1,947/3,893 млн руб. неизменны. Потенциал автоответа к PV не прибавлен."
+  }
+}

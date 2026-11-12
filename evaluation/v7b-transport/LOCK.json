@@ -1,0 +1,26 @@
+{
+  "config_freeze": false,
+  "files": {
+    "PROTOCOL.md": {
+      "bytes": 5369,
+      "sha256": "673fd94cbcf526ae22b94e9fe317e4f340b81e91e3546db3c7de2f470eb85225"
+    },
+    "needs-inputs.jsonl": {
+      "bytes": 21975,
+      "sha256": "480da0574ed625a48b0fd70d0b5eb16735f78eeca8cd2af8f0e69edc47a7a445"
+    },
+    "reply-inputs.jsonl": {
+      "bytes": 51457,
+      "sha256": "f025e82648cc16e4e9fae0a74d34240d418145e9f380834dcc53e97606c6703e"
+    },
+    "sealed/needs-gold.jsonl": {
+      "bytes": 5854,
+      "sha256": "49e3ecc45276c62c80549a18f27de1a039125a3924d6dc1d248c9a8fd1efab37"
+    },
+    "sealed/reply-gold.jsonl": {
+      "bytes": 4921,
+      "sha256": "1600c7a43680cdc7659169d28c375fabc44240b5cf52c2d63410c9cb13a4856c"
+    }
+  },
+  "version": "v7b-transport"
+}

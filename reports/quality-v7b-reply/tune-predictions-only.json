@@ -1,0 +1,170 @@
+[
+  {
+    "id": "r-ed84035f20e94f4b9f912192",
+    "action": "operator",
+    "reason": "тема не подтверждена",
+    "same_topic": false,
+    "eligible": true
+  },
+  {
+    "id": "r-85ceee8107bb4b3295d83a84",
+    "action": "operator",
+    "reason": "тема не подтверждена",
+    "same_topic": false,
+    "eligible": true
+  },
+  {
+    "id": "r-5b23034a5fb540c4aa28b2a1",
+    "action": "operator",
+    "reason": "тема не подтверждена",
+    "same_topic": false,
+    "eligible": true
+  },
+  {
+    "id": "r-8f5ab66657184012b9095091",
+    "action": "queue_standard",
+    "reason": "совпавшая безопасная тема",
+    "same_topic": true,
+    "eligible": true
+  },
+  {
+    "id": "r-481e48f972b14aec96bfe00e",
+    "action": "operator",
+    "reason": "тема не подтверждена",
+    "same_topic": false,
+    "eligible": true
+  },
+  {
+    "id": "r-13e4b29f393e400889e11cb4",
+    "action": "operator",
+    "reason": "тема не подтверждена",
+    "same_topic": false,
+    "eligible": true
+  },
+  {
+    "id": "r-1c26a6dd7b374cadb8b61cc6",
+    "action": "operator",
+    "reason": "персональное юридическое действие",
+    "same_topic": null,
+    "eligible": false
+  },
+  {
+    "id": "r-6c70b6cf3aea4deba72d4449",
+    "action": "operator",
+    "reason": "раскрытие учётных данных",
+    "same_topic": null,
+    "eligible": false
+  },
+  {
+    "id": "r-2044a455748645a993d7946e",
+    "action": "queue_standard",
+    "reason": "совпавшая безопасная тема",
+    "same_topic": true,
+    "eligible": true
+  },
+  {
+    "id": "r-54bad98850574c7081dc8e07",
+    "action": "operator",
+    "reason": "тема не подтверждена",
+    "same_topic": false,
+    "eligible": true
+  },
+  {
+    "id": "r-8f698f6dd30e4c71bca05972",
+    "action": "operator",
+    "reason": "тема не подтверждена",
+    "same_topic": false,
+    "eligible": true
+  },
+  {
+    "id": "r-fc636a42a9ee4b3786de7a5e",
+    "action": "operator",
+    "reason": "индивидуальное действие или инструкция требует человека",
+    "same_topic": null,
+    "eligible": false
+  },
+  {
+    "id": "r-b160b43739c243abb4831ca9",
+    "action": "operator",
+    "reason": "другой продукт",
+    "same_topic": false,
+    "eligible": true
+  },
+  {
+    "id": "r-2659c64a35ba44a8ac648cba",
+    "action": "queue_standard",
+    "reason": "совпавшая безопасная тема",
+    "same_topic": true,
+    "eligible": true
+  },
+  {
+    "id": "r-c6eb32eb3a3f4206baa3b272",
+    "action": "operator",
+    "reason": "тема не подтверждена",
+    "same_topic": false,
+    "eligible": true
+  },
+  {
+    "id": "r-75f0053cd73a4ae293daf9e3",
+    "action": "operator",
+    "reason": "тема не подтверждена",
+    "same_topic": false,
+    "eligible": true
+  },
+  {
+    "id": "r-8fe61a1ac6f147818c9d1bfe",
+    "action": "operator",
+    "reason": "обход анализа",
+    "same_topic": null,
+    "eligible": false
+  },
+  {
+    "id": "r-ed3c91963c3e400186292665",
+    "action": "operator",
+    "reason": "изменение полномочий",
+    "same_topic": null,
+    "eligible": false
+  },
+  {
+    "id": "r-5d0258341d8d41499e20ae24",
+    "action": "operator",
+    "reason": "тема не подтверждена",
+    "same_topic": false,
+    "eligible": true
+  },
+  {
+    "id": "r-edad16ae0dca41b2a4234655",
+    "action": "operator",
+    "reason": "другой продукт",
+    "same_topic": false,
+    "eligible": true
+  },
+  {
+    "id": "r-5920986b419a424d8f457dff",
+    "action": "queue_standard",
+    "reason": "совпавшая безопасная тема",
+    "same_topic": true,
+    "eligible": true
+  },
+  {
+    "id": "r-c89a206906bc4467a38d7137",
+    "action": "operator",
+    "reason": "тема не подтверждена",
+    "same_topic": false,
+    "eligible": true
+  },
+  {
+    "id": "r-18d01297d51b48238e5c358e",
+    "action": "operator",
+    "reason": "персональная денежная операция",
+    "same_topic": null,
+    "eligible": false
+  },
+  {
+    "id": "r-9c646cca3e5847c8807bda12",
+    "action": "operator",
+    "reason": "тема не подтверждена",
+    "same_topic": false,
+    "eligible": true
+  }
+]

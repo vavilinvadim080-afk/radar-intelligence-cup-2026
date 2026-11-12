@@ -5556,6 +5556,7 @@ b.notes="";
 </script>
 <script>
 DECK.DATA.weekly={"version":1,"provenance":{"case":{"source":"Официальное условие кейса «Газпром нефть».","facts":["40 сотрудников","Бесплатная инфраструктура по условию кейса"]},"common_inputs":"data/economics.json#/base/inputs; кроме staff, это сценарные допущения, не замеры.","weekly_saved_hours":"Анализ чувствительности: 1,5 / 3 / 6 часов в неделю на одного сотрудника; сценарии, не измеренный минимум.","legacy_scenarios":"Полные conservative/base/optimistic сохранены отдельно в data/economics.json."},"assumptions":{"staff":40,"weeks":48,"hourly_cost":800,"cash_share":0.25,"adoption":[0.5,1,1],"discount":0.2,"wage_growth":0,"horizon_years":3},"scenarios":[{"weekly_saved_hours":1.5,"annual_hours":2880.0,"annual_capacity_rub":2304000.0,"cash_flows":[288000.0,576000.0,576000.0],"budget_discounted":973333.33},{"weekly_saved_hours":3,"annual_hours":5760,"annual_capacity_rub":4608000,"cash_flows":[576000.0,1152000.0,1152000.0],"budget_discounted":1946666.67},{"weekly_saved_hours":6,"annual_hours":11520,"annual_capacity_rub":9216000,"cash_flows":[1152000.0,2304000.0,2304000.0],"budget_discounted":3893333.33}]};
+DECK.DATA.caseLoadV14={"version":14,"provenance":"user_report_of_organizer_case_update","source":{"reported_on":"2026-11-12","reporter":"user","reported_statement":"организаторы еще дописали что в день им по40продуктам приходит480обращений в день в кейсе","interpretation":"480 обращений в день суммарно по 40 продуктам, не по 480 на каждый.","direct_document_available":false,"external_url":null,"is_measured_traffic":false,"prior_case_context":{"path":"reports/case-text-for-v5.txt","support_managers_approximately":40,"separate_from_product_count":true}},"case_load":{"daily_total":480,"products":40,"daily_per_product_mean":12.0,"is_per_product_peak":false,"distribution":"unknown_uneven"},"assumptions":{"weeks_per_year":48,"working_days_per_week":5,"hours_per_day":8,"peak_factor":5,"seconds_per_full_text_path":30},"derived":{"working_days_per_year":240,"annual_total":115200,"working_seconds_per_day":28800,"hourly_total_mean":60.0,"hourly_per_product_mean":1.5},"sizing":{"status":"sizing_assumption","formula":"ceil(daily_total * peak_factor * seconds_per_full_text_path / working_seconds_per_day)","text_slots":3,"seconds_sensitivity":[{"seconds_per_full_text_path":15,"text_slots":2},{"seconds_per_full_text_path":30,"text_slots":3},{"seconds_per_full_text_path":60,"text_slots":5}],"scope":"Один полный текстовый путь на новое обращение, включая его вызовы моделей и программные этапы.","not_model_or_gpu_benchmark":true,"limitations":["Пик 5x и длительность пути предположены; распределение по продуктам неравномерно и пока неизвестно.","12 в день и 1,5 в час на продукт являются средними, не пиковыми значениями.","Слоты являются параллельными путями, не числом GPU; ASR/VL и повторы планируются отдельно.","Старые замеры на 800/1500/3000 не подтверждают качество или скорость при 480 в день."]},"autoreply":{"status":"illustrative_assumptions_only","formula":"daily_total * working_days_per_year * repeat_share * eligible_share * minutes_saved_per_eligible / 60","unknown_inputs":["repeat_share","eligible_share","minutes_saved_per_eligible"],"eligible_share_definition":"Доля допустимых для автоответа среди повторных обращений; определяется отдельным контролем на данных компании.","illustration":{"repeat_share":0.2,"eligible_share":0.5,"minutes_saved_per_eligible":3.5,"annual_hours":672.0},"included_in_base_pv":false,"quality_metrics_are_not_eligible_share":true,"delivery_connected":false,"limitations":"672 ч/год при 20% повторов, 50% допуска среди повторов и 3,5 мин экономии являются иллюстрацией допущений, не измерением. Синтетические Precision/Recall не задают долю допуска. До сложения с другими эффектами нужно исключить двойной счёт."},"economics":{"source":"data/economics-weekly.json","depends_on_case_volume":false,"policy":"Три сценария 1,5/3/6 ч/нед и PV 0,973/1,947/3,893 млн руб. неизменны. Потенциал автоответа к PV не прибавлен."}};
 (function(){
 'use strict';
 const D=DECK,G=gsap,{h,s}=D,W=D.DATA.weekly,a=W.assumptions;
@@ -5565,7 +5566,48 @@ const branch=D.nodeById('economics').branches.find(b=>b.id==='gpn');
 const keys=['low','mid','high'],names={low:'1,5 ч/нед',mid:'3 ч/нед',high:'6 ч/нед'};
 const nf=(n,d=0)=>Number(n).toLocaleString('ru-RU',{maximumFractionDigits:d});
 const line=(text,style={})=>h('div',{text,style:{fontSize:'24px',lineHeight:1.32,...style}});
-function load(root,ctx){return D.v5Load?D.v5Load(root,ctx):D.v5Pending(root,'Расчётная ёмкость поддержки','Объём обращений неизвестен. Ёмкость рассчитывается из численности и допущений.','Источник: data/load-effect-v5.json');}
+function load(root,ctx){
+  const C=D.DATA.caseLoadV14,c=C.case_load,a=C.assumptions,d=C.derived,z=C.sizing,u=C.autoreply,i=u.illustration;
+  root.dataset.resultStatus='case_condition_user_report';
+  const small=(text,style={})=>line(text,{fontSize:'20px',...style});
+  const card=(...children)=>h('div',{class:'kpi',style:{padding:'17px 21px'}},...children);
+  const metrics=[
+    [c.daily_total,'обращений в день суммарно'],
+    [c.products,'продуктов в контуре'],
+    [c.daily_per_product_mean,'в день на продукт в среднем']
+  ].map(([value,label])=>h('div',{class:'kpi hl',style:{padding:'18px 14px',minWidth:0}},
+    line(nf(value),{fontSize:'54px',fontWeight:300,color:'var(--code)'}),small(label,{fontSize:'19px'})));
+  const left=h('div',{style:{display:'flex',flexDirection:'column',gap:'14px'}},
+    h('div',{class:'eyebrow',text:'Газпром нефть · уточнение условия'}),
+    h('div',{style:{display:'grid',gridTemplateColumns:'repeat(3,minmax(0,1fr))',gap:'12px'}},metrics),
+    small('480 суммарно по всем 40 продуктам. 12 - среднее, не пик; распределение неравномерно.'),
+    card(line(nf(d.annual_total)+' обращений/год',{fontSize:'40px',color:'var(--code)'}),
+      small(`${nf(c.daily_total)} × (${a.weeks_per_year} × ${a.working_days_per_week}) = ${nf(d.annual_total)}`),
+      small(`${d.working_days_per_year} рабочих дней = ${a.weeks_per_year} недель × ${a.working_days_per_week} дней. Календарь - допущение.`,{color:'var(--ink2)',marginTop:'6px'}),
+      small(`При ${a.hours_per_day} ч/день: ${nf(d.hourly_total_mean)} обращений/час всего; ${nf(d.hourly_per_product_mean,1)} на продукт в среднем.`,{marginTop:'10px'})),
+    card(small('Около 40 менеджеров - отдельный факт прежнего условия. Число продуктов и численность поддержки являются разными показателями.')),
+    h('div',{class:'note',style:{fontSize:'19px',margin:0},text:'Источник: сообщение пользователя от 12.11.2026 о дополнении организаторов. Прямого нового PDF пока нет. Это условие со слов пользователя, не реальный замер потока.'}),
+    h('div',{class:'note',style:{fontSize:'18px',margin:0},text:'Воспроизводимость: data/case-load-20261112.json. Прежние замеры на 800/1500/3000 не подтверждают качество или скорость при 480 в день.'}));
+  const sensitivity=h('table',{class:'t',style:{fontSize:'21px'}},
+    h('thead',{},h('tr',{},h('th',{text:'Полный путь, с'}),z.seconds_sensitivity.map(r=>h('th',{text:nf(r.seconds_per_full_text_path)})))),
+    h('tbody',{},h('tr',{},h('td',{text:'Параллельные слоты'}),z.seconds_sensitivity.map(r=>h('td',{'data-text-slots':String(r.text_slots),text:nf(r.text_slots)})))));
+  const right=h('div',{style:{display:'flex',flexDirection:'column',gap:'12px'}},
+    h('div',{class:'eyebrow',text:'Планирование мощности · допущения'}),
+    card(line(nf(z.text_slots)+' текстовых слота',{fontSize:'40px',color:'var(--code)'}),
+      line(`⌈${c.daily_total} × ${a.peak_factor} × ${a.seconds_per_full_text_path} / ${d.working_seconds_per_day}⌉ = ${z.text_slots}`,{fontSize:'27px'}),
+      small(`Пик ${a.peak_factor}x; ${a.seconds_per_full_text_path} с на полный текстовый путь; ${a.hours_per_day} ч = ${nf(d.working_seconds_per_day)} с. Всё это допущения.`,{fontSize:'19px',marginTop:'6px'}),
+      sensitivity,
+      small('Слоты - параллельные пути, не число GPU. Скорость моделей не измерена; ASR/VL планируются отдельно.',{fontSize:'18px',color:'var(--ink2)',marginTop:'8px'})),
+    card(line('Автоответ · отдельная иллюстрация',{fontSize:'25px',fontWeight:600}),
+      small('H = N × D × r × s × t / 60, ч/год',{fontSize:'23px',marginTop:'5px'}),
+      small(`N=${c.daily_total}/день; D=${d.working_days_per_year} дней/год; r - повторы; s - допуск среди повторов; t - экономия минут.`,{fontSize:'18px',color:'var(--ink2)'}),
+      small(`${c.daily_total} × ${d.working_days_per_year} × ${nf(i.repeat_share*100)}% × ${nf(i.eligible_share*100)}% × ${nf(i.minutes_saved_per_eligible,1)} / 60 = ${nf(i.annual_hours)} ч/год`,{fontSize:'23px',color:'var(--code)',marginTop:'8px'}),
+      small('Доли и минуты неизвестны. 20%, 50% и 3,5 мин заданы только для примера; Precision/Recall не задают допуск.',{fontSize:'18px',marginTop:'7px'})),
+    h('div',{class:'note',style:{fontSize:'19px',margin:0},text:'К базовому PV автоответ не прибавлен. Доставка не подключена. PV 0,973 / 1,947 / 3,893 млн ₽ рассчитывается из часов обзора и не зависит от N.'}));
+  const dashboard=h('div',{'data-case-dashboard':'480',style:{display:'grid',gridTemplateColumns:'850px minmax(0,1fr)',columnGap:'50px',alignItems:'start'}},left,right);
+  root.append(dashboard);
+  return G.timeline({paused:true}).fromTo([left,right],{opacity:0,y:12},{opacity:1,y:0,duration:.55,stagger:.1});
+}
 Object.assign(branch,{title:'Экономика: 1,5 / 3 / 6 часов в неделю',title2:'Экономика: 1,5 / 3 / 6 часов в неделю',steps:true,beats:undefined,intro:false,
   takeaway:'Экономия часов в неделю на сотрудника задана как допущение. <em>Денежную долю и освоение учитываем отдельно.</em>',
   build(root,ctx){
@@ -5624,6 +5666,90 @@ Object.assign(branch,{title:'Экономика: 1,5 / 3 / 6 часов в не�
 });
 
 })();
+
+</script>
+<script>
+DECK.DATA.replyV7b={"scope":"Independent synthetic reply-only control;24ordinary+4fixed;no needs-clustering measurement","models":{"06b":{"incoming_ticket":{"n":24,"tp":5,"fp":4,"fn":1,"tn":14,"precision":0.5555555555555556,"recall":0.8333333333333334},"fixed_notice_candidate":{"n":4,"tp":1,"fp":0,"fn":1,"tn":2,"precision":1.0,"recall":0.5}},"4b":{"incoming_ticket":{"n":24,"tp":5,"fp":1,"fn":1,"tn":17,"precision":0.8333333333333334,"recall":0.8333333333333334},"fixed_notice_candidate":{"n":4,"tp":1,"fp":0,"fn":1,"tn":2,"precision":1.0,"recall":0.5}}},"predictions_sha256":"bba9067caa533b6cfc456216701b16f19f39e2ee6d79069447a2cade8fc9bea7","automatic_release":false,"limitations":["Only6ordinary and2fixed positive cases","Synthetic author labels; no corporate data or expert labels","Both arms use v7policy;06b arm is not the full frozenv5c service"],"version":"v7b-reply-only","provenance":{"report":"reports/quality-v7b-reply/CONTROL-RESULTS.json","report_sha256":"d7304430c666ab529743b4fb478ea8173c66801b6ae6f83f044693f600b250e7","freeze_sha256":"8cb7c42fa9a35908b57e94106497af9e685f0eec0e3c8a3b300b9acc01038412","comparison":"samev7policywithdifferentmodel;notfullfrozenv5c"}};
+(function(factory){
+  const api=factory();
+  if(typeof module==='object'&&module.exports)module.exports=api;
+  if(typeof DECK!=='undefined')api.install(DECK,gsap);
+})(function(){
+  'use strict';
+  const TITLE='Автоответ: малая независимая проверка';
+  const installed=new WeakSet();
+  const pct=(value,min=0)=>(value*100).toLocaleString('ru-RU',{minimumFractionDigits:min,maximumFractionDigits:1})+'%';
+  function verify(m,n,positive){
+    if(!m||m.n!==n)throw Error('Wrong reply-only population');
+    for(const key of ['tp','fp','fn','tn'])if(!Number.isInteger(m[key])||m[key]<0)throw Error('Invalid confusion counts');
+    if(m.tp+m.fp+m.fn+m.tn!==n||m.tp+m.fn!==positive)throw Error('Wrong reply-only denominator');
+    const precision=m.tp+m.fp?m.tp/(m.tp+m.fp):null,recall=m.tp+m.fn?m.tp/(m.tp+m.fn):null;
+    if(m.precision!==precision||m.recall!==recall)throw Error('Metrics differ from confusion counts');
+    return m;
+  }
+  function prepare(q){
+    if(!q?.scope?.includes('reply-only')||!/^[a-f0-9]{64}$/.test(q.predictions_sha256||''))throw Error('Independent reply-only report required');
+    if(q.automatic_release!==false)throw Error('Automatic release must stay closed');
+    return {models:['06b','4b'].map(id=>({id,label:id==='4b'?'Qwen 4B':'Qwen 0.6B',
+      ordinary:verify(q.models?.[id]?.incoming_ticket,24,6),fixed:verify(q.models?.[id]?.fixed_notice_candidate,4,2)}))};
+  }
+  function render(root,ctx,D,G){
+    const {models}=prepare(D.DATA.replyV7b),ordinary=models[1].ordinary,fixed=models[1].fixed;
+    const prior=D.DATA.v11.quality.models.candidate.needs;
+    const {s}=D;
+    root.dataset.qualitySource='data/quality-reply-v7b.json';root.dataset.autoEnable='false';root.dataset.resultStatus='measured_synthetic_small';
+    const svg=s('svg',{viewBox:'0 0 1688 640',role:'img','aria-label':TITLE});
+    svg.style.cssText='width:100%;height:100%;object-fit:contain';
+    const text=(x,y,value,size=22,color='var(--ink)')=>s('text',{x,y,text:String(value),fill:color,style:`font-size:${size}px;font-family:inherit`});
+    const box=(x,y,width,height)=>s('rect',{x,y,width,height,rx:12,fill:'none',stroke:'var(--line)'});
+    svg.append(text(25,30,'Независимая проверка автоответа · 24 обычных сценария, 6 допустимых',25),
+      text(25,65,'Нет оценки на данных компании или на нагрузке 480/день; это не 80% для всего сервиса.',21,'var(--muted)'));
+    [['Precision (точность)',ordinary.precision,'TP/(TP+FP)',ordinary.fp],['Recall (полнота)',ordinary.recall,'TP/(TP+FN)',ordinary.fn]].forEach(([label,value,formula,other],i)=>{
+      const x=25+i*545;
+      svg.append(box(x,95,515,205),text(x+25,137,label,27),text(x+25,218,pct(value),66,'var(--code)'),
+        text(x+25,270,`${formula} = ${ordinary.tp}/(${ordinary.tp}+${other})`,25));
+    });
+    svg.append(box(1115,95,545,205),text(1140,140,`Автовыпуск закрыт: ${ordinary.fp} ложный ответ`,25,'var(--human)'),
+      text(1140,190,'Показатели слева: Qwen 4B',24),
+      text(1140,235,`TP ${ordinary.tp} / FP ${ordinary.fp} / FN ${ordinary.fn} / TN ${ordinary.tn}`,24),
+      text(1140,273,`${ordinary.n} сценария; ${ordinary.tp+ordinary.fn} допустимых`,22,'var(--muted)'));
+    svg.append(text(25,340,'Одна политика допуска и проверка рисков; порог 0,95 для обеих моделей',24),
+      text(25,380,'Модель',21,'var(--muted)'),text(270,380,'Precision (точность)',21,'var(--muted)'),
+      text(550,380,'Recall (полнота)',21,'var(--muted)'),text(820,380,'TP / FP / FN / TN',21,'var(--muted)'));
+    models.forEach((model,i)=>{
+      const y=421+i*43,r=model.ordinary;
+      svg.append(text(25,y,model.label,25),text(270,y,pct(r.precision),27),text(550,y,pct(r.recall),27),
+        text(820,y,`${r.tp} / ${r.fp} / ${r.fn} / ${r.tn}`,25));
+    });
+    svg.append(box(1140,361,520,141),text(1160,393,`Рассылка фикса · n=${fixed.n}, допустимых ${fixed.tp+fixed.fn}`,22),
+      text(1160,426,`Обе модели: Precision ${pct(fixed.precision)} / Recall ${pct(fixed.recall)}`,21),
+      text(1160,464,`TP ${fixed.tp} / FP ${fixed.fp} / FN ${fixed.fn} / TN ${fixed.tn}`,21),
+      text(25,510,'Qwen 4B и 0.6B на одном новом наборе. Контроль v5c приведён отдельно.',21,'var(--muted)'),
+      text(25,543,'Малый набор: 6 допустимых обычных ответов и 2 уведомления о фиксе. Автоответ v5c: n=120.',20,'var(--muted)'),
+      text(25,577,`Группировка v5c: Precision ${pct(prior.pairs.precision,1)}, Recall ${pct(prior.pairs.recall,1)}, n=${prior.unique_messages}; не переизмерялась`,21,'var(--muted)'),
+      s('a',{href:'../data/quality-reply-v7b.json'},text(25,622,'data/quality-reply-v7b.json',21,'var(--code)')),
+      text(460,622,'Пять верных ответов, один ложный. Автовыпуск отключён.',20,'var(--muted)'));
+    root.append(svg);
+    return G.timeline({paused:true}).from(svg,{opacity:0,y:8,duration:.35});
+  }
+  function install(D,G){
+    if(installed.has(D))return;
+    const branch=D.nodeById('quality').branches.find(b=>b.id==='speed'),previous=branch.build;
+    branch.title=branch.title2='Качество: результаты проверок';
+    branch.build=function(root,ctx){
+      const stack=D.v5Stack;
+      D.v5Stack=function(host,sub,definitions,options={}){
+        if(host!==root||sub!==ctx)return stack.call(D,host,sub,definitions,options);
+        if(definitions.map(d=>d.key).join(',')!=='bursts,needs,autoreply,load')throw Error('Unexpected quality actions');
+        const extra={key:'reply-v7b',label:'5 · Автоответ v7b',title:TITLE,build:(el,context)=>render(el,context,D,G)};
+        return stack.call(D,host,sub,[...definitions,extra],{...options,staticIndex:sub.static?definitions.length:options.staticIndex});
+      };
+      try{return previous.call(this,root,ctx);}finally{D.v5Stack=stack;}
+    };
+    installed.add(D);
+  }
+  return {prepare,render,install};
+});
 
 </script>
 </body>

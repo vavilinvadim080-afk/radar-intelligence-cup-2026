@@ -1,0 +1,125 @@
+{
+  "input_sha256": "00d22e075885788db59e275a5b288250d49dd33ab0e8b8f31a2664411cc94544",
+  "metadata": {
+    "backend": "nli",
+    "encoder": "MoritzLaurer/multilingual-MiniLMv2-L6-mnli-xnli",
+    "revision": "0a71e92a985b6e1ad1828cf67ce9c459639c1dca",
+    "dimension": 384,
+    "pooling": "NLI",
+    "prefix": null,
+    "max_tokens": 512,
+    "offline": true,
+    "attention": "eager",
+    "cpu_threads": 2,
+    "dtype": "float32",
+    "labels": [
+      "entailment",
+      "neutral",
+      "contradiction"
+    ],
+    "torch": "2.14.1",
+    "transformers": "5.20.2",
+    "weights_sha256": "91b323ccf247ec1e3b5925d566230bae7c52de8147e6062b42e250089a3fc80b",
+    "artifacts_fingerprint": "af6e1e254a531d6d29b87d7ce6889b4b6de9687189e680a90c7a5cf3d231c821",
+    "artifact_files": {
+      "config.json": {
+        "bytes": 1032,
+        "sha256": "79862295be1538a947e0f56d495ef8d658c3eaebcfb42c7ad96229d195ca745d"
+      },
+      "tokenizer.json": {
+        "bytes": 17082758,
+        "sha256": "098c131bb4423163db239755e309facaa6850059f850f9f3d88a78344a4b631c"
+      },
+      "tokenizer_config.json": {
+        "bytes": 565,
+        "sha256": "86139ce1f39e814bcdb99a6fe30c0c4983911508aad07417e616d994fb74eb25"
+      },
+      "special_tokens_map.json": {
+        "bytes": 280,
+        "sha256": "06e405a36dfe4b9604f484f6a1e619af1a7f7d09e34a8555eb0b77b66318067f"
+      },
+      "model.safetensors": {
+        "bytes": 427997022,
+        "sha256": "91b323ccf247ec1e3b5925d566230bae7c52de8147e6062b42e250089a3fc80b"
+      },
+      "README.md": {
+        "bytes": 6741,
+        "sha256": "f28aebb1babf603b5c5c107670645f2b00e09a2e9a39132293ad0a9a7ab6fa34"
+      }
+    },
+    "manifest_sha256": "fe1ceee77ec8c7cb7a604c447a93c6c490c258d19fa988d5ff125963343c4a1b",
+    "worker_sha256": "6837164e91ed9f5673b44099a2cd5c1a5b750895c38d93ec17c7edef6425c90a"
+  },
+  "risks": {
+    "7e877960e044d81715b72d35f0fdc9d8cdca9df3cbc11db2bc8b9fc2cfbf4334": {
+      "money": 0.25441238284111023,
+      "credentials": 0.14081408083438873,
+      "injection": 0.010243612341582775
+    },
+    "a9cc9bb5054f491a56f4fba3d9e2d9d9ecbe7c5234aaf923ed38def4fa26b3de": {
+      "money": 0.02015599049627781,
+      "credentials": 0.023461272940039635,
+      "injection": 0.001034270040690899
+    },
+    "a297351c68df1ad9735745bfd4660cd636b8b62e73b63bbfed96b3ae1574b98f": {
+      "money": 0.01692827045917511,
+      "credentials": 0.012427969835698605,
+      "injection": 0.0019062012434005737
+    },
+    "a0ee7c2d08a27b0dcac474845795b4b275b768da350454e3d4532bdd5820f946": {
+      "money": 0.7182815670967102,
+      "credentials": 0.02484292909502983,
+      "injection": 0.0023628820199519396
+    },
+    "788e9bc8b3d348acb4f85ca79e6649db5a01d0005fb91671ffceb4876271997b": {
+      "money": 0.08077065646648407,
+      "credentials": 0.005635867826640606,
+      "injection": 0.0199966412037611
+    },
+    "eb3fe13337a34454b53185b11cdc92293e23cb1a271a1bde5e6c0ad265cbc25f": {
+      "money": 0.019740141928195953,
+      "credentials": 0.50730961561203,
+      "injection": 0.02711370401084423
+    },
+    "1e2beb1b25f1ab8289d89a69b74669a127cbb9728658509f3ced4309d73f53bb": {
+      "money": 0.07756678014993668,
+      "credentials": 0.00561063876375556,
+      "injection": 0.0015692624729126692
+    },
+    "a0a5be8e04d6ecf8384d31a33dea77e2071f6a60965a0271be25f0c5c50e345c": {
+      "money": 0.008575296960771084,
+      "credentials": 0.0023738814052194357,
+      "injection": 0.0014233203837648034
+    },
+    "8de6f2ed87c116d3d5da87a91e9cac3c87259d9315c40f8ba4b452880c254513": {
+      "money": 0.3221076726913452,
+      "credentials": 0.031808555126190186,
+      "injection": 0.0034168127458542585
+    },
+    "e259f92591d00b3889bfec4847535f981f4a47649affe676c6a2a04782f615f7": {
+      "money": 0.08613573014736176,
+      "credentials": 0.9006678462028503,
+      "injection": 0.0029983045533299446
+    },
+    "0ed99daf8debb748e0e2f071858d38cc96dc8d904f410a8a240d66387d3aa69b": {
+      "money": 0.6653926372528076,
+      "credentials": 0.012614898383617401,
+      "injection": 0.02222430892288685
+    },
+    "b3a42a4f586a84cd75b27cbd840814c7b4b4944c81f49596f1f49dc9fb7ba04d": {
+      "money": 0.028825338929891586,
+      "credentials": 0.0032705795019865036,
+      "injection": 0.0021898425184190273
+    },
+    "7e953065a27fad557bd77908e43a7a65f751682d99f16966fa132d6438c1f1c7": {
+      "money": 0.051391683518886566,
+      "credentials": 0.006680051796138287,
+      "injection": 0.0013812088873237371
+    },
+    "b5dad320326acbe1e4439ba94f63148fce6e2916fa9e4d6feb657289399f538b": {
+      "money": 0.01815955899655819,
+      "credentials": 0.005354664754122496,
+      "injection": 0.002382139442488551
+    }
+  }
+}

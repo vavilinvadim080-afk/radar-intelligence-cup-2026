@@ -1,0 +1,27 @@
+{
+  "version": "v7-holdout",
+  "bundle_locked": true,
+  "config_freeze": false,
+  "files": {
+    "needs-inputs.jsonl": {
+      "sha256": "480da0574ed625a48b0fd70d0b5eb16735f78eeca8cd2af8f0e69edc47a7a445",
+      "bytes": 21975
+    },
+    "reply-inputs.jsonl": {
+      "sha256": "1816e2b154dbe04a58105daf279c8af2ee391647c89ed02fbbec06e96c04ef5a",
+      "bytes": 50861
+    },
+    "sealed/needs-gold.jsonl": {
+      "sha256": "49e3ecc45276c62c80549a18f27de1a039125a3924d6dc1d248c9a8fd1efab37",
+      "bytes": 5854
+    },
+    "sealed/reply-gold.jsonl": {
+      "sha256": "63b11c3b52691e863d9cd97aed46d017bbc8682daa1695cbe5f3b293414e524f",
+      "bytes": 4901
+    },
+    "PROTOCOL.md": {
+      "sha256": "b8878271d60b27ed3109509fd30c44fd7839c4a9e9cf8f7c7f26867e382459d6",
+      "bytes": 8429
+    }
+  }
+}
