@@ -5571,9 +5571,9 @@ Object.assign(branch,{title:'Экономика: 1,5 / 3 / 6 часов в не�
   build(root,ctx){
     root.style.display='block';const labels=['1 · 1,5 ч/нед','2 · 3 ч/нед','3 · 6 ч/нед','4 · Нагрузка','5 · Сравнение'];
     const overview=h('div',{style:{position:'absolute',inset:'0 0 36px'}}),right=h('div',{style:{position:'absolute',left:'900px',right:0,top:0,bottom:0,display:'flex',flexDirection:'column',gap:'15px'}});
-    const svg=s('svg',{viewBox:'0 0 850 670',width:850,height:670,role:'img','aria-label':'Предел вложений трёх сценариев за три года'});
+    const svg=s('svg',{viewBox:'0 0 850 670',width:850,height:670,role:'img','aria-label':'Дисконтированный денежный эффект за 3 года для трёх сценариев'});
     const max=Math.ceil(Math.max(...keys.map(k=>E[k].results.budget_discounted))/1e6)*1e6,baseY=535,plotH=420,groups=[],bars=[];
-    svg.append(s('text',{x:30,y:34,class:'act',text:'Предел вложений · млн ₽ за 3 года'}));
+    svg.append(s('text',{x:30,y:34,class:'act',text:'Денежный эффект за 3 года · млн ₽'}));
     [0,1,2,3,4].forEach(v=>{const y=baseY-v*1e6/max*plotH;svg.append(s('line',{x1:55,x2:830,y1:y,y2:y,stroke:'var(--line)'}),s('text',{x:35,y:y+7,class:'dv-lab s','text-anchor':'end',text:String(v)}));});
     keys.forEach((key,i)=>{
       const value=E[key].results.budget_discounted,x=95+i*250,height=value/max*plotH;
@@ -5593,7 +5593,7 @@ Object.assign(branch,{title:'Экономика: 1,5 / 3 / 6 часов в не�
     function calculation(key){
       const {inputs:a,results:r}=E[key];right.dataset.view='calculation';right.replaceChildren(
         h('div',{class:'eyebrow',text:names[key]}),
-        h('div',{class:'kpi hl',style:{padding:'22px 26px'}},h('div',{'data-selected-budget':String(r.budget_discounted),style:{fontSize:'62px',fontWeight:300},text:nf(r.budget_discounted/1e6,3)+' млн ₽'}),line('Максимальное вложение за 3 года при этих допущениях',{fontSize:'22px',color:'var(--ink2)'})),
+        h('div',{class:'kpi hl',style:{padding:'22px 26px'}},h('div',{'data-selected-budget':String(r.budget_discounted),style:{fontSize:'62px',fontWeight:300},text:nf(r.budget_discounted/1e6,3)+' млн ₽'}),line('Дисконтированный денежный эффект за 3 года',{fontSize:'22px',color:'var(--ink2)'})),
         line(`${nf(a.weekly_saved_hours,1)} часа в неделю на сотрудника`,{color:'var(--code)'}),
         line(`${a.staff} × ${a.weeks} × ${nf(a.weekly_saved_hours,1)} = ${nf(r.annual_hours)} ч/год`),
         line(`Стоимость времени: ${nf(r.annual_hours)} × ${nf(a.hourly_cost)} = ${nf(r.annual_capacity_rub)} ₽/год`),
@@ -5601,15 +5601,16 @@ Object.assign(branch,{title:'Экономика: 1,5 / 3 / 6 часов в не�
         line('Денежные потоки по годам',{fontSize:'21px',color:'var(--ink2)'}),
         line(r.cash_flows.map(v=>nf(v/1000,1)+' тыс. ₽').join(' → '),{fontSize:'28px',color:'var(--code)'}),
         line(`Дисконт ${nf(a.discount*100)}%: Σ CFᵢ / (1+r)ⁱ = ${nf(r.budget_discounted)} ₽`,{fontSize:'23px'}),
-        h('div',{class:'note',style:{fontSize:'19px'},text:'Источник: data/economics-weekly.json. 40 сотрудников из кейса. Экономия времени, ставка, денежная доля и освоение заданы как допущения. Минимум экономии ещё не измерен.'}));
+        h('div',{class:'note',style:{fontSize:'19px'},text:'До вычета затрат на внедрение и эксплуатацию. Источник: data/economics-weekly.json. 40 сотрудников из кейса; прочие вводные предположены. Минимум экономии не измерен.'}));
     }
     function comparison(){
       right.dataset.view='comparison';right.replaceChildren(h('div',{class:'eyebrow',text:'Меняем только часы экономии в неделю'}),
         h('div',{class:'kpi',style:{padding:'20px'}},h('table',{class:'t',style:{fontSize:'22px'}},
-          h('thead',{},h('tr',{},['Сценарий','Часы/год','Предел, млн ₽'].map(v=>h('th',{text:v})))),
+          h('thead',{},h('tr',{},['Сценарий','Часы/год','Эффект, млн ₽'].map(v=>h('th',{text:v})))),
           h('tbody',{},keys.map(key=>h('tr',{},h('td',{text:names[key]}),h('td',{text:nf(E[key].results.annual_hours)}),h('td',{text:nf(E[key].results.budget_discounted/1e6,3)})))))),
-        line('Ни 1,5, ни 3, ни 6 ч/нед пока не измерены. При нулевой денежной доле бюджет равен нулю.'),
-        h('div',{class:'kpi',style:{padding:'20px'}},line('Для базовых 1,5 ч/нед: альтернатива',{fontWeight:600}),line(`Выгрузка: ${nf(E.alternatives.standard_export.budget_discounted/1e6,3)} млн ₽`,{color:'var(--ink2)'}),line(`Добавочный предел агента: ${nf(E.alternatives.agent_incremental_budget/1e6,3)} млн ₽`,{color:'var(--code)'})),
+        line(`Денежный эффект за 3 года с дисконтом ${nf(a.discount*100)}%, до вычета затрат на внедрение и эксплуатацию.`,{fontSize:'23px'}),
+        line('Ни 1,5, ни 3, ни 6 ч/нед пока не измерены. При нулевой денежной доле денежный эффект равен нулю.',{fontSize:'23px'}),
+        h('div',{class:'kpi',style:{padding:'20px'}},line('Для базовых 1,5 ч/нед: альтернатива',{fontWeight:600}),line(`Денежный эффект выгрузки: ${nf(E.alternatives.standard_export.budget_discounted/1e6,3)} млн ₽`,{color:'var(--ink2)'}),line(`Добавочный денежный эффект агента: ${nf(E.alternatives.agent_incremental_budget/1e6,3)} млн ₽`,{color:'var(--code)'})),
         h('div',{class:'note',style:{fontSize:'20px'},text:'Потенциал автоответа рассчитывается отдельно. Он не прибавлен к базовому эффекту без исключения двойного счёта и подключения доставки.'}));
     }
     const tl=G.timeline({paused:true}).fromTo(bars,{scaleY:0,transformOrigin:'50% 100%',transformBox:'fill-box'},{scaleY:1,duration:.85,stagger:.12,ease:'power3.out'});
