@@ -5577,7 +5577,7 @@ function load(root,ctx){
   ].map(([value,label])=>h('div',{class:'kpi hl',style:{padding:'18px 14px',minWidth:0}},
     line(nf(value),{fontSize:'54px',fontWeight:300,color:'var(--code)'}),small(label,{fontSize:'19px'})));
   const left=h('div',{style:{display:'flex',flexDirection:'column',gap:'14px'}},
-    h('div',{class:'eyebrow',text:'Газпром нефть · уточнение условия'}),
+    h('div',{class:'eyebrow',text:'Газпром нефть · параметры кейса'}),
     h('div',{style:{display:'grid',gridTemplateColumns:'repeat(3,minmax(0,1fr))',gap:'12px'}},metrics),
     small('480 суммарно по всем 40 продуктам. 12 - среднее, не пик; распределение неравномерно.'),
     card(line(nf(d.annual_total)+' обращений/год',{fontSize:'40px',color:'var(--code)'}),
@@ -5585,8 +5585,8 @@ function load(root,ctx){
       small(`${d.working_days_per_year} рабочих дней = ${a.weeks_per_year} недель × ${a.working_days_per_week} дней. Календарь - допущение.`,{color:'var(--ink2)',marginTop:'6px'}),
       small(`При ${a.hours_per_day} ч/день: ${nf(d.hourly_total_mean)} обращений/час всего; ${nf(d.hourly_per_product_mean,1)} на продукт в среднем.`,{marginTop:'10px'})),
     card(small('Около 40 менеджеров - отдельный факт прежнего условия. Число продуктов и численность поддержки являются разными показателями.')),
-    h('div',{class:'note',style:{fontSize:'19px',margin:0},text:'Источник: сообщение пользователя от 12.11.2026 о дополнении организаторов. Прямого нового PDF пока нет. Это условие со слов пользователя, не реальный замер потока.'}),
-    h('div',{class:'note',style:{fontSize:'18px',margin:0},text:'Воспроизводимость: data/case-load-20261112.json. Прежние замеры на 800/1500/3000 не подтверждают качество или скорость при 480 в день.'}));
+    h('div',{class:'note',style:{fontSize:'19px',margin:0},text:'Параметры кейса: 480 обращений в день суммарно по 40 продуктам.'}),
+    h('div',{class:'note',style:{fontSize:'18px',margin:0},text:'Годовой объём и число слотов рассчитаны из допущений. Скорость моделей при этой нагрузке не измерена.'}));
   const sensitivity=h('table',{class:'t',style:{fontSize:'21px'}},
     h('thead',{},h('tr',{},h('th',{text:'Полный путь, с'}),z.seconds_sensitivity.map(r=>h('th',{text:nf(r.seconds_per_full_text_path)})))),
     h('tbody',{},h('tr',{},h('td',{text:'Параллельные слоты'}),z.seconds_sensitivity.map(r=>h('td',{'data-text-slots':String(r.text_slots),text:nf(r.text_slots)})))));
@@ -5642,7 +5642,7 @@ Object.assign(branch,{title:'Экономика: 1,5 / 3 / 6 часов в не�
         line('Денежные потоки по годам',{fontSize:'21px',color:'var(--ink2)'}),
         line(r.cash_flows.map(v=>nf(v/1000,1)+' тыс. ₽').join(' → '),{fontSize:'28px',color:'var(--code)'}),
         line(`Дисконт ${nf(a.discount*100)}%: Σ CFᵢ / (1+r)ⁱ = ${nf(r.budget_discounted)} ₽`,{fontSize:'23px'}),
-        h('div',{class:'note',style:{fontSize:'19px'},text:'До вычета затрат на внедрение и эксплуатацию. Источник: data/economics-weekly.json. 40 сотрудников из кейса; прочие вводные предположены. Минимум экономии не измерен.'}));
+        h('div',{class:'note',style:{fontSize:'19px'},text:'До вычета затрат на внедрение и эксплуатацию. Около 40 сотрудников из кейса; прочие вводные предположены. Экономия часов пока не измерена.'}));
     }
     function comparison(){
       right.dataset.view='comparison';right.replaceChildren(h('div',{class:'eyebrow',text:'Меняем только часы экономии в неделю'}),
@@ -5748,6 +5748,133 @@ DECK.DATA.replyV7b={"scope":"Independent synthetic reply-only control;24ordinary
     installed.add(D);
   }
   return {prepare,render,install};
+});
+
+</script>
+
+<!-- v17: scoped quality presentation; frozen data retained -->
+<script>
+(function(factory){
+  const api=factory();
+  if(typeof module==='object'&&module.exports)module.exports=api;
+  if(typeof DECK!=='undefined')api.install(DECK,gsap);
+})(function(){
+  'use strict';
+  const pct=value=>(100*value).toLocaleString('ru-RU',{maximumFractionDigits:1})+'%';
+  function verify(m,n,positive){
+    for(const key of ['tp','fp','fn','tn'])if(!Number.isInteger(m?.[key])||m[key]<0)throw Error('Invalid confusion counts');
+    if(m.tp+m.fp+m.fn+m.tn!==n||m.tp+m.fn!==positive)throw Error('Wrong population');
+    if(m.precision!==m.tp/(m.tp+m.fp)||m.recall!==m.tp/(m.tp+m.fn))throw Error('Metrics differ from counts');
+    return m;
+  }
+  function prepare(data){
+    const q=data.replyV7b,prior=data.v11?.quality;
+    if(q?.version!=='v7b-reply-only'||q.automatic_release!==false||!/^[a-f0-9]{64}$/.test(q.predictions_sha256||''))throw Error('Frozen reply-only control required');
+    const ordinary=verify(q.models?.['4b']?.incoming_ticket,24,6),fixed=verify(q.models?.['4b']?.fixed_notice_candidate,4,2);
+    if(ordinary.n!==24||fixed.n!==4)throw Error('Wrong reply-only population');
+    if(prior?.version!=='v5c'||!prior.provenance?.predictions_sha256||prior.models.candidate.gates.auto_enable!==false)throw Error('Frozen needs control required');
+    const needs=prior.models.candidate.needs;
+    if(needs.unique_messages!==184||needs.kind_correct!==153||needs.kind_accuracy!==153/184)throw Error('Wrong needs population or Accuracy');
+    verify(needs.pairs,16836,240);
+    return {ordinary,fixed,needs};
+  }
+  function canvas(root,D,label,source){
+    const {s}=D;
+    root.dataset.autoEnable='false';root.dataset.resultStatus=source?'measured_synthetic':'architecture';
+    if(source)root.dataset.qualitySource=source;
+    const svg=s('svg',{viewBox:'0 0 1688 640',role:'img','aria-label':label});
+    svg.style.cssText='width:100%;height:100%;object-fit:contain';
+    const text=(x,y,value,size=23,color='var(--ink)')=>s('text',{x,y,text:String(value),fill:color,style:`font-size:${size}px;font-family:inherit`});
+    const box=(x,y,width,height)=>s('rect',{x,y,width,height,rx:12,fill:'none',stroke:'var(--line)'});
+    root.append(svg);return {svg,text,box};
+  }
+  function animate(svg,G){return G.timeline({paused:true}).from(svg,{opacity:0,y:8,duration:.4});}
+  function renderReply(root,ctx,D,G){
+    const {ordinary:r,fixed:f}=prepare(D.DATA),{svg,text,box}=canvas(root,D,'Автоответ: отдельный контроль v7b','data/quality-reply-v7b.json');
+    svg.append(text(25,30,'Автоответ · независимый синтетический контроль v7b',27),
+      text(25,68,'24 обычных сценария, 6 допустимых. Qwen 4B: офлайн-тест отбора автоответа.',22,'var(--muted)'));
+    [['Precision (точность)',r.precision,`TP / (TP + FP) = ${r.tp} / ${r.tp+r.fp}`],
+      ['Recall (полнота)',r.recall,`TP / (TP + FN) = ${r.tp} / ${r.tp+r.fn}`]].forEach(([label,value,formula],i)=>{
+      const x=25+i*520;
+      svg.append(box(x,105,490,215),text(x+25,149,label,27),text(x+25,235,pct(value),68,'var(--code)'),text(x+25,289,formula,25));
+    });
+    svg.append(box(1065,105,595,215),text(1090,150,'1 ложный ответ · выпуск отключён',27,'var(--human)'),
+      text(1090,200,`TP ${r.tp} / FP ${r.fp} / FN ${r.fn} / TN ${r.tn}`,26),
+      text(1090,248,'Решение и отправка остаются за человеком.',23),
+      text(1090,289,'Внешняя доставка не подключена.',22,'var(--muted)'));
+    svg.append(box(25,353,1010,176),text(50,395,'Уведомление о фиксе · отдельные 4 сценария, 2 допустимых',25),
+      text(50,445,`Precision ${pct(f.precision)} · Recall ${pct(f.recall)}`,30,'var(--code)'),
+      text(50,492,`TP ${f.tp} / FP ${f.fp} / FN ${f.fn} / TN ${f.tn}. Эти случаи не входят в 24 обычных.`,23),
+      box(1065,353,595,176),text(1090,395,'Граница результата',26),
+      text(1090,437,'Малый набор с авторской разметкой.',23),
+      text(1090,478,'Данные компании не проверялись.',23),
+      text(1090,510,'Скорость при 480/день не измерена.',21,'var(--muted)'),
+      text(25,578,'5 верных подготовок и 1 ложная. Проверка человеком остаётся обязательной.',25,'var(--human)'),
+      sLink(D,text,25,624,'../data/quality-reply-v7b.json','Протокол автоответа'),
+      text(410,624,'Результат относится только к этому контролю автоответа.',21,'var(--muted)'));
+    return animate(svg,G);
+  }
+  function sLink(D,text,x,y,href,label){return D.s('a',{href},text(x,y,label,21,'var(--code)'));}
+  function renderNeeds(root,ctx,D,G){
+    const {needs:n}=prepare(D.DATA),p=n.pairs,{svg,text,box}=canvas(root,D,'Потребности: тип и группировка v5c','data/quality-v5c.json');
+    svg.append(text(25,30,'Потребности · сохранённый синтетический контроль v5c',27),
+      text(25,68,'184 уникальных обращения. Тип обращения и объединение в одну потребность оцениваются отдельно.',22,'var(--muted)'));
+    [['Accuracy (верный тип)',n.kind_accuracy,`${n.kind_correct} / ${n.unique_messages} обращений`],
+      ['Precision (точность пар)',p.precision,`${p.tp} / (${p.tp} + ${p.fp}) = ${p.tp} / ${p.tp+p.fp}`],
+      ['Recall (полнота пар)',p.recall,`${p.tp} / (${p.tp} + ${p.fn}) = ${p.tp} / ${p.tp+p.fn}`]].forEach(([label,value,formula],i)=>{
+      const x=25+i*555;
+      svg.append(box(x,108,525,225),text(x+23,153,label,26),text(x+23,239,pct(value),66,'var(--code)'),text(x+23,300,formula,25));
+    });
+    svg.append(box(25,367,1635,154),text(50,408,`Группировка: TP ${p.tp} / FP ${p.fp} / FN ${p.fn}. Эталон: ${p.tp+p.fn} пар одной потребности.`,27),
+      text(50,452,'TP: пара верно объединена; FP: разные потребности объединены; FN: общая потребность пропущена.',23),
+      text(50,495,'Это отдельный результат v5c. Qwen 4B на группировке потребностей не проверялся.',24,'var(--muted)'),
+      text(25,575,'Карточки потребностей проверяет владелец продукта. Данных компании в этом контроле нет.',24),
+      sLink(D,text,25,624,'../data/quality-v5c.json','Протокол потребностей'),
+      text(410,624,'Сохранённые результаты; нового измерения группировки нет.',21,'var(--muted)'));
+    return animate(svg,G);
+  }
+  function renderArchitecture(root,ctx,D,G){
+    const {svg,text,box}=canvas(root,D,'Роли моделей и кода');
+    svg.append(text(25,30,'Модели проверяют смысл; код управляет действиями',27),
+      text(25,68,'4B: только офлайн-тест автоответа v7b. К приложению не подключён.',22,'var(--muted)'));
+    const cards=[
+      ['Embeddings',['Находят кандидатов по смыслу.','Сходство ещё не подтверждает','совпадение проблемы.']],
+      ['Reranker 4B',['Проверяет пары','«обращение - инцидент».','Только офлайн-тест автоответа v7b.']],
+      ['NLI',['Проверяет совместимость и риск.','Сомнение или риск:','обращение идёт оператору.']]
+    ];
+    cards.forEach(([title,lines],i)=>{
+      const x=25+i*555;svg.append(box(x,108,525,224),text(x+24,155,title,31,'var(--code)'));
+      lines.forEach((value,j)=>svg.append(text(x+24,207+j*42,value,24)));
+      if(i<2)svg.append(text(x+533,227,'→',24,'var(--muted)'));
+    });
+    svg.append(box(25,354,795,184),text(50,396,'Оркестрация и доступ: код',28),
+      text(50,438,'Права, лимиты, очереди и журнал проверяются кодом.',24),
+      text(50,476,'В приложении по умолчанию: правила и шаблоны.',24),
+      text(50,514,'Семантический v5c: отдельный эксперимент.',23,'var(--muted)'),
+      box(855,354,805,184),text(880,396,'Человек разрешает действие',28,'var(--human)'),
+      text(880,438,'Офлайн-тест 4B не меняет путь в приложении.',24),
+      text(880,476,'Автоматический выпуск отключён.',24),
+      text(880,514,'Очередь и черновик требуют отдельной отправки.',24),
+      text(25,580,'Газпром нефть: адаптер к внутренней Qwen3.8 запланирован.',26),
+      text(25,624,'Перенос на внутренние модели и их скорость ещё не проверены.',22,'var(--muted)'));
+    return animate(svg,G);
+  }
+  function install(D,G){
+    const branch=D.nodeById('quality').branches.find(b=>b.id==='speed');
+    Object.assign(branch,{title:'Качество: автоответ, потребности, архитектура',title2:'Качество: автоответ, потребности, архитектура',
+      lead:'Отдельные проверки функций и границы эксперимента',
+      fig:()=>({v:'24',u:'обычных сценария в контроле автоответа'}),
+      steps:true,beats:undefined,intro:false,
+      takeaway:'У каждой функции свой контроль. <em>1 ложный автоответ: выпуск отключён, решение остаётся за человеком.</em>',
+      build(root,ctx){return D.v5Stack(root,ctx,[
+        {key:'reply-v7b',label:'1 · Автоответ',title:'Автоответ: отдельный контроль v7b',build:(el,sub)=>renderReply(el,sub,D,G)},
+        {key:'needs',label:'2 · Потребности',title:'Потребности: тип и группировка',build:(el,sub)=>renderNeeds(el,sub,D,G)},
+        {key:'architecture',label:'3 · Архитектура',title:'Архитектура: роли моделей и кода',build:(el,sub)=>renderArchitecture(el,sub,D,G)}
+      ],{staticIndex:0}).timeline;}
+    });
+
+  }
+  return {prepare,renderReply,renderNeeds,renderArchitecture,install};
 });
 
 </script>

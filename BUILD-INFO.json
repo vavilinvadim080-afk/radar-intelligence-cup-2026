@@ -1,7 +1,7 @@
 {
   "date": "2026-11-08",
-  "presentation": "v16",
-  "video": "v5-case480-reply-v7b",
+  "presentation": "v17",
+  "video": "v6-case480-stress",
   "quality": "v5c full-service control plus separate v7b reply-only control",
   "unfinished_v5c_included": false,
   "source_files": {
@@ -1208,34 +1208,34 @@
       "published_sha256": "a03ee4348a436942ea7f316513b5879ed5f67c552535e85043f57a323ec8c348"
     },
     "presentation/radar.html": {
-      "source": "presentation/Радар-v13-плюс-кейс-v16-для-жюри.html",
-      "sha256": "d7d082e08da2ab18df4db327ce7163eb54b0b18a571864f4472d303fda70d676",
-      "published_sha256": "d7d082e08da2ab18df4db327ce7163eb54b0b18a571864f4472d303fda70d676"
+      "source": "presentation/Радар-v13-плюс-кейс-v17-для-жюри.html",
+      "sha256": "26bd6d46f1f343c667de383800323468ab3e2c6a6b51e5bd5d5efd3dff005c22",
+      "published_sha256": "26bd6d46f1f343c667de383800323468ab3e2c6a6b51e5bd5d5efd3dff005c22"
     },
     "presentation/radar.pdf": {
-      "source": "presentation/Радар-v13-плюс-кейс-v16-для-жюри.pdf",
-      "sha256": "5d8718838afaad481396e6169958fbd83d0e5a1d3d63593b56a01f583c834178",
-      "published_sha256": "5d8718838afaad481396e6169958fbd83d0e5a1d3d63593b56a01f583c834178"
+      "source": "presentation/Радар-v13-плюс-кейс-v17-для-жюри.pdf",
+      "sha256": "ee11a28a66b353bce1553220c7156d10c5f1bb9a53768cedcdaadb903e4066b5",
+      "published_sha256": "ee11a28a66b353bce1553220c7156d10c5f1bb9a53768cedcdaadb903e4066b5"
     },
     "video/radar.mp4": {
-      "source": "promo-case-v5/radar-case-v5.mp4",
-      "sha256": "0d59389d233f09896e813cb6d99b3a0e6df6129470e3a117b0011b84dd421b2b",
-      "published_sha256": "0d59389d233f09896e813cb6d99b3a0e6df6129470e3a117b0011b84dd421b2b"
+      "source": "promo-case-v6/radar-case-v6.mp4",
+      "sha256": "a5e847a557a14c76500fea173b0c0b77c8760afebea743c50d9e823a124b5d15",
+      "published_sha256": "a5e847a557a14c76500fea173b0c0b77c8760afebea743c50d9e823a124b5d15"
     },
     "video/captions.vtt": {
-      "source": "promo-case-v5/radar-case-v5.vtt",
-      "sha256": "b8ba2423bfff9cf5efc73be91c78a07a7cd20c313d8b576e2955e06ceafed94c",
-      "published_sha256": "b8ba2423bfff9cf5efc73be91c78a07a7cd20c313d8b576e2955e06ceafed94c"
+      "source": "promo-case-v6/radar-case-v6.vtt",
+      "sha256": "524f863ea69bcee9d83578a9ae718317ccd4773a44b9b3de45d74199673a170c",
+      "published_sha256": "524f863ea69bcee9d83578a9ae718317ccd4773a44b9b3de45d74199673a170c"
     },
     "video/captions.srt": {
-      "source": "promo-case-v5/radar-case-v5.srt",
-      "sha256": "1e6ef9a204fdf84bf670f04c3f875a5fb77997bde0ca206c47f110717d1b787a",
-      "published_sha256": "1e6ef9a204fdf84bf670f04c3f875a5fb77997bde0ca206c47f110717d1b787a"
+      "source": "promo-case-v6/radar-case-v6.srt",
+      "sha256": "d4eda96a86e6c13ec41382950eb03bf23cd8744ab5d33df7bb29d91db9fe27bf",
+      "published_sha256": "d4eda96a86e6c13ec41382950eb03bf23cd8744ab5d33df7bb29d91db9fe27bf"
     },
     "video/script.md": {
-      "source": "promo-case-v5/script.md",
-      "sha256": "9d468f79406ca22a8e02c9c085d60c56347e8be1cec2c26e20e4e18604b439b3",
-      "published_sha256": "49ea73340046b2f55b40f6848c51c6f2ad910030d3011b62e94fa83927a30747",
+      "source": "promo-case-v6/script.md",
+      "sha256": "cee69caf82f2001f1a39259930ebb8ca98f2413e1d76c2f9d2b844567c1fa4cf",
+      "published_sha256": "cee69caf82f2001f1a39259930ebb8ca98f2413e1d76c2f9d2b844567c1fa4cf",
       "adapted_for_submission": true
     },
     "submission/solution.md": {
@@ -1467,9 +1467,9 @@
     },
     "tests/test_reranker_v5c_review.py": {
       "source": "tests/test_reranker_v5c_review.py",
-      "sha256": "e917d1c7e0477a0f92bbacfa40902b8e9d40ededbea26433c44837cb1bf647c6",
+      "sha256": "f8ac5e86f4cf925a6177b9d391cbb4d1fe078bb56ca3091c5538fda7a382f351",
       "adapted_for_submission": true,
-      "published_sha256": "e917d1c7e0477a0f92bbacfa40902b8e9d40ededbea26433c44837cb1bf647c6"
+      "published_sha256": "f8ac5e86f4cf925a6177b9d391cbb4d1fe078bb56ca3091c5538fda7a382f351"
     },
     "tests/test_score_v5c.py": {
       "source": "tests/test_score_v5c.py",
