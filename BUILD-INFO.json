@@ -1860,10 +1860,32 @@
       "source": "evaluation/v7b-transport/sealed/TRANSPORT-AUDIT.json",
       "sha256": "e69973dab18a6691c75ebb30b2c796c65627f46ec2be825127a30609aaa1a6f3",
       "published_sha256": "e69973dab18a6691c75ebb30b2c796c65627f46ec2be825127a30609aaa1a6f3"
+    },
+    "submission/description.txt": {
+      "source": "submission/04-Описание-для-формы.txt",
+      "sha256": "af35d79c495bce6fd2142a74b08659af5f6b15845984c44ba86bbb54ceac5a85",
+      "published_sha256": "af35d79c495bce6fd2142a74b08659af5f6b15845984c44ba86bbb54ceac5a85"
+    },
+    "LICENSE": {
+      "source": "submission/LICENSE",
+      "sha256": "e205e355a18560b97047bc947c9c71c60aede65e0ccbaedcd9b4b622af6d3655",
+      "published_sha256": "e205e355a18560b97047bc947c9c71c60aede65e0ccbaedcd9b4b622af6d3655"
+    },
+    "LICENSES/Apache-2.0.txt": {
+      "source": "submission/LICENSES/Apache-2.0.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "published_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "LICENSES/MIT-NLI.txt": {
+      "source": "submission/LICENSES/MIT-NLI.txt",
+      "sha256": "6a9a8b98b4839fa4d0e3fc1863c7fa7a5f673e08172ba787ff4c44f3bf628dca",
+      "published_sha256": "6a9a8b98b4839fa4d0e3fc1863c7fa7a5f673e08172ba787ff4c44f3bf628dca"
     }
   },
   "submission_characters": 14949,
   "local_access_help_updated": "2026-11-11",
   "updated": "2026-11-13",
-  "verification": "RELEASE-CHECKS.md"
+  "verification": "RELEASE-CHECKS.md",
+  "license": "LicenseRef-Radar-Evaluation-1.0",
+  "rights_terms": "LICENSE"
 }
